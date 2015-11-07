@@ -1,1 +1,15 @@
-// Sass Styles
+.box {
+  height : 100px;
+  width : 100px;
+  border: 1px solid black;
+  margin-bottom: 25px;
+}
+
+#image-div {
+  background-image: url("https://s3-us-west-1.amazonaws.com/riot-api/img/minimap-ig.png");
+  width:600px;
+  height:600px;
+  background-repeat: no-repeat;
+  // width:100%;
+  // height:100%;
+}

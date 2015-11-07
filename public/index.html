@@ -3,8 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>League Analytical Examiner</title>
+   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:3000/./css/styles.css">
 </head>
-<body>
-  <h1>League Analytical Examiner</h1>
+<body ng-app="laneApp">
+
+  <div ng-view></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular-route.min.js"></script>
+
+<!-- import modules -->
+<script src="app.js"></script>
+<script src="js/controllers/default-controller.js"></script>
+
 </body>
 </html>
