@@ -1,0 +1,28 @@
+{
+  "name": "league-analytical-examiner-lane",
+  "version": "1.0.0",
+  "description": "Eleazar Corpuz",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SkinnyFatMan/League-ANalytical-Examiner-LANE-.git"
+  },
+  "author": "Nolan, eL, Mike",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SkinnyFatMan/League-ANalytical-Examiner-LANE-/issues"
+  },
+  "homepage": "https://github.com/SkinnyFatMan/League-ANalytical-Examiner-LANE-#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.1.0",
+    "gulp-shell": "^0.5.1"
+  },
+  "dependencies": {
+    "express": "^4.13.3",
+    "request": "^2.65.0"
+  }
+}
