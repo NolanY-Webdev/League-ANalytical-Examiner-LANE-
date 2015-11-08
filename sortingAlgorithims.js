@@ -1,4 +1,4 @@
-var riotMatchData = {}; //insert Riot's Match Data here
+var riotMatchData = {};
 var parsedMatchData = {};
 
 for (var p = 1; p < riotMatchData.participants.length + 1; p++) {
@@ -59,5 +59,4 @@ for (var p = 1; p < riotMatchData.participants.length + 1; p++) {
     }
 }
 
-console.log(parsedMatchData.player1[1]);
 
