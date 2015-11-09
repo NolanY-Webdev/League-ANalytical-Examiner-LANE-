@@ -13,7 +13,7 @@ router
     request.get({
       url : 'https://' + region +
             '.api.pvp.net/api/lol/' + region +
-            '/v1.4/summoner/by-name/ISheetOnYou?api_key=' + process.env.LOL_API_KEY
+            '/v1.4/summoner/by-name/ISheeetOnYou?api_key=' + process.env.LOL_API_KEY
     }, function(err, response, body) {
       if (err) {
         return res.status(500).json(err);

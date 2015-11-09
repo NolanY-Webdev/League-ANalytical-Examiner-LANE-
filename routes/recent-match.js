@@ -4,13 +4,13 @@ var router = express.Router();
 var request = require('request');
 
 router
-  .route('/')
+  .route('/recent')
 
   // get player recent match info
   // /api/lol/{region}/v1.3/game/by-summoner/{summonerId}/recent
   .get(function(req,res) {
     var region = 'na';
-    var summonerId = '59698121';
+    var summonerId = '70460493';
     request.get({
       url : 'https://' + region + '.api.pvp.net/api/lol/' + region +
             '/v1.3/game/by-summoner/' + summonerId +

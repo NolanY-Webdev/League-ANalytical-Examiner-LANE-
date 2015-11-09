@@ -6,10 +6,8 @@ angular.module('laneApp')
     'summonerInfo',
     function($scope, $window, summonerInfo) {
       summonerInfo.getSummonerInfo()
-        .success((data)=>{
+        .success((data)=> {
           //data recieved
           $scope.summoner = data;
         });
-      // $window.location.href = '/#/getSummoner';
-    }
-]);
+    }]);
