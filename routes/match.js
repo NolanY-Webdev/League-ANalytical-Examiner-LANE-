@@ -6,19 +6,21 @@ var request = require('request');
 router
   .route('/')
 
-  // get summoners info
-  //api/lol/{region}/v1.4/summoner/by-name/{summonerNames}
+  // get match info
   .get(function(req,res) {
     var region = 'na';
+    var matchId = '2002113603';
     request.get({
-      url : 'https://' + region +
-            '.api.pvp.net/api/lol/' + region +
-            '/v1.4/summoner/by-name/ISheetOnYou?api_key=' + process.env.LOL_API_KEY
+      // /api/lol/{region}/v2.2/match/{matchId}
+      url : 'https://' + region + '.api.pvp.net/api/lol/' + region + '/v2.2/match/' + matchId + '?api_key=' + process.env.LOL_API_KEY,
+      includeTimeline : true
+
     }, function(err, response, body) {
+      //err handling
       if (err) {
         return res.status(500).json(err);
       }
-      res.send(body);
+      res.json(JSON.parse(body));
     });
   });
 

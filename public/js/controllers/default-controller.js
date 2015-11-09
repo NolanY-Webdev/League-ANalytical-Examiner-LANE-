@@ -2,7 +2,14 @@
 angular.module('laneApp')
   .controller('defaultController', [
     '$scope',
-    function($scope) {
-      $scope.message = 'Welcome';
+    '$window',
+    'summonerInfo',
+    function($scope, $window, summonerInfo) {
+      summonerInfo.getSummonerInfo()
+        .success((data)=>{
+          //data recieved
+          $scope.summoner = data;
+        });
+      // $window.location.href = '/#/getSummoner';
     }
 ]);
