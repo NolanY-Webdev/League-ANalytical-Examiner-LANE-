@@ -346,7 +346,6 @@ var jsonData = { player1:
      [ 1304487, 'Player Slain', 9301, 9106 ] ] };
 
 var player1 = jsonData.player1;
-var xyarray = [];
 var cords = [];
 function sortPlayer1() {
   for (var i = 0; i < player1.length; i++) {
@@ -357,36 +356,39 @@ function sortPlayer1() {
 sortPlayer1();
 
 var player2 = jsonData.player2;
+var cords2 = [];
 function sortPlayer2() {
   for (var i = 0; i < player2.length; i++) {
     var coordinates = player2[i].slice(2);
-    cords.push(coordinates);
+    cords2.push(coordinates);
   }
 }
-// sortPlayer2();
+sortPlayer2();
 
 var player3 = jsonData.player3;
+var cords3 = [];
 function sortPlayer3() {
   for (var i = 0; i < player3.length; i++) {
     var coordinates = player3[i].slice(2);
-    cords.push(coordinates);
+    cords3.push(coordinates);
   }
 }
-// sortPlayer3();
+sortPlayer3();
 
 
+//map d3
 var domain = {
-            min: {x: -570, y: -420},
-            max: {x: 15220, y: 14980}
-    },
+    min : { x : -570, y : -420 },
+    max : { x : 15220, y : 14980 }
+},
     width = 512,
     height = 512,
-    bg = "https://s3-us-west-1.amazonaws.com/riot-api/img/minimap-mh.png",
+    bg = 'https://s3-us-west-1.amazonaws.com/riot-api/img/minimap-mh.png',
     xScale, yScale, svg;
 
 color = d3.scale.linear()
     .domain([0, 3])
-    .range(["white", "steelblue"])
+    .range([ 'white', 'steelblue' ])
     .interpolate(d3.interpolateLab);
 
 xScale = d3.scale.linear()
@@ -397,9 +399,9 @@ yScale = d3.scale.linear()
   .domain([domain.min.y, domain.max.y])
   .range([height, 0]);
 
-svg = d3.select("#map").append("svg:svg")
-    .attr("width", width)
-    .attr("height", height);
+svg = d3.select('#map').append('svg:svg')
+    .attr('width', width)
+    .attr('height', height);
 
 svg.append('image')
     .attr('xlink:href', bg)
@@ -410,20 +412,41 @@ svg.append('image')
 
 //use g to append to group tag
 //to put image into circles svg filter and clipping mask
-var player1 = svg.selectAll("image")
+var player1 = svg.selectAll('image')
     .data(cords)
-    .enter().append("image")
-
-        .attr('class', 'kills')
+    .enter().append('image')
+    .attr('class', 'kills')
     .attr('xlink:href', 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Xerath.png')
     .attr('x', function(d) { return xScale(d[0]) - 7 })
     .attr('y', function(d) { return yScale(d[1]) - 7 })
     .attr('width', 15)
     .attr('height', 15);
-svg.append('svg:g').selectAll("circle")
-    .data(cords)
-    .enter().append("svg:circle")
-//         .attr('cx', function(d) { return xScale(d[0]) })
-//         .attr('cy', function(d) { return yScale(d[1]) })
-//         .attr('r', 5)
-        .attr('class', 'kills');
+
+var player2img = svg.selectAll('image2')
+    .data(cords2)
+    .enter().append('image')
+    .attr('class', 'kills')
+    .attr('xlink:href', 'http://ftalphaville.ft.com/files/2013/06/cows.jpg')
+    .attr('x', function(d) { return xScale(d[0]) - 7 })
+    .attr('y', function(d) { return yScale(d[1]) - 7 })
+    .attr('width', 15)
+    .attr('height', 15);
+
+var player3img = svg.selectAll('image3')
+    .data(cords3)
+    .enter().append('image')
+    .attr('class', 'kills')
+    .attr('xlink:href', 'http://dreamatico.com/data_images/kitten/kitten-2.jpg')
+    .attr('x', function(d) { return xScale(d[0]) - 7 })
+    .attr('y', function(d) { return yScale(d[1]) - 7 })
+    .attr('width', 15)
+    .attr('height', 15);
+
+
+// svg.append('svg:g').selectAll("circle")
+//     .data(cords)
+//     .enter().append("svg:circle")
+// //         .attr('cx', function(d) { return xScale(d[0]) })
+// //         .attr('cy', function(d) { return yScale(d[1]) })
+// //         .attr('r', 5)
+//         .attr('class', 'kills');
