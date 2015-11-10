@@ -17,7 +17,7 @@ laneApp.config( function($routeProvider) {
     templateUrl : 'views/recent-match.html'
   })
   .when('/match', {
-    controller : 'defaultController',
+    controller : 'matchController',
     templateUrl : 'views/match.html'
   })
   .otherwise({
