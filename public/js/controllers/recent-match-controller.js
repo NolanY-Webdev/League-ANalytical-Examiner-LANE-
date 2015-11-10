@@ -8,5 +8,6 @@ angular.module('laneApp')
       recentMatchInfo.getRecentMatchInfo()
         .success((data) => {
           $scope.recentMatch = data;
+          console.log(data);
         });
     }]);

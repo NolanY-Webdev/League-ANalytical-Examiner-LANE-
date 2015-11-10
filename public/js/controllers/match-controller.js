@@ -6,7 +6,7 @@ angular.module('laneApp')
     'matchInfo',
     '$rootScope',
     function($scope, $window, matchInfo, $rootScope) {
-      matchInfo.getMatchInfo()
+      matchInfo.getMatch()
         .success((data) => {
           $scope.match = data;
           // $rootScope

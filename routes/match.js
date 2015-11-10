@@ -24,7 +24,7 @@ router
       // prune body
       res.send(body);
 
-      console.log(body);
+      // console.log(body);
     });
   });
 

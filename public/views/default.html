@@ -1,23 +1,25 @@
 <div class="container">
   <div class="row">
     <h1>Home Page</h1>
-    <h2>{{message}}</h2>
   </div>
 
   <div class="row">
     <div class="six columns">
-        <label for="exampleEmailInput">Summoner name</label>
+        <label for="summonerNameInput">Summoner name</label>
         <input class="u-full-width" type="text" placeholder="summoner name" id="summonerNameInput" ng-model="summonerName">
     </div>
   </div>
 
   <div class="row">
-    <a class="button" ng-click="getSummonerInfo(summonerName)">Player Stats</a>
+    <a class="button" ng-click="getSummonerInfo(summonerName)" href="/#/match">Player Stats</a>
     <!-- <a class="button" ng-href="/#/default">Death Map</a> -->
   </div>
 
   <div class="row">
     <p>{{summoner}}</p>
+    <!-- <p>{{recentMatch.games[0].gameId }}</p> -->
+    <p>{{recentMatch.games[0] }}</p>
+    <p>{{mostRecentMatch }}</p>
     <p ng-repeat="single in isheetonyou">{{summoner.single.id}}</p>
   </div>
 </div>

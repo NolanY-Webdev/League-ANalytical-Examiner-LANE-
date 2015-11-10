@@ -3,7 +3,12 @@
   width : 100px;
   border: 1px solid black;
   margin-bottom: 25px;
+
 }
+  #player1.box {
+    background-image: url("http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Leona.png");
+    background-size:100%;
+  }
 
 #image-div {
   background-image: url("https://s3-us-west-1.amazonaws.com/riot-api/img/minimap-ig.png");
@@ -11,3 +16,5 @@
   height:600px;
   background-repeat: no-repeat;
 }
+
+
