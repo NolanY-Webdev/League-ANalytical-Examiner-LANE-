@@ -10,17 +10,18 @@ router
   // /api/lol/{region}/v1.3/game/by-summoner/{summonerId}/recent
   .get(function(req,res) {
     var region = 'na';
-    var summonerId = '59698121';
+    // var summonerId = '59698121';
     request.get({
       url : 'https://' + region + '.api.pvp.net/api/lol/' + region +
-            '/v1.3/game/by-summoner/' + summonerId +
+            '/v1.3/game/by-summoner/' + req.query.summonerId +
             '/recent?api_key=' + process.env.LOL_API_KEY
     }, function(err, response, body) {
       //err handling
       if (err) {
         return res.status(500).json(err);
       }
-      res.json(JSON.parse(body));
+      res.send(body);
+
     });
   });
 

@@ -1,12 +1,14 @@
 'use strict';
 angular.module('laneApp')
-  .controller('recentMatchController', [
+  .controller('matchController', [
     '$scope',
     '$window',
     'matchInfo',
-    function($scope, $window, summonerInfo) {
+    '$rootScope',
+    function($scope, $window, matchInfo, $rootScope) {
       matchInfo.getMatchInfo()
         .success((data) => {
           $scope.match = data;
+          // $rootScope
         });
     }]);

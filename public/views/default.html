@@ -7,12 +7,12 @@
   <div class="row">
     <div class="six columns">
         <label for="exampleEmailInput">Summoner name</label>
-        <input class="u-full-width" type="text" placeholder="summoner name" id="summonerNameInput" ng-model="summonerInfo">
+        <input class="u-full-width" type="text" placeholder="summoner name" id="summonerNameInput" ng-model="summonerName">
     </div>
   </div>
 
   <div class="row">
-    <a class="button" ng-href={{summoner}}>Player Stats</a>
+    <a class="button" ng-click="getSummonerInfo(summonerName)">Player Stats</a>
     <!-- <a class="button" ng-href="/#/default">Death Map</a> -->
   </div>
 
