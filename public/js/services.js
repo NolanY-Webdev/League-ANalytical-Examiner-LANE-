@@ -1,7 +1,7 @@
 'use strict';
 angular.module('laneApp')
   .service('summonerInfo', [ '$http', function($http) {
-    this.getSummoner= function(name) {
+    this.getSummoner = function(name) {
       return $http.get('http://localhost:3000/getSummoner?summonerName=' + name);
     };
   }])

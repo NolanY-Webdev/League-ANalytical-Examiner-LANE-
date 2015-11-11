@@ -22,7 +22,9 @@ angular.module('laneApp')
               matchInfo.getMatch(recentMatches.games[0].gameId)
                 .success( ( mostRecentMatch ) => {
                   $scope.mostRecentMatch = mostRecentMatch;
+                  console.log('\n a string');
                   console.log(mostRecentMatch);
+                  console.log('this is it: ', mostRecentMatch.participants[0].championId)
               });
             });
         });
