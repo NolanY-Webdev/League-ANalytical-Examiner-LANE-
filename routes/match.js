@@ -40,7 +40,6 @@ router
           if (parsed.participants[i].championId == champion[j].key) {
 
             console.log('MATCH: ',champion[j].key);
-
             console.log(parsed.participants.championImage = champion[j].image);
 
           }
