@@ -375,7 +375,8 @@ var jsonData = { player1:
 // }
 // sortPlayer3();
 
-
+var imageWidth = 25;
+var imageHeight = 25;
 
 var towerCordsSummoners = [
         [12400, 13000], [12900, 12600], [10500, 13800], [11100, 11100],
@@ -404,7 +405,7 @@ var howlingAbyss = 'http://ddragon.leagueoflegends.com/cdn/5.22.2/img/map/map12.
 // max: {x: 12849, y: 12858}
 
 //=============================
-var crystalScar = 'http://ddragon.leagueoflegends.com/cdn/5.22.2/img/map/map8.png'
+var crystalScar = 'http://ddragon.leagueoflegends.com/cdn/5.22.2/img/map/map8.png';
 
 // min: {x: 0, y: 0}
 // max: {x: 13987, y: 13987}
@@ -424,8 +425,8 @@ var domain = {
     min : { x : -570, y : -420 },
     max : { x : 15220, y : 14980 }
 },
-    width = 512,
-    height = 512,
+    width = 800,
+    height = 800,
     bg = 'https://s3-us-west-1.amazonaws.com/riot-api/img/minimap-mh.png',
     xScale, yScale, svg;
 
@@ -453,45 +454,80 @@ svg.append('image')
     .attr('width', width)
     .attr('height', height);
 
-var imgurl1 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Xerath.png'
+var imgurl1 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Xerath.png';
 var player1img = svg.selectAll("image1")
 
     //bypass sortPlayer functions by referring to jsonData.player#
     .data(jsonData.player1)
     .enter().append("svg:image")
-    .attr('class', 'kills')
+    .attr('class', 'stuff1')
 
     //pass variable containing url
     .attr('xlink:href', imgurl1)
-    .attr('x', function(d) { return xScale(d[2]) - 7; })
-    .attr('y', function(d) { return yScale(d[3]) - 7; });
+    .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
+    .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
+    .attr('width', imageWidth)
+    .attr('height', imageHeight);
 
-      //define width and height in css
-//     .attr('width', 15)
-//     .attr('height', 15);
-var imgurl2 = 'http://ftalphaville.ft.com/files/2013/06/cows.jpg'
+svg.selectAll('image1')
+    .data(jsonData.player1)
+    .enter().append('rect')
+    .attr('width', imageWidth + 2)
+    .attr('height', imageHeight + 2)
+    .style('fill', 'none')
+    .style('stroke', 'orange')
+    .style('stroke-width', 2)
+    .attr('class', 'stuff3')
+    .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
+    .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); });
+
+var imgurl2 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Vi.png';
 var player2img = svg.selectAll("image1")
     .data(jsonData.player2)
     .enter().append("svg:image")
-    .attr('class', 'kills')
     .attr('xlink:href', imgurl2)
-    .attr('id', 'stuff')
-    .attr('x', function(d) { return xScale(d[2]) - 7; })
-    .attr('y', function(d) { return yScale(d[3]) - 7; });
-//     .attr('width', 15)
-//     .attr('height', 15);
+    .attr('class', 'stuff2')
+    .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
+    .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
+    .attr('width', imageWidth)
+    .attr('height', imageHeight);
 
-var imgurl3 = 'http://dreamatico.com/data_images/kitten/kitten-2.jpg'
+svg.selectAll('image1')
+    .data(jsonData.player2)
+    .enter().append('rect')
+    .attr('width', imageWidth + 2)
+    .attr('height', imageHeight + 2)
+    .style('fill', 'none')
+    .style('stroke', 'blue')
+    .style('stroke-width', 2)
+    .attr('class', 'stuff3')
+    .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
+    .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); });
+
+//put image in rect, instead of rect in image
+var imgurl3 = 'http://dreamatico.com/data_images/kitten/kitten-2.jpg';
 var player3img = svg.selectAll("image1")
     .data(jsonData.player3)
     .enter().append("svg:image")
-    .attr('class', 'kills')
     .attr('xlink:href', imgurl3)
-    .attr('id', 'stuff')
-    .attr('x', function(d) { return xScale(d[2]) - 7; })
-    .attr('y', function(d) { return yScale(d[3]) - 7; });
-//     .attr('width', 15)
-//     .attr('height', 15);
+
+    .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
+    .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
+    .attr('width', imageWidth)
+    .attr('height', imageHeight);
+
+svg.selectAll('image1')
+    .data(jsonData.player3)
+    .enter().append('rect')
+    .attr('width', imageWidth + 2)
+    .attr('height', imageHeight + 2)
+    .style('fill', 'none')
+    .style('stroke', 'red')
+    .style('stroke-width', 2)
+    .attr('class', 'stuff3')
+    .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
+    .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); });
+
 
 // //use g to append to group tag
 // //to put image into circles svg filter and clipping mask
