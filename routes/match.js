@@ -10,10 +10,10 @@ router
   // get match info
   .get(function(req,res) {
     var region = 'na';
-    var matchId = '2003406065';
+    console.log(req.query);
     request.get({
       // /api/lol/{region}/v2.2/match/{matchId}
-      url : 'https://' + region + '.api.pvp.net/api/lol/' + region + '/v2.2/match/' + matchId + '?api_key=' + process.env.LOL_API_KEY,
+      url : 'https://' + region + '.api.pvp.net/api/lol/' + region + '/v2.2/match/' + req.query.matchId + '?api_key=' + process.env.LOL_API_KEY,
       includeTimeline : true
 
     }, function(err, response, body) {
@@ -23,8 +23,7 @@ router
       }
 
       // prune body
-      // console.log(res.send(body));
-      res.send(body)
+      console.log(body.participants);
       var parsed = JSON.parse(body);
       // console.log(champion[0].key);
       // console.log(champion.indexOf(parsed.participants[0].championId));
@@ -38,14 +37,14 @@ router
           // console.log(champion[j].key);
 
           if (parsed.participants[i].championId == champion[j].key) {
-
+            parsed.participants[i].championImage = champion[j].image;
             console.log('MATCH: ',champion[j].key);
             console.log(parsed.participants.championImage = champion[j].image);
 
           }
         }
       }
-      // console.log(body);
+      res.send(parsed);
     });
   });
 module.exports = router;
