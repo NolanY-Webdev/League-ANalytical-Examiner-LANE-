@@ -346,36 +346,6 @@ var jsonData = { player1:
      [ 1304487, 'Player Slain', 9301, 9106 ] ] };
 
 
-// var player1 = jsonData.player1;
-// var cords = [];
-// function sortPlayer1() {
-//   for (var i = 0; i < player1.length; i++) {
-//     var coordinates = player1[i].slice(2);
-//     cords.push(coordinates);
-//   }
-// }
-// sortPlayer1();
-
-// var player2 = jsonData.player2;
-// var cords2 = [];
-// function sortPlayer2() {
-//   for (var i = 0; i < player2.length; i++) {
-//     var coordinates = player2[i].slice(2);
-//     cords2.push(coordinates);
-//   }
-// }
-// sortPlayer2();
-
-// var player3 = jsonData.player3;
-// var cords3 = [];
-// function sortPlayer3() {
-//   for (var i = 0; i < player3.length; i++) {
-//     var coordinates = player3[i].slice(2);
-//     cords3.push(coordinates);
-//   }
-// }
-// sortPlayer3();
-
 var imageWidth = 25;
 var imageHeight = 25;
 
@@ -439,7 +409,7 @@ var filteredData = {};
 
 //BRUSH DATA
 
-var gameLength = 1320435;
+var gameLength = 1320435; //INSERT GAME LENGTH FROM DATA HERE
 var gameLengthByMin = gameLength/60000;
 var brushX = 5;
 var brushY = 18;
@@ -530,18 +500,18 @@ svg.append('image')
 
 //UPDATE FUNCTION
 function update(data){
-    var images = svg.selectAll('.kills').data(data);
+    var images = svg.selectAll('.stuff1').data(data);
     images.exit().remove();
     images.enter();
 
-       var towers = 'http://www.team-dignitas.net/uploads/tinymce/images/turret_transparent.png';
+    var towers = 'http://www.team-dignitas.net/uploads/tinymce/images/turret_transparent.png';
 svg.append('svg:g').selectAll('image2')
     .data(towerCordsSummoners)
     .enter().append('svg:image')
         .attr('xlink:href', towers)
         .attr('x', function(d) { return xScale(d[0]) - 25; })
         .attr('y', function(d) { return yScale(d[1]) - 50; })
-        .attr('class', 'towers')
+        .attr('class', 'stuff1')
         .attr('width', 60)
         .attr('height', 60);
 
@@ -552,7 +522,7 @@ svg.append('svg:g').selectAll('image3')
         .attr('xlink:href', nexi)
         .attr('x', function(d) { return xScale(d[0]) - 25; })
         .attr('y', function(d) { return yScale(d[1]) - 50; })
-        .attr('class', 'towers')
+        .attr('class', 'stuff1')
         .attr('width', 60)
         .attr('height', 60);
 
@@ -563,7 +533,7 @@ svg.append('svg:g').selectAll('image4')
         .attr('xlink:href', inhibs)
         .attr('x', function(d) { return xScale(d[0]) - 25; })
         .attr('y', function(d) { return yScale(d[1]) - 50; })
-        .attr('class', 'inhibs')
+        .attr('class', 'stuff1')
         .attr('width', 40)
         .attr('height', 40);
 
@@ -589,7 +559,7 @@ svg.selectAll('image1')
     .style('fill', 'none')
     .style('stroke', 'orange')
     .style('stroke-width', 2)
-    .attr('class', 'stuff3')
+    .attr('class', 'stuff1')
     .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
     .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); });
 
@@ -599,7 +569,7 @@ var player2img = svg.selectAll('image1')
     .data(data.player2)
     .enter().append('svg:image')
     .attr('xlink:href', imgurl2)
-    .attr('class', 'stuff2')
+    .attr('class', 'stuff1')
     .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
     .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
     .attr('width', imageWidth)
@@ -613,7 +583,7 @@ svg.selectAll('image1')
     .style('fill', 'none')
     .style('stroke', 'blue')
     .style('stroke-width', 2)
-    .attr('class', 'stuff3')
+    .attr('class', 'stuff1')
     .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
     .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); });
 
@@ -622,7 +592,7 @@ var player3img = svg.selectAll('image1')
     .data(data.player3)
     .enter().append('svg:image')
     .attr('xlink:href', imgurl3)
-
+    .attr('class', 'stuff1')
     .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
     .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
     .attr('width', imageWidth)
@@ -636,7 +606,7 @@ svg.selectAll('image1')
     .style('fill', 'none')
     .style('stroke', 'red')
     .style('stroke-width', 2)
-    .attr('class', 'stuff3')
+    .attr('class', 'stuff1')
     .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
     .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); });
 
@@ -645,7 +615,7 @@ var player4img = svg.selectAll('image1')
     .data(data.player4)
     .enter().append('svg:image')
     .attr('xlink:href', imgurl4)
-
+    .attr('class', 'stuff1')
     .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
     .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
     .attr('width', imageWidth)
@@ -659,7 +629,7 @@ svg.selectAll('image1')
     .style('fill', 'none')
     .style('stroke', 'black')
     .style('stroke-width', 2)
-    .attr('class', 'stuff3')
+    .attr('class', 'stuff1')
     .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
     .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); });
 
