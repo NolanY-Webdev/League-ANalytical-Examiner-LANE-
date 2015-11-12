@@ -349,8 +349,7 @@ var jsonData = { player1:
 var imageWidth = 25;
 var imageHeight = 25;
 
-var nexiCordsSummoners = [[1600, 1300], [13100, 13100]];
-
+//=====================Summoners Rift============================
 var towerCordsSummoners = [
         [12400, 13000], [12900, 12500], [10500, 13800], [11100, 11100],
         [13800, 10500], [7700, 13600], [4500, 14000], [9800, 9900],
@@ -360,49 +359,88 @@ var towerCordsSummoners = [
         [1500, 6600], [1200, 11000]
     ];
 
+var nexiCordsSummoners = [[1600, 1300], [13100, 13100]];
+
 var inhibCordsSummoners = [[1450, 3050], [3400, 2650], [3650, 640], [11500, 13460], [11770, 11420], [13750, 11090]];
 
 var summonersRift = 'https://s3-us-west-1.amazonaws.com/riot-api/img/minimap-mh.png';
 
-// min: {x: -570, y: -420}
+// min: {x: -570, y: -420},
 // max: {x: 15220, y: 14980}
 
-//=============================
+//======================Twisted Treeline==========================
+
+var towerCordsTwisted = [
+  [2450, 7140], [2200, 9065], [2150, 5100], [12965, 7140], [13200, 9065], [13250, 5100], [4400, 9500], [4400, 4600], [5800, 8600], [6200, 4900], [9400, 4900], [11200, 4600], [9500, 8700], [11200, 9600]
+    ];
+
+var nexiCordsTwisted = [
+    [3030, 7140], [12370, 7140]
+    ];
+
+var inhibCordsTwisted = [
+    [2150, 6000], [2150, 8250], [13260, 6000], [13260, 8250]
+    ];
+
 var twistedTreeLine = 'http://ddragon.leagueoflegends.com/cdn/5.22.2/img/map/map10.png';
 
-// min: {x: 0, y: 0}
+// min: {x: 0, y: 0},
 // max: {x: 15398, y: 15398}
 
-//=============================
+//======================Howling Abyss================================
+var towerCordsHowling = [
+  [2100, 2600], [2650, 2200], [4400, 4400], [5800, 5800], [7500, 7500], [8900, 8900], [10600, 11000], [11100, 10700]
+    ];
+
+var nexiCordsHowling = [
+    [1900, 1900], [11400, 11400]
+    ];
+
+var inhibCordsHowling = [
+    [3200, 3200], [10100, 10100]
+    ];
+
 var howlingAbyss = 'http://ddragon.leagueoflegends.com/cdn/5.22.2/img/map/map12.png';
 
-// min: {x: -28, y: -19}
+// min: {x: -28, y: -19},
 // max: {x: 12849, y: 12858}
 
-//=============================
+//=======================Crystal Scar=================================
 var crystalScar = 'http://ddragon.leagueoflegends.com/cdn/5.22.2/img/map/map8.png';
 
-// min: {x: 0, y: 0}
+var capturePoints = [
+    [4400, 2600], [2700, 7900], [7000, 11000], [11400, 7900], [9600, 2600]
+];
+
+// min: {x: 0, y: 0},
 // max: {x: 13987, y: 13987}
 
 //=============================
 
-var provingGrounds;
-
-// min: {x: -500, y: -500}
-// max: {x: 15000, y: 15000}
-
-//=============================
 
 
 //MAP OPTIONS/VARIABLES
 var domain = {
+
+    //Summoners
     min : { x : -570, y : -420 },
     max : { x : 15220, y : 14980 }
+
+      //Twisted
+//     min: { x : 0, y : 0 },
+//     max: { x: 15398, y : 15398}
+
+      //Howling
+//     min: {x: -28, y: -19},
+//     max: {x: 12849, y: 12858}
+
+//     //Crystal Scar
+//     min: {x: 0, y: 0},
+//     max: {x: 13987, y: 13987}
 },
     width = 1000,
     height = 1000,
-    bg = 'https://s3-us-west-1.amazonaws.com/riot-api/img/minimap-mh.png',
+    bg = summonersRift,
     xScale, yScale, svg;
 
 var filteredData = {};
@@ -506,11 +544,22 @@ function update(data){
 
     var towers = 'http://www.team-dignitas.net/uploads/tinymce/images/turret_transparent.png';
 svg.append('svg:g').selectAll('image2')
+
+    //towerCords + Summoners/Twisted/Howling
     .data(towerCordsSummoners)
     .enter().append('svg:image')
         .attr('xlink:href', towers)
+
+         //Summoners
         .attr('x', function(d) { return xScale(d[0]) - 25; })
         .attr('y', function(d) { return yScale(d[1]) - 50; })
+
+//          //Twisted
+//         .attr('x', function(d) { return xScale(d[0]) - 30; })
+//         .attr('y', function(d) { return yScale(d[1]) - 45; })
+
+//         //Howling - same as Twisted
+
         .attr('class', 'stuff1')
         .attr('width', 60)
         .attr('height', 60);
@@ -520,8 +569,16 @@ svg.append('svg:g').selectAll('image3')
     .data(nexiCordsSummoners)
     .enter().append('svg:image')
         .attr('xlink:href', nexi)
+
+        //Summoners
         .attr('x', function(d) { return xScale(d[0]) - 25; })
         .attr('y', function(d) { return yScale(d[1]) - 50; })
+
+//         //Twisted
+//         .attr('x', function(d) { return xScale(d[0]) - 30; })
+//         .attr('y', function(d) { return yScale(d[1]) - 35; })
+
+//         //Howling - same as Twisted
         .attr('class', 'stuff1')
         .attr('width', 60)
         .attr('height', 60);
@@ -531,8 +588,19 @@ svg.append('svg:g').selectAll('image4')
      .data(inhibCordsSummoners)
      .enter().append('svg:image')
         .attr('xlink:href', inhibs)
+
+        //Summoners
         .attr('x', function(d) { return xScale(d[0]) - 25; })
         .attr('y', function(d) { return yScale(d[1]) - 50; })
+
+//         //Twisted
+//         .attr('x', function(d) { return xScale(d[0]) - 20; })
+//         .attr('y', function(d) { return yScale(d[1]) - 20; })
+
+        //Howling - same as Twisted
+
+        //For Crystal Scar, no good images for capture points, maybe use inhibs?
+
         .attr('class', 'stuff1')
         .attr('width', 40)
         .attr('height', 40);
