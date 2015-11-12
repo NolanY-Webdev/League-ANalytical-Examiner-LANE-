@@ -375,16 +375,21 @@ var jsonData = { player1:
 // }
 // sortPlayer3();
 
+var imageWidth = 25;
+var imageHeight = 25;
 
+var nexiCordsSummoners = [[1600, 1300], [13100, 13100]];
 
 var towerCordsSummoners = [
-        [12400, 13000], [12900, 12600], [10500, 13800], [11100, 11100],
+        [12400, 13000], [12900, 12500], [10500, 13800], [11100, 11100],
         [13800, 10500], [7700, 13600], [4500, 14000], [9800, 9900],
         [8900, 8400], [13600, 8200], [13900, 4000], [2000, 2200],
         [2400, 1700], [1400, 4300], [3800, 3500], [4200, 900],
         [7200, 1100], [10700, 800], [5300, 4800], [6200, 6300],
         [1500, 6600], [1200, 11000]
     ];
+
+var turretCordsSummoners = [[1450, 3050], [3400, 2650], [3650, 640], [11500, 13460], [11770, 11420], [13750, 11090]];
 
 var summonersRift = 'https://s3-us-west-1.amazonaws.com/riot-api/img/minimap-mh.png';
 
@@ -404,7 +409,7 @@ var howlingAbyss = 'http://ddragon.leagueoflegends.com/cdn/5.22.2/img/map/map12.
 // max: {x: 12849, y: 12858}
 
 //=============================
-var crystalScar = 'http://ddragon.leagueoflegends.com/cdn/5.22.2/img/map/map8.png'
+var crystalScar = 'http://ddragon.leagueoflegends.com/cdn/5.22.2/img/map/map8.png';
 
 // min: {x: 0, y: 0}
 // max: {x: 13987, y: 13987}
@@ -424,8 +429,8 @@ var domain = {
     min : { x : -570, y : -420 },
     max : { x : 15220, y : 14980 }
 },
-    width = 512,
-    height = 512,
+    width = 1000,
+    height = 1000,
     bg = 'https://s3-us-west-1.amazonaws.com/riot-api/img/minimap-mh.png',
     xScale, yScale, svg;
 
@@ -453,83 +458,157 @@ svg.append('image')
     .attr('width', width)
     .attr('height', height);
 
-var imgurl1 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Xerath.png'
+
+var towers = 'http://www.team-dignitas.net/uploads/tinymce/images/turret_transparent.png';
+svg.append('svg:g').selectAll('image2')
+    .data(towerCordsSummoners)
+    .enter().append('svg:image')
+        .attr('xlink:href', towers)
+        .attr('x', function(d) { return xScale(d[0]) - 25; })
+        .attr('y', function(d) { return yScale(d[1]) - 50; })
+        .attr('class', 'towers')
+        .attr('width', 60)
+        .attr('height', 60);
+
+var nexi = 'http://i42.tinypic.com/15nll07.png';
+svg.append('svg:g').selectAll('image3')
+    .data(nexiCordsSummoners)
+    .enter().append('svg:image')
+        .attr('xlink:href', nexi)
+        .attr('x', function(d) { return xScale(d[0]) - 25; })
+        .attr('y', function(d) { return yScale(d[1]) - 50; })
+        .attr('class', 'towers')
+        .attr('width', 60)
+        .attr('height', 60);
+
+var turrets = 'http://assets.razerzone.com/eeimages/razer_events/11691/inhibitor-b.png';
+svg.append('svg:g').selectAll('image4')
+     .data(turretCordsSummoners)
+     .enter().append('svg:image')
+        .attr('xlink:href', turrets)
+        .attr('x', function(d) { return xScale(d[0]) - 25; })
+        .attr('y', function(d) { return yScale(d[1]) - 50; })
+        .attr('class', 'turrets')
+        .attr('width', 40)
+        .attr('height', 40);
+
+var imgurl1 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Xerath.png';
 var player1img = svg.selectAll("image1")
 
     //bypass sortPlayer functions by referring to jsonData.player#
     .data(jsonData.player1)
-    .enter().append("svg:image")
-    .attr('class', 'kills')
+    .enter().append('svg:image')
+    .attr('class', 'stuff1')
 
     //pass variable containing url
     .attr('xlink:href', imgurl1)
-    .attr('x', function(d) { return xScale(d[2]) - 7; })
-    .attr('y', function(d) { return yScale(d[3]) - 7; });
+    .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
+    .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
+    .attr('width', imageWidth)
+    .attr('height', imageHeight);
 
-      //define width and height in css
-//     .attr('width', 15)
-//     .attr('height', 15);
-var imgurl2 = 'http://ftalphaville.ft.com/files/2013/06/cows.jpg'
-var player2img = svg.selectAll("image1")
+svg.selectAll('image1')
+    .data(jsonData.player1)
+    .enter().append('rect')
+    .attr('width', imageWidth + 2)
+    .attr('height', imageHeight + 2)
+    .style('fill', 'none')
+    .style('stroke', 'orange')
+    .style('stroke-width', 2)
+    .attr('class', 'stuff3')
+    .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
+    .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); });
+
+svg.selectAll('image1')
+    .data(jsonData.player1)
+    .enter().append('rect')
+    .attr('width', imageWidth + 2)
+    .attr('height', imageHeight + 2)
+    .style('fill', 'none')
+    .style('stroke', 'orange')
+    .style('stroke-width', 2)
+    .attr('class', 'stuff3')
+    .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
+    .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); });
+
+var imgurl2 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Vi.png';
+var player2img = svg.selectAll('image1')
     .data(jsonData.player2)
-    .enter().append("svg:image")
-    .attr('class', 'kills')
+    .enter().append('svg:image')
     .attr('xlink:href', imgurl2)
-    .attr('id', 'stuff')
-    .attr('x', function(d) { return xScale(d[2]) - 7; })
-    .attr('y', function(d) { return yScale(d[3]) - 7; });
-//     .attr('width', 15)
-//     .attr('height', 15);
+    .attr('class', 'stuff2')
+    .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
+    .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
+    .attr('width', imageWidth)
+    .attr('height', imageHeight);
 
-var imgurl3 = 'http://dreamatico.com/data_images/kitten/kitten-2.jpg'
-var player3img = svg.selectAll("image1")
+svg.selectAll('image1')
+    .data(jsonData.player2)
+    .enter().append('rect')
+    .attr('width', imageWidth + 2)
+    .attr('height', imageHeight + 2)
+    .style('fill', 'none')
+    .style('stroke', 'blue')
+    .style('stroke-width', 2)
+    .attr('class', 'stuff3')
+    .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
+    .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); });
+
+var imgurl3 = 'http://dreamatico.com/data_images/kitten/kitten-2.jpg';
+var player3img = svg.selectAll('image1')
     .data(jsonData.player3)
-    .enter().append("svg:image")
-    .attr('class', 'kills')
+    .enter().append('svg:image')
     .attr('xlink:href', imgurl3)
-    .attr('id', 'stuff')
-    .attr('x', function(d) { return xScale(d[2]) - 7; })
-    .attr('y', function(d) { return yScale(d[3]) - 7; });
-//     .attr('width', 15)
-//     .attr('height', 15);
 
-// //use g to append to group tag
-// //to put image into circles svg filter and clipping mask
-// var player1 = svg.selectAll('image')
-//     .data(cords)
-//     .enter().append('image')
-//     .attr('class', 'kills')
-//     .attr('xlink:href', 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Xerath.png')
-//     .attr('x', function(d) { return xScale(d[0]) - 7 })
-//     .attr('y', function(d) { return yScale(d[1]) - 7 })
-//     .attr('width', 15)
-//     .attr('height', 15);
+    .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
+    .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
+    .attr('width', imageWidth)
+    .attr('height', imageHeight);
 
-// var player2img = svg.selectAll('image2')
-//     .data(cords2)
-//     .enter().append('image')
-//     .attr('class', 'kills')
-//     .attr('xlink:href', 'http://ftalphaville.ft.com/files/2013/06/cows.jpg')
-//     .attr('x', function(d) { return xScale(d[0]) - 7 })
-//     .attr('y', function(d) { return yScale(d[1]) - 7 })
-//     .attr('width', 15)
-//     .attr('height', 15);
+svg.selectAll('image1')
+    .data(jsonData.player3)
+    .enter().append('rect')
+    .attr('width', imageWidth + 2)
+    .attr('height', imageHeight + 2)
+    .style('fill', 'none')
+    .style('stroke', 'red')
+    .style('stroke-width', 2)
+    .attr('class', 'stuff3')
+    .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
+    .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); });
 
-// var player3img = svg.selectAll('image3')
-//     .data(cords3)
-//     .enter().append('image')
-//     .attr('class', 'kills')
-//     .attr('xlink:href', 'http://dreamatico.com/data_images/kitten/kitten-2.jpg')
-//     .attr('x', function(d) { return xScale(d[0]) - 7 })
-//     .attr('y', function(d) { return yScale(d[1]) - 7 })
-//     .attr('width', 15)
-//     .attr('height', 15);
+var imgurl4 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Heimerdinger.png';
+var player4img = svg.selectAll('image1')
+    .data(jsonData.player4)
+    .enter().append('svg:image')
+    .attr('xlink:href', imgurl4)
 
+    .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
+    .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
+    .attr('width', imageWidth)
+    .attr('height', imageHeight);
 
-// svg.append('svg:g').selectAll("circle")
-//     .data(cords)
-//     .enter().append("svg:circle")
-// //         .attr('cx', function(d) { return xScale(d[0]) })
-// //         .attr('cy', function(d) { return yScale(d[1]) })
-// //         .attr('r', 5)
-//         .attr('class', 'kills');
+svg.selectAll('image1')
+    .data(jsonData.player4)
+    .enter().append('rect')
+    .attr('width', imageWidth + 2)
+    .attr('height', imageHeight + 2)
+    .style('fill', 'none')
+    .style('stroke', 'black')
+    .style('stroke-width', 2)
+    .attr('class', 'stuff3')
+    .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
+    .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); });
+
+var awesomeCords = [[4000, 12000]]
+
+var awesome = 'http://www.americasfreedomfighters.com/wp-content/uploads/2015/08/acow.jpg'
+var player4img = svg.selectAll('image1')
+    .data(awesomeCords)
+    .enter().append('svg:image')
+    .attr('xlink:href', awesome)
+
+        .attr('x', function(d) { return xScale(d[0]) - 25; })
+        .attr('y', function(d) { return yScale(d[1]) - 50; })
+    .attr('width', 500)
+    .attr('height', 500);
