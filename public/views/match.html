@@ -17,7 +17,9 @@
       </div>
     </div>
 
-    <div class="eight columns" id="image-div" ng-style="{'background-image' : 'url( http://ddragon.leagueoflegends.com/cdn/5.22.3/img/map/map' + {{ mostRecentMatch.mapId }} + '.png  )'}"></div>
+    <div class="eight columns">
+      <div id="image-div" ng-style="{'background-image' : 'url( http://ddragon.leagueoflegends.com/cdn/5.22.3/img/map/map' + {{ mostRecentMatch.mapId }} + '.png  )'}"></div>
+    </div>
 
     <div class="two columns">
       <div ng-repeat="participant in mostRecentMatch.participants | filter: {  teamId: 200 }">
