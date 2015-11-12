@@ -345,8 +345,7 @@ var jsonData = { player1:
      [ 1262877, 'Enemy Slain', 8347, 10155 ],
      [ 1304487, 'Player Slain', 9301, 9106 ] ] };
 
-<<<<<<< HEAD
-=======
+
 // var player1 = jsonData.player1;
 // var cords = [];
 // function sortPlayer1() {
@@ -381,7 +380,6 @@ var imageWidth = 25;
 var imageHeight = 25;
 
 var nexiCordsSummoners = [[1600, 1300], [13100, 13100]];
->>>>>>> 84be98c25d31cd3a88a03a69ba74bbc6c05e2bbb
 
 var towerCordsSummoners = [
         [12400, 13000], [12900, 12500], [10500, 13800], [11100, 11100],
