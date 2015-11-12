@@ -5,11 +5,6 @@
   border: 1px solid black;
   margin-bottom: 25px; }
 
-/* line 8, stdin */
-#player1.box {
-  background-image: url("http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Leona.png");
-  background-size: 100%; }
-
 /* line 13, stdin */
 #image-div {
   background-image: url("https://s3-us-west-1.amazonaws.com/riot-api/img/minimap-ig.png");

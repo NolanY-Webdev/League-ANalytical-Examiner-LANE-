@@ -1,7 +1,6 @@
 <div class="container">
   <div class="row">
     <h1>Statistics Page</h1>
-    {{ mostRecentMatch }}
   </div>
 
   <div class="row">
@@ -11,22 +10,20 @@
   </div>
 
   <div class="row">
+
     <div class="two columns">
-      <div class="box" id="player1"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
+      <div ng-repeat="participant in mostRecentMatch.participants | filter: {  teamId: 100 }">
+        <div class="box" ng-style="{'background-image' : 'url( {{ participant.championImage }} )'}"></div>
+      </div>
     </div>
 
     <div class="eight columns" id="image-div"></div>
 
     <div class="two columns">
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
+      <div ng-repeat="participant in mostRecentMatch.participants | filter: {  teamId: 200 }">
+        <div class="box" ng-style="{'background-image' : 'url( {{ participant.championImage }} )'}"></div>
+      </div>
     </div>
+
   </div>
 </div>
