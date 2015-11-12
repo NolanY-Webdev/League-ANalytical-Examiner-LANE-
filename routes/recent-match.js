@@ -10,6 +10,7 @@ router
   // /api/lol/{region}/v1.3/game/by-summoner/{summonerId}/recent
   .get(function(req,res) {
     var region = 'na';
+    console.log('query',req.query);
     // var summonerId = '59698121';
     request.get({
       url : 'https://' + region + '.api.pvp.net/api/lol/' + region +

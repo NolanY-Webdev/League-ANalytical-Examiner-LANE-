@@ -11,7 +11,8 @@ angular.module('laneApp')
     };
   }])
   .service('matchInfo', [ '$http', function($http) {
-    this.getMatch = function() {
-      return $http.get('http://localhost:3000/getMatch');
+    this.getMatch = function(matchId) {
+      console.log(matchId);
+      return $http.get('http://localhost:3000/getMatch?matchId=' + matchId);
     };
   }]);
