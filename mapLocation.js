@@ -345,6 +345,7 @@ var jsonData = { player1:
      [ 1262877, 'Enemy Slain', 8347, 10155 ],
      [ 1304487, 'Player Slain', 9301, 9106 ] ] };
 
+
 // var player1 = jsonData.player1;
 // var cords = [];
 // function sortPlayer1() {
@@ -389,7 +390,7 @@ var towerCordsSummoners = [
         [1500, 6600], [1200, 11000]
     ];
 
-var turretCordsSummoners = [[1450, 3050], [3400, 2650], [3650, 640], [11500, 13460], [11770, 11420], [13750, 11090]];
+var inhibCordsSummoners = [[1450, 3050], [3400, 2650], [3650, 640], [11500, 13460], [11770, 11420], [13750, 11090]];
 
 var summonersRift = 'https://s3-us-west-1.amazonaws.com/riot-api/img/minimap-mh.png';
 
@@ -424,7 +425,7 @@ var provingGrounds;
 //=============================
 
 
-//map d3
+//MAP OPTIONS/VARIABLES
 var domain = {
     min : { x : -570, y : -420 },
     max : { x : 15220, y : 14980 }
@@ -433,6 +434,74 @@ var domain = {
     height = 1000,
     bg = 'https://s3-us-west-1.amazonaws.com/riot-api/img/minimap-mh.png',
     xScale, yScale, svg;
+
+var filteredData = {};
+
+//BRUSH DATA
+
+var gameLength = 1320435;
+var gameLengthByMin = gameLength/60000;
+var brushX = 5;
+var brushY = 18;
+var brushHeight = 30;
+var brushPositionX = 3;
+
+svg = d3.select("#brush").append("svg:svg")
+    .attr("width", width)
+    .attr("height", brushY+100);
+
+var scale = d3.scale.linear()
+    //length of data
+    .domain([0, gameLengthByMin])
+    //size of bar
+    .range([brushPositionX + 0, brushPositionX + 500]);
+
+var brush = d3.svg.brush();
+brush.x(scale);
+brush.extent([0, gameLengthByMin/10]);
+
+brush.on('brushend', function() {
+   for(player in jsonData) {
+      filteredData[player] = jsonData[player].filter(function(d){
+         return (d[0] >= (brush.extent()[0] * 60000) && d[0] <= (brush.extent()[1] * 60050));
+      });
+
+   }
+   update(filteredData);
+});
+
+var g = svg.append("g");
+brush(g);
+g.attr("transform", "translate(" + brushX + "," + brushY +")");
+g.selectAll("rect").attr("height", brushHeight);
+g.selectAll(".background")
+    .style({fill: "#4B9E9E", visibility: "visible"});
+g.selectAll(".extent")
+    .style({fill: "#78C5C5", visibility: "visible"});
+g.selectAll(".resize rect")
+    .style({fill: "#276C86", visibility: "visible"})
+    .attr("class", "brush");
+
+
+var scale = d3.scale.linear()
+    .domain([0, gameLengthByMin])
+    .range([ brushPositionX + 7, brushPositionX + 503]);
+
+var axis = d3.svg.axis()
+    .scale(scale)
+    .orient("bottom"); //left, right, top
+
+var g = svg.append("g");
+axis(g);
+g.attr("transform", "translate(" + (brushX - 6) + "," + (brushY + 35) +")");
+g.selectAll("path")
+    .style({ fill: "none", stroke: "#000"});
+g.selectAll("line")
+    .style({ stroke: "#000"})
+    .attr("class", "brush");
+
+
+//MAP DATA
 
 color = d3.scale.linear()
     .domain([0, 3])
@@ -459,7 +528,13 @@ svg.append('image')
     .attr('height', height);
 
 
-var towers = 'http://www.team-dignitas.net/uploads/tinymce/images/turret_transparent.png';
+//UPDATE FUNCTION
+function update(data){
+    var images = svg.selectAll('.kills').data(data);
+    images.exit().remove();
+    images.enter();
+
+       var towers = 'http://www.team-dignitas.net/uploads/tinymce/images/turret_transparent.png';
 svg.append('svg:g').selectAll('image2')
     .data(towerCordsSummoners)
     .enter().append('svg:image')
@@ -481,14 +556,14 @@ svg.append('svg:g').selectAll('image3')
         .attr('width', 60)
         .attr('height', 60);
 
-var turrets = 'http://assets.razerzone.com/eeimages/razer_events/11691/inhibitor-b.png';
+var inhibs = 'http://assets.razerzone.com/eeimages/razer_events/11691/inhibitor-b.png';
 svg.append('svg:g').selectAll('image4')
-     .data(turretCordsSummoners)
+     .data(inhibCordsSummoners)
      .enter().append('svg:image')
-        .attr('xlink:href', turrets)
+        .attr('xlink:href', inhibs)
         .attr('x', function(d) { return xScale(d[0]) - 25; })
         .attr('y', function(d) { return yScale(d[1]) - 50; })
-        .attr('class', 'turrets')
+        .attr('class', 'inhibs')
         .attr('width', 40)
         .attr('height', 40);
 
@@ -496,10 +571,9 @@ var imgurl1 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Xerath
 var player1img = svg.selectAll("image1")
 
     //bypass sortPlayer functions by referring to jsonData.player#
-    .data(jsonData.player1)
+    .data(data.player1)
     .enter().append('svg:image')
     .attr('class', 'stuff1')
-
     //pass variable containing url
     .attr('xlink:href', imgurl1)
     .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
@@ -508,7 +582,7 @@ var player1img = svg.selectAll("image1")
     .attr('height', imageHeight);
 
 svg.selectAll('image1')
-    .data(jsonData.player1)
+    .data(data.player1)
     .enter().append('rect')
     .attr('width', imageWidth + 2)
     .attr('height', imageHeight + 2)
@@ -519,21 +593,10 @@ svg.selectAll('image1')
     .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
     .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); });
 
-svg.selectAll('image1')
-    .data(jsonData.player1)
-    .enter().append('rect')
-    .attr('width', imageWidth + 2)
-    .attr('height', imageHeight + 2)
-    .style('fill', 'none')
-    .style('stroke', 'orange')
-    .style('stroke-width', 2)
-    .attr('class', 'stuff3')
-    .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
-    .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); });
 
 var imgurl2 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Vi.png';
 var player2img = svg.selectAll('image1')
-    .data(jsonData.player2)
+    .data(data.player2)
     .enter().append('svg:image')
     .attr('xlink:href', imgurl2)
     .attr('class', 'stuff2')
@@ -543,7 +606,7 @@ var player2img = svg.selectAll('image1')
     .attr('height', imageHeight);
 
 svg.selectAll('image1')
-    .data(jsonData.player2)
+    .data(data.player2)
     .enter().append('rect')
     .attr('width', imageWidth + 2)
     .attr('height', imageHeight + 2)
@@ -556,7 +619,7 @@ svg.selectAll('image1')
 
 var imgurl3 = 'http://dreamatico.com/data_images/kitten/kitten-2.jpg';
 var player3img = svg.selectAll('image1')
-    .data(jsonData.player3)
+    .data(data.player3)
     .enter().append('svg:image')
     .attr('xlink:href', imgurl3)
 
@@ -566,7 +629,7 @@ var player3img = svg.selectAll('image1')
     .attr('height', imageHeight);
 
 svg.selectAll('image1')
-    .data(jsonData.player3)
+    .data(data.player3)
     .enter().append('rect')
     .attr('width', imageWidth + 2)
     .attr('height', imageHeight + 2)
@@ -579,7 +642,7 @@ svg.selectAll('image1')
 
 var imgurl4 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Heimerdinger.png';
 var player4img = svg.selectAll('image1')
-    .data(jsonData.player4)
+    .data(data.player4)
     .enter().append('svg:image')
     .attr('xlink:href', imgurl4)
 
@@ -589,7 +652,7 @@ var player4img = svg.selectAll('image1')
     .attr('height', imageHeight);
 
 svg.selectAll('image1')
-    .data(jsonData.player4)
+    .data(data.player4)
     .enter().append('rect')
     .attr('width', imageWidth + 2)
     .attr('height', imageHeight + 2)
@@ -600,15 +663,21 @@ svg.selectAll('image1')
     .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
     .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); });
 
-var awesomeCords = [[4000, 12000]]
 
-var awesome = 'http://www.americasfreedomfighters.com/wp-content/uploads/2015/08/acow.jpg'
-var player4img = svg.selectAll('image1')
-    .data(awesomeCords)
-    .enter().append('svg:image')
-    .attr('xlink:href', awesome)
+}
 
-        .attr('x', function(d) { return xScale(d[0]) - 25; })
-        .attr('y', function(d) { return yScale(d[1]) - 50; })
-    .attr('width', 500)
-    .attr('height', 500);
+update(jsonData);
+
+//var awesomeCords = [[4000, 12000]]
+//
+//var awesome = 'http://www.americasfreedomfighters.com/wp-content/uploads/2015/08/acow.jpg'
+//var player4img = svg.selectAll('image1')
+//    .data(awesomeCords)
+//    .enter().append('svg:image')
+//    .attr('xlink:href', awesome)
+//
+//        .attr('x', function(d) { return xScale(d[0]) - 25; })
+//        .attr('y', function(d) { return yScale(d[1]) - 50; })
+//    .attr('width', 500)
+//    .attr('height', 500);
+
