@@ -1,13 +1,13 @@
 /* line 1, stdin */
 .box {
-  height: 100px;
-  width: 100px;
+  height: 125px;
+  width: 125px;
   border: 1px solid black;
-  margin-bottom: 25px; }
+  margin-bottom: 25px;
+  background-size: 100%; }
 
-/* line 13, stdin */
+/* line 14, stdin */
 #image-div {
-  background-image: url("https://s3-us-west-1.amazonaws.com/riot-api/img/minimap-ig.png");
-  width: 600px;
-  height: 600px;
+  width: 500px;
+  height: 500px;
   background-repeat: no-repeat; }
