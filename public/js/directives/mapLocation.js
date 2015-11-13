@@ -356,19 +356,27 @@ var jsonData = { player1:
      [ 1262877, 'Enemy Slain', 8347, 10155 ],
      [ 1304487, 'Player Slain', 9301, 9106 ] ] };
 
-
 var imageWidth = 25;
 var imageHeight = 25;
 
-//=======================Crystal Scar=================================
-var crystalScar = 'http://ddragon.leagueoflegends.com/cdn/5.22.2/img/map/map8.png';
+//=====================Summoners Rift============================
+var towerCordsSummoners = [
+        [12400, 13000], [12900, 12500], [10500, 13800], [11100, 11100],
+        [13800, 10500], [7700, 13600], [4500, 14000], [9800, 9900],
+        [8900, 8400], [13600, 8200], [13900, 4000], [2000, 2200],
+        [2400, 1700], [1400, 4300], [3800, 3500], [4200, 900],
+        [7200, 1100], [10700, 800], [5300, 4800], [6200, 6300],
+        [1500, 6600], [1200, 11000]
+    ];
 
-var capturePoints = [
-    [4400, 2600], [2700, 7900], [7000, 11000], [11400, 7900], [9600, 2600]
-];
+var nexiCordsSummoners = [[1600, 1300], [13100, 13100]];
 
-// min: {x: 0, y: 0},
-// max: {x: 13987, y: 13987}
+var inhibCordsSummoners = [[1450, 3050], [3400, 2650], [3650, 640], [11500, 13460], [11770, 11420], [13750, 11090]];
+
+var summonersRift = 'https://s3-us-west-1.amazonaws.com/riot-api/img/minimap-mh.png';
+
+// min: {x: -570, y: -420},
+// max: {x: 15220, y: 14980}
 
 //=============================
 
@@ -377,13 +385,13 @@ var capturePoints = [
 //MAP OPTIONS/VARIABLES
 var domain = {
 
-    //Crystal Scar
-    min: {x: 0, y: 0},
-    max: {x: 13987, y: 13987}
+    //Summoners
+    min : { x : -570, y : -420 },
+    max : { x : 15220, y : 14980 }
 },
     width = 1000,
     height = 1000,
-    bg = crystalScar,
+    bg = summonersRift,
     xScale, yScale, svg;
 
 var filteredData = {};
@@ -485,27 +493,46 @@ function update(data){
     images.exit().remove();
     images.enter();
 
+    var towers = 'http://www.team-dignitas.net/uploads/tinymce/images/turret_transparent.png';
+svg.append('svg:g').selectAll('image2')
+
+    //towerCords + Summoners/Twisted/Howling
+    .data(towerCordsSummoners)
+    .enter().append('svg:image')
+        .attr('xlink:href', towers)
+
+         //Summoners
+        .attr('x', function(d) { return xScale(d[0]) - 25; })
+        .attr('y', function(d) { return yScale(d[1]) - 50; })
+        .attr('class', 'stuff1')
+        .attr('width', 60)
+        .attr('height', 60);
 
 var nexi = 'http://i42.tinypic.com/15nll07.png';
 svg.append('svg:g').selectAll('image3')
-    .data(capturePoints)
+    .data(nexiCordsSummoners)
     .enter().append('svg:image')
         .attr('xlink:href', nexi)
 
         //Summoners
         .attr('x', function(d) { return xScale(d[0]) - 25; })
         .attr('y', function(d) { return yScale(d[1]) - 50; })
-
-        //Twisted
-        .attr('x', function(d) { return xScale(d[0]) - 30; })
-        .attr('y', function(d) { return yScale(d[1]) - 35; })
-
-//         //Howling - same as Twisted
         .attr('class', 'stuff1')
         .attr('width', 60)
         .attr('height', 60);
 
+var inhibs = 'http://assets.razerzone.com/eeimages/razer_events/11691/inhibitor-b.png';
+svg.append('svg:g').selectAll('image4')
+     .data(inhibCordsSummoners)
+     .enter().append('svg:image')
+        .attr('xlink:href', inhibs)
 
+        //Summoners
+        .attr('x', function(d) { return xScale(d[0]) - 25; })
+        .attr('y', function(d) { return yScale(d[1]) - 50; })
+        .attr('class', 'stuff1')
+        .attr('width', 40)
+        .attr('height', 40);
 
 var imgurl1 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Xerath.png';
 var player1img = svg.selectAll("image1")
@@ -607,6 +634,7 @@ svg.selectAll('image1')
 }
 
 update(jsonData);
+
         }
       }
     }
