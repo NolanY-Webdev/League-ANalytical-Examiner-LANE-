@@ -1,3 +1,4 @@
+
 <div class="container">
   <div class="row">
     <h1>Statistics Page</h1>
@@ -18,7 +19,9 @@
     </div>
 
     <div class="eight columns">
-      <div id="image-div" ng-style="{'background-image' : 'url( http://ddragon.leagueoflegends.com/cdn/5.22.3/img/map/map' + {{ mostRecentMatch.mapId }} + '.png  )'}"></div>
+      <map-d></map-d>
+      <div id="map-d"></div>
+      <!-- <div id="image-div" ng-style="{'background-image' : 'url( http://ddragon.leagueoflegends.com/cdn/5.22.3/img/map/map' + {{ mostRecentMatch.mapId }} + '.png  )'}"></div> -->
     </div>
 
     <div class="two columns">
@@ -29,3 +32,6 @@
 
   </div>
 </div>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
+<script src="js/mapLocation.js"></script>
