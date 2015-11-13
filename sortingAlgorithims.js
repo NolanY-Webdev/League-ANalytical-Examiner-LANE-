@@ -1,9 +1,9 @@
 function combatParser(riotMatchData) {
     var parsedMatchData = {};
+    var timeline = riotMatchData.timeline.frames;
 
     for (var p = 1; p < riotMatchData.participants.length + 1; p++) {
         parsedMatchData['player' + p] = [];
-        var timeline = riotMatchData.timeline.frames;
         for (var i = 0; i < timeline.length; i++) {//removed the -1 from timeline length, don't remember why I put it in
             var data = [];
             data.push(timeline[i].timestamp);
@@ -81,7 +81,11 @@ parsedMatchData.deadBuildings = [];
                     } else if(eventFrame.towerType == "BASE_TURRET") {
                         position = 'Base';
                     } else if(eventFrame.towerType == "NEXUS_TURRET") {
-                        position = 'Nexus';
+                        if(eventFrame.position.x < eventFrame.position.y) {
+                            position = 'NexusTop';
+                        } else if (eventFrame.position.x > eventFrame.position.y) {
+                            position = 'NexusBot';
+                        }
                     }
                     if(eventFrame.laneType == "BOT_LANE") {
                         lane = 'Bot';
@@ -101,7 +105,12 @@ parsedMatchData.deadBuildings = [];
                 }
             }
         }
+        if(i == timeline.length) {
+            parsedMatchData.gameLength = timeline[i].timestamp
+        }
     }
+
+    return parsedMatchData;
 }
 
 

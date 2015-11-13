@@ -350,12 +350,12 @@ var imageHeight = 25;
 
 //=====================Summoners Rift============================
 var towerCordsSummoners = [
-        [12400, 13000], [12900, 12500], [10500, 13800], [11100, 11100],
-        [13800, 10500], [7700, 13600], [4500, 14000], [9800, 9900],
-        [8900, 8400], [13600, 8200], [13900, 4000], [2000, 2200],
-        [2400, 1700], [1400, 4300], [3800, 3500], [4200, 900],
-        [7200, 1100], [10700, 800], [5300, 4800], [6200, 6300],
-        [1500, 6600], [1200, 11000]
+      [12400, 13000, 'TowerNexusTopMidB'], [12900, 12500, 'TowerNexusBotMidB'], [10500, 13800, 'TowerBaseTopB'], [11100, 11100, 'TowerBaseMidB'],
+      [13800, 10500, 'TowerBaseBotB'], [7700, 13600, 'TowerInnerTopB'], [4500, 14000, 'TowerOuterTopB'], [9800, 9900, 'TowerInnerMidB'],
+      [8900, 8400, 'TowerOuterMidB'], [13600, 8200, 'TowerInnerBotB'], [13900, 4000, 'TowerOuterBotB'], [2000, 2200, 'TowerNexusTopMidA'],
+      [2400, 1700, 'TowerNexusBotMidA'], [1400, 4300, 'TowerBaseTopA'], [3800, 3500, 'TowerBaseMidA'], [4200, 900, 'TowerBaseBotA'],
+      [7200, 1100, 'TowerInnerBotA'], [10700, 800, 'TowerOuterBotA'], [5300, 4800, 'TowerInnerMidA'], [6200, 6300, 'TowerOuterMidA'],
+      [1500, 6600, 'TowerInnerTopA'], [1200, 11000, 'TowerOuterTopA']
     ];
 
 var nexiCordsSummoners = [[1600, 1300], [13100, 13100]];
