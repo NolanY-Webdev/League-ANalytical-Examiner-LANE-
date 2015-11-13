@@ -508,7 +508,14 @@ var player1img = svg.selectAll("image1")
     .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
     .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
     .attr('width', imageWidth)
-    .attr('height', imageHeight);
+    .attr('height', imageHeight)
+    .attr('opacity', function(d) {
+      if((brush.extent()[1]-1)*60050 <= d[0] ) {
+         return 1
+      } else {
+         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+      }
+    });
 
 svg.selectAll('image1')
     .data(data.player1)
@@ -516,11 +523,18 @@ svg.selectAll('image1')
     .attr('width', imageWidth + 2)
     .attr('height', imageHeight + 2)
     .style('fill', 'none')
-    .style('stroke', 'orange')
+    .style('stroke', '#ffc080')
     .style('stroke-width', 2)
     .attr('class', 'stuff1')
     .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
-    .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); });
+    .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
+    .attr('opacity', function(d) {
+      if((brush.extent()[1]-1)*60050 <= d[0] ) {
+         return 1
+      } else {
+         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+      }
+    });
 
 
 var imgurl2 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Vi.png';
@@ -532,7 +546,14 @@ var player2img = svg.selectAll('image1')
     .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
     .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
     .attr('width', imageWidth)
-    .attr('height', imageHeight);
+    .attr('height', imageHeight)
+    .attr('opacity', function(d) {
+      if((brush.extent()[1]-1)*60050 <= d[0] ) {
+         return 1
+      } else {
+         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+      }
+    });
 
 svg.selectAll('image1')
     .data(data.player2)
@@ -540,11 +561,18 @@ svg.selectAll('image1')
     .attr('width', imageWidth + 2)
     .attr('height', imageHeight + 2)
     .style('fill', 'none')
-    .style('stroke', 'blue')
+    .style('stroke', '#ffc080')
     .style('stroke-width', 2)
     .attr('class', 'stuff1')
     .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
-    .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); });
+    .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
+    .attr('opacity', function(d) {
+      if((brush.extent()[1]-1)*60050 <= d[0] ) {
+         return 1
+      } else {
+         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+      }
+    });
 
 var imgurl3 = 'http://dreamatico.com/data_images/kitten/kitten-2.jpg';
 var player3img = svg.selectAll('image1')
@@ -555,7 +583,14 @@ var player3img = svg.selectAll('image1')
     .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
     .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
     .attr('width', imageWidth)
-    .attr('height', imageHeight);
+    .attr('height', imageHeight)
+    .attr('opacity', function(d) {
+      if((brush.extent()[1]-1)*60050 <= d[0] ) {
+         return 1
+      } else {
+         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+      }
+    })
 
 svg.selectAll('image1')
     .data(data.player3)
@@ -563,11 +598,18 @@ svg.selectAll('image1')
     .attr('width', imageWidth + 2)
     .attr('height', imageHeight + 2)
     .style('fill', 'none')
-    .style('stroke', 'red')
+    .style('stroke', '#ffc080')
     .style('stroke-width', 2)
     .attr('class', 'stuff1')
     .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
-    .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); });
+    .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
+    .attr('opacity', function(d) {
+      if((brush.extent()[1]-1)*60050 <= d[0] ) {
+         return 1
+      } else {
+         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+      }
+    });
 
 var imgurl4 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Heimerdinger.png';
 var player4img = svg.selectAll('image1')
@@ -578,7 +620,14 @@ var player4img = svg.selectAll('image1')
     .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
     .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
     .attr('width', imageWidth)
-    .attr('height', imageHeight);
+    .attr('height', imageHeight)
+    .attr('opacity', function(d) {
+      if((brush.extent()[1]-1)*60050 <= d[0] ) {
+         return 1
+      } else {
+         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+      }
+    });
 
 svg.selectAll('image1')
     .data(data.player4)
@@ -586,14 +635,245 @@ svg.selectAll('image1')
     .attr('width', imageWidth + 2)
     .attr('height', imageHeight + 2)
     .style('fill', 'none')
-    .style('stroke', 'black')
+    .style('stroke', '#ffc080')
     .style('stroke-width', 2)
     .attr('class', 'stuff1')
     .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
-    .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); });
+    .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
+    .attr('opacity', function(d) {
+      if((brush.extent()[1]-1)*60050 <= d[0] ) {
+         return 1
+      } else {
+         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+      }
+    });
+
+var imgurl5 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Heimerdinger.png';
+var player5img = svg.selectAll('image1')
+    .data(data.player5)
+    .enter().append('svg:image')
+    .attr('xlink:href', imgurl5)
+    .attr('class', 'stuff1')
+    .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
+    .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
+    .attr('width', imageWidth)
+    .attr('height', imageHeight)
+    .attr('opacity', function(d) {
+      if((brush.extent()[1]-1)*60050 <= d[0] ) {
+         return 1
+      } else {
+         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+      }
+    });
+
+svg.selectAll('image1')
+    .data(data.player5)
+    .enter().append('rect')
+    .attr('width', imageWidth + 2)
+    .attr('height', imageHeight + 2)
+    .style('fill', 'none')
+    .style('stroke', '#ffc080')
+    .style('stroke-width', 2)
+    .attr('class', 'stuff1')
+    .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
+    .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
+    .attr('opacity', function(d) {
+      if((brush.extent()[1]-1)*60050 <= d[0] ) {
+         return 1
+      } else {
+         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+      }
+    });
+
+var imgurl6 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Xerath.png';
+var player6img = svg.selectAll('image1')
+    .data(data.player6)
+    .enter().append('svg:image')
+    .attr('xlink:href', imgurl6)
+    .attr('class', 'stuff1')
+    .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
+    .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
+    .attr('width', imageWidth)
+    .attr('height', imageHeight)
+    .attr('opacity', function(d) {
+      if((brush.extent()[1]-1)*60050 <= d[0] ) {
+         return 1
+      } else {
+         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+      }
+    });
+
+svg.selectAll('image1')
+    .data(data.player6)
+    .enter().append('rect')
+    .attr('width', imageWidth + 2)
+    .attr('height', imageHeight + 2)
+    .style('fill', 'none')
+    .style('stroke', '#21FFFF')
+    .style('stroke-width', 2)
+    .attr('class', 'stuff1')
+    .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
+    .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
+    .attr('opacity', function(d) {
+      if((brush.extent()[1]-1)*60050 <= d[0] ) {
+         return 1
+      } else {
+         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+      }
+    });
+
+var imgurl7 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Vi.png';
+var player7img = svg.selectAll('image1')
+    .data(data.player7)
+    .enter().append('svg:image')
+    .attr('xlink:href', imgurl7)
+    .attr('class', 'stuff1')
+    .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
+    .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
+    .attr('width', imageWidth)
+    .attr('height', imageHeight)
+    .attr('opacity', function(d) {
+      if((brush.extent()[1]-1)*60050 <= d[0] ) {
+         return 1
+      } else {
+         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+      }
+    });
+
+svg.selectAll('image1')
+    .data(data.player7)
+    .enter().append('rect')
+    .attr('width', imageWidth + 2)
+    .attr('height', imageHeight + 2)
+    .style('fill', 'none')
+    .style('stroke', '#21FFFF')
+    .style('stroke-width', 2)
+    .attr('class', 'stuff1')
+    .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
+    .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
+    .attr('opacity', function(d) {
+      if((brush.extent()[1]-1)*60050 <= d[0] ) {
+         return 1
+      } else {
+         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+      }
+    });
+
+var imgurl8 = 'http://dreamatico.com/data_images/kitten/kitten-2.jpg';
+var player8img = svg.selectAll('image1')
+    .data(data.player8)
+    .enter().append('svg:image')
+    .attr('xlink:href', imgurl8)
+    .attr('class', 'stuff1')
+    .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
+    .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
+    .attr('width', imageWidth)
+    .attr('height', imageHeight)
+    .attr('opacity', function(d) {
+      if((brush.extent()[1]-1)*60050 <= d[0] ) {
+         return 1
+      } else {
+         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+      }
+    });
+
+svg.selectAll('image1')
+    .data(data.player8)
+    .enter().append('rect')
+    .attr('width', imageWidth + 2)
+    .attr('height', imageHeight + 2)
+    .style('fill', 'none')
+    .style('stroke', '#21FFFF')
+    .style('stroke-width', 2)
+    .attr('class', 'stuff1')
+    .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
+    .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
+    .attr('opacity', function(d) {
+      if((brush.extent()[1]-1)*60050 <= d[0] ) {
+         return 1
+      } else {
+         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+      }
+    });
+
+var imgurl9 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Heimerdinger.png';
+var player9img = svg.selectAll('image1')
+    .data(data.player9)
+    .enter().append('svg:image')
+    .attr('xlink:href', imgurl9)
+    .attr('class', 'stuff1')
+    .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
+    .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
+    .attr('width', imageWidth)
+    .attr('height', imageHeight)
+    .attr('opacity', function(d) {
+      if((brush.extent()[1]-1)*60050 <= d[0] ) {
+         return 1
+      } else {
+         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+      }
+    });
+
+svg.selectAll('image1')
+    .data(data.player9)
+    .enter().append('rect')
+    .attr('width', imageWidth + 2)
+    .attr('height', imageHeight + 2)
+    .style('fill', 'none')
+    .style('stroke', '#21FFFF')
+    .style('stroke-width', 2)
+    .attr('class', 'stuff1')
+    .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
+    .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
+    .attr('opacity', function(d) {
+      if((brush.extent()[1]-1)*60050 <= d[0] ) {
+         return 1
+      } else {
+         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+      }
+    });
+
+var imgurl10 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Heimerdinger.png';
+var player10img = svg.selectAll('image1')
+    .data(data.player10)
+    .enter().append('svg:image')
+    .attr('xlink:href', imgurl10)
+    .attr('class', 'stuff1')
+    .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
+    .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
+    .attr('width', imageWidth)
+    .attr('height', imageHeight)
+    .attr('opacity', function(d) {
+      if((brush.extent()[1]-1)*60050 <= d[0] ) {
+         return 1
+      } else {
+         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+      }
+    });
+
+svg.selectAll('image1')
+    .data(data.player10)
+    .enter().append('rect')
+    .attr('width', imageWidth + 2)
+    .attr('height', imageHeight + 2)
+    .style('fill', 'none')
+    .style('stroke', '#21FFFF')
+    .style('stroke-width', 2)
+    .attr('class', 'stuff1')
+    .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
+    .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
+    .attr('opacity', function(d) {
+      if((brush.extent()[1]-1)*60050 <= d[0] ) {
+         return 1
+      } else {
+         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+      }
+    });
+
 
 
 }
+
 
 update(jsonData);
 
