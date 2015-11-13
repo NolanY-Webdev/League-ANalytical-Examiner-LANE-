@@ -511,9 +511,9 @@ var player1img = svg.selectAll("image1")
     .attr('height', imageHeight)
     .attr('opacity', function(d) {
       if((brush.extent()[1]-1)*60050 <= d[0] ) {
-         return 1
+         return 1;
       } else {
-         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+         return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
       }
     });
 
@@ -530,9 +530,9 @@ svg.selectAll('image1')
     .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
     .attr('opacity', function(d) {
       if((brush.extent()[1]-1)*60050 <= d[0] ) {
-         return 1
+         return 1;
       } else {
-         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+         return (0);
       }
     });
 
@@ -549,9 +549,9 @@ var player2img = svg.selectAll('image1')
     .attr('height', imageHeight)
     .attr('opacity', function(d) {
       if((brush.extent()[1]-1)*60050 <= d[0] ) {
-         return 1
+         return 1;
       } else {
-         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+         return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
       }
     });
 
@@ -568,9 +568,9 @@ svg.selectAll('image1')
     .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
     .attr('opacity', function(d) {
       if((brush.extent()[1]-1)*60050 <= d[0] ) {
-         return 1
+         return 1;
       } else {
-         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+         return (0);
       }
     });
 
@@ -586,9 +586,9 @@ var player3img = svg.selectAll('image1')
     .attr('height', imageHeight)
     .attr('opacity', function(d) {
       if((brush.extent()[1]-1)*60050 <= d[0] ) {
-         return 1
+         return 1;
       } else {
-         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+         return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
       }
     })
 
@@ -605,9 +605,9 @@ svg.selectAll('image1')
     .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
     .attr('opacity', function(d) {
       if((brush.extent()[1]-1)*60050 <= d[0] ) {
-         return 1
+         return 1;
       } else {
-         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+         return (0);
       }
     });
 
@@ -623,9 +623,9 @@ var player4img = svg.selectAll('image1')
     .attr('height', imageHeight)
     .attr('opacity', function(d) {
       if((brush.extent()[1]-1)*60050 <= d[0] ) {
-         return 1
+         return 1;
       } else {
-         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+         return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
       }
     });
 
@@ -642,13 +642,13 @@ svg.selectAll('image1')
     .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
     .attr('opacity', function(d) {
       if((brush.extent()[1]-1)*60050 <= d[0] ) {
-         return 1
+         return 1;
       } else {
-         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+         return (0);
       }
     });
 
-var imgurl5 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Heimerdinger.png';
+var imgurl5 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Garen.png';
 var player5img = svg.selectAll('image1')
     .data(data.player5)
     .enter().append('svg:image')
@@ -660,9 +660,9 @@ var player5img = svg.selectAll('image1')
     .attr('height', imageHeight)
     .attr('opacity', function(d) {
       if((brush.extent()[1]-1)*60050 <= d[0] ) {
-         return 1
+         return 1;
       } else {
-         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+         return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
       }
     });
 
@@ -679,9 +679,9 @@ svg.selectAll('image1')
     .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
     .attr('opacity', function(d) {
       if((brush.extent()[1]-1)*60050 <= d[0] ) {
-         return 1
+         return 1;
       } else {
-         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+         return (0);
       }
     });
 
@@ -697,9 +697,9 @@ var player6img = svg.selectAll('image1')
     .attr('height', imageHeight)
     .attr('opacity', function(d) {
       if((brush.extent()[1]-1)*60050 <= d[0] ) {
-         return 1
+         return 1;
       } else {
-         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+         return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
       }
     });
 
@@ -716,9 +716,9 @@ svg.selectAll('image1')
     .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
     .attr('opacity', function(d) {
       if((brush.extent()[1]-1)*60050 <= d[0] ) {
-         return 1
+         return 1;
       } else {
-         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+         return (0);
       }
     });
 
@@ -734,9 +734,9 @@ var player7img = svg.selectAll('image1')
     .attr('height', imageHeight)
     .attr('opacity', function(d) {
       if((brush.extent()[1]-1)*60050 <= d[0] ) {
-         return 1
+         return 1;
       } else {
-         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+         return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
       }
     });
 
@@ -753,9 +753,9 @@ svg.selectAll('image1')
     .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
     .attr('opacity', function(d) {
       if((brush.extent()[1]-1)*60050 <= d[0] ) {
-         return 1
+         return 1;
       } else {
-         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+         return (0);
       }
     });
 
@@ -771,9 +771,9 @@ var player8img = svg.selectAll('image1')
     .attr('height', imageHeight)
     .attr('opacity', function(d) {
       if((brush.extent()[1]-1)*60050 <= d[0] ) {
-         return 1
+         return 1;
       } else {
-         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+         return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
       }
     });
 
@@ -790,9 +790,9 @@ svg.selectAll('image1')
     .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
     .attr('opacity', function(d) {
       if((brush.extent()[1]-1)*60050 <= d[0] ) {
-         return 1
+         return 1;
       } else {
-         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+         return (0);
       }
     });
 
@@ -808,9 +808,9 @@ var player9img = svg.selectAll('image1')
     .attr('height', imageHeight)
     .attr('opacity', function(d) {
       if((brush.extent()[1]-1)*60050 <= d[0] ) {
-         return 1
+         return 1;
       } else {
-         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+         return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
       }
     });
 
@@ -827,13 +827,13 @@ svg.selectAll('image1')
     .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
     .attr('opacity', function(d) {
       if((brush.extent()[1]-1)*60050 <= d[0] ) {
-         return 1
+         return 1;
       } else {
-         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+         return (0);
       }
     });
 
-var imgurl10 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Heimerdinger.png';
+var imgurl10 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Garen.png';
 var player10img = svg.selectAll('image1')
     .data(data.player10)
     .enter().append('svg:image')
@@ -845,9 +845,9 @@ var player10img = svg.selectAll('image1')
     .attr('height', imageHeight)
     .attr('opacity', function(d) {
       if((brush.extent()[1]-1)*60050 <= d[0] ) {
-         return 1
+         return 1;
       } else {
-         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+         return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
       }
     });
 
@@ -864,9 +864,9 @@ svg.selectAll('image1')
     .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
     .attr('opacity', function(d) {
       if((brush.extent()[1]-1)*60050 <= d[0] ) {
-         return 1
+         return 1;
       } else {
-         return ((d[0]/(brush.extent()[1] * 60000) *.7) + .1)
+         return (0);
       }
     });
 
