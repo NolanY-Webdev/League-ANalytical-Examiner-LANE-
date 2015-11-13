@@ -4,7 +4,7 @@ function combatParser(riotMatchData) {
     for (var p = 1; p < riotMatchData.participants.length + 1; p++) {
         parsedMatchData['player' + p] = [];
         var timeline = riotMatchData.timeline.frames;
-        for (var i = 0; i < timeline.length - 1; i++) {
+        for (var i = 0; i < timeline.length; i++) {//removed the -1 from timeline length, don't remember why I put it in
             var data = [];
             data.push(timeline[i].timestamp);
             data.push('Position');
@@ -54,6 +54,50 @@ function combatParser(riotMatchData) {
                             }
                         }
                     }
+                }
+            }
+        }
+    }
+parsedMatchData.deadBuildings = [];
+    for (var i = 0; i < timeline.length; i++) {//removed the -1 from timeline length, don't remember why I put it in
+        if (timeline[i].events !== undefined) {
+            for (var j = 0; j < timeline[i].events.length; j++) {
+                var eventFrame = timeline[i].events[j];
+                if (eventFrame.eventType == 'BUILDING_KILL') {
+                    var data = [];
+                    var type = '';
+                    var position = '';
+                    var lane = '';
+                    var team = '';
+                    if(eventFrame.buildingType == "TOWER_BUILDING") {
+                        type = 'Tower';
+                    } else if (eventFrame.buildingType == "INHIBITOR_BUILDING") {
+                        type = "Inhib";
+                    }
+                    if(eventFrame.towerType == "OUTER_TURRET") {
+                        position = 'Outer';
+                    } else if(eventFrame.towerType == "INNER_TURRET") {
+                        position = 'Inner';
+                    } else if(eventFrame.towerType == "BASE_TURRET") {
+                        position = 'Base';
+                    } else if(eventFrame.towerType == "NEXUS_TURRET") {
+                        position = 'Nexus';
+                    }
+                    if(eventFrame.laneType == "BOT_LANE") {
+                        lane = 'Bot';
+                    } else if(eventFrame.laneType == "TOP_LANE") {
+                        lane = 'Top';
+                    } else if(eventFrame.laneType == "MID_LANE") {
+                        lane = 'Mid';
+                    }
+                    if(eventFrame.teamId == 100) {
+                        team = 'A';
+                    } else if(eventFrame.teamId == 200) {
+                        team = 'B';
+                    }
+                    data.push(eventFrame.timestamp);
+                    data.push(type + position + lane + team);
+                    parsedMatchData.deadBuildings.push(data);
                 }
             }
         }
