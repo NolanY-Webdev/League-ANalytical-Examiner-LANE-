@@ -4,7 +4,7 @@
 */
 'use strict';
 angular.module('laneApp')
-  .directive('mapD', function() {
+  .directive('mapD', function($rootScope) {
       return {
         restrict : 'E',
         link : function () {var jsonData = { player1:
@@ -531,8 +531,10 @@ angular.module('laneApp')
                   .attr('class', 'stuff1')
                   .attr('width', 40)
                   .attr('height', 40);
-
-              var imgurl1 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Xerath.png';
+              console.log('FIORA!!!',$rootScope.mostRecentMatch.participants[0].championImage);
+              console.log('FIORA!!!',$rootScope.mostRecentMatch.participants[2].championImage);
+              console.log('FIORA!!!',$rootScope.mostRecentMatch.participants[3].championImage);
+              var imgurl1 = $rootScope.mostRecentMatch.participants[0].championImage;
               var player1img = svg.selectAll("image1")
 
                   //bypass sortPlayer functions by referring to jsonData.player#
@@ -573,7 +575,7 @@ angular.module('laneApp')
                   });
 
 
-              var imgurl2 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Vi.png';
+              var imgurl2 = $rootScope.mostRecentMatch.participants[1].championImage;
               var player2img = svg.selectAll('image1')
                   .data(data.player2)
                   .enter().append('svg:image')
@@ -610,7 +612,7 @@ angular.module('laneApp')
                      }
                   });
 
-              var imgurl3 = 'http://dreamatico.com/data_images/kitten/kitten-2.jpg';
+              var imgurl3 = $rootScope.mostRecentMatch.participants[2].championImage;
               var player3img = svg.selectAll('image1')
                   .data(data.player3)
                   .enter().append('svg:image')
@@ -647,7 +649,7 @@ angular.module('laneApp')
                      }
                   });
 
-              var imgurl4 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Heimerdinger.png';
+              var imgurl4 = $rootScope.mostRecentMatch.participants[3].championImage;
               var player4img = svg.selectAll('image1')
                   .data(data.player4)
                   .enter().append('svg:image')
@@ -684,7 +686,7 @@ angular.module('laneApp')
                      }
                   });
 
-              var imgurl5 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Garen.png';
+              var imgurl5 = $rootScope.mostRecentMatch.participants[4].championImage;
               var player5img = svg.selectAll('image1')
                   .data(data.player5)
                   .enter().append('svg:image')
@@ -721,7 +723,7 @@ angular.module('laneApp')
                      }
                   });
 
-              var imgurl6 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Xerath.png';
+              var imgurl6 = $rootScope.mostRecentMatch.participants[5].championImage;
               var player6img = svg.selectAll('image1')
                   .data(data.player6)
                   .enter().append('svg:image')
@@ -758,7 +760,7 @@ angular.module('laneApp')
                      }
                   });
 
-              var imgurl7 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Vi.png';
+              var imgurl7 = $rootScope.mostRecentMatch.participants[6].championImage;
               var player7img = svg.selectAll('image1')
                   .data(data.player7)
                   .enter().append('svg:image')
@@ -795,7 +797,7 @@ angular.module('laneApp')
                      }
                   });
 
-              var imgurl8 = 'http://dreamatico.com/data_images/kitten/kitten-2.jpg';
+              var imgurl8 = $rootScope.mostRecentMatch.participants[7].championImage;
               var player8img = svg.selectAll('image1')
                   .data(data.player8)
                   .enter().append('svg:image')
@@ -832,7 +834,7 @@ angular.module('laneApp')
                      }
                   });
 
-              var imgurl9 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Heimerdinger.png';
+              var imgurl9 = $rootScope.mostRecentMatch.participants[8].championImage;
               var player9img = svg.selectAll('image1')
                   .data(data.player9)
                   .enter().append('svg:image')
@@ -869,7 +871,7 @@ angular.module('laneApp')
                      }
                   });
 
-              var imgurl10 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Garen.png';
+              var imgurl10 = $rootScope.mostRecentMatch.participants[9].championImage;
               var player10img = svg.selectAll('image1')
                   .data(data.player10)
                   .enter().append('svg:image')
