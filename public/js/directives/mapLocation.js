@@ -378,7 +378,8 @@ angular.module('laneApp')
 
 //=============================
 
-
+           var mapWidth = 600;
+           var mapHeight = 600;
 
 //MAP OPTIONS/VARIABLES
            var domain = {
@@ -387,8 +388,8 @@ angular.module('laneApp')
                   min : { x : -570, y : -420 },
                   max : { x : 15220, y : 14980 }
                },
-               width = 600,
-               height = 600,
+               width = mapWidth,
+               height = mapHeight,
                bg = summonersRift,
                xScale, yScale, svg;
 
@@ -500,11 +501,11 @@ angular.module('laneApp')
                   .attr('xlink:href', towers)
 
                   //Summoners
-                  .attr('x', function(d) { return xScale(d[0]) - 25; })
-                  .attr('y', function(d) { return yScale(d[1]) - 50; })
+                  .attr('x', function(d) { return xScale(d[0]) - mapWidth/40; })
+                  .attr('y', function(d) { return yScale(d[1]) - mapHeight/20; })
                   .attr('class', 'stuff1')
-                  .attr('width', 60)
-                  .attr('height', 60);
+                  .attr('width', mapWidth/16)
+                  .attr('height', mapHeight/16);
 
               var nexi = 'http://i42.tinypic.com/15nll07.png';
               svg.append('svg:g').selectAll('image3')
@@ -513,11 +514,11 @@ angular.module('laneApp')
                   .attr('xlink:href', nexi)
 
                   //Summoners
-                  .attr('x', function(d) { return xScale(d[0]) - 25; })
-                  .attr('y', function(d) { return yScale(d[1]) - 50; })
+                  .attr('x', function(d) { return xScale(d[0]) - mapWidth/40; })
+                  .attr('y', function(d) { return yScale(d[1]) - mapHeight/20; })
                   .attr('class', 'stuff1')
-                  .attr('width', 60)
-                  .attr('height', 60);
+                  .attr('width', mapWidth/16)
+                  .attr('height', mapHeight/16);
 
               var inhibs = 'http://assets.razerzone.com/eeimages/razer_events/11691/inhibitor-b.png';
               svg.append('svg:g').selectAll('image4')
@@ -526,11 +527,12 @@ angular.module('laneApp')
                   .attr('xlink:href', inhibs)
 
                   //Summoners
-                  .attr('x', function(d) { return xScale(d[0]) - 25; })
-                  .attr('y', function(d) { return yScale(d[1]) - 50; })
+                  .attr('x', function(d) { return xScale(d[0]) - mapWidth/40; })
+                  .attr('y', function(d) { return yScale(d[1]) - mapWidth/20; })
                   .attr('class', 'stuff1')
-                  .attr('width', 40)
-                  .attr('height', 40);
+                  .attr('width', mapWidth/25)
+                  .attr('height', mapHeight/25);
+
 
               var imgurl1 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Xerath.png';
               var player1img = svg.selectAll("image1")
@@ -559,8 +561,8 @@ angular.module('laneApp')
                   .attr('width', imageWidth + 2)
                   .attr('height', imageHeight + 2)
                   .style('fill', 'none')
-                  .style('stroke', '#ffc080')
-                  .style('stroke-width', 2)
+                  .style('stroke', '#ffbc44')
+                  .style('stroke-width', 6)
                   .attr('class', 'stuff1')
                   .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
                   .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
@@ -571,6 +573,25 @@ angular.module('laneApp')
                         return (0);
                      }
                   });
+
+                  svg.selectAll('image1')
+                      .data(data.player1)
+                      .enter().append('rect')
+                      .attr('width', imageWidth + 2)
+                      .attr('height', imageHeight + 2)
+                      .style('fill', 'none')
+                      .style('stroke', '#330000')
+                      .style('stroke-width', 2)
+                      .attr('class', 'stuff1')
+                      .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
+                      .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
+                      .attr('opacity', function(d) {
+                        if((brush.extent()[1]-1)*60050 <= d[0] ) {
+                           return 1;
+                        } else {
+                           return (0);
+                        }
+                      });
 
 
               var imgurl2 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Vi.png';
@@ -597,8 +618,8 @@ angular.module('laneApp')
                   .attr('width', imageWidth + 2)
                   .attr('height', imageHeight + 2)
                   .style('fill', 'none')
-                  .style('stroke', '#ffc080')
-                  .style('stroke-width', 2)
+                  .style('stroke', '#ff3300')
+                  .style('stroke-width', 6)
                   .attr('class', 'stuff1')
                   .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
                   .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
@@ -609,6 +630,26 @@ angular.module('laneApp')
                         return (0);
                      }
                   });
+
+              svg.selectAll('image1')
+                  .data(data.player2)
+                  .enter().append('rect')
+                  .attr('width', imageWidth + 2)
+                  .attr('height', imageHeight + 2)
+                  .style('fill', 'none')
+                  .style('stroke', '#330000')
+                  .style('stroke-width', 2)
+                  .attr('class', 'stuff1')
+                  .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
+                  .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
+                  .attr('opacity', function(d) {
+                    if((brush.extent()[1]-1)*60050 <= d[0] ) {
+                       return 1;
+                    } else {
+                       return (0);
+                    }
+                  });
+
 
               var imgurl3 = 'http://dreamatico.com/data_images/kitten/kitten-2.jpg';
               var player3img = svg.selectAll('image1')
@@ -634,8 +675,8 @@ angular.module('laneApp')
                   .attr('width', imageWidth + 2)
                   .attr('height', imageHeight + 2)
                   .style('fill', 'none')
-                  .style('stroke', '#ffc080')
-                  .style('stroke-width', 2)
+                  .style('stroke', '#800000')
+                  .style('stroke-width', 6)
                   .attr('class', 'stuff1')
                   .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
                   .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
@@ -646,6 +687,26 @@ angular.module('laneApp')
                         return (0);
                      }
                   });
+
+              svg.selectAll('image1')
+                .data(data.player3)
+                .enter().append('rect')
+                .attr('width', imageWidth + 2)
+                .attr('height', imageHeight + 2)
+                .style('fill', 'none')
+                .style('stroke', '#330000')
+                .style('stroke-width', 2)
+                .attr('class', 'stuff1')
+                .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
+                .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
+                .attr('opacity', function(d) {
+                  if((brush.extent()[1]-1)*60050 <= d[0] ) {
+                     return 1;
+                  } else {
+                     return (0);
+                  }
+                });
+
 
               var imgurl4 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Heimerdinger.png';
               var player4img = svg.selectAll('image1')
@@ -671,8 +732,8 @@ angular.module('laneApp')
                   .attr('width', imageWidth + 2)
                   .attr('height', imageHeight + 2)
                   .style('fill', 'none')
-                  .style('stroke', '#ffc080')
-                  .style('stroke-width', 2)
+                  .style('stroke', '#ffb5b4')
+                  .style('stroke-width', 6)
                   .attr('class', 'stuff1')
                   .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
                   .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
@@ -683,6 +744,26 @@ angular.module('laneApp')
                         return (0);
                      }
                   });
+
+              svg.selectAll('image1')
+                  .data(data.player4)
+                  .enter().append('rect')
+                  .attr('width', imageWidth + 2)
+                  .attr('height', imageHeight + 2)
+                  .style('fill', 'none')
+                  .style('stroke', '#330000')
+                  .style('stroke-width', 2)
+                  .attr('class', 'stuff1')
+                  .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
+                  .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
+                  .attr('opacity', function(d) {
+                    if((brush.extent()[1]-1)*60050 <= d[0] ) {
+                       return 1;
+                    } else {
+                       return (0);
+                    }
+                  });
+
 
               var imgurl5 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Garen.png';
               var player5img = svg.selectAll('image1')
@@ -708,8 +789,8 @@ angular.module('laneApp')
                   .attr('width', imageWidth + 2)
                   .attr('height', imageHeight + 2)
                   .style('fill', 'none')
-                  .style('stroke', '#ffc080')
-                  .style('stroke-width', 2)
+                  .style('stroke', '#ff45a2')
+                  .style('stroke-width', 6)
                   .attr('class', 'stuff1')
                   .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
                   .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
@@ -720,6 +801,26 @@ angular.module('laneApp')
                         return (0);
                      }
                   });
+
+              svg.selectAll('image1')
+                  .data(data.player5)
+                  .enter().append('rect')
+                  .attr('width', imageWidth + 2)
+                  .attr('height', imageHeight + 2)
+                  .style('fill', 'none')
+                  .style('stroke', '#330000')
+                  .style('stroke-width', 2)
+                  .attr('class', 'stuff1')
+                  .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
+                  .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
+                  .attr('opacity', function(d) {
+                    if((brush.extent()[1]-1)*60050 <= d[0] ) {
+                       return 1;
+                    } else {
+                       return (0);
+                    }
+                  });
+
 
               var imgurl6 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Xerath.png';
               var player6img = svg.selectAll('image1')
@@ -745,8 +846,8 @@ angular.module('laneApp')
                   .attr('width', imageWidth + 2)
                   .attr('height', imageHeight + 2)
                   .style('fill', 'none')
-                  .style('stroke', '#21FFFF')
-                  .style('stroke-width', 2)
+                  .style('stroke', '#000066')
+                  .style('stroke-width', 6)
                   .attr('class', 'stuff1')
                   .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
                   .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
@@ -757,6 +858,26 @@ angular.module('laneApp')
                         return (0);
                      }
                   });
+
+              svg.selectAll('image1')
+                  .data(data.player6)
+                  .enter().append('rect')
+                  .attr('width', imageWidth + 2)
+                  .attr('height', imageHeight + 2)
+                  .style('fill', 'none')
+                  .style('stroke', '#ffffff')
+                  .style('stroke-width', 2)
+                  .attr('class', 'stuff1')
+                  .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
+                  .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
+                  .attr('opacity', function(d) {
+                    if((brush.extent()[1]-1)*60050 <= d[0] ) {
+                       return 1;
+                    } else {
+                       return (0);
+                    }
+                  });
+
 
               var imgurl7 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Vi.png';
               var player7img = svg.selectAll('image1')
@@ -782,8 +903,8 @@ angular.module('laneApp')
                   .attr('width', imageWidth + 2)
                   .attr('height', imageHeight + 2)
                   .style('fill', 'none')
-                  .style('stroke', '#21FFFF')
-                  .style('stroke-width', 2)
+                  .style('stroke', '#00cc99')
+                  .style('stroke-width', 6)
                   .attr('class', 'stuff1')
                   .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
                   .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
@@ -794,6 +915,27 @@ angular.module('laneApp')
                         return (0);
                      }
                   });
+
+              svg.selectAll('image1')
+                  .data(data.player7)
+                  .enter().append('rect')
+                  .attr('width', imageWidth + 2)
+                  .attr('height', imageHeight + 2)
+                  .style('fill', 'none')
+                  .style('stroke', '#ffffff')
+                  .style('stroke-width', 2)
+                  .attr('class', 'stuff1')
+                  .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
+                  .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
+                  .attr('opacity', function(d) {
+                    if((brush.extent()[1]-1)*60050 <= d[0] ) {
+                       return 1;
+                    } else {
+                       return (0);
+                    }
+                  });
+
+
 
               var imgurl8 = 'http://dreamatico.com/data_images/kitten/kitten-2.jpg';
               var player8img = svg.selectAll('image1')
@@ -819,8 +961,8 @@ angular.module('laneApp')
                   .attr('width', imageWidth + 2)
                   .attr('height', imageHeight + 2)
                   .style('fill', 'none')
-                  .style('stroke', '#21FFFF')
-                  .style('stroke-width', 2)
+                  .style('stroke', '#006666')
+                  .style('stroke-width', 6)
                   .attr('class', 'stuff1')
                   .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
                   .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
@@ -831,6 +973,26 @@ angular.module('laneApp')
                         return (0);
                      }
                   });
+
+              svg.selectAll('image1')
+                  .data(data.player8)
+                  .enter().append('rect')
+                  .attr('width', imageWidth + 2)
+                  .attr('height', imageHeight + 2)
+                  .style('fill', 'none')
+                  .style('stroke', '#ffffff')
+                  .style('stroke-width', 2)
+                  .attr('class', 'stuff1')
+                  .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
+                  .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
+                  .attr('opacity', function(d) {
+                    if((brush.extent()[1]-1)*60050 <= d[0] ) {
+                       return 1;
+                    } else {
+                       return (0);
+                    }
+                  });
+
 
               var imgurl9 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Heimerdinger.png';
               var player9img = svg.selectAll('image1')
@@ -856,8 +1018,8 @@ angular.module('laneApp')
                   .attr('width', imageWidth + 2)
                   .attr('height', imageHeight + 2)
                   .style('fill', 'none')
-                  .style('stroke', '#21FFFF')
-                  .style('stroke-width', 2)
+                  .style('stroke', '#66ccff')
+                  .style('stroke-width', 6)
                   .attr('class', 'stuff1')
                   .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
                   .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
@@ -868,6 +1030,26 @@ angular.module('laneApp')
                         return (0);
                      }
                   });
+
+              svg.selectAll('image1')
+                  .data(data.player9)
+                  .enter().append('rect')
+                  .attr('width', imageWidth + 2)
+                  .attr('height', imageHeight + 2)
+                  .style('fill', 'none')
+                  .style('stroke', '#ffffff')
+                  .style('stroke-width', 2)
+                  .attr('class', 'stuff1')
+                  .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
+                  .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
+                  .attr('opacity', function(d) {
+                    if((brush.extent()[1]-1)*60050 <= d[0] ) {
+                       return 1;
+                    } else {
+                       return (0);
+                    }
+                  });
+
 
               var imgurl10 = 'http://ddragon.leagueoflegends.com/cdn/5.21.1/img/champion/Garen.png';
               var player10img = svg.selectAll('image1')
@@ -893,8 +1075,8 @@ angular.module('laneApp')
                   .attr('width', imageWidth + 2)
                   .attr('height', imageHeight + 2)
                   .style('fill', 'none')
-                  .style('stroke', '#21FFFF')
-                  .style('stroke-width', 2)
+                  .style('stroke', '#6666ff')
+                  .style('stroke-width', 6)
                   .attr('class', 'stuff1')
                   .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
                   .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
@@ -904,6 +1086,25 @@ angular.module('laneApp')
                      } else {
                         return (0);
                      }
+                  });
+
+              svg.selectAll('image1')
+                  .data(data.player10)
+                  .enter().append('rect')
+                  .attr('width', imageWidth + 2)
+                  .attr('height', imageHeight + 2)
+                  .style('fill', 'none')
+                  .style('stroke', '#ffffff')
+                  .style('stroke-width', 2)
+                  .attr('class', 'stuff1')
+                  .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
+                  .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
+                  .attr('opacity', function(d) {
+                    if((brush.extent()[1]-1)*60050 <= d[0] ) {
+                       return 1;
+                    } else {
+                       return (0);
+                    }
                   });
 
 
