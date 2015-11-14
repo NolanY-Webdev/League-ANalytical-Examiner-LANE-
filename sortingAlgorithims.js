@@ -107,8 +107,8 @@ parsedMatchData.deadBuildings = [];
                 }
             }
         }
-        if(i == timeline.length) {
-            parsedMatchData.gameLength = timeline[i].timestamp
+        if(i == timeline.length-1) {
+            parsedMatchData.gameLength = timeline[i].timestamp;
         }
     }
 
