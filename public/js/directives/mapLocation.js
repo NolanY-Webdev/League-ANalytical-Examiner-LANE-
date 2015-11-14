@@ -371,7 +371,7 @@ angular.module('laneApp')
 
            var inhibCordsSummoners = [[1450, 3050], [3400, 2650], [3650, 640], [11500, 13460], [11770, 11420], [13750, 11090]];
 
-           var summonersRift = 'https://s3-us-west-1.amazonaws.com/riot-api/img/minimap-mh.png';
+           var summonersRift = "http://ddragon.leagueoflegends.com/cdn/5.22.3/img/map/map" + $rootScope.mostRecentMatch.mapId + ".png"  ;
 
 // min: {x: -570, y: -420},
 // max: {x: 15220, y: 14980}
