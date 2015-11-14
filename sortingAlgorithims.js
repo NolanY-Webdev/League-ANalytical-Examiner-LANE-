@@ -5,12 +5,14 @@ function combatParser(riotMatchData) {
     for (var p = 1; p < riotMatchData.participants.length + 1; p++) {
         parsedMatchData['player' + p] = [];
         for (var i = 0; i < timeline.length; i++) {//removed the -1 from timeline length, don't remember why I put it in
-            var data = [];
-            data.push(timeline[i].timestamp);
-            data.push('Position');
-            data.push(timeline[i].participantFrames[p].position.x);
-            data.push(timeline[i].participantFrames[p].position.y);
-            parsedMatchData['player' + p].push(data);
+            if(i !== timeline.length-1) {
+                var data = [];
+                data.push(timeline[i].timestamp);
+                data.push('Position');
+                data.push(timeline[i].participantFrames[p].position.x);
+                data.push(timeline[i].participantFrames[p].position.y);
+                parsedMatchData['player' + p].push(data);
+            }
             if (timeline[i].events !== undefined) {
                 for (var j = 0; j < timeline[i].events.length; j++) {
                     var data = [];

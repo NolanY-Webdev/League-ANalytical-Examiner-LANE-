@@ -13,8 +13,7 @@ router
     console.log(req.query);
     request.get({
       // /api/lol/{region}/v2.2/match/{matchId}
-      url : 'https://' + region + '.api.pvp.net/api/lol/' + region + '/v2.2/match/' + req.query.matchId + '?api_key=' + process.env.LOL_API_KEY,
-      includeTimeline : true
+      url : 'https://' + region + '.api.pvp.net/api/lol/' + region + '/v2.2/match/' + req.query.matchId + '?includeTimeline=true&api_key=' + process.env.LOL_API_KEY
 
     }, function(err, response, body) {
       //err handling
@@ -28,6 +27,10 @@ router
       // console.log(champion[0].key);
       // console.log(champion.indexOf(parsed.participants[0].championId));
 
+      //parsing server data into match data
+      var sorted = sort(parsed);
+
+      parsed.sortedData = sorted;
       // loop through array of participants
       for (var i = 0; i < parsed.participants.length; i++) {
         // loop through champion array on champtionSelect.js
