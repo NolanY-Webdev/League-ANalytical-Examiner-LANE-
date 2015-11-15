@@ -1,14 +1,32 @@
 /* line 1, stdin */
 .box {
+  box-sizing: border-box;
   height: 125px;
   width: 125px;
   border: 1px solid black;
   margin-bottom: 25px;
   background-size: 100%; }
 
-/* line 14, stdin */
-#image-div {
-  width: 100%;
-  height: 600px;
-  background-size: 100% 100%;
-  background-repeat: no-repeat; }
+/* line 23, stdin */
+li {
+  display: inline; }
+
+/* line 27, stdin */
+#tabs {
+  display: block;
+  margin: auto;
+  padding: auto;
+  width: 100%; }
+  /* line 33, stdin */
+  #tabs .matchTabs {
+    box-sizing: border-box;
+    text-align: center;
+    display: inline-block;
+    margin: auto;
+    padding: auto;
+    width: 50%;
+    border: 1px solid black; }
+
+/* line 44, stdin */
+#map-d {
+  box-sizing: border-box; }
