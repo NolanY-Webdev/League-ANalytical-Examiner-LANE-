@@ -23,14 +23,15 @@
       <!-- renders the 10 recent games -->
 
       <li>
-        <a href="" ng-href={{recentMatch}}>Last Match</a>
+        <a ui-sref="match.lastMatch">Last Match</a>
       </li>
       <li>
-        <a href="" ng-href={{recentMatch}}>Recent Matches</a>
+        <a ui-sref="match.recentMatch">Recent Matches</a>
       </li>
 
       <!-- renders the map and brush to the DOM -->
       <map-d></map-d>
+      <div ui-view></div>
       <div id="map-d"></div>
       <div id="brush-d"></div>
       <!-- <div id="image-div" ng-style="{'background-image' : 'url( http://ddragon.leagueoflegends.com/cdn/5.22.3/img/map/map' + {{ mostRecentMatch.mapId }} + '.png  )'}"></div> -->

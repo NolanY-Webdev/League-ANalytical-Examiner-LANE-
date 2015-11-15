@@ -1,29 +1,34 @@
+'use strict';
 angular.module('laneApp', [
-'ngRoute'
-]);
+'ui.router'
+])
+.config(['$stateProvider', '$urlRouterProvider', function( $stateProvider, $urlRouteProvider) {
 
-var laneApp = angular.module('laneApp');
-
-laneApp.config( function($routeProvider) {
+$urlRouteProvider.otherwise('/');
 
 //routes
-  $routeProvider
-  .when('/', {
+  $stateProvider
+  .state('default', {
+    url : '/',
     controller : 'defaultController',
     templateUrl : 'views/default.html'
   })
-  .when('/recent-match', {
-    controller : 'recentMatchController',
-    templateUrl : 'views/recent-match.html'
-  })
-  .when('/match', {
+  .state('match', {
+    url : '/match',
     controller : 'matchController',
     templateUrl : 'views/match.html'
   })
-  .otherwise({
-    templateUrl : 'views/404.html'
-  });
-})
+    .state('match.lastMatch', {
+      url : '/match',
+      controller : 'recentMatchController',
+      templateUrl : 'views/match.html'
+    })
+    .state('match.recentMatch', {
+      url : '/recent-match',
+      controller : 'recentMatchController',
+      templateUrl : 'views/recent-match.html'
+    });
+}])
 .run(['$rootScope', function($rootScope) {
 
 }]);
