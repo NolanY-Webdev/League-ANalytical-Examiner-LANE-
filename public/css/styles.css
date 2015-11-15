@@ -16,3 +16,11 @@
 /* line 22, stdin */
 li {
   display: inline; }
+  /* line 24, stdin */
+  li a.match-tab {
+    text-decoration: none;
+    color: #bada55;
+    font-size: 1.5em; }
+  /* line 29, stdin */
+  li p.game-info {
+    border: 1px solid #000; }

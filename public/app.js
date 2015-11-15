@@ -19,9 +19,9 @@ $urlRouteProvider.otherwise('/');
     templateUrl : 'views/match.html'
   })
     .state('match.lastMatch', {
-      url : '/match',
-      controller : 'recentMatchController',
-      templateUrl : 'views/match.html'
+      url : '/last-match',
+      controller : 'matchController',
+      templateUrl : 'views/last-match.html'
     })
     .state('match.recentMatch', {
       url : '/recent-match',

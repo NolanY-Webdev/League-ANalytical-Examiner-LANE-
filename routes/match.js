@@ -22,12 +22,7 @@ router
       }
 
       // prune body
-      // console.log(body.participants);
-      console.log(body);
-      console.log(response);
       var parsed = JSON.parse(body);
-      // console.log(champion[0].key);
-      // console.log(champion.indexOf(parsed.participants[0].championId));
 
       //parsing server data into match data
       var sorted = sort(parsed);

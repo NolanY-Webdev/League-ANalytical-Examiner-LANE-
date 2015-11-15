@@ -21,5 +21,13 @@
 
 li {
   display : inline;
+  a.match-tab {
+    text-decoration : none;
+    color : #bada55;
+    font-size: 1.5em;
+  }
+  p.game-info {
+    border : 1px solid #000;
+  }
 }
 

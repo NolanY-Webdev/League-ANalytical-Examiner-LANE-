@@ -1,9 +1,15 @@
 <div class="row">
-  <div class=" three columns"></div>
-
-  <div class=" six columns">
-    // add ng-repeat here that auto fills divs
-  </div>
-
-  <div class=" three columns"></div>
+  <ul>
+    <li ng-repeat="game in games">
+      <div ng-click="getMatch(game.gameId)">
+        <p class="game-info">
+          Game mode:{{game.gameMode}}
+          <br>
+          Game Length: {{game.stats.timePlayed}}
+          <br>
+          Game Type: {{game.gameType}}
+        </p>
+      </div>
+    </li>
+  </ul>
 </div>

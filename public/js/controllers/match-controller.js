@@ -8,8 +8,4 @@ angular.module('laneApp')
     function($scope, $window, matchInfo, $rootScope) {
      $scope.mostRecentMatch = $rootScope.mostRecentMatch;
      $scope.summonerName = $rootScope.summonerName;
-
-      console.log($scope.mostRecentMatch);
-      $scope.recentMatch = "/#/recent-match";
-
     }]);
