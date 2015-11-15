@@ -16,7 +16,7 @@ li {
   display: block;
   margin: auto;
   padding: auto;
-  width: 100%; }
+  width: 628px; }
   /* line 33, stdin */
   #tabs .matchTabs {
     box-sizing: border-box;
@@ -25,8 +25,18 @@ li {
     margin: auto;
     padding: auto;
     width: 50%;
-    border: 1px solid black; }
+    border: 1px solid black;
+    background-image: url("https://s3-us-west-1.amazonaws.com/riot-api/img/rune-bg.png");
+    background-size: 100px; }
+    /* line 44, stdin */
+    #tabs .matchTabs a {
+      text-decoration: none;
+      color: black; }
 
-/* line 44, stdin */
+/* line 51, stdin */
+.container {
+  min-width: 950px; }
+
+/* line 55, stdin */
 #map-d {
   box-sizing: border-box; }

@@ -28,7 +28,7 @@ li {
   display: block;
   margin: auto;
   padding: auto;
-  width: 100%;
+  width: 628px;
 
   .matchTabs {
     box-sizing: border-box;
@@ -38,7 +38,18 @@ li {
     padding: auto;
     width: 50%;
     border: 1px solid black;
+    background-image: url('https://s3-us-west-1.amazonaws.com/riot-api/img/rune-bg.png');
+    background-size: 100px;
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
   }
+}
+
+.container {
+    min-width: 950px;
 }
 
 #map-d {

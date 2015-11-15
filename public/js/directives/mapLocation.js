@@ -31,8 +31,8 @@ angular.module('laneApp')
 
 //=============================
         //app page map display size
-        var mapWidth = 630;
-        var mapHeight = 630;
+        var mapWidth = 628;
+        var mapHeight = 628;
 
 //MAP OPTIONS/VARIABLES
 
@@ -45,7 +45,7 @@ angular.module('laneApp')
           height = mapHeight,
           bg = summonersRift,
           xScale, yScale, svg;
-        
+
         if ($rootScope.mostRecentMatch.mapId == 8) {
           var domain = {
               //Crystal Scar

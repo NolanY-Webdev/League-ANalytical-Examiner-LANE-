@@ -21,7 +21,9 @@
     <div class="eight columns">
       <map-d></map-d>
       <div id="tabs">
-        <li class = 'matchTabs'><a href='' ng-href = ''>Most Recent</a></li><li class = 'matchTabs'><a href='' ng-href = ''>List of Recent Matches</a></li>
+
+<!--         <button class='matchTabs' ng-href={{ mostRecent }}>Most Recent</button><button class='matchTabs' ng-href={{ otherMatches }}>Other Matches</button> -->
+        <li class='matchTabs'><a href='#' ng-href={{ mostRecent }}>Most Recent</a></li><li class='matchTabs'><a href='#' ng-href={{ otherMatches }}>List of Recent Matches</a></li>
       </div>
       <div id="map-d"></div>
       <div id="brush-d"></div>
