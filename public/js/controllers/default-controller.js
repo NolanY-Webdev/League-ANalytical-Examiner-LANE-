@@ -13,6 +13,7 @@ angular.module('laneApp')
         summonerInfo.getSummoner(name)
          .success( ( data ) => {
           // data recieved
+          $rootScope.summonerName = name;
           $scope.summoner = data;
           console.log(data);
 

@@ -11,4 +11,5 @@ angular.module('laneApp')
 
       console.log($scope.mostRecentMatch);
       $scope.recentMatch = "/#/recent-match";
+
     }]);
