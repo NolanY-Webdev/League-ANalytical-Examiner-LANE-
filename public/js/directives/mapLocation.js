@@ -35,20 +35,21 @@ angular.module('laneApp')
         var mapHeight = 630;
 
 //MAP OPTIONS/VARIABLES
-        if($rootScope.mostRecentMatch.mapId == 1) {
-          var domain = {
-              //Summoners Rift
-              min: {x: -570, y: -420},
-              max: {x: 15220, y: 14980}
-            },
-            width = mapWidth,
-            height = mapHeight,
-            bg = summonersRift,
-            xScale, yScale, svg;
-        } else if ($rootScope.mostRecentMatch.mapId == 8) {
+
+        var domain = {
+            //Summoners Rift
+            min: {x: -570, y: -420},
+            max: {x: 15220, y: 14980}
+          },
+          width = mapWidth,
+          height = mapHeight,
+          bg = summonersRift,
+          xScale, yScale, svg;
+        
+        if ($rootScope.mostRecentMatch.mapId == 8) {
           var domain = {
               //Crystal Scar
-              min: {x: 0, y: 0}
+              min: {x: 0, y: 0},
               max: {x: 13987, y: 13987}
             },
             width = mapWidth,
@@ -58,7 +59,7 @@ angular.module('laneApp')
         } else if ($rootScope.mostRecentMatch.mapId == 10) {
           var domain = {
               //Twisted Treeline
-              min: {x: 0, y: 0}
+              min: {x: 0, y: 0},
               max: {x: 15398, y: 15398}
             },
             width = mapWidth,
@@ -68,7 +69,7 @@ angular.module('laneApp')
         } else if ($rootScope.mostRecentMatch.mapId == 12) {
           var domain = {
               //Howling Abyss
-              min: {x: -28, y: -19}
+              min: {x: -28, y: -19},
               max: {x: 12849, y: 12858}
             },
             width = mapWidth,
