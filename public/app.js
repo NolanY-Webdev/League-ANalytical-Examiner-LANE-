@@ -27,7 +27,15 @@ $urlRouteProvider.otherwise('/');
       url : '/recent-match',
       controller : 'recentMatchController',
       templateUrl : 'views/recent-match.html'
-    });
+    })
+  .state('signup', {
+    url : '/signup',
+    templateUrl : 'views/signup.html'
+  })
+    .state('login', {
+    url : '/login',
+    templateUrl : 'views/login.html'
+  });
 }])
 .run(['$rootScope', function($rootScope) {
 
