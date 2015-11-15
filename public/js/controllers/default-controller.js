@@ -9,6 +9,7 @@ angular.module('laneApp')
     '$rootScope',
     function($scope, $window, summonerInfo, recentMatchInfo, matchInfo, $rootScope) {
       $scope.getSummonerInfo = function(name) {
+        $rootScope.summonerName = name;
         summonerInfo.getSummoner(name)
          .success( ( data ) => {
           // data recieved
