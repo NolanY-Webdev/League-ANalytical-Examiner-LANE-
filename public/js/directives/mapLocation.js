@@ -16,6 +16,7 @@ angular.module('laneApp')
 //=====================Building Data============================
         var deadBuildings = $rootScope.mostRecentMatch.sortedData.deadBuildings;
 
+        //summoners rift
         var towerCords = [
           [12400, 13000, 'TowerNexusTopMidB'], [12900, 12500, 'TowerNexusBotMidB'], [10500, 13800, 'TowerBaseTopB'], [11100, 11100, 'TowerBaseMidB'],
           [13800, 10500, 'TowerBaseBotB'], [7700, 13600, 'TowerInnerTopB'], [4500, 14000, 'TowerOuterTopB'], [9800, 9900, 'TowerInnerMidB'],
@@ -26,14 +27,14 @@ angular.module('laneApp')
         ];
         var nexiCords = [[1600, 1300], [13100, 13100]];
         var inhibCords = [[1450, 3050], [3400, 2650], [3650, 640], [11500, 13460], [11770, 11420], [13750, 11090]];
-        if($rootScope.mostRecentMatch.mapId == 8) {
+        if($rootScope.mostRecentMatch.mapId == 8) { //crystal scar
           var capturePoints = [
             [4400, 2600], [2700, 7900], [7000, 11000], [11400, 7900], [9600, 2600]
           ];
           towerCords = [];
           nexiCords = [];
           inhibCords = [];
-        } else if($rootScope.mostRecentMatch.mapId == 10) {
+        } else if($rootScope.mostRecentMatch.mapId == 10) { //twisted treeline
           towerCords = [
             [2450, 7140], [2200, 9065], [2150, 5100], [12965, 7140], [13200, 9065], [13250, 5100], [4400, 9500], [4400, 4600], [5800, 8600], [6200, 4900], [9400, 4900], [11200, 4600], [9500, 8700], [11200, 9600]
           ];
@@ -43,15 +44,15 @@ angular.module('laneApp')
           inhibCords = [
             [2150, 6000], [2150, 8250], [13260, 6000], [13260, 8250]
           ];
-        } else if($rootScope.mostRecentMatch.mapId == 12) {
+        } else if($rootScope.mostRecentMatch.mapId == 12) { //howling abyss
           towerCords = [
-            [2100, 2600], [2650, 2200], [4400, 4400], [5800, 5800], [7500, 7500], [8900, 8900], [10600, 11000], [11100, 10700]
+            [2100, 2600], [2650, 2200], [4400, 4400, "TowerOuterMidA"], [5800, 5800, "TowerNexusBotMidA"], [7500, 7500, "TowerNexusBotMidB"], [8900, 8900, "TowerOuterMidB"], [10600, 11000], [11100, 10700]
           ];
           nexiCords = [
             [1900, 1900], [11400, 11400]
           ];
           inhibCords = [
-            [3200, 3200], [10100, 10100]
+            [3250, 2800], [10150, 9750]
           ];
         }
 
@@ -144,11 +145,12 @@ angular.module('laneApp')
           var buildingsDestroyed = deadBuildings.filter(function(buildingDeaths) {
             return (buildingDeaths[0] <= (brush.extent()[1] * 60050))
           })
+          console.log(buildingsDestroyed);
           for(var j = 0; j < buildingsDestroyed.length; j++) {
             for(var i = 0; i < currentTowers.length; i++) {
               if(buildingsDestroyed[j][1] == currentTowers[i][2]) {
                 currentTowers.splice(i, 1);
-                console.log('spliced' + i + buildingsDestroyed[j][1])
+                console.log('spliced ' + buildingsDestroyed[j][1])
               }
             }
           }
