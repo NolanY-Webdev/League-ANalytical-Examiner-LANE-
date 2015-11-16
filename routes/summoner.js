@@ -10,7 +10,7 @@ router
     //api/lol/{region}/v1.4/summoner/by-name/{summonerNames}
     .get(function(req,res) {
       var region = 'na';
-      console.log(req.query);
+      // console.log(req.query);
       request.get({
         url : 'https://' + region +
           '.api.pvp.net/api/lol/' + region +

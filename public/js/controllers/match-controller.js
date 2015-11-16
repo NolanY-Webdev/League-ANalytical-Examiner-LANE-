@@ -6,7 +6,6 @@ angular.module('laneApp')
     'matchInfo',
     '$rootScope',
     function($scope, $window, matchInfo, $rootScope) {
-
      $scope.mostRecentMatch = $rootScope.mostRecentMatch;
      $scope.summonerName = $rootScope.summonerName;
     }]);

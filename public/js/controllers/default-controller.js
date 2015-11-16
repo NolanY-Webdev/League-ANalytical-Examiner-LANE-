@@ -9,23 +9,25 @@ angular.module('laneApp')
     '$rootScope',
     function($scope, $window, summonerInfo, recentMatchInfo, matchInfo, $rootScope) {
       $scope.getSummonerInfo = function(name) {
+        $rootScope.summonerName = name;
         summonerInfo.getSummoner(name)
          .success( ( data ) => {
           // data recieved
-          $rootScope.summonerName = name;
+          $rootScope.summoner = data;
           $scope.summoner = data;
-          console.log(data);
 
           recentMatchInfo.getRecentMatch(data[name].id)
             .success( ( recentMatches ) => {
+              $rootScope.recentMatch = recentMatches;
               $scope.recentMatch = recentMatches;
-              console.log('recentMatch');
+              console.log('recentMatch: ', recentMatches);
 
               matchInfo.getMatch($scope.recentMatch.games[0].gameId)
                 .success( ( mostRecentMatch ) => {
                   $rootScope.mostRecentMatch = mostRecentMatch;
                   $window.location.href = "/#/match";
                 });
+
             });
         });
       };
