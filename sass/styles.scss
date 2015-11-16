@@ -19,7 +19,7 @@ li {
   padding: auto;
   width: 628px;
 
-  .match-tab {
+  .matchTabs {
     box-sizing: border-box;
     text-align: center;
     display: inline-block;
@@ -33,6 +33,7 @@ li {
     a {
       text-decoration: none;
       color: black;
+      font-weight: bold;
     }
   }
 }
