@@ -14,6 +14,8 @@ angular.module('laneApp')
         var imageHeight = 25;
 
 //=====================Summoners Rift============================
+        var deadBuildings = $rootScope.mostRecentMatch.sortedData.deadBuildings;
+
         var towerCordsSummoners = [
           [12400, 13000, 'TowerNexusTopMidB'], [12900, 12500, 'TowerNexusBotMidB'], [10500, 13800, 'TowerBaseTopB'], [11100, 11100, 'TowerBaseMidB'],
           [13800, 10500, 'TowerBaseBotB'], [7700, 13600, 'TowerInnerTopB'], [4500, 14000, 'TowerOuterTopB'], [9800, 9900, 'TowerInnerMidB'],
@@ -45,7 +47,7 @@ angular.module('laneApp')
           height = mapHeight,
           bg = summonersRift,
           xScale, yScale, svg;
-        
+
         if ($rootScope.mostRecentMatch.mapId == 8) {
           var domain = {
               //Crystal Scar
@@ -109,6 +111,12 @@ angular.module('laneApp')
                 return (d[0] >= (brush.extent()[0] * 60000) && d[0] <= (brush.extent()[1] * 60050));
               });
             }
+          }
+          var buildingsDestroyed = deadBuildings.filter(function(buildingDeaths) {
+            return (buildingDeaths[0] <= (brush.extent()[1] * 60050))
+          })
+          for(var ruins in buildingsDestroyed) {
+
           }
           update(filteredData);
         });
@@ -788,11 +796,7 @@ angular.module('laneApp')
                 return (0);
               }
             });
-
-
-
         }
-
 
         update(jsonData);
 
