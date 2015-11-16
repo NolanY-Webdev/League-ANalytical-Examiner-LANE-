@@ -55,6 +55,7 @@ angular.module('laneApp')
           ];
         }
 
+        jsonData.currentTowers = JSON.parse(JSON.stringify(towerCords));
 
         var summonersRift = "http://ddragon.leagueoflegends.com/cdn/5.22.3/img/map/map" + (($rootScope.mostRecentMatch.mapId !== 11) ? $rootScope.mostRecentMatch.mapId : 1)  + ".png"  ;
 
@@ -139,12 +140,19 @@ angular.module('laneApp')
               });
             }
           }
+          var currentTowers = JSON.parse(JSON.stringify(towerCords));
           var buildingsDestroyed = deadBuildings.filter(function(buildingDeaths) {
             return (buildingDeaths[0] <= (brush.extent()[1] * 60050))
           })
-          for(var ruins in buildingsDestroyed) {
-
+          for(var j = 0; j < buildingsDestroyed.length; j++) {
+            for(var i = 0; i < currentTowers.length; i++) {
+              if(buildingsDestroyed[j][1] == currentTowers[i][2]) {
+                currentTowers.splice(i, 1);
+                console.log('spliced' + i + buildingsDestroyed[j][1])
+              }
+            }
           }
+          filteredData.currentTowers = currentTowers;
           update(filteredData);
         });
 
@@ -215,7 +223,7 @@ angular.module('laneApp')
           //tower img
           var towers = 'http://www.team-dignitas.net/uploads/tinymce/images/turret_transparent.png';
           svg.append('svg:g').selectAll('image2')
-            .data(towerCords)
+            .data(data.currentTowers)
             .enter().append('svg:image')
             .attr('xlink:href', towers)
             .attr('x', function(d) { return xScale(d[0]) - mapWidth/40; })
