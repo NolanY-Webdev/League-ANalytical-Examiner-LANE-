@@ -16,7 +16,7 @@ angular.module('laneApp')
 //=====================Summoners Rift============================
         var deadBuildings = $rootScope.mostRecentMatch.sortedData.deadBuildings;
 
-        var towerCordsSummoners = [
+        var towerCords = [
           [12400, 13000, 'TowerNexusTopMidB'], [12900, 12500, 'TowerNexusBotMidB'], [10500, 13800, 'TowerBaseTopB'], [11100, 11100, 'TowerBaseMidB'],
           [13800, 10500, 'TowerBaseBotB'], [7700, 13600, 'TowerInnerTopB'], [4500, 14000, 'TowerOuterTopB'], [9800, 9900, 'TowerInnerMidB'],
           [8900, 8400, 'TowerOuterMidB'], [13600, 8200, 'TowerInnerBotB'], [13900, 4000, 'TowerOuterBotB'], [2000, 2200, 'TowerNexusTopMidA'],
@@ -24,10 +24,37 @@ angular.module('laneApp')
           [7200, 1100, 'TowerInnerBotA'], [10700, 800, 'TowerOuterBotA'], [5300, 4800, 'TowerInnerMidA'], [6200, 6300, 'TowerOuterMidA'],
           [1500, 6600, 'TowerInnerTopA'], [1200, 11000, 'TowerOuterTopA']
         ];
+        var nexiCords = [[1600, 1300], [13100, 13100]];
+        var inhibCords = [[1450, 3050], [3400, 2650], [3650, 640], [11500, 13460], [11770, 11420], [13750, 11090]];
+        if($rootScope.mostRecentMatch.mapId == 8) {
+          var capturePoints = [
+            [4400, 2600], [2700, 7900], [7000, 11000], [11400, 7900], [9600, 2600]
+          ];
+          towerCords = [];
+          nexiCords = [];
+          inhibCords = [];
+        } else if($rootScope.mostRecentMatch.mapId == 10) {
+          towerCords = [
+            [2450, 7140], [2200, 9065], [2150, 5100], [12965, 7140], [13200, 9065], [13250, 5100], [4400, 9500], [4400, 4600], [5800, 8600], [6200, 4900], [9400, 4900], [11200, 4600], [9500, 8700], [11200, 9600]
+          ];
+          nexiCords = [
+            [3030, 7140], [12370, 7140]
+          ];
+          inhibCords = [
+            [2150, 6000], [2150, 8250], [13260, 6000], [13260, 8250]
+          ];
+        } else if($rootScope.mostRecentMatch.mapId == 12) {
+          towerCords = [
+            [2100, 2600], [2650, 2200], [4400, 4400], [5800, 5800], [7500, 7500], [8900, 8900], [10600, 11000], [11100, 10700]
+          ];
+          nexiCords = [
+            [1900, 1900], [11400, 11400]
+          ];
+          inhibCords = [
+            [3200, 3200], [10100, 10100]
+          ];
+        }
 
-        var nexiCordsSummoners = [[1600, 1300], [13100, 13100]];
-
-        var inhibCordsSummoners = [[1450, 3050], [3400, 2650], [3650, 640], [11500, 13460], [11770, 11420], [13750, 11090]];
 
         var summonersRift = "http://ddragon.leagueoflegends.com/cdn/5.22.3/img/map/map" + (($rootScope.mostRecentMatch.mapId !== 11) ? $rootScope.mostRecentMatch.mapId : 1)  + ".png"  ;
 
@@ -189,7 +216,7 @@ angular.module('laneApp')
           svg.append('svg:g').selectAll('image2')
 
             //towerCords + Summoners/Twisted/Howling
-            .data(towerCordsSummoners)
+            .data(towerCords)
             .enter().append('svg:image')
             .attr('xlink:href', towers)
 
@@ -202,7 +229,7 @@ angular.module('laneApp')
 
           var nexi = 'http://i42.tinypic.com/15nll07.png';
           svg.append('svg:g').selectAll('image3')
-            .data(nexiCordsSummoners)
+            .data(nexiCords)
             .enter().append('svg:image')
             .attr('xlink:href', nexi)
 
@@ -215,7 +242,7 @@ angular.module('laneApp')
 
           var inhibs = 'http://assets.razerzone.com/eeimages/razer_events/11691/inhibitor-b.png';
           svg.append('svg:g').selectAll('image4')
-            .data(inhibCordsSummoners)
+            .data(inhibCords)
             .enter().append('svg:image')
             .attr('xlink:href', inhibs)
 
