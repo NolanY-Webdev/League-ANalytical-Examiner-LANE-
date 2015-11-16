@@ -13,7 +13,7 @@ angular.module('laneApp')
         var imageWidth = 25;
         var imageHeight = 25;
 
-//=====================Summoners Rift============================
+//=====================Building Data============================
         var deadBuildings = $rootScope.mostRecentMatch.sortedData.deadBuildings;
 
         var towerCords = [
@@ -58,7 +58,7 @@ angular.module('laneApp')
 
         var summonersRift = "http://ddragon.leagueoflegends.com/cdn/5.22.3/img/map/map" + (($rootScope.mostRecentMatch.mapId !== 11) ? $rootScope.mostRecentMatch.mapId : 1)  + ".png"  ;
 
-//=============================
+//============================= MAP DATA ====================================
         //app page map display size
         var mapWidth = 628;
         var mapHeight = 628;
@@ -76,7 +76,7 @@ angular.module('laneApp')
           xScale, yScale, svg;
 
         if ($rootScope.mostRecentMatch.mapId == 8) {
-          var domain = {
+          domain = {
               //Crystal Scar
               min: {x: 0, y: 0},
               max: {x: 13987, y: 13987}
@@ -86,7 +86,7 @@ angular.module('laneApp')
             bg = summonersRift,
             xScale, yScale, svg;
         } else if ($rootScope.mostRecentMatch.mapId == 10) {
-          var domain = {
+          domain = {
               //Twisted Treeline
               min: {x: 0, y: 0},
               max: {x: 15398, y: 15398}
@@ -96,7 +96,7 @@ angular.module('laneApp')
             bg = summonersRift,
             xScale, yScale, svg;
         } else if ($rootScope.mostRecentMatch.mapId == 12) {
-          var domain = {
+          domain = {
               //Howling Abyss
               min: {x: -28, y: -19},
               max: {x: 12849, y: 12858}
@@ -212,41 +212,36 @@ angular.module('laneApp')
           images.exit().remove();
           images.enter();
 
+          //tower img
           var towers = 'http://www.team-dignitas.net/uploads/tinymce/images/turret_transparent.png';
           svg.append('svg:g').selectAll('image2')
-
-            //towerCords + Summoners/Twisted/Howling
             .data(towerCords)
             .enter().append('svg:image')
             .attr('xlink:href', towers)
-
-            //Summoners
             .attr('x', function(d) { return xScale(d[0]) - mapWidth/40; })
             .attr('y', function(d) { return yScale(d[1]) - mapHeight/20; })
             .attr('class', 'stuff1')
             .attr('width', mapWidth/16)
             .attr('height', mapHeight/16);
 
+          //nexus img
           var nexi = 'http://i42.tinypic.com/15nll07.png';
           svg.append('svg:g').selectAll('image3')
             .data(nexiCords)
             .enter().append('svg:image')
             .attr('xlink:href', nexi)
-
-            //Summoners
             .attr('x', function(d) { return xScale(d[0]) - mapWidth/40; })
             .attr('y', function(d) { return yScale(d[1]) - mapHeight/20; })
             .attr('class', 'stuff1')
             .attr('width', mapWidth/16)
             .attr('height', mapHeight/16);
 
+          //inhib img
           var inhibs = 'http://assets.razerzone.com/eeimages/razer_events/11691/inhibitor-b.png';
           svg.append('svg:g').selectAll('image4')
             .data(inhibCords)
             .enter().append('svg:image')
             .attr('xlink:href', inhibs)
-
-            //Summoners
             .attr('x', function(d) { return xScale(d[0]) - mapWidth/40; })
             .attr('y', function(d) { return yScale(d[1]) - mapWidth/20; })
             .attr('class', 'stuff1')
