@@ -7,18 +7,18 @@
   margin-bottom: 25px;
   background-size: 100%; }
 
-/* line 23, stdin */
+/* line 12, stdin */
 li {
   display: inline; }
 
-/* line 27, stdin */
+/* line 16, stdin */
 #tabs {
   display: block;
   margin: auto;
   padding: auto;
   width: 628px; }
-  /* line 33, stdin */
-  #tabs .matchTabs {
+  /* line 22, stdin */
+  #tabs .match-tab {
     box-sizing: border-box;
     text-align: center;
     display: inline-block;
@@ -28,15 +28,15 @@ li {
     border: 1px solid black;
     background-image: url("https://s3-us-west-1.amazonaws.com/riot-api/img/rune-bg.png");
     background-size: 100px; }
-    /* line 44, stdin */
-    #tabs .matchTabs a {
+    /* line 33, stdin */
+    #tabs .match-tab a {
       text-decoration: none;
       color: black; }
 
-/* line 51, stdin */
+/* line 41, stdin */
 .container {
   min-width: 950px; }
 
-/* line 55, stdin */
+/* line 45, stdin */
 #map-d {
   box-sizing: border-box; }
