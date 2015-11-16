@@ -60,8 +60,8 @@ angular.module('laneApp')
 
 //=============================
         //app page map display size
-        var mapWidth = 630;
-        var mapHeight = 630;
+        var mapWidth = 628;
+        var mapHeight = 628;
 
 //MAP OPTIONS/VARIABLES
 
