@@ -1,24 +1,26 @@
 <div class="container">
-  <div class="row">
-    <h1>Home Page</h1>
-  </div>
 
-  <div class="row">
-    <div class="six columns">
+  <form>
+
+  <div class="sixteen columns">
+
+    <div class="four columns offset-by-four">
+      <h1>Home Page</h1>
+    </div>
+
+    <div class="four columns offset-by-four">
         <label for="summonerNameInput">Summoner name</label>
         <input class="u-full-width" type="text" placeholder="summoner name" id="summonerNameInput" ng-model="summonerName">
     </div>
   </div>
 
-  <div class="row">
-    <a class="button" ng-click="getSummonerInfo(summonerName)">Player Stats</a>
-    <!-- <a class="button" ng-href="/#/default">Death Map</a> -->
+  <div class="four columns offset-by-four">
+    <div class="eight columns offset-by-two">
+      <a class="button u-full-width" ng-click="getSummonerInfo(summonerName)">Player Stats</a>
+      <!-- <a class="button" ng-href="/#/default">Death Map</a> -->
+    </div>
   </div>
 
-  <div class="row">
-    <p>{{summoner}}</p>
-    <!-- <p>{{recentMatch.games[0].gameId }}</p> -->
-    <p>{{ recentMatch.games[0] }}</p>
-    <p>{{ mostRecentMatch }}</p>
-  </div>
+  </form>
+
 </div>
