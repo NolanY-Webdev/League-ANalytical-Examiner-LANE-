@@ -11,15 +11,13 @@
   </div>
 
   <div class="row">
+    <div id="tabs">
+      <a ui-sref="match.matchDetails({summoner_id : summoner.id})" class="match-tab"><li class="matchTabs">Match Details</li></a><a ui-sref="match.recentMatch({summoner_id : summoner.id})" class="match-tab"><li class="matchTabs">Recent Matches</li></a>
 
-      <!-- renders the 10 recent games -->
-      <div id="tabs">
-        <a ui-sref="match.matchDetails({summoner_id : summoner.id})" class="match-tab"><li class="matchTabs">Match Details</li></a><a ui-sref="match.recentMatch({summoner_id : summoner.id})" class="match-tab"><li class="matchTabs">Recent Matches</li></a>
+      <!-- renders the map and brush to the DOM -->
 
-        <!-- renders the map and brush to the DOM -->
-
-        <div ui-view></div>
     </div>
+    <div ui-view></div>
 
   </div>
 </div>

@@ -46,14 +46,14 @@ function runD3(match) {
     ];
     var nexiCords = [[1600, 1300], [13100, 13100]];
     var inhibCords = [[1450, 3050], [3400, 2650], [3650, 640], [11500, 13460], [11770, 11420], [13750, 11090]];
-    if(scope.mostRecentMatch.mapId == 8) { //crystal scar
+    if (scope.mostRecentMatch.mapId == 8) { //crystal scar
       var capturePoints = [
         [4400, 2600], [2700, 7900], [7000, 11000], [11400, 7900], [9600, 2600]
       ];
       towerCords = [];
       nexiCords = [];
       inhibCords = [];
-    } else if(scope.mostRecentMatch.mapId == 10) { //twisted treeline
+    } else if (scope.mostRecentMatch.mapId == 10) { //twisted treeline
       towerCords = [
         [2450, 7140], [2200, 9065], [2150, 5100], [12965, 7140], [13200, 9065], [13250, 5100], [4400, 9500], [4400, 4600], [5800, 8600], [6200, 4900], [9400, 4900], [11200, 4600], [9500, 8700], [11200, 9600]
       ];
@@ -63,7 +63,7 @@ function runD3(match) {
       inhibCords = [
         [2150, 6000], [2150, 8250], [13260, 6000], [13260, 8250]
       ];
-    } else if(scope.mostRecentMatch.mapId == 12) { //howling abyss
+    } else if (scope.mostRecentMatch.mapId == 12) { //howling abyss
       towerCords = [
         [2100, 2600], [2650, 2200], [4400, 4400, "TowerOuterMidA"], [5800, 5800, "TowerNexusBotMidA"], [7500, 7500, "TowerNexusBotMidB"], [8900, 8900, "TowerOuterMidB"], [10600, 11000], [11100, 10700]
       ];
@@ -154,7 +154,7 @@ function runD3(match) {
 
     brush.on('brushend', function() {
       for(var player in jsonData) {
-        if(player!== 'gameLength' && player !== 'deadBuildings') {
+        if (player!== 'gameLength' && player !== 'deadBuildings') {
           filteredData[player] = jsonData[player].filter(function (d) {
             return (d[0] >= (brush.extent()[0] * 60000) && d[0] <= (brush.extent()[1] * 60050));
           });
@@ -167,7 +167,7 @@ function runD3(match) {
       console.log(buildingsDestroyed);
       for(var j = 0; j < buildingsDestroyed.length; j++) {
         for(var i = 0; i < currentTowers.length; i++) {
-          if(buildingsDestroyed[j][1] == currentTowers[i][2]) {
+          if (buildingsDestroyed[j][1] == currentTowers[i][2]) {
             currentTowers.splice(i, 1);
             console.log('spliced ' + buildingsDestroyed[j][1])
           }
@@ -291,7 +291,7 @@ function runD3(match) {
         .attr('width', imageWidth)
         .attr('height', imageHeight)
         .attr('opacity', function(d) {
-          if((brush.extent()[1]-1)*60050 <= d[0] ) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
             return 1;
           } else {
             return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
@@ -310,7 +310,7 @@ function runD3(match) {
         .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
         .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
         .attr('opacity', function(d) {
-          if((brush.extent()[1]-1)*60050 <= d[0] ) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
             return 1;
           } else {
             return (0);
@@ -329,7 +329,7 @@ function runD3(match) {
         .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
         .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
         .attr('opacity', function(d) {
-          if((brush.extent()[1]-1)*60050 <= d[0] ) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
             return 1;
           } else {
             return (0);
@@ -348,7 +348,7 @@ function runD3(match) {
         .attr('width', imageWidth)
         .attr('height', imageHeight)
         .attr('opacity', function(d) {
-          if((brush.extent()[1]-1)*60050 <= d[0] ) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
             return 1;
           } else {
             return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
@@ -367,7 +367,7 @@ function runD3(match) {
         .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
         .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
         .attr('opacity', function(d) {
-          if((brush.extent()[1]-1)*60050 <= d[0] ) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
             return 1;
           } else {
             return (0);
@@ -386,7 +386,7 @@ function runD3(match) {
         .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
         .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
         .attr('opacity', function(d) {
-          if((brush.extent()[1]-1)*60050 <= d[0] ) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
             return 1;
           } else {
             return (0);
@@ -404,7 +404,7 @@ function runD3(match) {
         .attr('width', imageWidth)
         .attr('height', imageHeight)
         .attr('opacity', function(d) {
-          if((brush.extent()[1]-1)*60050 <= d[0] ) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
             return 1;
           } else {
             return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
@@ -423,7 +423,7 @@ function runD3(match) {
         .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
         .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
         .attr('opacity', function(d) {
-          if((brush.extent()[1]-1)*60050 <= d[0] ) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
             return 1;
           } else {
             return (0);
@@ -442,7 +442,7 @@ function runD3(match) {
         .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
         .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
         .attr('opacity', function(d) {
-          if((brush.extent()[1]-1)*60050 <= d[0] ) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
             return 1;
           } else {
             return (0);
@@ -461,7 +461,7 @@ function runD3(match) {
         .attr('width', imageWidth)
         .attr('height', imageHeight)
         .attr('opacity', function(d) {
-          if((brush.extent()[1]-1)*60050 <= d[0] ) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
             return 1;
           } else {
             return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
@@ -480,7 +480,7 @@ function runD3(match) {
         .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
         .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
         .attr('opacity', function(d) {
-          if((brush.extent()[1]-1)*60050 <= d[0] ) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
             return 1;
           } else {
             return (0);
@@ -499,7 +499,7 @@ function runD3(match) {
         .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
         .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
         .attr('opacity', function(d) {
-          if((brush.extent()[1]-1)*60050 <= d[0] ) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
             return 1;
           } else {
             return (0);
@@ -518,7 +518,7 @@ function runD3(match) {
         .attr('width', imageWidth)
         .attr('height', imageHeight)
         .attr('opacity', function(d) {
-          if((brush.extent()[1]-1)*60050 <= d[0] ) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
             return 1;
           } else {
             return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
@@ -537,7 +537,7 @@ function runD3(match) {
         .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
         .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
         .attr('opacity', function(d) {
-          if((brush.extent()[1]-1)*60050 <= d[0] ) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
             return 1;
           } else {
             return (0);
@@ -556,7 +556,7 @@ function runD3(match) {
         .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
         .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
         .attr('opacity', function(d) {
-          if((brush.extent()[1]-1)*60050 <= d[0] ) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
             return 1;
           } else {
             return (0);
@@ -575,7 +575,7 @@ function runD3(match) {
         .attr('width', imageWidth)
         .attr('height', imageHeight)
         .attr('opacity', function(d) {
-          if((brush.extent()[1]-1)*60050 <= d[0] ) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
             return 1;
           } else {
             return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
@@ -594,7 +594,7 @@ function runD3(match) {
         .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
         .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
         .attr('opacity', function(d) {
-          if((brush.extent()[1]-1)*60050 <= d[0] ) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
             return 1;
           } else {
             return (0);
@@ -613,7 +613,7 @@ function runD3(match) {
         .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
         .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
         .attr('opacity', function(d) {
-          if((brush.extent()[1]-1)*60050 <= d[0] ) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
             return 1;
           } else {
             return (0);
@@ -632,7 +632,7 @@ function runD3(match) {
         .attr('width', imageWidth)
         .attr('height', imageHeight)
         .attr('opacity', function(d) {
-          if((brush.extent()[1]-1)*60050 <= d[0] ) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
             return 1;
           } else {
             return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
@@ -651,7 +651,7 @@ function runD3(match) {
         .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
         .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
         .attr('opacity', function(d) {
-          if((brush.extent()[1]-1)*60050 <= d[0] ) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
             return 1;
           } else {
             return (0);
@@ -670,7 +670,7 @@ function runD3(match) {
         .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
         .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
         .attr('opacity', function(d) {
-          if((brush.extent()[1]-1)*60050 <= d[0] ) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
             return 1;
           } else {
             return (0);
@@ -689,7 +689,7 @@ function runD3(match) {
         .attr('width', imageWidth)
         .attr('height', imageHeight)
         .attr('opacity', function(d) {
-          if((brush.extent()[1]-1)*60050 <= d[0] ) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
             return 1;
           } else {
             return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
@@ -708,7 +708,7 @@ function runD3(match) {
         .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
         .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
         .attr('opacity', function(d) {
-          if((brush.extent()[1]-1)*60050 <= d[0] ) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
             return 1;
           } else {
             return (0);
@@ -727,7 +727,7 @@ function runD3(match) {
         .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
         .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
         .attr('opacity', function(d) {
-          if((brush.extent()[1]-1)*60050 <= d[0] ) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
             return 1;
           } else {
             return (0);
@@ -746,7 +746,7 @@ function runD3(match) {
         .attr('width', imageWidth)
         .attr('height', imageHeight)
         .attr('opacity', function(d) {
-          if((brush.extent()[1]-1)*60050 <= d[0] ) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
             return 1;
           } else {
             return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
@@ -765,7 +765,7 @@ function runD3(match) {
         .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
         .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
         .attr('opacity', function(d) {
-          if((brush.extent()[1]-1)*60050 <= d[0] ) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
             return 1;
           } else {
             return (0);
@@ -784,7 +784,7 @@ function runD3(match) {
         .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
         .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
         .attr('opacity', function(d) {
-          if((brush.extent()[1]-1)*60050 <= d[0] ) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
             return 1;
           } else {
             return (0);
@@ -803,7 +803,7 @@ function runD3(match) {
         .attr('width', imageWidth)
         .attr('height', imageHeight)
         .attr('opacity', function(d) {
-          if((brush.extent()[1]-1)*60050 <= d[0] ) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
             return 1;
           } else {
             return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
@@ -822,7 +822,7 @@ function runD3(match) {
         .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
         .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
         .attr('opacity', function(d) {
-          if((brush.extent()[1]-1)*60050 <= d[0] ) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
             return 1;
           } else {
             return (0);
@@ -841,7 +841,7 @@ function runD3(match) {
         .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
         .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
         .attr('opacity', function(d) {
-          if((brush.extent()[1]-1)*60050 <= d[0] ) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
             return 1;
           } else {
             return (0);
@@ -871,7 +871,7 @@ function runD3(match) {
         .attr('width', 25)
         .attr('height', 25)
         .attr('opacity', function(d) {
-          if((brush.extent()[1]-1)*60050 <= d[0] ) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
             return 1;
           } else {
             return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);

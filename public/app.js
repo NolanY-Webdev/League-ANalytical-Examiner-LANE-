@@ -4,7 +4,7 @@ angular.module('laneApp', [
 ])
 .config(['$stateProvider', '$urlRouterProvider', function( $stateProvider, $urlRouteProvider) {
 
-$urlRouteProvider.otherwise('/');
+  $urlRouteProvider.otherwise('/');
 
 //routes
   $stateProvider

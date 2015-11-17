@@ -2,13 +2,12 @@
 angular.module('laneApp')
   .controller('recentMatchController', [
     '$scope',
-    '$window',
     'recentMatchInfo',
     '$rootScope',
     'matchInfo',
     '$state',
     '$stateParams',
-    function($scope, $window, recentMatchInfo, $rootScope, matchInfo, $state, $stateParams) {
+    function($scope, recentMatchInfo, $rootScope, matchInfo, $state, $stateParams) {
       recentMatchInfo.getRecentMatch($stateParams.summoner_id)
         .success((data) => {
           // console.log('data: ', data)
@@ -17,11 +16,8 @@ angular.module('laneApp')
           $scope.summonerName = 'TODO';
         });
       $scope.getMatch = function(gameId) {
-        recentMatchInfo.getMatch(gameId)
-          .success( ( mostRecentMatch ) => {
-            console.log('THiS========', mostRecentMatch);
-            $scope.mostRecentMatch = mostRecentMatch;
-            $state.go('match.matchDetails');
-          });
-      }
+        $state.go('match.matchDetails', {
+          match_id : gameId
+        });
+      };
     }]);

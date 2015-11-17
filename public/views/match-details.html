@@ -1,20 +1,19 @@
-   <div class="row">
+<div class="row">
 
-      <div class="two columns">
-        <div ng-repeat="participant in mostRecentMatch.participants | filter: {  teamId: 100 }">
-          {{participant.championImage}}
-          <div class="box" ng-style="{'background-image' : 'url( {{ participant.championImage }} )'}"></div>
-        </div>
-      </div>
-
-      <div class="eight columns">
-        <map-d my-recent-games = "mostRecentMatch"></map-d>
-      </div>
-
-      <div class="two columns">
-        <div ng-repeat="participant in mostRecentMatch.participants | filter: {  teamId: 200 }">
-          <div class="box" ng-style="{'background-image' : 'url( {{ participant.championImage }} )'}"></div>
-        </div>
-      </div>
-
+  <div class="two columns">
+    <div ng-repeat="participant in mostRecentMatch.participants | filter: {  teamId: 100 }">
+      <div class="box" ng-style="{'background-image' : 'url( {{ participant.championImage }} )'}"></div>
     </div>
+  </div>
+
+  <div class="eight columns">
+    <map-d my-recent-games = "mostRecentMatch"></map-d>
+  </div>
+
+  <div class="two columns">
+    <div ng-repeat="participant in mostRecentMatch.participants | filter: {  teamId: 200 }">
+      <div class="box" ng-style="{'background-image' : 'url( {{ participant.championImage }} )'}"></div>
+    </div>
+  </div>
+
+</div>
