@@ -92,3 +92,48 @@ li {
   margin: -1px 0 0 0;
   top: 100%;
   left: 0; }
+
+/* line 120, stdin */
+.tooltip {
+  height: 40px;
+  width: 40px; }
+
+/* line 125, stdin */
+.player1 {
+  border: 4px solid #ffbc44; }
+
+/* line 129, stdin */
+.player2 {
+  border: 4px solid #ff3300; }
+
+/* line 133, stdin */
+.player3 {
+  border: 4px solid #800000; }
+
+/* line 137, stdin */
+.player4 {
+  border: 4px solid #ffb5b4; }
+
+/* line 141, stdin */
+.player5 {
+  border: 4px solid #ff45a2; }
+
+/* line 145, stdin */
+.player6 {
+  border: 4px solid #000066; }
+
+/* line 149, stdin */
+.player7 {
+  border: 4px solid #00cc99; }
+
+/* line 153, stdin */
+.player8 {
+  border: 4px solid #006666; }
+
+/* line 157, stdin */
+.player9 {
+  border: 4px solid #66ccff; }
+
+/* line 161, stdin */
+.player10 {
+  border: 4px solid #6666ff; }
