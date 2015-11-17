@@ -857,7 +857,7 @@ function runD3(match) {
             if(d[4] !== 0) {
               var killer = '<image class="tooltip player' + d[4] + '" src="' + scope.mostRecentMatch.participants[d[4] - 1].championImage + '">'
             } else {
-              var killer = '';
+              var killer = '<image class="tooltip player0" src="http://25.media.tumblr.com/tumblr_m6vl9yakTH1qi0dzko1_400.jpg">'; //
             }
             var victim = '<image class="tooltip player'+ d[6] +'" src="'+scope.mostRecentMatch.participants[d[6]-1].championImage+'">'
             return killer + victim
