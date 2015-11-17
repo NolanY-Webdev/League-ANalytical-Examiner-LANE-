@@ -17,29 +17,7 @@ function combatParser(riotMatchData) {
                 for (var j = 0; j < timeline[i].events.length; j++) {
                     var data = [];
                     var eventFrame = timeline[i].events[j];
-                    if (eventFrame.eventType == 'CHAMPION_KILL') {
-                        if (eventFrame.killerId == p) {
-                            data.push(eventFrame.timestamp);
-                            data.push('Enemy Slain');
-                            data.push(eventFrame.position.x);
-                            data.push(eventFrame.position.y);
-                            parsedMatchData['player' + p].push(data);
-                        } else if (eventFrame.victimId == p) {
-                            data.push(eventFrame.timestamp);
-                            data.push('Player Slain');
-                            data.push(eventFrame.position.x);
-                            data.push(eventFrame.position.y);
-                            parsedMatchData['player' + p].push(data);
-                        } else if ('assistingParticipantIds' in eventFrame) {
-                            if (eventFrame.assistingParticipantIds.indexOf(p) !== -1) {
-                                data.push(eventFrame.timestamp);
-                                data.push('Kill Assisted');
-                                data.push(eventFrame.position.x);
-                                data.push(eventFrame.position.y);
-                                parsedMatchData['player' + p].push(data);
-                            }
-                        }
-                    } else if (eventFrame.eventType == 'BUILDING_KILL') {
+                    if (eventFrame.eventType == 'BUILDING_KILL') {
                         if (eventFrame.killerId == p) {
                             data.push(eventFrame.timestamp);
                             data.push('Building Destroyed');
@@ -60,12 +38,23 @@ function combatParser(riotMatchData) {
             }
         }
     }
-parsedMatchData.deadBuildings = [];
+    parsedMatchData.combat = [];
+    parsedMatchData.deadBuildings = [];
     for (var i = 0; i < timeline.length; i++) {//removed the -1 from timeline length, don't remember why I put it in
         if (timeline[i].events !== undefined) {
             for (var j = 0; j < timeline[i].events.length; j++) {
                 var eventFrame = timeline[i].events[j];
-                if (eventFrame.eventType == 'BUILDING_KILL') {
+                if (eventFrame.eventType == 'CHAMPION_KILL') {
+                    var data = [];
+                    data.push(eventFrame.timestamp);
+                    data.push('ChampionKilled');
+                    data.push(eventFrame.position.x);
+                    data.push(eventFrame.position.y);
+                    data.push(eventFrame.killerId);
+                    data.push(eventFrame.assistingParticipantIds);
+                    data.push(eventFrame.victimId);
+                    parsedMatchData['combat'].push(data);
+                } else if (eventFrame.eventType == 'BUILDING_KILL') {
                     var data = [];
                     var type = '';
                     var position = '';
