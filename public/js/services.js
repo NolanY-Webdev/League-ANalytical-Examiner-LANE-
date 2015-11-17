@@ -9,6 +9,9 @@ angular.module('laneApp')
     this.getRecentMatch = function(summonerId) {
       return $http.get('http://localhost:3000/getRecentMatch?summonerId=' + summonerId);
     };
+    this.getMatch = function(matchId) {
+      return $http.get('http://localhost:3000/getMatch?matchId=' + matchId);
+    };
   }])
   .service('matchInfo', [ '$http', function($http) {
     this.getMatch = function(matchId) {

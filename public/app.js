@@ -14,17 +14,17 @@ $urlRouteProvider.otherwise('/');
     templateUrl : 'views/default.html'
   })
   .state('match', {
-    url : '/match',
+    url : '/match/:summoner_name',
     controller : 'matchController',
     templateUrl : 'views/match.html'
   })
-    .state('match.lastMatch', {
-      url : '/last-match',
-      controller : 'matchController',
-      templateUrl : 'views/last-match.html'
+    .state('match.matchDetails', {
+      url : '/match-details',
+      controller : 'recentMatchController',
+      templateUrl : 'views/match-details.html'
     })
     .state('match.recentMatch', {
-      url : '/recent-match',
+      url : '/recent-match/:summoner_id',
       controller : 'recentMatchController',
       templateUrl : 'views/recent-match.html'
     })

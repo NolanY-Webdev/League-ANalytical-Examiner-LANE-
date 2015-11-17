@@ -6,20 +6,22 @@ angular.module('laneApp')
     'recentMatchInfo',
     '$rootScope',
     'matchInfo',
-    function($scope, $window, recentMatchInfo, $rootScope, matchInfo) {
-      recentMatchInfo.getRecentMatch($rootScope.summoner[$rootScope.summonerName].id)
+    '$state',
+    '$stateParams',
+    function($scope, $window, recentMatchInfo, $rootScope, matchInfo, $state, $stateParams) {
+      recentMatchInfo.getRecentMatch($stateParams.summoner_id)
         .success((data) => {
           // console.log('data: ', data)
           $scope.games = data.games;
-          $scope.summonerName = $rootScope.summonerName;
+          // $scope.summonerName = $rootScope.summonerName;
+          $scope.summonerName = 'TODO';
         });
-
       $scope.getMatch = function(gameId) {
-        console.log(gameId);
-        matchInfo.getMatch(gameId)
+        recentMatchInfo.getMatch(gameId)
           .success( ( mostRecentMatch ) => {
-            $rootScope.mostRecentMatch = mostRecentMatch;
-            $window.location.href = "/#/match";
+            console.log('THiS========', mostRecentMatch);
+            $scope.mostRecentMatch = mostRecentMatch;
+            $state.go('match.matchDetails');
           });
       }
     }]);
