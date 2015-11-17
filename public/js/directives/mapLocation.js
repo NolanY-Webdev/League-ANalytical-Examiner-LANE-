@@ -834,7 +834,11 @@ angular.module('laneApp')
             .offset([-10, 0])
             .html(function(d) {
               console.log(d)
-              var killer = '<image class="tooltip player'+ d[4] +'" src="'+$rootScope.mostRecentMatch.participants[d[4]-1].championImage+'">'
+              if(d[4] !== 0) {
+                var killer = '<image class="tooltip player' + d[4] + '" src="' + $rootScope.mostRecentMatch.participants[d[4] - 1].championImage + '">'
+              } else {
+                var killer = '';
+              }
               var victim = '<image class="tooltip player'+ d[6] +'" src="'+$rootScope.mostRecentMatch.participants[d[6]-1].championImage+'">'
               return killer + victim
             })
