@@ -135,7 +135,7 @@ angular.module('laneApp')
 
         brush.on('brushend', function() {
           for(var player in jsonData) {
-            if(player!== 'gameLength' && player !== 'deadBuildings' && player !== 'combat') {
+            if(player!== 'gameLength' && player !== 'deadBuildings') {
               filteredData[player] = jsonData[player].filter(function (d) {
                 return (d[0] >= (brush.extent()[0] * 60000) && d[0] <= (brush.extent()[1] * 60050));
               });
