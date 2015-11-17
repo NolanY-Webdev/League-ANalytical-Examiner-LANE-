@@ -1,4 +1,4 @@
-/* line 1, stdin */
+/* line 14, stdin */
 .box {
   box-sizing: border-box;
   height: 125px;
@@ -7,17 +7,17 @@
   margin-bottom: 25px;
   background-size: 100%; }
 
-/* line 12, stdin */
+/* line 25, stdin */
 li {
   display: inline; }
 
-/* line 16, stdin */
+/* line 29, stdin */
 #tabs {
   display: block;
   margin: auto;
   padding: auto;
   width: 628px; }
-  /* line 22, stdin */
+  /* line 35, stdin */
   #tabs .matchTabs {
     box-sizing: border-box;
     text-align: center;
@@ -29,15 +29,37 @@ li {
     background-image: url("https://s3-us-west-1.amazonaws.com/riot-api/img/rune-bg.png");
     background-size: 100px;
     color: black;
-    font-weight: bold; }
-    /* line 35, stdin */
+    font-weight: bold;
+    box-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa; }
+    /* line 53, stdin */
+    #tabs .matchTabs:hover {
+      color: red;
+      border: 2px solid orange;
+      box-shadow: none; }
+    /* line 59, stdin */
     #tabs .matchTabs a {
       text-decoration: none; }
 
-/* line 42, stdin */
+/* line 66, stdin */
 .container {
   min-width: 950px; }
 
-/* line 46, stdin */
+/* line 70, stdin */
 #map-d {
   box-sizing: border-box; }
+
+/* line 74, stdin */
+.game-info {
+  box-sizing: border-box;
+  display: block;
+  border: 1px solid black;
+  font-weight: bold;
+  line-height: 140%;
+  margin: 7px;
+  background-image: url("https://s3-us-west-1.amazonaws.com/riot-api/img/rune-bg.png");
+  box-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15); }
+  /* line 84, stdin */
+  .game-info:hover {
+    border: 2px solid orange;
+    color: red;
+    box-shadow: none; }
