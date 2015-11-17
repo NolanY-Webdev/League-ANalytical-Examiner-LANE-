@@ -31,6 +31,7 @@ function runD3(match) {
     var imageHeight = 25;
 
 //=====================Building Data============================
+
     var deadBuildings = jsonData.deadBuildings;
 
     console.log(deadBuildings);
@@ -131,6 +132,7 @@ function runD3(match) {
     var filteredData = {};
 
 //BRUSH DATA
+
     var gameLength = scope.mostRecentMatch.sortedData.gameLength;
     var gameLengthByMin = gameLength/60000;
     var brushX = 5;
@@ -206,7 +208,6 @@ function runD3(match) {
     g.selectAll("line")
       .style({ stroke: "#000"})
       .attr("class", "brush");
-
 
 //MAP DATA
 
@@ -848,39 +849,43 @@ function runD3(match) {
           }
         });
 
-      var tip = d3.tip()
-        .attr('class', 'd3-tip')
-        .offset([-10, 0])
-        .html(function(d) {
-          console.log(d)
-          var killer = '<image class="tooltip player'+ d[4] +'" src="'+scope.mostRecentMatch.participants[d[4]-1].championImage+'">'
-          var victim = '<image class="tooltip player'+ d[6] +'" src="'+scope.mostRecentMatch.participants[d[6]-1].championImage+'">'
-          return killer + victim
-        })
+    var tip = d3.tip()
+          .attr('class', 'd3-tip')
+          .offset([-10, 0])
+          .html(function(d) {
+            console.log(d)
+            if(d[4] !== 0) {
+              var killer = '<image class="tooltip player' + d[4] + '" src="' + scope.mostRecentMatch.participants[d[4] - 1].championImage + '">'
+            } else {
+              var killer = '';
+            }
+            var victim = '<image class="tooltip player'+ d[6] +'" src="'+scope.mostRecentMatch.participants[d[6]-1].championImage+'">'
+            return killer + victim
+          })
 
-      svg.call(tip);
+        svg.call(tip);
 
-      var combaturl = 'http://i64.tinypic.com/2ugl94l.png';
-      var combatimg = svg.selectAll("image1")
-        .data(data.combat)
-        .enter().append('svg:image')
-        .attr('class', 'stuff1')
-        .attr('xlink:href', combaturl)
-        .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
-        .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
-        .attr('width', 25)
-        .attr('height', 25)
-        .attr('opacity', function(d) {
-          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
-            return 1;
-          } else {
-            return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
-          }
-        })
-        .on('mouseover', tip.show)
-        .on('mouseout', tip.hide)
-        ;
-    }
+        var combaturl = 'http://i64.tinypic.com/2ugl94l.png';
+        var combatimg = svg.selectAll("image1")
+          .data(data.combat)
+          .enter().append('svg:image')
+          .attr('class', 'stuff1')
+          .attr('xlink:href', combaturl)
+          .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
+          .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
+          .attr('width', 25)
+          .attr('height', 25)
+          .attr('opacity', function(d) {
+            if ((brush.extent()[1]-1)*60050 <= d[0] ) {
+              return 1;
+            } else {
+              return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
+            }
+          })
+          .on('mouseover', tip.show)
+          .on('mouseout', tip.hide)
+
+      }
 
     update(jsonData);
 

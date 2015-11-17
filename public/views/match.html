@@ -6,20 +6,18 @@
 
   <div class="row">
     <div class="six columns">
-        <label for="summonerNameLabel">Summoner name: {{ summoner.name }}</label>
+      <label for="summonerNameLabel">Summoner name: {{ summonerName }}</label>
     </div>
   </div>
 
   <div class="row">
     <div id="tabs">
       <a ui-sref="match.matchDetails({summoner_id : summoner.id})" class="match-tab"><li class="matchTabs">Match Details</li></a><a ui-sref="match.recentMatch({summoner_id : summoner.id})" class="match-tab"><li class="matchTabs">Recent Matches</li></a>
-
-      <!-- renders the map and brush to the DOM -->
-
     </div>
     <div ui-view></div>
 
   </div>
+
 </div>
 
 <script src="http://d3js.org/d3.v3.min.js"></script>
