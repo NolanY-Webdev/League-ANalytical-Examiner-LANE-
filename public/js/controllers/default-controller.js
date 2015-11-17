@@ -13,18 +13,6 @@ angular.module('laneApp')
         $state.go('match', {
           summoner_name : name
         });
-
-          // recentMatchInfo.getRecentMatch(data[name].id)
-          //   .success( ( recentMatches ) => {
-          //     $rootScope.recentMatch = recentMatches;
-          //     $scope.recentMatch = recentMatches;
-
-              // matchInfo.getMatch($scope.recentMatch.games[0].gameId)
-              //   .success( ( mostRecentMatch ) => {
-              //     $scope.mostRecentMatch = mostRecentMatch;
-              //     $window.location.href = "/#/match";
-              //   });
-            // });
         };
     }
 ]);
