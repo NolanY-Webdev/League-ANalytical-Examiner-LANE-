@@ -828,6 +828,36 @@ angular.module('laneApp')
                 return (0);
               }
             });
+
+          var tip = d3.tip()
+            .attr('class', 'd3-tip')
+            .offset([-10, 0])
+            .html(function(d) {
+              return "<strong>Frequency:</strong> <span style='color:red'>" + d.frequency + "</span>";
+            })
+
+          svg.call(tip);
+
+          var combaturl = 'http://ddragon.leagueoflegends.com/cdn/5.5.1/img/ui/score.png';
+          var combatimg = svg.selectAll("image1")
+            .data(data.combat)
+            .enter().append('svg:image')
+            .attr('class', 'stuff1')
+            .attr('xlink:href', combaturl)
+            .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
+            .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
+            .attr('width', 50)
+            .attr('height', 50)
+            .attr('opacity', function(d) {
+              if((brush.extent()[1]-1)*60050 <= d[0] ) {
+                return 1;
+              } else {
+                return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
+              }
+            })
+            .on('mouseover', tip.show)
+            .on('mouseout', tip.hide)
+            ;
         }
 
         update(jsonData);
