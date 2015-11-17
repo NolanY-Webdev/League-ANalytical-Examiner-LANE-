@@ -18,7 +18,7 @@ angular.module('laneApp')
           }
         });
       }
-    }
+    };
   }
 );
 
