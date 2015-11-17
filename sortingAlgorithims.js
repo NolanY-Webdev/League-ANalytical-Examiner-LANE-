@@ -93,6 +93,12 @@ function combatParser(riotMatchData) {
                     data.push(eventFrame.timestamp);
                     data.push(type + position + lane + team);
                     parsedMatchData.deadBuildings.push(data);
+                    if (eventFrame.buildingType == "INHIBITOR_BUILDING") {
+                        var respawn = []
+                        respawn.push(data[0] + 300000);
+                        respawn.push(data[1] + 'Respawned');
+                        parsedMatchData.deadBuildings.push(respawn);
+                    }
                 }
             }
         }

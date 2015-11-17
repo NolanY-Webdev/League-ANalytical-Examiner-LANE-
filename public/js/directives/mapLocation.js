@@ -831,9 +831,12 @@ angular.module('laneApp')
 
           var tip = d3.tip()
             .attr('class', 'd3-tip')
-            .offset([-10, 0])
+            .offset([-10, -10])
             .html(function(d) {
-              return "<strong>Frequency:</strong> <span style='color:red'>" + d.frequency + "</span>";
+              console.log(d)
+              var killer = '<image class="tooltip player'+ d[4] +'" src="'+$rootScope.mostRecentMatch.participants[d[4]-1].championImage+'">'
+              var victim = '<image class="tooltip player'+ d[6] +'" src="'+$rootScope.mostRecentMatch.participants[d[6]-1].championImage+'">'
+              //return killer + victim
             })
 
           svg.call(tip);
