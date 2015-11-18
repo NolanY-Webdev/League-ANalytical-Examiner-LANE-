@@ -67,7 +67,7 @@ function runD3(match) {
       ];
     } else if (scope.mostRecentMatch.mapId == 12) { //howling abyss
       towerCords = [
-        [2100, 2600], [2650, 2200], [4400, 4400, "TowerOuterMidA"], [5800, 5800, "TowerNexusBotMidA"], [7500, 7500, "TowerNexusBotMidB"], [8900, 8900, "TowerOuterMidB"], [10600, 11000], [11100, 10700]
+        [2100, 2600], [2650, 2200], [4400, 4400, "TowerOuterMidA"], [5800, 5800, "TowerNexusMidA"], [7500, 7500, "TowerNexusMidB"], [8900, 8900, "TowerOuterMidB"], [10600, 11000], [11100, 10700]
       ];
       nexiCords = [
         [1900, 1900], [11400, 11400]
@@ -164,6 +164,7 @@ function runD3(match) {
         }
       }
       var currentTowers = JSON.parse(JSON.stringify(towerCords));
+      var currentInhibs = JSON.parse(JSON.stringify(inhibCords));
       var buildingsDestroyed = deadBuildings.filter(function(buildingDeaths) {
         return (buildingDeaths[0] <= (brush.extent()[1] * 60050))
       })
@@ -175,8 +176,21 @@ function runD3(match) {
             console.log('spliced ' + buildingsDestroyed[j][1])
           }
         }
+        for(i = 0; i < currentInhibs.length; i++) {
+          if(buildingsDestroyed[j][1].substr(9,16)=='Respawned') {
+            for(i = 0; i < inhibCords.length; i++) {
+              if(buildingsDestroyed[j][1] == inhibCords[i][2]+'Respawned')
+                currentInhibs.push(inhibCords[i]);
+              console.log('INHIB RESPAWNED ' + buildingsDestroyed[j][1])
+            }
+          }
+          if(buildingsDestroyed[j][1] == currentInhibs[i][2])
+          currentInhibs.splice(i, 1);
+          console.log('spliced ' + buildingsDestroyed[j][1])
+        }
       }
       filteredData.currentTowers = currentTowers;
+      filteredData.currentInhibs = currentInhibs;
       update(filteredData);
     });
 
@@ -270,7 +284,7 @@ function runD3(match) {
       //inhib img
       var inhibs = 'http://assets.razerzone.com/eeimages/razer_events/11691/inhibitor-b.png';
       svg.append('svg:g').selectAll('image4')
-        .data(inhibCords)
+        .data(data.currentInhibs)
         .enter().append('svg:image')
         .attr('xlink:href', inhibs)
         .attr('x', function(d) { return xScale(d[0]) - mapWidth/40; })

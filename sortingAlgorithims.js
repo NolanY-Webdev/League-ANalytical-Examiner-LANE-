@@ -81,10 +81,14 @@ function combatParser(riotMatchData) {
           } else if(eventFrame.towerType == "BASE_TURRET") {
             position = 'Base';
           } else if(eventFrame.towerType == "NEXUS_TURRET") {
-            if(eventFrame.position.x < eventFrame.position.y) {
-              position = 'NexusTop';
-            } else if (eventFrame.position.x > eventFrame.position.y) {
-              position = 'NexusBot';
+            if (riotMatchData.mapId !== 8) {
+              if (eventFrame.position.x < eventFrame.position.y) {
+                position = 'NexusTop';
+              } else if (eventFrame.position.x > eventFrame.position.y) {
+                position = 'NexusBot';
+              }
+            } else {
+              position = 'Nexus'
             }
           }
           if(eventFrame.laneType == "BOT_LANE") {
