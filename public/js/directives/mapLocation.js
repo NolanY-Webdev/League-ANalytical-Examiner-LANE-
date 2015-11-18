@@ -34,7 +34,7 @@ function runD3(match) {
 
     var deadBuildings = jsonData.deadBuildings;
 
-    console.log(deadBuildings);
+    //console.log(deadBuildings);
 
     //summoners rift
     var towerCords = [
@@ -57,17 +57,17 @@ function runD3(match) {
       inhibCords = [];
     } else if (scope.mostRecentMatch.mapId == 10) { //twisted treeline
       towerCords = [
-        [2450, 7140], [2200, 9065], [2150, 5100], [12965, 7140], [13200, 9065], [13250, 5100], [4400, 9500], [4400, 4600], [5800, 8600], [6200, 4900], [9400, 4900], [11200, 4600], [9500, 8700], [11200, 9600]
+        [2350, 7140], [2100, 9065], [2100, 5100], [12915, 7140], [13150, 9065], [13200, 5100], [4350, 9500], [4350, 4600], [5750, 8600], [6150, 4900], [9350, 4900], [11150, 4600], [9450, 8700], [11150, 9600]
       ];
       nexiCords = [
-        [3030, 7140], [12370, 7140]
+        [3000, 7000], [12300, 7000]
       ];
       inhibCords = [
-        [2150, 6000], [2150, 8250], [13260, 6000], [13260, 8250]
+        [2175, 5550], [2175, 7800], [13260, 5500], [13260, 7750]
       ];
     } else if (scope.mostRecentMatch.mapId == 12) { //howling abyss
       towerCords = [
-        [2100, 2600], [2650, 2200], [4400, 4400, "TowerOuterMidA"], [5800, 5800, "TowerNexusBotMidA"], [7500, 7500, "TowerNexusBotMidB"], [8900, 8900, "TowerOuterMidB"], [10600, 11000], [11100, 10700]
+        [2100, 2600], [2650, 2200], [4400, 4400, "TowerOuterMidA"], [5800, 5800, "TowerNexusMidA"], [7500, 7500, "TowerNexusMidB"], [8900, 8900, "TowerOuterMidB"], [10600, 11000], [11100, 10700]
       ];
       nexiCords = [
         [1900, 1900], [11400, 11400]
@@ -164,19 +164,33 @@ function runD3(match) {
         }
       }
       var currentTowers = JSON.parse(JSON.stringify(towerCords));
+      var currentInhibs = JSON.parse(JSON.stringify(inhibCords));
       var buildingsDestroyed = deadBuildings.filter(function(buildingDeaths) {
         return (buildingDeaths[0] <= (brush.extent()[1] * 60050))
       })
-      console.log(buildingsDestroyed);
+      //console.log(buildingsDestroyed);
       for(var j = 0; j < buildingsDestroyed.length; j++) {
         for(var i = 0; i < currentTowers.length; i++) {
           if (buildingsDestroyed[j][1] == currentTowers[i][2]) {
             currentTowers.splice(i, 1);
-            console.log('spliced ' + buildingsDestroyed[j][1])
+            //console.log('spliced ' + buildingsDestroyed[j][1])
           }
+        }
+        for(i = 0; i < currentInhibs.length; i++) {
+          if(buildingsDestroyed[j][1].substr(9,16)=='Respawned') {
+            for(i = 0; i < inhibCords.length; i++) {
+              if(buildingsDestroyed[j][1] == inhibCords[i][2]+'Respawned')
+                currentInhibs.push(inhibCords[i]);
+              //console.log('INHIB RESPAWNED ' + buildingsDestroyed[j][1])
+            }
+          }
+          if(buildingsDestroyed[j][1] == currentInhibs[i][2])
+          currentInhibs.splice(i, 1);
+          //console.log('spliced ' + buildingsDestroyed[j][1])
         }
       }
       filteredData.currentTowers = currentTowers;
+      filteredData.currentInhibs = currentInhibs;
       update(filteredData);
     });
 
@@ -270,7 +284,7 @@ function runD3(match) {
       //inhib img
       var inhibs = 'http://assets.razerzone.com/eeimages/razer_events/11691/inhibitor-b.png';
       svg.append('svg:g').selectAll('image4')
-        .data(inhibCords)
+        .data(data.currentInhibs)
         .enter().append('svg:image')
         .attr('xlink:href', inhibs)
         .attr('x', function(d) { return xScale(d[0]) - mapWidth/40; })
@@ -622,281 +636,342 @@ function runD3(match) {
           }
         });
 
-
-      var imgurl7 = scope.mostRecentMatch.participants[6].championImage;
-      var player7img = svg.selectAll('image1')
-        .data(data.player7)
-        .enter().append('svg:image')
-        .attr('xlink:href', imgurl7)
-        .attr('class', 'stuff1')
-        .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
-        .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
-        .attr('width', imageWidth)
-        .attr('height', imageHeight)
-        .attr('opacity', function(d) {
-          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
-            return 1;
-          } else {
-            return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
-          }
-        });
-
-      svg.selectAll('image1')
-        .data(data.player7)
-        .enter().append('rect')
-        .attr('width', imageWidth + 2)
-        .attr('height', imageHeight + 2)
-        .style('fill', 'none')
-        .style('stroke', '#00cc99')
-        .style('stroke-width', 6)
-        .attr('class', 'stuff1')
-        .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
-        .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
-        .attr('opacity', function(d) {
-          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
-            return 1;
-          } else {
-            return (0);
-          }
-        });
-
-      svg.selectAll('image1')
-        .data(data.player7)
-        .enter().append('rect')
-        .attr('width', imageWidth + 2)
-        .attr('height', imageHeight + 2)
-        .style('fill', 'none')
-        .style('stroke', '#ffffff')
-        .style('stroke-width', 2)
-        .attr('class', 'stuff1')
-        .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
-        .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
-        .attr('opacity', function(d) {
-          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
-            return 1;
-          } else {
-            return (0);
-          }
-        });
-
-
-      var imgurl8 = scope.mostRecentMatch.participants[7].championImage;
-      var player8img = svg.selectAll('image1')
-        .data(data.player8)
-        .enter().append('svg:image')
-        .attr('xlink:href', imgurl8)
-        .attr('class', 'stuff1')
-        .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
-        .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
-        .attr('width', imageWidth)
-        .attr('height', imageHeight)
-        .attr('opacity', function(d) {
-          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
-            return 1;
-          } else {
-            return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
-          }
-        });
-
-      svg.selectAll('image1')
-        .data(data.player8)
-        .enter().append('rect')
-        .attr('width', imageWidth + 2)
-        .attr('height', imageHeight + 2)
-        .style('fill', 'none')
-        .style('stroke', '#006666')
-        .style('stroke-width', 6)
-        .attr('class', 'stuff1')
-        .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
-        .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
-        .attr('opacity', function(d) {
-          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
-            return 1;
-          } else {
-            return (0);
-          }
-        });
-
-      svg.selectAll('image1')
-        .data(data.player8)
-        .enter().append('rect')
-        .attr('width', imageWidth + 2)
-        .attr('height', imageHeight + 2)
-        .style('fill', 'none')
-        .style('stroke', '#ffffff')
-        .style('stroke-width', 2)
-        .attr('class', 'stuff1')
-        .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
-        .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
-        .attr('opacity', function(d) {
-          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
-            return 1;
-          } else {
-            return (0);
-          }
-        });
-
-
-      var imgurl9 = scope.mostRecentMatch.participants[8].championImage;
-      var player9img = svg.selectAll('image1')
-        .data(data.player9)
-        .enter().append('svg:image')
-        .attr('xlink:href', imgurl9)
-        .attr('class', 'stuff1')
-        .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
-        .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
-        .attr('width', imageWidth)
-        .attr('height', imageHeight)
-        .attr('opacity', function(d) {
-          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
-            return 1;
-          } else {
-            return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
-          }
-        });
-
-      svg.selectAll('image1')
-        .data(data.player9)
-        .enter().append('rect')
-        .attr('width', imageWidth + 2)
-        .attr('height', imageHeight + 2)
-        .style('fill', 'none')
-        .style('stroke', '#66ccff')
-        .style('stroke-width', 6)
-        .attr('class', 'stuff1')
-        .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
-        .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
-        .attr('opacity', function(d) {
-          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
-            return 1;
-          } else {
-            return (0);
-          }
-        });
-
-      svg.selectAll('image1')
-        .data(data.player9)
-        .enter().append('rect')
-        .attr('width', imageWidth + 2)
-        .attr('height', imageHeight + 2)
-        .style('fill', 'none')
-        .style('stroke', '#ffffff')
-        .style('stroke-width', 2)
-        .attr('class', 'stuff1')
-        .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
-        .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
-        .attr('opacity', function(d) {
-          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
-            return 1;
-          } else {
-            return (0);
-          }
-        });
-
-
-      var imgurl10 = scope.mostRecentMatch.participants[9].championImage;
-      var player10img = svg.selectAll('image1')
-        .data(data.player10)
-        .enter().append('svg:image')
-        .attr('xlink:href', imgurl10)
-        .attr('class', 'stuff1')
-        .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
-        .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
-        .attr('width', imageWidth)
-        .attr('height', imageHeight)
-        .attr('opacity', function(d) {
-          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
-            return 1;
-          } else {
-            return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
-          }
-        });
-
-      svg.selectAll('image1')
-        .data(data.player10)
-        .enter().append('rect')
-        .attr('width', imageWidth + 2)
-        .attr('height', imageHeight + 2)
-        .style('fill', 'none')
-        .style('stroke', '#6666ff')
-        .style('stroke-width', 6)
-        .attr('class', 'stuff1')
-        .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
-        .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
-        .attr('opacity', function(d) {
-          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
-            return 1;
-          } else {
-            return (0);
-          }
-        });
-
-      svg.selectAll('image1')
-        .data(data.player10)
-        .enter().append('rect')
-        .attr('width', imageWidth + 2)
-        .attr('height', imageHeight + 2)
-        .style('fill', 'none')
-        .style('stroke', '#ffffff')
-        .style('stroke-width', 2)
-        .attr('class', 'stuff1')
-        .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
-        .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
-        .attr('opacity', function(d) {
-          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
-            return 1;
-          } else {
-            return (0);
-          }
-        });
-
-    var tip = d3.tip()
-          .attr('class', 'd3-tip')
-          .offset([-10, 0])
-          .html(function(d) {
-            console.log(d)
-
-            if(d[4] !== 0) {
-              var killer = '<image class="tooltip player' + d[4] + '" src="' + scope.mostRecentMatch.participants[d[4] - 1].championImage + '">';
-            } else {
-              killer = '<image class="tooltip player0" src="./views/images/RIP.jpg">';
-            }
-            var scoreImg = '<image class="tooltipScore" src="./views/images/score.png">';
-            var victim = '<image class="tooltip player'+ d[6] +'" src="'+scope.mostRecentMatch.participants[d[6]-1].championImage+'">';
-            var assistImg = '';
-            var assistors = '';
-            if(d[5] !== null) {
-              assistImg = '<image class="tooltipScore" src="./views/images/assist.png">';
-              for (var i = 0; i < d[5].length; i++) {
-                assistors += '<image class="tooltip assistor player' + d[5][i] + '" src="' + scope.mostRecentMatch.participants[(d[5][i]) - 1].championImage + '">'
-              }
-            }
-            return killer + scoreImg + victim + '<br>' + assistImg + assistors;
-          })
-
-        svg.call(tip);
-
-        var combaturl = "./views/images/score.png";
-        var combatimg = svg.selectAll("image1")
-          .data(data.combat)
+      if(scope.mostRecentMatch.mapId !== 10) {
+        var imgurl7 = scope.mostRecentMatch.participants[6].championImage;
+        var player7img = svg.selectAll('image1')
+          .data(data.player7)
           .enter().append('svg:image')
+          .attr('xlink:href', imgurl7)
           .attr('class', 'stuff1')
-          .attr('xlink:href', combaturl)
-          .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
-          .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
-          .attr('width', 25)
-          .attr('height', 25)
-          .attr('opacity', function(d) {
-            if ((brush.extent()[1]-1)*60050 <= d[0] ) {
+          .attr('x', function (d) {
+            return xScale(d[2]) - imageWidth / 2;
+          })
+          .attr('y', function (d) {
+            return yScale(d[3]) - imageHeight / 2;
+          })
+          .attr('width', imageWidth)
+          .attr('height', imageHeight)
+          .attr('opacity', function (d) {
+            if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
               return 1;
             } else {
-              return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
+              return ((d[0] / (brush.extent()[1] * 60000) * 0.7) + 0.1);
             }
+          });
+
+        svg.selectAll('image1')
+          .data(data.player7)
+          .enter().append('rect')
+          .attr('width', imageWidth + 2)
+          .attr('height', imageHeight + 2)
+          .style('fill', 'none')
+          .style('stroke', '#00cc99')
+          .style('stroke-width', 6)
+          .attr('class', 'stuff1')
+          .attr('x', function (d) {
+            return xScale(d[2]) - (imageWidth / 2 + 1);
           })
-          .on('mouseover', tip.show)
-          .on('mouseout', tip.hide)
+          .attr('y', function (d) {
+            return yScale(d[3]) - (imageHeight / 2 + 1);
+          })
+          .attr('opacity', function (d) {
+            if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
+              return 1;
+            } else {
+              return (0);
+            }
+          });
+
+        svg.selectAll('image1')
+          .data(data.player7)
+          .enter().append('rect')
+          .attr('width', imageWidth + 2)
+          .attr('height', imageHeight + 2)
+          .style('fill', 'none')
+          .style('stroke', '#ffffff')
+          .style('stroke-width', 2)
+          .attr('class', 'stuff1')
+          .attr('x', function (d) {
+            return xScale(d[2]) - (imageWidth / 2 + 1);
+          })
+          .attr('y', function (d) {
+            return yScale(d[3]) - (imageHeight / 2 + 1);
+          })
+          .attr('opacity', function (d) {
+            if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
+              return 1;
+            } else {
+              return (0);
+            }
+          });
+
+
+        var imgurl8 = scope.mostRecentMatch.participants[7].championImage;
+        var player8img = svg.selectAll('image1')
+          .data(data.player8)
+          .enter().append('svg:image')
+          .attr('xlink:href', imgurl8)
+          .attr('class', 'stuff1')
+          .attr('x', function (d) {
+            return xScale(d[2]) - imageWidth / 2;
+          })
+          .attr('y', function (d) {
+            return yScale(d[3]) - imageHeight / 2;
+          })
+          .attr('width', imageWidth)
+          .attr('height', imageHeight)
+          .attr('opacity', function (d) {
+            if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
+              return 1;
+            } else {
+              return ((d[0] / (brush.extent()[1] * 60000) * 0.7) + 0.1);
+            }
+          });
+
+        svg.selectAll('image1')
+          .data(data.player8)
+          .enter().append('rect')
+          .attr('width', imageWidth + 2)
+          .attr('height', imageHeight + 2)
+          .style('fill', 'none')
+          .style('stroke', '#006666')
+          .style('stroke-width', 6)
+          .attr('class', 'stuff1')
+          .attr('x', function (d) {
+            return xScale(d[2]) - (imageWidth / 2 + 1);
+          })
+          .attr('y', function (d) {
+            return yScale(d[3]) - (imageHeight / 2 + 1);
+          })
+          .attr('opacity', function (d) {
+            if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
+              return 1;
+            } else {
+              return (0);
+            }
+          });
+
+        svg.selectAll('image1')
+          .data(data.player8)
+          .enter().append('rect')
+          .attr('width', imageWidth + 2)
+          .attr('height', imageHeight + 2)
+          .style('fill', 'none')
+          .style('stroke', '#ffffff')
+          .style('stroke-width', 2)
+          .attr('class', 'stuff1')
+          .attr('x', function (d) {
+            return xScale(d[2]) - (imageWidth / 2 + 1);
+          })
+          .attr('y', function (d) {
+            return yScale(d[3]) - (imageHeight / 2 + 1);
+          })
+          .attr('opacity', function (d) {
+            if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
+              return 1;
+            } else {
+              return (0);
+            }
+          });
+
+
+        var imgurl9 = scope.mostRecentMatch.participants[8].championImage;
+        var player9img = svg.selectAll('image1')
+          .data(data.player9)
+          .enter().append('svg:image')
+          .attr('xlink:href', imgurl9)
+          .attr('class', 'stuff1')
+          .attr('x', function (d) {
+            return xScale(d[2]) - imageWidth / 2;
+          })
+          .attr('y', function (d) {
+            return yScale(d[3]) - imageHeight / 2;
+          })
+          .attr('width', imageWidth)
+          .attr('height', imageHeight)
+          .attr('opacity', function (d) {
+            if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
+              return 1;
+            } else {
+              return ((d[0] / (brush.extent()[1] * 60000) * 0.7) + 0.1);
+            }
+          });
+
+        svg.selectAll('image1')
+          .data(data.player9)
+          .enter().append('rect')
+          .attr('width', imageWidth + 2)
+          .attr('height', imageHeight + 2)
+          .style('fill', 'none')
+          .style('stroke', '#66ccff')
+          .style('stroke-width', 6)
+          .attr('class', 'stuff1')
+          .attr('x', function (d) {
+            return xScale(d[2]) - (imageWidth / 2 + 1);
+          })
+          .attr('y', function (d) {
+            return yScale(d[3]) - (imageHeight / 2 + 1);
+          })
+          .attr('opacity', function (d) {
+            if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
+              return 1;
+            } else {
+              return (0);
+            }
+          });
+
+        svg.selectAll('image1')
+          .data(data.player9)
+          .enter().append('rect')
+          .attr('width', imageWidth + 2)
+          .attr('height', imageHeight + 2)
+          .style('fill', 'none')
+          .style('stroke', '#ffffff')
+          .style('stroke-width', 2)
+          .attr('class', 'stuff1')
+          .attr('x', function (d) {
+            return xScale(d[2]) - (imageWidth / 2 + 1);
+          })
+          .attr('y', function (d) {
+            return yScale(d[3]) - (imageHeight / 2 + 1);
+          })
+          .attr('opacity', function (d) {
+            if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
+              return 1;
+            } else {
+              return (0);
+            }
+          });
+
+
+        var imgurl10 = scope.mostRecentMatch.participants[9].championImage;
+        var player10img = svg.selectAll('image1')
+          .data(data.player10)
+          .enter().append('svg:image')
+          .attr('xlink:href', imgurl10)
+          .attr('class', 'stuff1')
+          .attr('x', function (d) {
+            return xScale(d[2]) - imageWidth / 2;
+          })
+          .attr('y', function (d) {
+            return yScale(d[3]) - imageHeight / 2;
+          })
+          .attr('width', imageWidth)
+          .attr('height', imageHeight)
+          .attr('opacity', function (d) {
+            if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
+              return 1;
+            } else {
+              return ((d[0] / (brush.extent()[1] * 60000) * 0.7) + 0.1);
+            }
+          });
+
+        svg.selectAll('image1')
+          .data(data.player10)
+          .enter().append('rect')
+          .attr('width', imageWidth + 2)
+          .attr('height', imageHeight + 2)
+          .style('fill', 'none')
+          .style('stroke', '#6666ff')
+          .style('stroke-width', 6)
+          .attr('class', 'stuff1')
+          .attr('x', function (d) {
+            return xScale(d[2]) - (imageWidth / 2 + 1);
+          })
+          .attr('y', function (d) {
+            return yScale(d[3]) - (imageHeight / 2 + 1);
+          })
+          .attr('opacity', function (d) {
+            if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
+              return 1;
+            } else {
+              return (0);
+            }
+          });
+
+        svg.selectAll('image1')
+          .data(data.player10)
+          .enter().append('rect')
+          .attr('width', imageWidth + 2)
+          .attr('height', imageHeight + 2)
+          .style('fill', 'none')
+          .style('stroke', '#ffffff')
+          .style('stroke-width', 2)
+          .attr('class', 'stuff1')
+          .attr('x', function (d) {
+            return xScale(d[2]) - (imageWidth / 2 + 1);
+          })
+          .attr('y', function (d) {
+            return yScale(d[3]) - (imageHeight / 2 + 1);
+          })
+          .attr('opacity', function (d) {
+            if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
+              return 1;
+            } else {
+              return (0);
+            }
+          });
 
       }
+    var tip = d3.tip()
+      .attr('class', 'd3-tip')
+      .offset([-10, 0])
+      .html(function(d) {
+        //console.log(d)
+        var scoreImg = '<image class="tooltipScore" src="./views/images/score.png">';
+        if(d[1] == "ChampionKilled") {
+          if (d[4] !== 0) {
+            var killer = '<image class="tooltip player' + d[4] + '" src="' + scope.mostRecentMatch.participants[d[4] - 1].championImage + '">';
+          } else {
+            killer = '<image class="tooltip player0" src="./views/images/RIP.jpg">';
+          }
+          var victim = '<image class="tooltip player' + d[6] + '" src="' + scope.mostRecentMatch.participants[d[6] - 1].championImage + '">';
+          var assistImg = '';
+          var assistors = '';
+          if (d[5] !== null) {
+            assistImg = '<image class="tooltipScore" src="./views/images/assist.png">';
+            for (var i = 0; i < d[5].length; i++) {
+              assistors += '<image class="tooltip assistor player' + d[5][i] + '" src="' + scope.mostRecentMatch.participants[(d[5][i]) - 1].championImage + '">'
+            }
+          }
+        } else if (d[1] == 'MonsterKilled') {
+          var assistImg = '';
+          var assistors = '';
+          var killer = '<image class="tooltip player' + d[4] + '" src="' + scope.mostRecentMatch.participants[d[4] - 1].championImage + '">';
+          if(d[5] == 'DRAGON') {
+            var victim = '<image class="tooltip player0" src="http://vignette3.wikia.nocookie.net/leagueoflegends/images/c/c9/DragonSquare.png/revision/latest/scale-to-width-down/48?cb=20140620025407">';
+          } else if (d[5] == 'BARON_NASHOR') {
+            var victim = '<image class="tooltip player0" src="http://vignette2.wikia.nocookie.net/leagueoflegends/images/3/38/Baron_NashorSquare.png/revision/latest/scale-to-width-down/48?cb=20140620025404">';
+          } else if (d[5] == 'VILEMAW') {
+            var victim = '<image class="tooltip player0" src="http://vignette1.wikia.nocookie.net/leagueoflegends/images/5/5d/VilemawSquare.png/revision/latest/scale-to-width-down/48?cb=20140308093146">';
+          }
+        }
+        return killer + scoreImg + victim + '<br>' + assistImg + assistors;
+      });
+
+      svg.call(tip);
+
+      var combaturl = "./views/images/score.png";
+      var combatimg = svg.selectAll("image1")
+        .data(data.combat)
+        .enter().append('svg:image')
+        .attr('class', 'stuff1')
+        .attr('xlink:href', combaturl)
+        .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
+        .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
+        .attr('width', 25)
+        .attr('height', 25)
+        .attr('opacity', function(d) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
+            return 1;
+          } else {
+            return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
+          }
+        })
+        .on('mouseover', tip.show)
+        .on('mouseout', tip.hide)
+
+    }
 
     update(jsonData);
 

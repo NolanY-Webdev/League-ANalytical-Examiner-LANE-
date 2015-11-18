@@ -18,11 +18,15 @@ $box-shadow : 0 1px 0 #ccc,
 .box {
   box-sizing: border-box;
   height : 125px;
-  width : 125px;
-  border: 1px solid black;
-  margin-bottom: 25px;
+  // width : 125px;
+  // border: 1px solid black;
+  // margin-bottom: 25px;
   background-size: 100%;
 
+}
+
+.portrait {
+  margin-bottom: 25px;
 }
 
 .match-tab {
@@ -183,4 +187,12 @@ li {
 .assistor{
   height: 20px;
   width: 20px;
+}
+
+.logo {
+  background-image: url('/views/images/LaneLogo.png');
+  background-repeat: none;
+  width: 250px;
+  height: 100px;
+  margin: auto;
 }

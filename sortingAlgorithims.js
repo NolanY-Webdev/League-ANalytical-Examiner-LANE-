@@ -54,6 +54,15 @@ function combatParser(riotMatchData) {
           data.push(eventFrame.assistingParticipantIds);
           data.push(eventFrame.victimId);
           parsedMatchData['combat'].push(data);
+        } else if (eventFrame.eventType == "ELITE_MONSTER_KILL") {
+          var data = [];
+          data.push(eventFrame.timestamp);
+          data.push('MonsterKilled');
+          data.push(eventFrame.position.x);
+          data.push(eventFrame.position.y);
+          data.push(eventFrame.killerId);
+          data.push(eventFrame.monsterType);
+          parsedMatchData['combat'].push(data);
         } else if (eventFrame.eventType == 'BUILDING_KILL') {
           var data = [];
           var type = '';
@@ -72,10 +81,14 @@ function combatParser(riotMatchData) {
           } else if(eventFrame.towerType == "BASE_TURRET") {
             position = 'Base';
           } else if(eventFrame.towerType == "NEXUS_TURRET") {
-            if(eventFrame.position.x < eventFrame.position.y) {
-              position = 'NexusTop';
-            } else if (eventFrame.position.x > eventFrame.position.y) {
-              position = 'NexusBot';
+            if (riotMatchData.mapId !== 8) {
+              if (eventFrame.position.x < eventFrame.position.y) {
+                position = 'NexusTop';
+              } else if (eventFrame.position.x > eventFrame.position.y) {
+                position = 'NexusBot';
+              }
+            } else {
+              position = 'Nexus'
             }
           }
           if(eventFrame.laneType == "BOT_LANE") {
