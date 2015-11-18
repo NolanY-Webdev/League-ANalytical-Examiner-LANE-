@@ -150,3 +150,11 @@ li {
 .assistor {
   height: 20px;
   width: 20px; }
+
+/* line 188, stdin */
+.logo {
+  background-image: url("/views/images/LaneLogo.png");
+  background-repeat: none;
+  width: 250px;
+  height: 100px;
+  margin: auto; }
