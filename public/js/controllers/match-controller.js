@@ -14,6 +14,8 @@ angular.module('laneApp')
       $scope.summoner = {};
       summonerInfo.getSummoner($stateParams.summoner_name)
         .success( ( data ) => {
+          // console.log('a string', $state)
+          $scope.disableTab = $state
           for (var key in data) {
             $scope.summoner = data[key];
           }
