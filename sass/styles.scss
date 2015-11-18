@@ -21,6 +21,14 @@ $box-shadow : 0 1px 0 #ccc,
 
 }
 
+.match-tab {
+  text-decoration: none;
+  box-shadow: 0 1px 0 #ccc,
+            0 2px 0 #c9c9c9,
+            0 3px 0 #bbb,
+            0 4px 0 #b9b9b9,
+            0 5px 0 #aaa;
+}
 
 li {
   display: inline;
@@ -30,29 +38,28 @@ li {
   display: block;
   margin: auto;
   padding: auto;
-  width: 628px;
+  width: 100%;
 
   .matchTabs {
     box-sizing: border-box;
     text-align: center;
-    display: inline-block;
+    display: block;
     margin: auto;
-    padding: auto;
-    width: 50%;
-    border: 1px solid black;
+    width: 628px;
+    border: 4px solid black;
     background-image: url('https://s3-us-west-1.amazonaws.com/riot-api/img/rune-bg.png');
     background-size: 100px;
     color: black;
     font-weight: bold;
-    box-shadow: 0 1px 0 #ccc,
-                0 2px 0 #c9c9c9,
-                0 3px 0 #bbb,
-                0 4px 0 #b9b9b9,
-                0 5px 0 #aaa;
+    // box-shadow: 0 1px 0 #ccc,
+    //             0 2px 0 #c9c9c9,
+    //             0 3px 0 #bbb,
+    //             0 4px 0 #b9b9b9,
+    //             0 5px 0 #aaa;
 
     &:hover {
       color: red;
-      border: 2px solid orange;
+      border: 4px solid orange;
       box-shadow: none;
     }
 
