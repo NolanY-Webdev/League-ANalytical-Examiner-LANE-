@@ -34,7 +34,7 @@ function runD3(match) {
 
     var deadBuildings = jsonData.deadBuildings;
 
-    console.log(deadBuildings);
+    //console.log(deadBuildings);
 
     //summoners rift
     var towerCords = [
@@ -168,12 +168,12 @@ function runD3(match) {
       var buildingsDestroyed = deadBuildings.filter(function(buildingDeaths) {
         return (buildingDeaths[0] <= (brush.extent()[1] * 60050))
       })
-      console.log(buildingsDestroyed);
+      //console.log(buildingsDestroyed);
       for(var j = 0; j < buildingsDestroyed.length; j++) {
         for(var i = 0; i < currentTowers.length; i++) {
           if (buildingsDestroyed[j][1] == currentTowers[i][2]) {
             currentTowers.splice(i, 1);
-            console.log('spliced ' + buildingsDestroyed[j][1])
+            //console.log('spliced ' + buildingsDestroyed[j][1])
           }
         }
         for(i = 0; i < currentInhibs.length; i++) {
@@ -181,12 +181,12 @@ function runD3(match) {
             for(i = 0; i < inhibCords.length; i++) {
               if(buildingsDestroyed[j][1] == inhibCords[i][2]+'Respawned')
                 currentInhibs.push(inhibCords[i]);
-              console.log('INHIB RESPAWNED ' + buildingsDestroyed[j][1])
+              //console.log('INHIB RESPAWNED ' + buildingsDestroyed[j][1])
             }
           }
           if(buildingsDestroyed[j][1] == currentInhibs[i][2])
           currentInhibs.splice(i, 1);
-          console.log('spliced ' + buildingsDestroyed[j][1])
+          //console.log('spliced ' + buildingsDestroyed[j][1])
         }
       }
       filteredData.currentTowers = currentTowers;
@@ -868,7 +868,7 @@ function runD3(match) {
       .attr('class', 'd3-tip')
       .offset([-10, 0])
       .html(function(d) {
-        console.log(d)
+        //console.log(d)
         var scoreImg = '<image class="tooltipScore" src="./views/images/score.png">';
         if(d[1] == "ChampionKilled") {
           if (d[4] !== 0) {
