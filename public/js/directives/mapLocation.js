@@ -851,52 +851,64 @@ function runD3(match) {
         });
 
     var tip = d3.tip()
-          .attr('class', 'd3-tip')
-          .offset([-10, 0])
-          .html(function(d) {
-            console.log(d)
-
-            if(d[4] !== 0) {
-              var killer = '<image class="tooltip player' + d[4] + '" src="' + scope.mostRecentMatch.participants[d[4] - 1].championImage + '">';
-            } else {
-              killer = '<image class="tooltip player0" src="./views/images/RIP.jpg">';
+      .attr('class', 'd3-tip')
+      .offset([-10, 0])
+      .html(function(d) {
+        console.log(d)
+        var scoreImg = '<image class="tooltipScore" src="./views/images/score.png">';
+        if(d[1] == "ChampionKilled") {
+          if (d[4] !== 0) {
+            var killer = '<image class="tooltip player' + d[4] + '" src="' + scope.mostRecentMatch.participants[d[4] - 1].championImage + '">';
+          } else {
+            killer = '<image class="tooltip player0" src="./views/images/RIP.jpg">';
+          }
+          var victim = '<image class="tooltip player' + d[6] + '" src="' + scope.mostRecentMatch.participants[d[6] - 1].championImage + '">';
+          var assistImg = '';
+          var assistors = '';
+          if (d[5] !== null) {
+            assistImg = '<image class="tooltipScore" src="./views/images/assist.png">';
+            for (var i = 0; i < d[5].length; i++) {
+              assistors += '<image class="tooltip assistor player' + d[5][i] + '" src="' + scope.mostRecentMatch.participants[(d[5][i]) - 1].championImage + '">'
             }
-            var scoreImg = '<image class="tooltipScore" src="./views/images/score.png">';
-            var victim = '<image class="tooltip player'+ d[6] +'" src="'+scope.mostRecentMatch.participants[d[6]-1].championImage+'">';
-            var assistImg = '';
-            var assistors = '';
-            if(d[5] !== null) {
-              assistImg = '<image class="tooltipScore" src="./views/images/assist.png">';
-              for (var i = 0; i < d[5].length; i++) {
-                assistors += '<image class="tooltip assistor player' + d[5][i] + '" src="' + scope.mostRecentMatch.participants[(d[5][i]) - 1].championImage + '">'
-              }
-            }
-            return killer + scoreImg + victim + '<br>' + assistImg + assistors;
-          })
+          }
+        } else if (d[1] == 'MonsterKilled') {
+          var assistImg = '';
+          var assistors = '';
+          var killer = '<image class="tooltip player' + d[4] + '" src="' + scope.mostRecentMatch.participants[d[4] - 1].championImage + '">';
+          if(d[5] == 'DRAGON') {
+            var victim = '<image class="tooltip player0" src="http://vignette3.wikia.nocookie.net/leagueoflegends/images/c/c9/DragonSquare.png/revision/latest/scale-to-width-down/48?cb=20140620025407">';
+          } else if (d[5] == 'BARON_NASHOR') {
+            var victim = '<image class="tooltip player0" src="http://vignette2.wikia.nocookie.net/leagueoflegends/images/3/38/Baron_NashorSquare.png/revision/latest/scale-to-width-down/48?cb=20140620025404">';
+          } else if (d[5] == 'VILEMAW') {
+            var victim = '<image class="tooltip player0" src="http://vignette1.wikia.nocookie.net/leagueoflegends/images/5/5d/VilemawSquare.png/revision/latest/scale-to-width-down/48?cb=20140308093146">';
+          }
+        }
+        return killer + scoreImg + victim + '<br>' + assistImg + assistors;
+      });
 
-        svg.call(tip);
+      svg.call(tip);
 
-        var combaturl = "./views/images/score.png";
-        var combatimg = svg.selectAll("image1")
-          .data(data.combat)
-          .enter().append('svg:image')
-          .attr('class', 'stuff1')
-          .attr('xlink:href', combaturl)
-          .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
-          .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
-          .attr('width', 25)
-          .attr('height', 25)
-          .attr('opacity', function(d) {
-            if ((brush.extent()[1]-1)*60050 <= d[0] ) {
-              return 1;
-            } else {
-              return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
-            }
-          })
-          .on('mouseover', tip.show)
-          .on('mouseout', tip.hide)
+      var combaturl = "./views/images/score.png";
+      var combatimg = svg.selectAll("image1")
+        .data(data.combat)
+        .enter().append('svg:image')
+        .attr('class', 'stuff1')
+        .attr('xlink:href', combaturl)
+        .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
+        .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
+        .attr('width', 25)
+        .attr('height', 25)
+        .attr('opacity', function(d) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
+            return 1;
+          } else {
+            return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
+          }
+        })
+        .on('mouseover', tip.show)
+        .on('mouseout', tip.hide)
 
-      }
+    }
 
     update(jsonData);
 
