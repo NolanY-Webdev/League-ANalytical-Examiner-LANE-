@@ -54,6 +54,15 @@ function combatParser(riotMatchData) {
           data.push(eventFrame.assistingParticipantIds);
           data.push(eventFrame.victimId);
           parsedMatchData['combat'].push(data);
+        } else if (eventFrame.eventType == "ELITE_MONSTER_KILL") {
+          var data = [];
+          data.push(eventFrame.timestamp);
+          data.push('MonsterKilled');
+          data.push(eventFrame.position.x);
+          data.push(eventFrame.position.y);
+          data.push(eventFrame.killerId);
+          data.push(eventFrame.monsterType);
+          parsedMatchData['combat'].push(data);
         } else if (eventFrame.eventType == 'BUILDING_KILL') {
           var data = [];
           var type = '';
