@@ -636,234 +636,283 @@ function runD3(match) {
           }
         });
 
+      if(scope.mostRecentMatch.mapId !== 10) {
+        var imgurl7 = scope.mostRecentMatch.participants[6].championImage;
+        var player7img = svg.selectAll('image1')
+          .data(data.player7)
+          .enter().append('svg:image')
+          .attr('xlink:href', imgurl7)
+          .attr('class', 'stuff1')
+          .attr('x', function (d) {
+            return xScale(d[2]) - imageWidth / 2;
+          })
+          .attr('y', function (d) {
+            return yScale(d[3]) - imageHeight / 2;
+          })
+          .attr('width', imageWidth)
+          .attr('height', imageHeight)
+          .attr('opacity', function (d) {
+            if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
+              return 1;
+            } else {
+              return ((d[0] / (brush.extent()[1] * 60000) * 0.7) + 0.1);
+            }
+          });
 
-      var imgurl7 = scope.mostRecentMatch.participants[6].championImage;
-      var player7img = svg.selectAll('image1')
-        .data(data.player7)
-        .enter().append('svg:image')
-        .attr('xlink:href', imgurl7)
-        .attr('class', 'stuff1')
-        .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
-        .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
-        .attr('width', imageWidth)
-        .attr('height', imageHeight)
-        .attr('opacity', function(d) {
-          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
-            return 1;
-          } else {
-            return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
-          }
-        });
+        svg.selectAll('image1')
+          .data(data.player7)
+          .enter().append('rect')
+          .attr('width', imageWidth + 2)
+          .attr('height', imageHeight + 2)
+          .style('fill', 'none')
+          .style('stroke', '#00cc99')
+          .style('stroke-width', 6)
+          .attr('class', 'stuff1')
+          .attr('x', function (d) {
+            return xScale(d[2]) - (imageWidth / 2 + 1);
+          })
+          .attr('y', function (d) {
+            return yScale(d[3]) - (imageHeight / 2 + 1);
+          })
+          .attr('opacity', function (d) {
+            if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
+              return 1;
+            } else {
+              return (0);
+            }
+          });
 
-      svg.selectAll('image1')
-        .data(data.player7)
-        .enter().append('rect')
-        .attr('width', imageWidth + 2)
-        .attr('height', imageHeight + 2)
-        .style('fill', 'none')
-        .style('stroke', '#00cc99')
-        .style('stroke-width', 6)
-        .attr('class', 'stuff1')
-        .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
-        .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
-        .attr('opacity', function(d) {
-          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
-            return 1;
-          } else {
-            return (0);
-          }
-        });
-
-      svg.selectAll('image1')
-        .data(data.player7)
-        .enter().append('rect')
-        .attr('width', imageWidth + 2)
-        .attr('height', imageHeight + 2)
-        .style('fill', 'none')
-        .style('stroke', '#ffffff')
-        .style('stroke-width', 2)
-        .attr('class', 'stuff1')
-        .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
-        .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
-        .attr('opacity', function(d) {
-          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
-            return 1;
-          } else {
-            return (0);
-          }
-        });
-
-
-      var imgurl8 = scope.mostRecentMatch.participants[7].championImage;
-      var player8img = svg.selectAll('image1')
-        .data(data.player8)
-        .enter().append('svg:image')
-        .attr('xlink:href', imgurl8)
-        .attr('class', 'stuff1')
-        .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
-        .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
-        .attr('width', imageWidth)
-        .attr('height', imageHeight)
-        .attr('opacity', function(d) {
-          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
-            return 1;
-          } else {
-            return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
-          }
-        });
-
-      svg.selectAll('image1')
-        .data(data.player8)
-        .enter().append('rect')
-        .attr('width', imageWidth + 2)
-        .attr('height', imageHeight + 2)
-        .style('fill', 'none')
-        .style('stroke', '#006666')
-        .style('stroke-width', 6)
-        .attr('class', 'stuff1')
-        .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
-        .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
-        .attr('opacity', function(d) {
-          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
-            return 1;
-          } else {
-            return (0);
-          }
-        });
-
-      svg.selectAll('image1')
-        .data(data.player8)
-        .enter().append('rect')
-        .attr('width', imageWidth + 2)
-        .attr('height', imageHeight + 2)
-        .style('fill', 'none')
-        .style('stroke', '#ffffff')
-        .style('stroke-width', 2)
-        .attr('class', 'stuff1')
-        .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
-        .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
-        .attr('opacity', function(d) {
-          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
-            return 1;
-          } else {
-            return (0);
-          }
-        });
+        svg.selectAll('image1')
+          .data(data.player7)
+          .enter().append('rect')
+          .attr('width', imageWidth + 2)
+          .attr('height', imageHeight + 2)
+          .style('fill', 'none')
+          .style('stroke', '#ffffff')
+          .style('stroke-width', 2)
+          .attr('class', 'stuff1')
+          .attr('x', function (d) {
+            return xScale(d[2]) - (imageWidth / 2 + 1);
+          })
+          .attr('y', function (d) {
+            return yScale(d[3]) - (imageHeight / 2 + 1);
+          })
+          .attr('opacity', function (d) {
+            if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
+              return 1;
+            } else {
+              return (0);
+            }
+          });
 
 
-      var imgurl9 = scope.mostRecentMatch.participants[8].championImage;
-      var player9img = svg.selectAll('image1')
-        .data(data.player9)
-        .enter().append('svg:image')
-        .attr('xlink:href', imgurl9)
-        .attr('class', 'stuff1')
-        .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
-        .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
-        .attr('width', imageWidth)
-        .attr('height', imageHeight)
-        .attr('opacity', function(d) {
-          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
-            return 1;
-          } else {
-            return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
-          }
-        });
+        var imgurl8 = scope.mostRecentMatch.participants[7].championImage;
+        var player8img = svg.selectAll('image1')
+          .data(data.player8)
+          .enter().append('svg:image')
+          .attr('xlink:href', imgurl8)
+          .attr('class', 'stuff1')
+          .attr('x', function (d) {
+            return xScale(d[2]) - imageWidth / 2;
+          })
+          .attr('y', function (d) {
+            return yScale(d[3]) - imageHeight / 2;
+          })
+          .attr('width', imageWidth)
+          .attr('height', imageHeight)
+          .attr('opacity', function (d) {
+            if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
+              return 1;
+            } else {
+              return ((d[0] / (brush.extent()[1] * 60000) * 0.7) + 0.1);
+            }
+          });
 
-      svg.selectAll('image1')
-        .data(data.player9)
-        .enter().append('rect')
-        .attr('width', imageWidth + 2)
-        .attr('height', imageHeight + 2)
-        .style('fill', 'none')
-        .style('stroke', '#66ccff')
-        .style('stroke-width', 6)
-        .attr('class', 'stuff1')
-        .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
-        .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
-        .attr('opacity', function(d) {
-          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
-            return 1;
-          } else {
-            return (0);
-          }
-        });
+        svg.selectAll('image1')
+          .data(data.player8)
+          .enter().append('rect')
+          .attr('width', imageWidth + 2)
+          .attr('height', imageHeight + 2)
+          .style('fill', 'none')
+          .style('stroke', '#006666')
+          .style('stroke-width', 6)
+          .attr('class', 'stuff1')
+          .attr('x', function (d) {
+            return xScale(d[2]) - (imageWidth / 2 + 1);
+          })
+          .attr('y', function (d) {
+            return yScale(d[3]) - (imageHeight / 2 + 1);
+          })
+          .attr('opacity', function (d) {
+            if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
+              return 1;
+            } else {
+              return (0);
+            }
+          });
 
-      svg.selectAll('image1')
-        .data(data.player9)
-        .enter().append('rect')
-        .attr('width', imageWidth + 2)
-        .attr('height', imageHeight + 2)
-        .style('fill', 'none')
-        .style('stroke', '#ffffff')
-        .style('stroke-width', 2)
-        .attr('class', 'stuff1')
-        .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
-        .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
-        .attr('opacity', function(d) {
-          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
-            return 1;
-          } else {
-            return (0);
-          }
-        });
+        svg.selectAll('image1')
+          .data(data.player8)
+          .enter().append('rect')
+          .attr('width', imageWidth + 2)
+          .attr('height', imageHeight + 2)
+          .style('fill', 'none')
+          .style('stroke', '#ffffff')
+          .style('stroke-width', 2)
+          .attr('class', 'stuff1')
+          .attr('x', function (d) {
+            return xScale(d[2]) - (imageWidth / 2 + 1);
+          })
+          .attr('y', function (d) {
+            return yScale(d[3]) - (imageHeight / 2 + 1);
+          })
+          .attr('opacity', function (d) {
+            if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
+              return 1;
+            } else {
+              return (0);
+            }
+          });
 
 
-      var imgurl10 = scope.mostRecentMatch.participants[9].championImage;
-      var player10img = svg.selectAll('image1')
-        .data(data.player10)
-        .enter().append('svg:image')
-        .attr('xlink:href', imgurl10)
-        .attr('class', 'stuff1')
-        .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
-        .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
-        .attr('width', imageWidth)
-        .attr('height', imageHeight)
-        .attr('opacity', function(d) {
-          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
-            return 1;
-          } else {
-            return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
-          }
-        });
+        var imgurl9 = scope.mostRecentMatch.participants[8].championImage;
+        var player9img = svg.selectAll('image1')
+          .data(data.player9)
+          .enter().append('svg:image')
+          .attr('xlink:href', imgurl9)
+          .attr('class', 'stuff1')
+          .attr('x', function (d) {
+            return xScale(d[2]) - imageWidth / 2;
+          })
+          .attr('y', function (d) {
+            return yScale(d[3]) - imageHeight / 2;
+          })
+          .attr('width', imageWidth)
+          .attr('height', imageHeight)
+          .attr('opacity', function (d) {
+            if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
+              return 1;
+            } else {
+              return ((d[0] / (brush.extent()[1] * 60000) * 0.7) + 0.1);
+            }
+          });
 
-      svg.selectAll('image1')
-        .data(data.player10)
-        .enter().append('rect')
-        .attr('width', imageWidth + 2)
-        .attr('height', imageHeight + 2)
-        .style('fill', 'none')
-        .style('stroke', '#6666ff')
-        .style('stroke-width', 6)
-        .attr('class', 'stuff1')
-        .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
-        .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
-        .attr('opacity', function(d) {
-          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
-            return 1;
-          } else {
-            return (0);
-          }
-        });
+        svg.selectAll('image1')
+          .data(data.player9)
+          .enter().append('rect')
+          .attr('width', imageWidth + 2)
+          .attr('height', imageHeight + 2)
+          .style('fill', 'none')
+          .style('stroke', '#66ccff')
+          .style('stroke-width', 6)
+          .attr('class', 'stuff1')
+          .attr('x', function (d) {
+            return xScale(d[2]) - (imageWidth / 2 + 1);
+          })
+          .attr('y', function (d) {
+            return yScale(d[3]) - (imageHeight / 2 + 1);
+          })
+          .attr('opacity', function (d) {
+            if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
+              return 1;
+            } else {
+              return (0);
+            }
+          });
 
-      svg.selectAll('image1')
-        .data(data.player10)
-        .enter().append('rect')
-        .attr('width', imageWidth + 2)
-        .attr('height', imageHeight + 2)
-        .style('fill', 'none')
-        .style('stroke', '#ffffff')
-        .style('stroke-width', 2)
-        .attr('class', 'stuff1')
-        .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
-        .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
-        .attr('opacity', function(d) {
-          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
-            return 1;
-          } else {
-            return (0);
-          }
-        });
+        svg.selectAll('image1')
+          .data(data.player9)
+          .enter().append('rect')
+          .attr('width', imageWidth + 2)
+          .attr('height', imageHeight + 2)
+          .style('fill', 'none')
+          .style('stroke', '#ffffff')
+          .style('stroke-width', 2)
+          .attr('class', 'stuff1')
+          .attr('x', function (d) {
+            return xScale(d[2]) - (imageWidth / 2 + 1);
+          })
+          .attr('y', function (d) {
+            return yScale(d[3]) - (imageHeight / 2 + 1);
+          })
+          .attr('opacity', function (d) {
+            if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
+              return 1;
+            } else {
+              return (0);
+            }
+          });
 
+
+        var imgurl10 = scope.mostRecentMatch.participants[9].championImage;
+        var player10img = svg.selectAll('image1')
+          .data(data.player10)
+          .enter().append('svg:image')
+          .attr('xlink:href', imgurl10)
+          .attr('class', 'stuff1')
+          .attr('x', function (d) {
+            return xScale(d[2]) - imageWidth / 2;
+          })
+          .attr('y', function (d) {
+            return yScale(d[3]) - imageHeight / 2;
+          })
+          .attr('width', imageWidth)
+          .attr('height', imageHeight)
+          .attr('opacity', function (d) {
+            if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
+              return 1;
+            } else {
+              return ((d[0] / (brush.extent()[1] * 60000) * 0.7) + 0.1);
+            }
+          });
+
+        svg.selectAll('image1')
+          .data(data.player10)
+          .enter().append('rect')
+          .attr('width', imageWidth + 2)
+          .attr('height', imageHeight + 2)
+          .style('fill', 'none')
+          .style('stroke', '#6666ff')
+          .style('stroke-width', 6)
+          .attr('class', 'stuff1')
+          .attr('x', function (d) {
+            return xScale(d[2]) - (imageWidth / 2 + 1);
+          })
+          .attr('y', function (d) {
+            return yScale(d[3]) - (imageHeight / 2 + 1);
+          })
+          .attr('opacity', function (d) {
+            if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
+              return 1;
+            } else {
+              return (0);
+            }
+          });
+
+        svg.selectAll('image1')
+          .data(data.player10)
+          .enter().append('rect')
+          .attr('width', imageWidth + 2)
+          .attr('height', imageHeight + 2)
+          .style('fill', 'none')
+          .style('stroke', '#ffffff')
+          .style('stroke-width', 2)
+          .attr('class', 'stuff1')
+          .attr('x', function (d) {
+            return xScale(d[2]) - (imageWidth / 2 + 1);
+          })
+          .attr('y', function (d) {
+            return yScale(d[3]) - (imageHeight / 2 + 1);
+          })
+          .attr('opacity', function (d) {
+            if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
+              return 1;
+            } else {
+              return (0);
+            }
+          });
+
+      }
     var tip = d3.tip()
       .attr('class', 'd3-tip')
       .offset([-10, 0])
