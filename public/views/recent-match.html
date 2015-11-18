@@ -2,12 +2,13 @@
   <ul class="recents">
     <li ng-repeat="game in games">
       <div ng-click="getMatch(game.gameId)">
+
         <p class="game-info">
           Game mode:{{game.gameMode}}
           <br>
           Game Length: {{game.stats.timePlayed}}
           <br>
-          Game Type: {{game.gameType}}
+          Game Type: {{game.subType}}
         </p>
       </div>
     </li>
