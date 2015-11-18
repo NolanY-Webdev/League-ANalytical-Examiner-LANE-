@@ -46,7 +46,8 @@ function runD3(match) {
       [1500, 6600, 'TowerInnerTopA'], [1200, 11000, 'TowerOuterTopA']
     ];
     var nexiCords = [[1600, 1300], [13100, 13100]];
-    var inhibCords = [[1450, 3050], [3400, 2650], [3650, 640], [11500, 13460], [11770, 11420], [13750, 11090]];
+    var inhibCords = [[1450, 3050, 'InhibTopA'], [3400, 2650, 'InhibMidA'], [3650, 640, 'InhibBotA'],
+      [11500, 13460, 'InhibTopB'], [11770, 11420, 'InhibMidB'], [13750, 11090, 'InhibBotB']];
     if (scope.mostRecentMatch.mapId == 8) { //crystal scar
       var capturePoints = [
         [4400, 2600], [2700, 7900], [7000, 11000], [11400, 7900], [9600, 2600]
@@ -77,7 +78,7 @@ function runD3(match) {
     }
 
     jsonData.currentTowers = JSON.parse(JSON.stringify(towerCords));
-
+    jsonData.currentInhibs = JSON.parse(JSON.stringify(inhibCords));
     var summonersRift = "http://ddragon.leagueoflegends.com/cdn/5.22.3/img/map/map" + ((scope.mostRecentMatch.mapId !== 11) ? scope.mostRecentMatch.mapId : 1)  + ".png"  ;
 
 //============================= MAP DATA ====================================
@@ -854,18 +855,28 @@ function runD3(match) {
           .offset([-10, 0])
           .html(function(d) {
             console.log(d)
+
             if(d[4] !== 0) {
               var killer = '<image class="tooltip player' + d[4] + '" src="' + scope.mostRecentMatch.participants[d[4] - 1].championImage + '">';
             } else {
-              killer = '<image class="tooltip player0" src="http://25.media.tumblr.com/tumblr_m6vl9yakTH1qi0dzko1_400.jpg">';
+              killer = '<image class="tooltip player0" src="./views/images/RIP.jpg">';
             }
+            var scoreImg = '<image class="tooltipScore" src="./views/images/score.png">';
             var victim = '<image class="tooltip player'+ d[6] +'" src="'+scope.mostRecentMatch.participants[d[6]-1].championImage+'">';
-            return killer + victim
+            var assistImg = '';
+            var assistors = '';
+            if(d[5] !== null) {
+              assistImg = '<image class="tooltipScore" src="./views/images/assist.png">';
+              for (var i = 0; i < d[5].length; i++) {
+                assistors += '<image class="tooltip assistor player' + d[5][i] + '" src="' + scope.mostRecentMatch.participants[(d[5][i]) - 1].championImage + '">'
+              }
+            }
+            return killer + scoreImg + victim + '<br>' + assistImg + assistors;
           })
 
         svg.call(tip);
 
-        var combaturl = 'http://i64.tinypic.com/2ugl94l.png';
+        var combaturl = "./views/images/score.png";
         var combatimg = svg.selectAll("image1")
           .data(data.combat)
           .enter().append('svg:image')
