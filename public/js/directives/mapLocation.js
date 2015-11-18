@@ -57,13 +57,16 @@ function runD3(match) {
       inhibCords = [];
     } else if (scope.mostRecentMatch.mapId == 10) { //twisted treeline
       towerCords = [
-        [2350, 7140], [2100, 9065], [2100, 5100], [12915, 7140], [13150, 9065], [13200, 5100], [4350, 9500], [4350, 4600], [5750, 8600], [6150, 4900], [9350, 4900], [11150, 4600], [9450, 8700], [11150, 9600]
+        [2350, 7140, 'TowerNexusBotA'], [2100, 9065, 'TowerBaseTopA'], [2100, 5100, 'TowerBaseBotA'], [12915, 7140, 'TowerNexusBotB'],
+        [13150, 9065, 'TowerBaseTopB'], [13200, 5100, 'TowerBaseBotB'], [4350, 9500, 'TowerInnerTopA'], [4350, 4600, 'TowerInnerBotA'],
+        [5750, 8600, 'TowerOuterTopA'], [6150, 4900, 'TowerOuterBotA'], [9350, 4900, 'TowerOuterBotB'], [11150, 4600, 'TowerInnerBotB'],
+        [9450, 8700, 'TowerOuterTopB'], [11150, 9600, 'TowerInnerTopB']
       ];
       nexiCords = [
         [3000, 7000], [12300, 7000]
       ];
       inhibCords = [
-        [2175, 5550], [2175, 7800], [13260, 5500], [13260, 7750]
+        [2175, 5550, 'InhibBotA'], [2175, 7800, 'InhibTopA'], [13260, 5500, 'InhibBotB'], [13260, 7750, 'InhibTopB']
       ];
     } else if (scope.mostRecentMatch.mapId == 12) { //howling abyss
       towerCords = [
