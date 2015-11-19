@@ -176,13 +176,17 @@ function runD3(match) {
         for(var i = 0; i < currentTowers.length; i++) {
           if (buildingsDestroyed[j][1] == currentTowers[i][2]) {
             currentTowers.splice(i, 1);
-            //console.log('spliced ' + buildingsDestroyed[j][1])
           }
         }
+        if(buildingsDestroyed[j][1].substr(9,16)=='Respawned') {
+          var inhibSpawn = inhibCords.filter(function(c,i,a) {
+            return c[2] == buildingsDestroyed[j][1].substr(0,9);
+          })
+          console.log(inhibSpawn);
+          currentInhibs.push(inhibSpawn[0]);
+          //do things here
+        }
         for(i = 0; i < currentInhibs.length; i++) {
-          if(buildingsDestroyed[j][1].substr(9,16)=='Respawned') {
-            //do things here
-          }
           if(buildingsDestroyed[j][1] == currentInhibs[i][2])
           currentInhibs.splice(i, 1);
           //console.log('spliced ' + buildingsDestroyed[j][1])
