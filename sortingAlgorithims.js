@@ -81,7 +81,7 @@ function combatParser(riotMatchData) {
           } else if(eventFrame.towerType == "BASE_TURRET") {
             position = 'Base';
           } else if(eventFrame.towerType == "NEXUS_TURRET") {
-            if (riotMatchData.mapId !== 8) {
+            if (riotMatchData.mapId !== 8 && riotMatchData.mapId !== 10) {
               if (eventFrame.position.x < eventFrame.position.y) {
                 position = 'NexusTop';
               } else if (eventFrame.position.x > eventFrame.position.y) {
