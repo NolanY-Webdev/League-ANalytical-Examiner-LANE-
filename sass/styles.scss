@@ -208,9 +208,19 @@ li {
 }
 
 .logo {
-  background-image: url('/views/images/LaneLogo.png');
+  background-image: url('/views/images/LaneLogoFull.png');
+  width: 950px;
   background-repeat: none;
-  width: 250px;
+  background-size: 100%;
+  background-repeat: no-repeat;
   height: 100px;
   margin: auto;
+}
+
+.disclaimer {
+  margin-top: 300px;
+  display: block;
+  color: #AA7420;
+  font-family: 'Freemont';
+  text-align: center;
 }
