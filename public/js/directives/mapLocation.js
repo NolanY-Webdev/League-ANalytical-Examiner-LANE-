@@ -152,7 +152,7 @@ function runD3(match) {
       //length of data
       .domain([0, gameLengthByMin])
       //size of bar
-      .range([brushPositionX + 0, brushPositionX + 500]);
+      .range([brushPositionX + 0, mapWidth - 7]);
 
     var brush = d3.svg.brush();
     brush.x(scale);
@@ -196,7 +196,8 @@ function runD3(match) {
 
     var g = svg.append("g");
     brush(g);
-    g.attr("transform", "translate(" + brushX + "," + brushY +")");
+    g.attr("transform", "translate(" + brushX + "," + brushY +")")
+
     g.selectAll("rect").attr("height", brushHeight);
     g.selectAll(".background")
       .style({fill: "#4B9E9E", visibility: "visible"});
@@ -209,7 +210,7 @@ function runD3(match) {
 
     var scale = d3.scale.linear()
       .domain([0, gameLengthByMin])
-      .range([ brushPositionX + 7, brushPositionX + 503]);
+      .range([ brushPositionX + 7, mapWidth - 10]);
 
     var axis = d3.svg.axis()
       .scale(scale)
@@ -217,11 +218,14 @@ function runD3(match) {
 
     var g = svg.append("g");
     axis(g);
+
     g.attr("transform", "translate(" + (brushX - 6) + "," + (brushY + 35) +")");
+    g.attr('class', 'scale')
+        .style({fill: '#E2BE30', visibility: 'visible'});
     g.selectAll("path")
-      .style({ fill: "none", stroke: "#000"});
+      .style({ fill: "none", stroke: "#E2BE30"});
     g.selectAll("line")
-      .style({ stroke: "#000"})
+      .style({ stroke: "#E2BE30"})
       .attr("class", "brush");
 
 //MAP DATA
@@ -320,8 +324,8 @@ function runD3(match) {
         .attr('width', imageWidth + 2)
         .attr('height', imageHeight + 2)
         .style('fill', 'none')
-        .style('stroke', '#ffbc44')
-        .style('stroke-width', 6)
+        .style('stroke', '#df3b20')
+        .style('stroke-width', 2)
         .attr('class', 'stuff1')
         .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
         .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
@@ -359,8 +363,8 @@ function runD3(match) {
         .attr('width', imageWidth + 2)
         .attr('height', imageHeight + 2)
         .style('fill', 'none')
-        .style('stroke', '#ff3300')
-        .style('stroke-width', 6)
+        .style('stroke', '#df3b20')
+        .style('stroke-width', 2)
         .attr('class', 'stuff1')
         .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
         .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
@@ -397,8 +401,8 @@ function runD3(match) {
         .attr('width', imageWidth + 2)
         .attr('height', imageHeight + 2)
         .style('fill', 'none')
-        .style('stroke', '#800000')
-        .style('stroke-width', 6)
+        .style('stroke', '#df3b20')
+        .style('stroke-width', 2)
         .attr('class', 'stuff1')
         .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
         .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
@@ -438,8 +442,8 @@ function runD3(match) {
         .attr('width', imageWidth + 2)
         .attr('height', imageHeight + 2)
         .style('fill', 'none')
-        .style('stroke', '#ffb5b4')
-        .style('stroke-width', 6)
+        .style('stroke', '#df3b20')
+        .style('stroke-width', 2)
         .attr('class', 'stuff1')
         .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
         .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
@@ -476,8 +480,8 @@ function runD3(match) {
         .attr('width', imageWidth + 2)
         .attr('height', imageHeight + 2)
         .style('fill', 'none')
-        .style('stroke', '#ff45a2')
-        .style('stroke-width', 6)
+        .style('stroke', '#df3b20')
+        .style('stroke-width', 2)
         .attr('class', 'stuff1')
         .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
         .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
@@ -515,8 +519,8 @@ function runD3(match) {
         .attr('width', imageWidth + 2)
         .attr('height', imageHeight + 2)
         .style('fill', 'none')
-        .style('stroke', '#000066')
-        .style('stroke-width', 6)
+        .style('stroke', '#42C0FB')
+        .style('stroke-width', 2)
         .attr('class', 'stuff1')
         .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
         .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
@@ -558,8 +562,8 @@ function runD3(match) {
           .attr('width', imageWidth + 2)
           .attr('height', imageHeight + 2)
           .style('fill', 'none')
-          .style('stroke', '#00cc99')
-          .style('stroke-width', 6)
+          .style('stroke', '#42C0FB')
+          .style('stroke-width', 2)
           .attr('class', 'stuff1')
           .attr('x', function (d) {
             return xScale(d[2]) - (imageWidth / 2 + 1);
@@ -604,8 +608,8 @@ function runD3(match) {
           .attr('width', imageWidth + 2)
           .attr('height', imageHeight + 2)
           .style('fill', 'none')
-          .style('stroke', '#006666')
-          .style('stroke-width', 6)
+          .style('stroke', '#42C0FB')
+          .style('stroke-width', 2)
           .attr('class', 'stuff1')
           .attr('x', function (d) {
             return xScale(d[2]) - (imageWidth / 2 + 1);
@@ -650,8 +654,8 @@ function runD3(match) {
           .attr('width', imageWidth + 2)
           .attr('height', imageHeight + 2)
           .style('fill', 'none')
-          .style('stroke', '#66ccff')
-          .style('stroke-width', 6)
+          .style('stroke', '#42C0FB')
+          .style('stroke-width', 2)
           .attr('class', 'stuff1')
           .attr('x', function (d) {
             return xScale(d[2]) - (imageWidth / 2 + 1);
@@ -696,8 +700,8 @@ function runD3(match) {
           .attr('width', imageWidth + 2)
           .attr('height', imageHeight + 2)
           .style('fill', 'none')
-          .style('stroke', '#6666ff')
-          .style('stroke-width', 6)
+          .style('stroke', '#42C0FB')
+          .style('stroke-width', 2)
           .attr('class', 'stuff1')
           .attr('x', function (d) {
             return xScale(d[2]) - (imageWidth / 2 + 1);
@@ -739,8 +743,8 @@ function runD3(match) {
         .attr('width', imageWidth + 2)
         .attr('height', imageHeight + 2)
         .style('fill', 'none')
-        .style('stroke', '#000066')
-        .style('stroke-width', 6)
+        .style('stroke', '#42C0FB')
+        .style('stroke-width', 2)
         .attr('class', 'stuff1')
         .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
         .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
@@ -781,8 +785,8 @@ function runD3(match) {
         .attr('width', imageWidth + 2)
         .attr('height', imageHeight + 2)
         .style('fill', 'none')
-        .style('stroke', '#00cc99')
-        .style('stroke-width', 6)
+        .style('stroke', '#42C0FB')
+        .style('stroke-width', 2)
         .attr('class', 'stuff1')
         .attr('x', function (d) {
           return xScale(d[2]) - (imageWidth / 2 + 1);
@@ -827,8 +831,8 @@ function runD3(match) {
         .attr('width', imageWidth + 2)
         .attr('height', imageHeight + 2)
         .style('fill', 'none')
-        .style('stroke', '#006666')
-        .style('stroke-width', 6)
+        .style('stroke', '#42C0FB')
+        .style('stroke-width', 2)
         .attr('class', 'stuff1')
         .attr('x', function (d) {
           return xScale(d[2]) - (imageWidth / 2 + 1);
@@ -847,7 +851,7 @@ function runD3(match) {
 
     }
 
-      
+
       //D3 TOOLTIPS AND COMBAT DATA
 
     var tip = d3.tip()
