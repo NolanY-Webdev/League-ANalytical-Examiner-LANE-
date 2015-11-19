@@ -184,7 +184,7 @@ function runD3(match) {
             for(i = 0; i < inhibCords.length; i++) {
               if(buildingsDestroyed[j][1] == inhibCords[i][2]+'Respawned')
                 currentInhibs.push(inhibCords[i]);
-              //console.log('INHIB RESPAWNED ' + buildingsDestroyed[j][1])
+              console.log('INHIB RESPAWNED ' + buildingsDestroyed[j][1])
             }
           }
           if(buildingsDestroyed[j][1] == currentInhibs[i][2])
@@ -486,6 +486,7 @@ function runD3(match) {
             return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
           }
         });
+
 
       svg.selectAll('image1')
         .data(data.player4)

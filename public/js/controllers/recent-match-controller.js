@@ -12,6 +12,7 @@ angular.module('laneApp')
         .success((data) => {
           console.log('success!', data)
           $scope.disableTab = $state;
+          console.log("1", data.games);
           $scope.games = data.games;
           // $scope.summonerName = $rootScope.summonerName;
           $scope.summonerName = 'TODO';
