@@ -70,13 +70,13 @@ function runD3(match) {
       ];
     } else if (scope.mostRecentMatch.mapId == 12) { //howling abyss
       towerCords = [
-        [2100, 2600], [2650, 2200], [4400, 4400, "TowerOuterMidA"], [5800, 5800, "TowerNexusMidA"], [7500, 7500, "TowerNexusMidB"], [8900, 8900, "TowerOuterMidB"], [10600, 11000], [11100, 10700]
+        [2100, 2600, 'TowerBaseMidA'], [2650, 2200, 'TowerInnerMidA'], [4400, 4400, "TowerOuterMidA"], [5800, 5800, "TowerNexusMidA"], [7500, 7500, "TowerNexusMidB"], [8900, 8900, "TowerOuterMidB"], [10600, 11000], [11100, 10700]
       ];
       nexiCords = [
         [1900, 1900], [11400, 11400]
       ];
       inhibCords = [
-        [3250, 2800], [10150, 9750]
+        [3250, 2800, 'InhibMidA'], [10150, 9750, 'InhibMidB']
       ];
     }
 
@@ -182,14 +182,11 @@ function runD3(match) {
           var inhibSpawn = inhibCords.filter(function(c,i,a) {
             return c[2] == buildingsDestroyed[j][1].substr(0,9);
           })
-          console.log(inhibSpawn);
           currentInhibs.push(inhibSpawn[0]);
-          //do things here
         }
         for(i = 0; i < currentInhibs.length; i++) {
           if(buildingsDestroyed[j][1] == currentInhibs[i][2])
           currentInhibs.splice(i, 1);
-          //console.log('spliced ' + buildingsDestroyed[j][1])
         }
       }
       filteredData.currentTowers = currentTowers;
