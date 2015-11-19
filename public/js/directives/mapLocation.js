@@ -181,12 +181,7 @@ function runD3(match) {
         }
         for(i = 0; i < currentInhibs.length; i++) {
           if(buildingsDestroyed[j][1].substr(9,16)=='Respawned') {
-            for(var k = 0; k < inhibCords.length; k++) {
-              //if(buildingsDestroyed[j][1] == inhibCords[k][2]+'Respawned') {           INFINITE LOOP HERE, FIX IT
-              //  currentInhibs.push(inhibCords[k]);
-              //  console.log('INHIB RESPAWNED ' + buildingsDestroyed[j][1])
-              }
-            }
+            //do things here
           }
           if(buildingsDestroyed[j][1] == currentInhibs[i][2])
           currentInhibs.splice(i, 1);
