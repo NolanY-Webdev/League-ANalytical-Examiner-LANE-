@@ -23,7 +23,8 @@ body {
   display: block;
   text-align: center;
   color: #E2BE30;
-  font-family: 'Friz Qudrata';
+  font-family: 'Freemont';
+  font-weight: bold;
 }
 
 .tick text {
@@ -73,7 +74,9 @@ li {
     background-size: 100px;
     color: gold;
     font-weight: bold;
-    font-family: 'Friz Qudrata';
+    font-family: 'Freemont';
+    text-shadow: 2px 0px 4px #BF7A3F;
+    font-size: 20px;
     // box-shadow: 0 1px 0 #ccc,
     //             0 2px 0 #c9c9c9,
     //             0 3px 0 #bbb,
