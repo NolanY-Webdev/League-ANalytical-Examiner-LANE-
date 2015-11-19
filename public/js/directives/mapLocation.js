@@ -488,6 +488,7 @@ function runD3(match) {
           }
         });
 
+
       svg.selectAll('image1')
         .data(data.player4)
         .enter().append('rect')
