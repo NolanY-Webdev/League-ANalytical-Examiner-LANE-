@@ -181,10 +181,11 @@ function runD3(match) {
         }
         for(i = 0; i < currentInhibs.length; i++) {
           if(buildingsDestroyed[j][1].substr(9,16)=='Respawned') {
-            for(i = 0; i < inhibCords.length; i++) {
-              if(buildingsDestroyed[j][1] == inhibCords[i][2]+'Respawned')
-                currentInhibs.push(inhibCords[i]);
-              console.log('INHIB RESPAWNED ' + buildingsDestroyed[j][1])
+            for(var k = 0; k < inhibCords.length; k++) {
+              //if(buildingsDestroyed[j][1] == inhibCords[k][2]+'Respawned') {           INFINITE LOOP HERE, FIX IT
+              //  currentInhibs.push(inhibCords[k]);
+              //  console.log('INHIB RESPAWNED ' + buildingsDestroyed[j][1])
+              }
             }
           }
           if(buildingsDestroyed[j][1] == currentInhibs[i][2])
