@@ -1,29 +1,33 @@
-/* line 14, stdin */
+/* line 13, stdin */
+body {
+  background-color: #021D24; }
+
+/* line 17, stdin */
 .box {
   box-sizing: border-box;
   height: 125px;
   background-size: 100%; }
 
-/* line 24, stdin */
+/* line 27, stdin */
 .portrait {
   margin-bottom: 25px; }
 
-/* line 28, stdin */
+/* line 31, stdin */
 .match-tab {
   text-decoration: none;
   box-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa; }
 
-/* line 37, stdin */
+/* line 40, stdin */
 li {
   display: inline; }
 
-/* line 41, stdin */
+/* line 44, stdin */
 #tabs {
   display: block;
   margin: auto;
   padding: auto;
   width: 100%; }
-  /* line 47, stdin */
+  /* line 50, stdin */
   #tabs .matchTabs {
     box-sizing: border-box;
     text-align: center;
@@ -31,28 +35,28 @@ li {
     margin: auto;
     width: 628px;
     border: 4px solid black;
-    background-image: url("https://s3-us-west-1.amazonaws.com/riot-api/img/rune-bg.png");
+    background-color: black;
     background-size: 100px;
-    color: black;
-    font-weight: bold; }
-    /* line 64, stdin */
+    color: gold;
+    font-weight: bold;
+    box-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa; }
+    /* line 67, stdin */
     #tabs .matchTabs:hover {
-      color: red;
-      border: 4px solid orange;
+      border: 4px solid gold;
       box-shadow: none; }
-    /* line 70, stdin */
+    /* line 73, stdin */
     #tabs .matchTabs a {
       text-decoration: none; }
 
-/* line 77, stdin */
+/* line 80, stdin */
 .container {
   min-width: 950px; }
 
-/* line 81, stdin */
+/* line 84, stdin */
 #map-d {
   box-sizing: border-box; }
 
-/* line 85, stdin */
+/* line 88, stdin */
 .game-info {
   box-sizing: border-box;
   display: block;
@@ -62,13 +66,13 @@ li {
   margin: 7px;
   background-image: url("https://s3-us-west-1.amazonaws.com/riot-api/img/rune-bg.png");
   box-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15); }
-  /* line 95, stdin */
+  /* line 98, stdin */
   .game-info:hover {
     border: 2px solid orange;
     color: red;
     box-shadow: none; }
 
-/* line 102, stdin */
+/* line 105, stdin */
 .d3-tip {
   line-height: 1;
   font-weight: bold;
@@ -78,7 +82,7 @@ li {
   border-radius: 2px; }
 
 /* Creates a small triangle extender for the tooltip */
-/* line 112, stdin */
+/* line 115, stdin */
 .d3-tip:after {
   box-sizing: border-box;
   display: inline;
@@ -91,67 +95,67 @@ li {
   text-align: center; }
 
 /* Style northward tooltips differently */
-/* line 125, stdin */
+/* line 128, stdin */
 .d3-tip.n:after {
   margin: -1px 0 0 0;
   top: 100%;
   left: 0; }
 
-/* line 134, stdin */
+/* line 137, stdin */
 .tooltip {
   height: 40px;
   width: 40px; }
 
-/* line 139, stdin */
+/* line 142, stdin */
 .player0 {
   border: 4px solid #ffffff; }
 
-/* line 143, stdin */
+/* line 146, stdin */
 .player1 {
   border: 4px solid #ffbc44; }
 
-/* line 147, stdin */
+/* line 150, stdin */
 .player2 {
   border: 4px solid #ff3300; }
 
-/* line 151, stdin */
+/* line 154, stdin */
 .player3 {
   border: 4px solid #800000; }
 
-/* line 155, stdin */
+/* line 158, stdin */
 .player4 {
   border: 4px solid #ffb5b4; }
 
-/* line 159, stdin */
+/* line 162, stdin */
 .player5 {
   border: 4px solid #ff45a2; }
 
-/* line 163, stdin */
+/* line 166, stdin */
 .player6 {
   border: 4px solid #000066; }
 
-/* line 167, stdin */
+/* line 170, stdin */
 .player7 {
   border: 4px solid #00cc99; }
 
-/* line 171, stdin */
+/* line 174, stdin */
 .player8 {
   border: 4px solid #006666; }
 
-/* line 175, stdin */
+/* line 178, stdin */
 .player9 {
   border: 4px solid #66ccff; }
 
-/* line 179, stdin */
+/* line 182, stdin */
 .player10 {
   border: 4px solid #6666ff; }
 
-/* line 183, stdin */
+/* line 186, stdin */
 .assistor {
   height: 20px;
   width: 20px; }
 
-/* line 188, stdin */
+/* line 191, stdin */
 .logo {
   background-image: url("/views/images/LaneLogo.png");
   background-repeat: none;
