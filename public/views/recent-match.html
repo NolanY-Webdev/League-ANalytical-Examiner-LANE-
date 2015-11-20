@@ -1,15 +1,32 @@
 <div class="row">
   <ul class="recents">
-    <li ng-repeat="game in games">
-      <div ng-click="getMatch(game.gameId)">
-        <p class="game-info">
-          Game mode:{{game.gameMode}}
-          <br>
-          Game Length: {{game.stats.timePlayed}}
-          <br>
-          Game Type: {{game.subType}}
-        </p>
+    <li ng-repeat="game in sortedData">
+      <div class="match-container" ng-click="getMatch(game.gameId)">
+
+        <div class="row game-info">
+          <div class="four columns">Game mode:{{game.gameMode}}</div>
+          <div class="four columns">Game Length: {{game.stats.timePlayed}}</div>
+          <div class="four columns">Game Type: {{game.subType}}</div>
+          <div class="four columns">Game Type: {{game.mapId}}</div>
+        </div>
+
+    <!--     <div class="row teams u-full-width" ng-style="{'background-image' : 'url( http://ddragon.leagueoflegends.com/cdn/5.22.3/img/map/map'+game.mapId+'.png )'}"> -->
+        <div class="row teams u-full-width">
+          <ul>
+            <li ng-repeat="friend in game.myTeam">
+              <img src="{{friend}}">
+            </li>
+          </ul>
+          <img id="vs" src="./views/images/score.png">
+          <ul>
+            <li ng-repeat="foe in game.enemyTeam">
+              <img src="{{foe}}">
+            </li>
+          </ul>
+        </div>
+
       </div>
     </li>
+
   </ul>
 </div>
