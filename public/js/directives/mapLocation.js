@@ -859,6 +859,7 @@ function runD3(match) {
       .html(function(d) {
         //console.log(d)
         var scoreImg = '<image class="tooltipScore" src="./views/images/score.png">';
+        var tooltipX = '<image class="tooltipX" src="./views/images/600px-Red_X_Freehand.svg.png">';
         if(d[1] == "ChampionKilled") {
           if (d[4] !== 0) {
             var killer = '<image class="tooltip team' + scope.mostRecentMatch.participants[d[4] - 1].teamId + '" src="' + scope.mostRecentMatch.participants[d[4] - 1].championImage + '">';
@@ -886,7 +887,7 @@ function runD3(match) {
             var victim = '<image class="tooltip player0" src="http://vignette1.wikia.nocookie.net/leagueoflegends/images/5/5d/VilemawSquare.png/revision/latest/scale-to-width-down/48?cb=20140308093146">';
           }
         }
-        return killer + scoreImg + victim + '<br>' + assistImg + assistors;
+        return killer + scoreImg + victim + tooltipX + '<br>' + assistImg + assistors;
       });
 
       svg.call(tip);

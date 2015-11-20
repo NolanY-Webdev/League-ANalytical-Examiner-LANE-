@@ -1,6 +1,6 @@
 <div class="container">
 
-  <form>
+  <form class="form" name="summonerForm" ng-submit="getSummonerInfo(summonerName)">
 
   <div class="sixteen columns">
       <h1 class='logo'></h1>
@@ -10,18 +10,26 @@
 
     <div class="four columns offset-by-four">
         <label for="summonerNameInput">Summoner name</label>
-        <input class="u-full-width" type="text" placeholder="summoner name" id="summonerNameInput" ng-model="summonerName">
+        <input
+        id="summonerNameInput"
+        required
+        class="u-full-width"
+        type="text"
+        placeholder="summoner name"
+        ng-model="summonerName">
+        <p class="error" ng-show="summonerForm.$dirty && summonerForm.summonerName.$invalid">Required</p>
+
     </div>
   </div>
 
   <div class="four columns offset-by-four">
     <div class="eight columns offset-by-two">
-      <a class="button u-full-width" ng-click="getSummonerInfo(summonerName)">Search</a>
+      <button type="submit" class="button u-full-width">Search</button>
     </div>
   </div>
 
   </form>
 </div>
   <div>
-    <h5 class="disclaimer">"League Analytical Examiner" isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.</h5>
+    <h4 class="disclaimer">"League Analytical Examiner" isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.</h4>
   </div>
