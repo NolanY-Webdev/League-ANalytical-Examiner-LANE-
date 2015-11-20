@@ -50,11 +50,12 @@ $blue : #42C0FB;
 
 .match-tab {
   text-decoration: none;
-  box-shadow: 0 1px 0 #ccc,
-            0 2px 0 #c9c9c9,
-            0 3px 0 #bbb,
-            0 4px 0 #b9b9b9,
-            0 5px 0 #aaa;
+  text-shadow: -1.5px 0 #A26627, 0 1.5px #A26627, 1.5px 0 #A26627, 0 -1.5px #A26627;
+  // box-shadow: 0 1px 0 #ccc,
+  //           0 2px 0 #c9c9c9,
+  //           0 3px 0 #bbb,
+  //           0 4px 0 #b9b9b9,
+  //           0 5px 0 #aaa;
 }
 
 li {
@@ -73,13 +74,13 @@ li {
     display: block;
     margin: auto;
     width: 628px;
-    border: 4px solid black;
+    border: 2px solid black;
     background-color: black;
     background-size: 100px;
-    color: gold;
+    color: #EFD5A2;
     font-weight: bold;
     font-family: 'Freemont';
-    text-shadow: 2px 0px 4px #BF7A3F;
+    // text-shadow: 0px 0px 4px #BF7A3F;
     font-size: 20px;
     // box-shadow: 0 1px 0 #ccc,
     //             0 2px 0 #c9c9c9,
@@ -89,7 +90,7 @@ li {
 
     &:hover {
       // color: red;
-      border: 4px solid gold;
+      border: 2px solid gold;
       box-shadow: none;
     }
 
@@ -272,7 +273,8 @@ li {
 }
 
 div.match-container {
-  border: 1px solid white;
+  border: 1px solid #E2BE30;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   margin-bottom : 35px;
   background-color: #03181E;
 }
@@ -280,4 +282,6 @@ div.match-container {
 #vs {
   height :50px;
   width :50px;
+  margin-left: 30px;
+  margin-bottom: 10px;
 }
