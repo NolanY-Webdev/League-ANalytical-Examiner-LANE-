@@ -49,7 +49,8 @@ label {
 /* line 67, stdin */
 .match-tab {
   text-decoration: none;
-  text-shadow: -1.5px 0 #A26627, 0 1.5px #A26627, 1.5px 0 #A26627, 0 -1.5px #A26627; }
+  text-shadow: -1.5px 0 #A26627, 0 1.5px #A26627, 1.5px 0 #A26627, 0 -1.5px #A26627;
+  }
 
 /* line 77, stdin */
 li {
@@ -245,7 +246,7 @@ li {
 /* line 291, stdin */
 div.match-container {
   border: 1px solid #E2BE30;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-shadow: -1.5px 0 #A26627, 0 1.5px #A26627, 1.5px 0 #A26627, 0 -1.5px #A26627;
   margin-bottom: 35px;
   background-color: #03181E; }
 
