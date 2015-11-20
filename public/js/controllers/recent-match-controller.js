@@ -10,12 +10,13 @@ angular.module('laneApp')
     function($scope, recentMatchInfo, $rootScope, matchInfo, $state, $stateParams) {
       recentMatchInfo.getRecentMatch($stateParams.summoner_id)
         .success((data) => {
-          console.log('success!', data)
+          $scope.sortedData = data.sortedData;
           $scope.disableTab = $state;
-          console.log("1", data.games);
           $scope.games = data.games;
+
           // $scope.summonerName = $rootScope.summonerName;
           $scope.summonerName = 'TODO';
+          console.log('games',data);
         });
       $scope.getMatch = function(gameId) {
         $state.go('match.matchDetails', {

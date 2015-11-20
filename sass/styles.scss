@@ -21,7 +21,7 @@ body {
 .box {
   box-sizing: border-box;
   height : 125px;
-  // width : 125px;
+  width : 125px;
   // border: 1px solid black;
   // margin-bottom: 25px;
   background-size: 100%;
@@ -198,4 +198,10 @@ li {
   width: 250px;
   height: 100px;
   margin: auto;
+}
+
+.teams {
+  img {
+    display : inline;
+  }
 }

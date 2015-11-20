@@ -1,6 +1,6 @@
 <div class="row">
   <ul class="recents">
-    <li ng-repeat="game in games">
+    <li ng-repeat="game in sortedData">
       <div ng-click="getMatch(game.gameId)">
 
         <div class="row game-info">
@@ -9,12 +9,21 @@
           <div class="four columns">Game Type: {{game.subType}}</div>
         </div>
 
-        <div class="row">
-          <div class="six columns">{{game.championId}}</div>
-          <div class="six columns"></div>
+        <div class="row teams">
+        <ul>
+          <li ng-repeat="friend in game.myTeam">
+            <img src="{{friend}}">
+          </li>
+        </ul>
+        <ul>
+          <li ng-repeat="foe in game.enemyTeam">
+            <img src="{{foe}}">
+          </li>
+        </ul>
         </div>
 
       </div>
     </li>
+
   </ul>
 </div>

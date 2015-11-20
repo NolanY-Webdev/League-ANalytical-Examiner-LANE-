@@ -10,6 +10,7 @@ body {
 .box {
   box-sizing: border-box;
   height: 125px;
+  width: 125px;
   background-size: 100%; }
 
 /* line 31, stdin */
@@ -166,3 +167,7 @@ li {
   width: 250px;
   height: 100px;
   margin: auto; }
+
+/* line 204, stdin */
+.teams img {
+  display: inline; }
