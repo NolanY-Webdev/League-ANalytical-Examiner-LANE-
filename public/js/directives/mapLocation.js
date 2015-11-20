@@ -70,13 +70,13 @@ function runD3(match) {
       ];
     } else if (scope.mostRecentMatch.mapId == 12) { //howling abyss
       towerCords = [
-        [2100, 2600], [2650, 2200], [4400, 4400, "TowerOuterMidA"], [5800, 5800, "TowerNexusMidA"], [7500, 7500, "TowerNexusMidB"], [8900, 8900, "TowerOuterMidB"], [10600, 11000], [11100, 10700]
+        [2100, 2600, 'TowerBaseMidA'], [2650, 2200, 'TowerInnerMidA'], [4400, 4400, "TowerOuterMidA"], [5800, 5800, "TowerNexusMidA"], [7500, 7500, "TowerNexusMidB"], [8900, 8900, "TowerOuterMidB"], [10600, 11000, 'TowerBaseMidB'], [11100, 10700, 'TowerInnerMidB']
       ];
       nexiCords = [
         [1900, 1900], [11400, 11400]
       ];
       inhibCords = [
-        [3250, 2800], [10150, 9750]
+        [3250, 2800, 'InhibMidA'], [10150, 9750, 'InhibMidB']
       ];
     }
 
@@ -152,7 +152,7 @@ function runD3(match) {
       //length of data
       .domain([0, gameLengthByMin])
       //size of bar
-      .range([brushPositionX + 0, brushPositionX + 500]);
+      .range([brushPositionX + 0, mapWidth - 7]);
 
     var brush = d3.svg.brush();
     brush.x(scale);
@@ -176,16 +176,17 @@ function runD3(match) {
         for(var i = 0; i < currentTowers.length; i++) {
           if (buildingsDestroyed[j][1] == currentTowers[i][2]) {
             currentTowers.splice(i, 1);
-            //console.log('spliced ' + buildingsDestroyed[j][1])
           }
         }
+        if(buildingsDestroyed[j][1].substr(9,16)=='Respawned') {
+          var inhibSpawn = inhibCords.filter(function(c,i,a) {
+            return c[2] == buildingsDestroyed[j][1].substr(0,9);
+          })
+          currentInhibs.push(inhibSpawn[0]);
+        }
         for(i = 0; i < currentInhibs.length; i++) {
-          if(buildingsDestroyed[j][1].substr(9,16)=='Respawned') {
-            //do things here
-          }
           if(buildingsDestroyed[j][1] == currentInhibs[i][2])
           currentInhibs.splice(i, 1);
-          //console.log('spliced ' + buildingsDestroyed[j][1])
         }
       }
       filteredData.currentTowers = currentTowers;
@@ -195,7 +196,8 @@ function runD3(match) {
 
     var g = svg.append("g");
     brush(g);
-    g.attr("transform", "translate(" + brushX + "," + brushY +")");
+    g.attr("transform", "translate(" + brushX + "," + brushY +")")
+
     g.selectAll("rect").attr("height", brushHeight);
     g.selectAll(".background")
       .style({fill: "#4B9E9E", visibility: "visible"});
@@ -208,7 +210,7 @@ function runD3(match) {
 
     var scale = d3.scale.linear()
       .domain([0, gameLengthByMin])
-      .range([ brushPositionX + 7, brushPositionX + 503]);
+      .range([ brushPositionX + 7, mapWidth - 10]);
 
     var axis = d3.svg.axis()
       .scale(scale)
@@ -216,11 +218,14 @@ function runD3(match) {
 
     var g = svg.append("g");
     axis(g);
+
     g.attr("transform", "translate(" + (brushX - 6) + "," + (brushY + 35) +")");
+    g.attr('class', 'scale')
+        .style({fill: '#E2BE30', visibility: 'visible'});
     g.selectAll("path")
-      .style({ fill: "none", stroke: "#000"});
+      .style({ fill: "none", stroke: "#E2BE30"});
     g.selectAll("line")
-      .style({ stroke: "#000"})
+      .style({ stroke: "#E2BE30"})
       .attr("class", "brush");
 
 //MAP DATA
@@ -319,26 +324,7 @@ function runD3(match) {
         .attr('width', imageWidth + 2)
         .attr('height', imageHeight + 2)
         .style('fill', 'none')
-        .style('stroke', '#ffbc44')
-        .style('stroke-width', 6)
-        .attr('class', 'stuff1')
-        .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
-        .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
-        .attr('opacity', function(d) {
-          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
-            return 1;
-          } else {
-            return (0);
-          }
-        });
-
-      svg.selectAll('image1')
-        .data(data.player1)
-        .enter().append('rect')
-        .attr('width', imageWidth + 2)
-        .attr('height', imageHeight + 2)
-        .style('fill', 'none')
-        .style('stroke', '#330000')
+        .style('stroke', '#df3b20')
         .style('stroke-width', 2)
         .attr('class', 'stuff1')
         .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
@@ -350,6 +336,7 @@ function runD3(match) {
             return (0);
           }
         });
+
 
 
       var imgurl2 = scope.mostRecentMatch.participants[1].championImage;
@@ -376,26 +363,7 @@ function runD3(match) {
         .attr('width', imageWidth + 2)
         .attr('height', imageHeight + 2)
         .style('fill', 'none')
-        .style('stroke', '#ff3300')
-        .style('stroke-width', 6)
-        .attr('class', 'stuff1')
-        .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
-        .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
-        .attr('opacity', function(d) {
-          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
-            return 1;
-          } else {
-            return (0);
-          }
-        });
-
-      svg.selectAll('image1')
-        .data(data.player2)
-        .enter().append('rect')
-        .attr('width', imageWidth + 2)
-        .attr('height', imageHeight + 2)
-        .style('fill', 'none')
-        .style('stroke', '#330000')
+        .style('stroke', '#df3b20')
         .style('stroke-width', 2)
         .attr('class', 'stuff1')
         .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
@@ -407,6 +375,7 @@ function runD3(match) {
             return (0);
           }
         });
+
 
       var imgurl3 = scope.mostRecentMatch.participants[2].championImage;
       var player3img = svg.selectAll('image1')
@@ -432,26 +401,7 @@ function runD3(match) {
         .attr('width', imageWidth + 2)
         .attr('height', imageHeight + 2)
         .style('fill', 'none')
-        .style('stroke', '#800000')
-        .style('stroke-width', 6)
-        .attr('class', 'stuff1')
-        .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
-        .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
-        .attr('opacity', function(d) {
-          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
-            return 1;
-          } else {
-            return (0);
-          }
-        });
-
-      svg.selectAll('image1')
-        .data(data.player3)
-        .enter().append('rect')
-        .attr('width', imageWidth + 2)
-        .attr('height', imageHeight + 2)
-        .style('fill', 'none')
-        .style('stroke', '#330000')
+        .style('stroke', '#df3b20')
         .style('stroke-width', 2)
         .attr('class', 'stuff1')
         .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
@@ -465,6 +415,8 @@ function runD3(match) {
         });
 
 
+      //BEGIN TWISTED TREELINE FILTER
+    if(scope.mostRecentMatch.mapId !== 10) {
       var imgurl4 = scope.mostRecentMatch.participants[3].championImage;
       var player4img = svg.selectAll('image1')
         .data(data.player4)
@@ -490,26 +442,7 @@ function runD3(match) {
         .attr('width', imageWidth + 2)
         .attr('height', imageHeight + 2)
         .style('fill', 'none')
-        .style('stroke', '#ffb5b4')
-        .style('stroke-width', 6)
-        .attr('class', 'stuff1')
-        .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
-        .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
-        .attr('opacity', function(d) {
-          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
-            return 1;
-          } else {
-            return (0);
-          }
-        });
-
-      svg.selectAll('image1')
-        .data(data.player4)
-        .enter().append('rect')
-        .attr('width', imageWidth + 2)
-        .attr('height', imageHeight + 2)
-        .style('fill', 'none')
-        .style('stroke', '#330000')
+        .style('stroke', '#df3b20')
         .style('stroke-width', 2)
         .attr('class', 'stuff1')
         .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
@@ -547,26 +480,7 @@ function runD3(match) {
         .attr('width', imageWidth + 2)
         .attr('height', imageHeight + 2)
         .style('fill', 'none')
-        .style('stroke', '#ff45a2')
-        .style('stroke-width', 6)
-        .attr('class', 'stuff1')
-        .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
-        .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
-        .attr('opacity', function(d) {
-          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
-            return 1;
-          } else {
-            return (0);
-          }
-        });
-
-      svg.selectAll('image1')
-        .data(data.player5)
-        .enter().append('rect')
-        .attr('width', imageWidth + 2)
-        .attr('height', imageHeight + 2)
-        .style('fill', 'none')
-        .style('stroke', '#330000')
+        .style('stroke', '#df3b20')
         .style('stroke-width', 2)
         .attr('class', 'stuff1')
         .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
@@ -578,6 +492,7 @@ function runD3(match) {
             return (0);
           }
         });
+
 
 
       var imgurl6 = scope.mostRecentMatch.participants[5].championImage;
@@ -604,26 +519,7 @@ function runD3(match) {
         .attr('width', imageWidth + 2)
         .attr('height', imageHeight + 2)
         .style('fill', 'none')
-        .style('stroke', '#000066')
-        .style('stroke-width', 6)
-        .attr('class', 'stuff1')
-        .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
-        .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
-        .attr('opacity', function(d) {
-          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
-            return 1;
-          } else {
-            return (0);
-          }
-        });
-
-      svg.selectAll('image1')
-        .data(data.player6)
-        .enter().append('rect')
-        .attr('width', imageWidth + 2)
-        .attr('height', imageHeight + 2)
-        .style('fill', 'none')
-        .style('stroke', '#ffffff')
+        .style('stroke', '#42C0FB')
         .style('stroke-width', 2)
         .attr('class', 'stuff1')
         .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
@@ -636,7 +532,8 @@ function runD3(match) {
           }
         });
 
-      if(scope.mostRecentMatch.mapId !== 10) {
+
+
         var imgurl7 = scope.mostRecentMatch.participants[6].championImage;
         var player7img = svg.selectAll('image1')
           .data(data.player7)
@@ -665,30 +562,7 @@ function runD3(match) {
           .attr('width', imageWidth + 2)
           .attr('height', imageHeight + 2)
           .style('fill', 'none')
-          .style('stroke', '#00cc99')
-          .style('stroke-width', 6)
-          .attr('class', 'stuff1')
-          .attr('x', function (d) {
-            return xScale(d[2]) - (imageWidth / 2 + 1);
-          })
-          .attr('y', function (d) {
-            return yScale(d[3]) - (imageHeight / 2 + 1);
-          })
-          .attr('opacity', function (d) {
-            if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
-              return 1;
-            } else {
-              return (0);
-            }
-          });
-
-        svg.selectAll('image1')
-          .data(data.player7)
-          .enter().append('rect')
-          .attr('width', imageWidth + 2)
-          .attr('height', imageHeight + 2)
-          .style('fill', 'none')
-          .style('stroke', '#ffffff')
+          .style('stroke', '#42C0FB')
           .style('stroke-width', 2)
           .attr('class', 'stuff1')
           .attr('x', function (d) {
@@ -734,30 +608,7 @@ function runD3(match) {
           .attr('width', imageWidth + 2)
           .attr('height', imageHeight + 2)
           .style('fill', 'none')
-          .style('stroke', '#006666')
-          .style('stroke-width', 6)
-          .attr('class', 'stuff1')
-          .attr('x', function (d) {
-            return xScale(d[2]) - (imageWidth / 2 + 1);
-          })
-          .attr('y', function (d) {
-            return yScale(d[3]) - (imageHeight / 2 + 1);
-          })
-          .attr('opacity', function (d) {
-            if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
-              return 1;
-            } else {
-              return (0);
-            }
-          });
-
-        svg.selectAll('image1')
-          .data(data.player8)
-          .enter().append('rect')
-          .attr('width', imageWidth + 2)
-          .attr('height', imageHeight + 2)
-          .style('fill', 'none')
-          .style('stroke', '#ffffff')
+          .style('stroke', '#42C0FB')
           .style('stroke-width', 2)
           .attr('class', 'stuff1')
           .attr('x', function (d) {
@@ -803,30 +654,7 @@ function runD3(match) {
           .attr('width', imageWidth + 2)
           .attr('height', imageHeight + 2)
           .style('fill', 'none')
-          .style('stroke', '#66ccff')
-          .style('stroke-width', 6)
-          .attr('class', 'stuff1')
-          .attr('x', function (d) {
-            return xScale(d[2]) - (imageWidth / 2 + 1);
-          })
-          .attr('y', function (d) {
-            return yScale(d[3]) - (imageHeight / 2 + 1);
-          })
-          .attr('opacity', function (d) {
-            if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
-              return 1;
-            } else {
-              return (0);
-            }
-          });
-
-        svg.selectAll('image1')
-          .data(data.player9)
-          .enter().append('rect')
-          .attr('width', imageWidth + 2)
-          .attr('height', imageHeight + 2)
-          .style('fill', 'none')
-          .style('stroke', '#ffffff')
+          .style('stroke', '#42C0FB')
           .style('stroke-width', 2)
           .attr('class', 'stuff1')
           .attr('x', function (d) {
@@ -872,30 +700,7 @@ function runD3(match) {
           .attr('width', imageWidth + 2)
           .attr('height', imageHeight + 2)
           .style('fill', 'none')
-          .style('stroke', '#6666ff')
-          .style('stroke-width', 6)
-          .attr('class', 'stuff1')
-          .attr('x', function (d) {
-            return xScale(d[2]) - (imageWidth / 2 + 1);
-          })
-          .attr('y', function (d) {
-            return yScale(d[3]) - (imageHeight / 2 + 1);
-          })
-          .attr('opacity', function (d) {
-            if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
-              return 1;
-            } else {
-              return (0);
-            }
-          });
-
-        svg.selectAll('image1')
-          .data(data.player10)
-          .enter().append('rect')
-          .attr('width', imageWidth + 2)
-          .attr('height', imageHeight + 2)
-          .style('fill', 'none')
-          .style('stroke', '#ffffff')
+          .style('stroke', '#42C0FB')
           .style('stroke-width', 2)
           .attr('class', 'stuff1')
           .attr('x', function (d) {
@@ -912,7 +717,143 @@ function runD3(match) {
             }
           });
 
-      }
+      //IF THE MAP IS TWISTED TREELINE
+      } else if (scope.mostRecentMatch.mapId == 10) {
+      var imgurl6 = scope.mostRecentMatch.participants[3].championImage;
+      var player6img = svg.selectAll('image1')
+        .data(data.player4)
+        .enter().append('svg:image')
+        .attr('xlink:href', imgurl6)
+        .attr('class', 'stuff1')
+        .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
+        .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
+        .attr('width', imageWidth)
+        .attr('height', imageHeight)
+        .attr('opacity', function(d) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
+            return 1;
+          } else {
+            return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
+          }
+        });
+
+      svg.selectAll('image1')
+        .data(data.player4)
+        .enter().append('rect')
+        .attr('width', imageWidth + 2)
+        .attr('height', imageHeight + 2)
+        .style('fill', 'none')
+        .style('stroke', '#42C0FB')
+        .style('stroke-width', 2)
+        .attr('class', 'stuff1')
+        .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
+        .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
+        .attr('opacity', function(d) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
+            return 1;
+          } else {
+            return (0);
+          }
+        });
+
+
+      var imgurl7 = scope.mostRecentMatch.participants[4].championImage;
+      var player7img = svg.selectAll('image1')
+        .data(data.player5)
+        .enter().append('svg:image')
+        .attr('xlink:href', imgurl7)
+        .attr('class', 'stuff1')
+        .attr('x', function (d) {
+          return xScale(d[2]) - imageWidth / 2;
+        })
+        .attr('y', function (d) {
+          return yScale(d[3]) - imageHeight / 2;
+        })
+        .attr('width', imageWidth)
+        .attr('height', imageHeight)
+        .attr('opacity', function (d) {
+          if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
+            return 1;
+          } else {
+            return ((d[0] / (brush.extent()[1] * 60000) * 0.7) + 0.1);
+          }
+        });
+
+      svg.selectAll('image1')
+        .data(data.player5)
+        .enter().append('rect')
+        .attr('width', imageWidth + 2)
+        .attr('height', imageHeight + 2)
+        .style('fill', 'none')
+        .style('stroke', '#42C0FB')
+        .style('stroke-width', 2)
+        .attr('class', 'stuff1')
+        .attr('x', function (d) {
+          return xScale(d[2]) - (imageWidth / 2 + 1);
+        })
+        .attr('y', function (d) {
+          return yScale(d[3]) - (imageHeight / 2 + 1);
+        })
+        .attr('opacity', function (d) {
+          if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
+            return 1;
+          } else {
+            return (0);
+          }
+        });
+
+
+      var imgurl8 = scope.mostRecentMatch.participants[5].championImage;
+      var player8img = svg.selectAll('image1')
+        .data(data.player6)
+        .enter().append('svg:image')
+        .attr('xlink:href', imgurl8)
+        .attr('class', 'stuff1')
+        .attr('x', function (d) {
+          return xScale(d[2]) - imageWidth / 2;
+        })
+        .attr('y', function (d) {
+          return yScale(d[3]) - imageHeight / 2;
+        })
+        .attr('width', imageWidth)
+        .attr('height', imageHeight)
+        .attr('opacity', function (d) {
+          if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
+            return 1;
+          } else {
+            return ((d[0] / (brush.extent()[1] * 60000) * 0.7) + 0.1);
+          }
+        });
+
+      svg.selectAll('image1')
+        .data(data.player6)
+        .enter().append('rect')
+        .attr('width', imageWidth + 2)
+        .attr('height', imageHeight + 2)
+        .style('fill', 'none')
+        .style('stroke', '#42C0FB')
+        .style('stroke-width', 2)
+        .attr('class', 'stuff1')
+        .attr('x', function (d) {
+          return xScale(d[2]) - (imageWidth / 2 + 1);
+        })
+        .attr('y', function (d) {
+          return yScale(d[3]) - (imageHeight / 2 + 1);
+        })
+        .attr('opacity', function (d) {
+          if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
+            return 1;
+          } else {
+            return (0);
+          }
+        });
+
+
+    }
+
+
+      //D3 TOOLTIPS AND COMBAT DATA
+
     var tip = d3.tip()
       .attr('class', 'd3-tip')
       .offset([-10, 0])
@@ -925,7 +866,7 @@ function runD3(match) {
           } else {
             killer = '<image class="tooltip player0" src="./views/images/RIP.jpg">';
           }
-          var victim = '<image class="tooltip player' + d[6] + '" src="' + scope.mostRecentMatch.participants[d[6] - 1].championImage + '">';
+          var victim = '<image class="victim tooltip player' + d[6] + '" src="' + scope.mostRecentMatch.participants[d[6] - 1].championImage + '">';
           var assistImg = '';
           var assistors = '';
           if (d[5] !== null) {

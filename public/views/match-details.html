@@ -8,11 +8,10 @@
 
   <div class="eight columns">
       <div id="tabs">
-        <a ui-sref="match.recentMatch({summoner_id : summoner.id})" class="match-tab"  ng-if="disableTab.current.name == 'match.matchDetails'">
-          <li class="matchTabs">List of Recent Matches</li>
-        </a>
+          <a ui-sref="match.recentMatch({summoner_id : summoner.id})" class="match-tab"  ng-if="disableTab.current.name == 'match.matchDetails'"><li class="matchTabs">LIST OF RECENT MATCHES</li></a>
     </div>
     <map-d my-recent-games = "mostRecentMatch"></map-d>
+    <p class="axisLabel">GAME TIME (min)</h1>
   </div>
 
   <div class="two columns">
