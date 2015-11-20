@@ -66,12 +66,6 @@ label{
 
 .match-tab {
   text-decoration: none;
-  text-shadow: -1.5px 0 #A26627, 0 1.5px #A26627, 1.5px 0 #A26627, 0 -1.5px #A26627;
-  // box-shadow: 0 1px 0 #ccc,
-  //           0 2px 0 #c9c9c9,
-  //           0 3px 0 #bbb,
-  //           0 4px 0 #b9b9b9,
-  //           0 5px 0 #aaa;
 }
 
 li {
@@ -98,14 +92,9 @@ li {
     font-family: 'Freemont';
     // text-shadow: 0px 0px 4px #BF7A3F;
     font-size: 20px;
-    // box-shadow: 0 1px 0 #ccc,
-    //             0 2px 0 #c9c9c9,
-    //             0 3px 0 #bbb,
-    //             0 4px 0 #b9b9b9,
-    //             0 5px 0 #aaa;
 
     &:hover {
-      // color: red;
+      border: 2px solid orange;
       border: 2px solid gold;
       box-shadow: none;
     }
@@ -123,18 +112,20 @@ li {
 }
 
 .game-info {
+
   box-sizing: border-box;
   display: block;
-  border: 1px solid black;
-  font-weight: bold;
   line-height: 140%;
-  margin: 7px;
+  padding-top: 7px;
+  padding-bottom: 7px;
   background-image: url('https://s3-us-west-1.amazonaws.com/riot-api/img/rune-bg.png');
-  // box-shadow: $box-shadow;
+
+  font-size: 1.2em;
+  font-weight: bold;
+  font-family: 'Freemont';
+  padding-left: 15px;
 
   &:hover {
-    border: 2px solid orange;
-    color: red;
     box-shadow: none;
   }
 }
@@ -289,10 +280,12 @@ li {
 }
 
 div.match-container {
-  border: 1px solid #E2BE30;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  border: 4px solid #E2AD5F;
   margin-bottom : 35px;
   background-color: #03181E;
+  &:hover {
+    border: 4px solid gold;
+  }
 }
 
 #vs {

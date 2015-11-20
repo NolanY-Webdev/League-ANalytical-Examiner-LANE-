@@ -4,13 +4,12 @@
       <div class="match-container" ng-click="getMatch(game.gameId)">
 
         <div class="row game-info">
-          <div class="four columns">Game mode:{{game.gameMode}}</div>
+          <div class="four columns"><div id="match-info-columns">{{game.gameMode}}</div></div>
+          <div class="four columns">{{game.subType}}</div>
           <div class="four columns">Game Length: {{game.stats.timePlayed}}</div>
-          <div class="four columns">Game Type: {{game.subType}}</div>
-          <div class="four columns">Game Type: {{game.mapId}}</div>
         </div>
 
-    <!--     <div class="row teams u-full-width" ng-style="{'background-image' : 'url( http://ddragon.leagueoflegends.com/cdn/5.22.3/img/map/map'+game.mapId+'.png )'}"> -->
+    <!--  <div class="row teams u-full-width" ng-style="{'background-image' : 'url( http://ddragon.leagueoflegends.com/cdn/5.22.3/img/map/map'+game.mapId+'.png )'}"> -->
         <div class="row teams u-full-width">
           <ul>
             <li ng-repeat="friend in game.myTeam">
