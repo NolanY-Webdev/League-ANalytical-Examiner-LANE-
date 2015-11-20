@@ -36,7 +36,8 @@ function sort(data) {
 			"gameMode": currentGame.gameMode,
 			"subType": currentGame.subType,
 			"mapId": currentGame.mapId,
-			"createDate": currentGame.createDate
+			"createDate": currentGame.createDate,
+			"gameLength": currentGame.stats.timePlayed
 		};
 
 		if (currentGame.teamId == 100) {
