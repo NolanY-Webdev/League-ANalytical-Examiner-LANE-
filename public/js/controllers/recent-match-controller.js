@@ -13,6 +13,7 @@ angular.module('laneApp')
           $scope.sortedData = data.sortedData;
           $scope.disableTab = $state;
           $scope.games = data.games;
+          // $scope.gameLength = data.sortedData.gameLength / 60;
 
           // $scope.summonerName = $rootScope.summonerName;
           $scope.summonerName = 'TODO';
