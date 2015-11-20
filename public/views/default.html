@@ -1,6 +1,6 @@
 <div class="container">
 
-  <form class="form" name="summonerForm" ng-submit="getSummonerInfo(summonerName)">
+  <form class="form" name="summonerForm" ng-disabled="summonerName.$invalid" ng-submit="getSummonerInfo(summonerName)">
 
   <div class="sixteen columns">
       <h1 class='logo'></h1>
@@ -8,23 +8,26 @@
     <div class="four columns offset-by-four">
     </div>
 
-    <div class="four columns offset-by-four">
-        <label for="summonerNameInput">Summoner name</label>
+    <div class="five columns offset-by-three">
+        <label id="summonerNameLabel">Enter Summoner Name</label>
         <input
         id="summonerNameInput"
         required
         class="u-full-width"
         type="text"
         placeholder="summoner name"
-        ng-model="summonerName">
-        <p class="error" ng-show="summonerForm.$dirty && summonerForm.summonerName.$invalid">Required</p>
+        ng-model="summonerName"
+        ng-minlength="2">
+        <!-- <p class="error" ng-show="summonerForm.$dirty && summonerForm.summonerName.$invalid">Required</p> -->
+        <p class="error" ng-show="summonerForm.summonerName.$pristine">Required</p>
+        <p class="error" ng-show="summonerForm.summonerName.$error.minlength">Not less than 2 characters</p>
 
     </div>
   </div>
 
   <div class="four columns offset-by-four">
     <div class="eight columns offset-by-two">
-      <button type="submit" class="button u-full-width">Search</button>
+      <button type="submit" class="button u-full-width" ng-show="summonerForm.$valid">Search</button>
     </div>
   </div>
 
