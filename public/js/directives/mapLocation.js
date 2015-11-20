@@ -866,7 +866,7 @@ function runD3(match) {
           } else {
             killer = '<image class="tooltip player0" src="./views/images/RIP.jpg">';
           }
-          var victim = '<image class="tooltip player' + d[6] + '" src="' + scope.mostRecentMatch.participants[d[6] - 1].championImage + '">';
+          var victim = '<image class="victim tooltip player' + d[6] + '" src="' + scope.mostRecentMatch.participants[d[6] - 1].championImage + '">';
           var assistImg = '';
           var assistors = '';
           if (d[5] !== null) {

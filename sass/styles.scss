@@ -154,8 +154,8 @@ li {
 
 //tooltip sizes and hard coded boarders per player
 .tooltip{
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 50px;
 }
 
 .player0{
@@ -223,4 +223,10 @@ li {
   color: #AA7420;
   font-family: 'Freemont';
   text-align: center;
+}
+
+.victim {
+  opacity: 0.4;
+  height: 40px;
+  width: 40px;
 }
