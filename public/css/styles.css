@@ -1,12 +1,8 @@
-/* line 1, stdin */
-.container {
-  max-width: 1200px; }
-
-/* line 21, stdin */
+/* line 17, stdin */
 body {
   background-color: #021D24; }
 
-/* line 25, stdin */
+/* line 21, stdin */
 .axisLabel {
   margin-top: -50px;
   display: block;
@@ -15,37 +11,36 @@ body {
   font-family: 'Freemont';
   font-weight: bold; }
 
-/* line 34, stdin */
+/* line 30, stdin */
 .tick text {
   fill: #E2BE30; }
 
-/* line 38, stdin */
+/* line 34, stdin */
 .box {
   box-sizing: border-box;
   height: 125px;
-  width: 125px;
   background-size: 100%; }
 
-/* line 47, stdin */
+/* line 43, stdin */
 .portrait {
   margin-bottom: 25px; }
 
-/* line 51, stdin */
+/* line 47, stdin */
 .match-tab {
   text-decoration: none;
   box-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa; }
 
-/* line 60, stdin */
+/* line 56, stdin */
 li {
   display: inline; }
 
-/* line 64, stdin */
+/* line 60, stdin */
 #tabs {
   display: block;
   margin: auto;
   padding: auto;
   width: 100%; }
-  /* line 70, stdin */
+  /* line 66, stdin */
   #tabs .matchTabs {
     box-sizing: border-box;
     text-align: center;
@@ -60,23 +55,23 @@ li {
     font-family: 'Freemont';
     text-shadow: 2px 0px 4px #BF7A3F;
     font-size: 20px; }
-    /* line 90, stdin */
+    /* line 86, stdin */
     #tabs .matchTabs:hover {
       border: 4px solid gold;
       box-shadow: none; }
-    /* line 96, stdin */
+    /* line 92, stdin */
     #tabs .matchTabs a {
       text-decoration: none; }
 
-/* line 103, stdin */
+/* line 99, stdin */
 .container {
   min-width: 950px; }
 
-/* line 107, stdin */
+/* line 103, stdin */
 #map-d {
   box-sizing: border-box; }
 
-/* line 111, stdin */
+/* line 107, stdin */
 .game-info {
   box-sizing: border-box;
   display: block;
@@ -85,13 +80,13 @@ li {
   line-height: 140%;
   margin: 7px;
   background-image: url("https://s3-us-west-1.amazonaws.com/riot-api/img/rune-bg.png"); }
-  /* line 121, stdin */
+  /* line 117, stdin */
   .game-info:hover {
     border: 2px solid orange;
     color: red;
     box-shadow: none; }
 
-/* line 128, stdin */
+/* line 124, stdin */
 .d3-tip {
   line-height: 1;
   font-weight: bold;
@@ -101,7 +96,7 @@ li {
   border-radius: 2px; }
 
 /* Creates a small triangle extender for the tooltip */
-/* line 138, stdin */
+/* line 134, stdin */
 .d3-tip:after {
   box-sizing: border-box;
   display: inline;
@@ -114,67 +109,67 @@ li {
   text-align: center; }
 
 /* Style northward tooltips differently */
-/* line 151, stdin */
+/* line 147, stdin */
 .d3-tip.n:after {
   margin: -1px 0 0 0;
   top: 100%;
   left: 0; }
 
-/* line 160, stdin */
+/* line 156, stdin */
 .tooltip {
   height: 50px;
   width: 50px; }
 
-/* line 165, stdin */
+/* line 161, stdin */
 .player0 {
   border: 4px solid #ffffff; }
 
-/* line 169, stdin */
+/* line 165, stdin */
 .player1 {
   border: 4px solid #df3b20; }
 
-/* line 173, stdin */
+/* line 169, stdin */
 .player2 {
   border: 4px solid #df3b20; }
 
-/* line 177, stdin */
+/* line 173, stdin */
 .player3 {
   border: 4px solid #df3b20; }
 
-/* line 181, stdin */
+/* line 177, stdin */
 .player4 {
   border: 4px solid #df3b20; }
 
-/* line 185, stdin */
+/* line 181, stdin */
 .player5 {
   border: 4px solid #df3b20; }
 
-/* line 189, stdin */
+/* line 185, stdin */
 .player6 {
   border: 4px solid #42C0FB; }
 
-/* line 193, stdin */
+/* line 189, stdin */
 .player7 {
   border: 4px solid #42C0FB; }
 
-/* line 197, stdin */
+/* line 193, stdin */
 .player8 {
   border: 4px solid #42C0FB; }
 
-/* line 201, stdin */
+/* line 197, stdin */
 .player9 {
   border: 4px solid #42C0FB; }
 
-/* line 205, stdin */
+/* line 201, stdin */
 .player10 {
   border: 4px solid #42C0FB; }
 
-/* line 209, stdin */
+/* line 205, stdin */
 .assistor {
   height: 20px;
   width: 20px; }
 
-/* line 214, stdin */
+/* line 210, stdin */
 .logo {
   background-image: url("/views/images/LaneLogoFull.png");
   width: 950px;
@@ -184,11 +179,7 @@ li {
   height: 100px;
   margin: auto; }
 
-/* line 225, stdin */
-.teams img {
-  display: inline; }
-
-/* line 229, stdin */
+/* line 220, stdin */
 .disclaimer {
   margin-top: 300px;
   display: block;
@@ -196,8 +187,33 @@ li {
   font-family: 'Freemont';
   text-align: center; }
 
-/* line 237, stdin */
+/* line 228, stdin */
 .victim {
   opacity: 0.4;
   height: 40px;
   width: 40px; }
+
+/* line 234, stdin */
+.teams {
+  margin-bottom: 20px; }
+  /* line 239, stdin */
+  .teams ul {
+    display: inline; }
+    /* line 242, stdin */
+    .teams ul li img {
+      opacity: 1;
+      margin-top: 35px;
+      display: inline;
+      height: 75px;
+      width: 75px; }
+
+/* line 253, stdin */
+div.match-container {
+  border: 1px solid white;
+  margin-bottom: 35px;
+  background-color: #03181E; }
+
+/* line 259, stdin */
+#vs {
+  height: 50px;
+  width: 50px; }
