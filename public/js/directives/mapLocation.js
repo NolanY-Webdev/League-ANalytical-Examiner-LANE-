@@ -194,6 +194,7 @@ function runD3(match) {
       update(filteredData);
     });
 
+
     var g = svg.append("g");
     brush(g);
     g.attr("transform", "translate(" + brushX + "," + brushY +")")
