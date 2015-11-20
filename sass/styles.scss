@@ -234,9 +234,17 @@ li {
 }
 
 .victim {
-  opacity: 0.4;
   height: 40px;
   width: 40px;
+}
+
+.tooltipX {
+  position: hover;
+  margin-left: -44px;
+  margin-bottom: 4px;
+  height: 40px;
+  width: 40px;
+
 }
 
 .teams {

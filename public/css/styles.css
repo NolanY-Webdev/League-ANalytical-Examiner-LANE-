@@ -197,17 +197,24 @@ li {
 
 /* line 236, stdin */
 .victim {
-  opacity: 0.4;
   height: 40px;
   width: 40px; }
 
-/* line 242, stdin */
+/* line 241, stdin */
+.tooltipX {
+  position: hover;
+  margin-left: -44px;
+  margin-bottom: 4px;
+  height: 40px;
+  width: 40px; }
+
+/* line 250, stdin */
 .teams {
   margin-bottom: 20px; }
-  /* line 247, stdin */
+  /* line 255, stdin */
   .teams ul {
     display: inline; }
-    /* line 250, stdin */
+    /* line 258, stdin */
     .teams ul li img {
       opacity: 1;
       margin-top: 35px;
@@ -215,13 +222,13 @@ li {
       height: 75px;
       width: 75px; }
 
-/* line 261, stdin */
+/* line 269, stdin */
 div.match-container {
   border: 1px solid white;
   margin-bottom: 35px;
   background-color: #03181E; }
 
-/* line 267, stdin */
+/* line 275, stdin */
 #vs {
   height: 50px;
   width: 50px; }
