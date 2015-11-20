@@ -1,3 +1,23 @@
+.container {
+    min-width: 950px;
+}
+body {
+  background-color: #031013;
+}
+
+label#summonerNameLabel {
+  margin-top : 150px;
+  color : #eee;
+  font-size : 1.5em;
+  font-family : 'Freemont';
+}
+
+input#summonerNameInput {
+  height : 50px;
+  font-size : 1.5em;
+  font-family : 'Freemont';
+}
+
 $box-shadow : 0 1px 0 #ccc,
               0 2px 0 #c9c9c9,
               0 3px 0 #bbb,
@@ -13,10 +33,6 @@ $box-shadow : 0 1px 0 #ccc,
 
 $red : #df3b20;
 $blue : #42C0FB;
-
-body {
-  background-color: #031013;
-}
 
 .axisLabel {
   margin-top: -50px;
@@ -100,9 +116,6 @@ li {
 }
 
 
-.container {
-    min-width: 950px;
-}
 
 #map-d {
     box-sizing: border-box;
