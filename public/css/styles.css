@@ -1,8 +1,13 @@
-/* line 17, stdin */
-body {
-  background-color: #021D24; }
+/* line 1, stdin */
+.container {
+  min-width: 950px; }
 
-/* line 21, stdin */
+/* line 4, stdin */
+body {
+  background-color: #021D24;
+  color: #eee; }
+
+/* line 26, stdin */
 .axisLabel {
   margin-top: -50px;
   display: block;
@@ -11,36 +16,36 @@ body {
   font-family: 'Freemont';
   font-weight: bold; }
 
-/* line 30, stdin */
+/* line 35, stdin */
 .tick text {
   fill: #E2BE30; }
 
-/* line 34, stdin */
+/* line 39, stdin */
 .box {
   box-sizing: border-box;
   height: 125px;
   background-size: 100%; }
 
-/* line 43, stdin */
+/* line 48, stdin */
 .portrait {
   margin-bottom: 25px; }
 
-/* line 47, stdin */
+/* line 52, stdin */
 .match-tab {
   text-decoration: none;
   box-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa; }
 
-/* line 56, stdin */
+/* line 61, stdin */
 li {
   display: inline; }
 
-/* line 60, stdin */
+/* line 65, stdin */
 #tabs {
   display: block;
   margin: auto;
   padding: auto;
   width: 100%; }
-  /* line 66, stdin */
+  /* line 71, stdin */
   #tabs .matchTabs {
     box-sizing: border-box;
     text-align: center;
@@ -55,23 +60,19 @@ li {
     font-family: 'Freemont';
     text-shadow: 2px 0px 4px #BF7A3F;
     font-size: 20px; }
-    /* line 86, stdin */
+    /* line 91, stdin */
     #tabs .matchTabs:hover {
       border: 4px solid gold;
       box-shadow: none; }
-    /* line 92, stdin */
+    /* line 97, stdin */
     #tabs .matchTabs a {
       text-decoration: none; }
 
-/* line 99, stdin */
-.container {
-  min-width: 950px; }
-
-/* line 103, stdin */
+/* line 105, stdin */
 #map-d {
   box-sizing: border-box; }
 
-/* line 107, stdin */
+/* line 109, stdin */
 .game-info {
   box-sizing: border-box;
   display: block;
@@ -80,13 +81,13 @@ li {
   line-height: 140%;
   margin: 7px;
   background-image: url("https://s3-us-west-1.amazonaws.com/riot-api/img/rune-bg.png"); }
-  /* line 117, stdin */
+  /* line 119, stdin */
   .game-info:hover {
     border: 2px solid orange;
     color: red;
     box-shadow: none; }
 
-/* line 124, stdin */
+/* line 126, stdin */
 .d3-tip {
   line-height: 1;
   font-weight: bold;
@@ -96,7 +97,7 @@ li {
   border-radius: 2px; }
 
 /* Creates a small triangle extender for the tooltip */
-/* line 134, stdin */
+/* line 136, stdin */
 .d3-tip:after {
   box-sizing: border-box;
   display: inline;
@@ -109,75 +110,75 @@ li {
   text-align: center; }
 
 /* Style northward tooltips differently */
-/* line 147, stdin */
+/* line 149, stdin */
 .d3-tip.n:after {
   margin: -1px 0 0 0;
   top: 100%;
   left: 0; }
 
-/* line 156, stdin */
+/* line 158, stdin */
 .tooltip {
   height: 50px;
   width: 50px; }
 
-/* line 161, stdin */
+/* line 163, stdin */
 .player0 {
   border: 4px solid #ffffff; }
 
-/* line 165, stdin */
+/* line 167, stdin */
 .player1 {
   border: 4px solid #df3b20; }
 
-/* line 169, stdin */
+/* line 171, stdin */
 .player2 {
   border: 4px solid #df3b20; }
 
-/* line 173, stdin */
+/* line 175, stdin */
 .player3 {
   border: 4px solid #df3b20; }
 
-/* line 177, stdin */
+/* line 179, stdin */
 .player4 {
   border: 4px solid #df3b20; }
 
-/* line 181, stdin */
+/* line 183, stdin */
 .player5 {
   border: 4px solid #df3b20; }
 
-/* line 185, stdin */
+/* line 187, stdin */
 .player6 {
   border: 4px solid #42C0FB; }
 
-/* line 189, stdin */
+/* line 191, stdin */
 .player7 {
   border: 4px solid #42C0FB; }
 
-/* line 193, stdin */
+/* line 195, stdin */
 .player8 {
   border: 4px solid #42C0FB; }
 
-/* line 197, stdin */
+/* line 199, stdin */
 .player9 {
   border: 4px solid #42C0FB; }
 
-/* line 201, stdin */
+/* line 203, stdin */
 .player10 {
   border: 4px solid #42C0FB; }
 
-/* line 205, stdin */
+/* line 207, stdin */
 .team100 {
   border: 4px solid #df3b20; }
 
-/* line 209, stdin */
+/* line 211, stdin */
 .team200 {
   border: 4px solid #42C0FB; }
 
-/* line 213, stdin */
+/* line 215, stdin */
 .assistor {
   height: 20px;
   width: 20px; }
 
-/* line 218, stdin */
+/* line 220, stdin */
 .logo {
   background-image: url("/views/images/LaneLogoFull.png");
   width: 950px;
@@ -187,7 +188,7 @@ li {
   height: 100px;
   margin: auto; }
 
-/* line 228, stdin */
+/* line 230, stdin */
 .disclaimer {
   margin-top: 300px;
   display: block;
@@ -195,12 +196,12 @@ li {
   font-family: 'Freemont';
   text-align: center; }
 
-/* line 236, stdin */
+/* line 238, stdin */
 .victim {
   height: 40px;
   width: 40px; }
 
-/* line 241, stdin */
+/* line 243, stdin */
 .tooltipX {
   position: hover;
   margin-left: -44px;
@@ -208,13 +209,13 @@ li {
   height: 40px;
   width: 40px; }
 
-/* line 250, stdin */
+/* line 252, stdin */
 .teams {
   margin-bottom: 20px; }
-  /* line 255, stdin */
+  /* line 257, stdin */
   .teams ul {
     display: inline; }
-    /* line 258, stdin */
+    /* line 260, stdin */
     .teams ul li img {
       opacity: 1;
       margin-top: 35px;
@@ -222,13 +223,13 @@ li {
       height: 75px;
       width: 75px; }
 
-/* line 269, stdin */
+/* line 271, stdin */
 div.match-container {
   border: 1px solid white;
   margin-bottom: 35px;
   background-color: #03181E; }
 
-/* line 275, stdin */
+/* line 277, stdin */
 #vs {
   height: 50px;
   width: 50px; }
