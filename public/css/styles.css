@@ -4,8 +4,12 @@
 
 /* line 4, stdin */
 body {
+<<<<<<< HEAD
   background-color: #021D24;
   color: #eee; }
+=======
+  background-color: #031013; }
+>>>>>>> ce0f60cbd055679d47ea13d30df2e44cb92ebf3a
 
 /* line 26, stdin */
 .axisLabel {
