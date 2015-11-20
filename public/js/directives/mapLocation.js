@@ -718,139 +718,136 @@ function runD3(match) {
           });
 
       //IF THE MAP IS TWISTED TREELINE
-      } else if (scope.mostRecentMatch.mapId == 10) {
-      var imgurl6 = scope.mostRecentMatch.participants[3].championImage;
-      var player6img = svg.selectAll('image1')
-        .data(data.player4)
-        .enter().append('svg:image')
-        .attr('xlink:href', imgurl6)
-        .attr('class', 'stuff1')
-        .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
-        .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
-        .attr('width', imageWidth)
-        .attr('height', imageHeight)
-        .attr('opacity', function(d) {
-          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
-            return 1;
-          } else {
-            return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
-          }
-        });
+      } else if (scope.mostRecentMatch.mapId == 10) {
+      var imgurl6 = scope.mostRecentMatch.participants[3].championImage;
+      var player6img = svg.selectAll('image1')
+        .data(data.player4)
+        .enter().append('svg:image')
+        .attr('xlink:href', imgurl6)
+        .attr('class', 'stuff1')
+        .attr('x', function(d) { return xScale(d[2]) - imageWidth/2; })
+        .attr('y', function(d) { return yScale(d[3]) - imageHeight/2; })
+        .attr('width', imageWidth)
+        .attr('height', imageHeight)
+        .attr('opacity', function(d) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
+            return 1;
+          } else {
+            return ((d[0]/(brush.extent()[1] * 60000) *0.7) + 0.1);
+          }
+        });
 
-      svg.selectAll('image1')
-        .data(data.player4)
-        .enter().append('rect')
-        .attr('width', imageWidth + 2)
-        .attr('height', imageHeight + 2)
-        .style('fill', 'none')
-        .style('stroke', '#42C0FB')
-        .style('stroke-width', 2)
-        .attr('class', 'stuff1')
-        .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
-        .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
-        .attr('opacity', function(d) {
-          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
-            return 1;
-          } else {
-            return (0);
-          }
-        });
-
-
-      var imgurl7 = scope.mostRecentMatch.participants[4].championImage;
-      var player7img = svg.selectAll('image1')
-        .data(data.player5)
-        .enter().append('svg:image')
-        .attr('xlink:href', imgurl7)
-        .attr('class', 'stuff1')
-        .attr('x', function (d) {
-          return xScale(d[2]) - imageWidth / 2;
-        })
-        .attr('y', function (d) {
-          return yScale(d[3]) - imageHeight / 2;
-        })
-        .attr('width', imageWidth)
-        .attr('height', imageHeight)
-        .attr('opacity', function (d) {
-          if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
-            return 1;
-          } else {
-            return ((d[0] / (brush.extent()[1] * 60000) * 0.7) + 0.1);
-          }
-        });
-
-      svg.selectAll('image1')
-        .data(data.player5)
-        .enter().append('rect')
-        .attr('width', imageWidth + 2)
-        .attr('height', imageHeight + 2)
-        .style('fill', 'none')
-        .style('stroke', '#42C0FB')
-        .style('stroke-width', 2)
-        .attr('class', 'stuff1')
-        .attr('x', function (d) {
-          return xScale(d[2]) - (imageWidth / 2 + 1);
-        })
-        .attr('y', function (d) {
-          return yScale(d[3]) - (imageHeight / 2 + 1);
-        })
-        .attr('opacity', function (d) {
-          if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
-            return 1;
-          } else {
-            return (0);
-          }
-        });
+      svg.selectAll('image1')
+        .data(data.player4)
+        .enter().append('rect')
+        .attr('width', imageWidth + 2)
+        .attr('height', imageHeight + 2)
+        .style('fill', 'none')
+        .style('stroke', '#42C0FB')
+        .style('stroke-width', 2)
+        .attr('class', 'stuff1')
+        .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
+        .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
+        .attr('opacity', function(d) {
+          if ((brush.extent()[1]-1)*60050 <= d[0] ) {
+            return 1;
+          } else {
+            return (0);
+          }
+        });
 
 
-      var imgurl8 = scope.mostRecentMatch.participants[5].championImage;
-      var player8img = svg.selectAll('image1')
-        .data(data.player6)
-        .enter().append('svg:image')
-        .attr('xlink:href', imgurl8)
-        .attr('class', 'stuff1')
-        .attr('x', function (d) {
-          return xScale(d[2]) - imageWidth / 2;
-        })
-        .attr('y', function (d) {
-          return yScale(d[3]) - imageHeight / 2;
-        })
-        .attr('width', imageWidth)
-        .attr('height', imageHeight)
-        .attr('opacity', function (d) {
-          if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
-            return 1;
-          } else {
-            return ((d[0] / (brush.extent()[1] * 60000) * 0.7) + 0.1);
-          }
-        });
+      var imgurl7 = scope.mostRecentMatch.participants[4].championImage;
+      var player7img = svg.selectAll('image1')
+        .data(data.player5)
+        .enter().append('svg:image')
+        .attr('xlink:href', imgurl7)
+        .attr('class', 'stuff1')
+        .attr('x', function (d) {
+          return xScale(d[2]) - imageWidth / 2;
+        })
+        .attr('y', function (d) {
+          return yScale(d[3]) - imageHeight / 2;
+        })
+        .attr('width', imageWidth)
+        .attr('height', imageHeight)
+        .attr('opacity', function (d) {
+          if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
+            return 1;
+          } else {
+            return ((d[0] / (brush.extent()[1] * 60000) * 0.7) + 0.1);
+          }
+        });
 
-      svg.selectAll('image1')
-        .data(data.player6)
-        .enter().append('rect')
-        .attr('width', imageWidth + 2)
-        .attr('height', imageHeight + 2)
-        .style('fill', 'none')
-        .style('stroke', '#42C0FB')
-        .style('stroke-width', 2)
-        .attr('class', 'stuff1')
-        .attr('x', function (d) {
-          return xScale(d[2]) - (imageWidth / 2 + 1);
-        })
-        .attr('y', function (d) {
-          return yScale(d[3]) - (imageHeight / 2 + 1);
-        })
-        .attr('opacity', function (d) {
-          if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
-            return 1;
-          } else {
-            return (0);
-          }
-        });
+      svg.selectAll('image1')
+        .data(data.player5)
+        .enter().append('rect')
+        .attr('width', imageWidth + 2)
+        .attr('height', imageHeight + 2)
+        .style('fill', 'none')
+        .style('stroke', '#42C0FB')
+        .style('stroke-width', 2)
+        .attr('class', 'stuff1')
+        .attr('x', function (d) {
+          return xScale(d[2]) - (imageWidth / 2 + 1);
+        })
+        .attr('y', function (d) {
+          return yScale(d[3]) - (imageHeight / 2 + 1);
+        })
+        .attr('opacity', function (d) {
+          if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
+            return 1;
+          } else {
+            return (0);
+          }
+        });
 
 
-    }
+      var imgurl8 = scope.mostRecentMatch.participants[5].championImage;
+      var player8img = svg.selectAll('image1')
+        .data(data.player6)
+        .enter().append('svg:image')
+        .attr('xlink:href', imgurl8)
+        .attr('class', 'stuff1')
+        .attr('x', function (d) {
+          return xScale(d[2]) - imageWidth / 2;
+        })
+        .attr('y', function (d) {
+          return yScale(d[3]) - imageHeight / 2;
+        })
+        .attr('width', imageWidth)
+        .attr('height', imageHeight)
+        .attr('opacity', function (d) {
+          if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
+            return 1;
+          } else {
+            return ((d[0] / (brush.extent()[1] * 60000) * 0.7) + 0.1);
+          }
+        });
 
+      svg.selectAll('image1')
+        .data(data.player6)
+        .enter().append('rect')
+        .attr('width', imageWidth + 2)
+        .attr('height', imageHeight + 2)
+        .style('fill', 'none')
+        .style('stroke', '#42C0FB')
+        .style('stroke-width', 2)
+        .attr('class', 'stuff1')
+        .attr('x', function (d) {
+          return xScale(d[2]) - (imageWidth / 2 + 1);
+        })
+        .attr('y', function (d) {
+          return yScale(d[3]) - (imageHeight / 2 + 1);
+        })
+        .attr('opacity', function (d) {
+          if ((brush.extent()[1] - 1) * 60050 <= d[0]) {
+            return 1;
+          } else {
+            return (0);
+          }
+        });
+    }
 
       //D3 TOOLTIPS AND COMBAT DATA
 
@@ -862,23 +859,23 @@ function runD3(match) {
         var scoreImg = '<image class="tooltipScore" src="./views/images/score.png">';
         if(d[1] == "ChampionKilled") {
           if (d[4] !== 0) {
-            var killer = '<image class="tooltip player' + d[4] + '" src="' + scope.mostRecentMatch.participants[d[4] - 1].championImage + '">';
+            var killer = '<image class="tooltip team' + scope.mostRecentMatch.participants[d[4] - 1].teamId + '" src="' + scope.mostRecentMatch.participants[d[4] - 1].championImage + '">';
           } else {
             killer = '<image class="tooltip player0" src="./views/images/RIP.jpg">';
           }
-          var victim = '<image class="victim tooltip player' + d[6] + '" src="' + scope.mostRecentMatch.participants[d[6] - 1].championImage + '">';
+          var victim = '<image class="victim tooltip team' + scope.mostRecentMatch.participants[d[6] - 1].teamId + '" src="' + scope.mostRecentMatch.participants[d[6] - 1].championImage + '">';
           var assistImg = '';
           var assistors = '';
           if (d[5] !== null) {
             assistImg = '<image class="tooltipScore" src="./views/images/assist.png">';
             for (var i = 0; i < d[5].length; i++) {
-              assistors += '<image class="tooltip assistor player' + d[5][i] + '" src="' + scope.mostRecentMatch.participants[(d[5][i]) - 1].championImage + '">'
+              assistors += '<image class="tooltip assistor team' + scope.mostRecentMatch.participants[(d[5][i]) - 1].teamId + '" src="' + scope.mostRecentMatch.participants[(d[5][i]) - 1].championImage + '">'
             }
           }
         } else if (d[1] == 'MonsterKilled') {
           var assistImg = '';
           var assistors = '';
-          var killer = '<image class="tooltip player' + d[4] + '" src="' + scope.mostRecentMatch.participants[d[4] - 1].championImage + '">';
+          var killer = '<image class="tooltip team' + scope.mostRecentMatch.participants[d[4] - 1].teamId + '" src="' + scope.mostRecentMatch.participants[d[4] - 1].championImage + '">';
           if(d[5] == 'DRAGON') {
             var victim = '<image class="tooltip player0" src="http://vignette3.wikia.nocookie.net/leagueoflegends/images/c/c9/DragonSquare.png/revision/latest/scale-to-width-down/48?cb=20140620025407">';
           } else if (d[5] == 'BARON_NASHOR') {
