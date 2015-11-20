@@ -745,7 +745,7 @@ function runD3(match) {
         .style('fill', 'none')
         .style('stroke', '#42C0FB')
         .style('stroke-width', 2)
-        .attr('class', 'stuff1')
+        .attr('class', 'stuff1 player6')
         .attr('x', function(d) { return xScale(d[2]) - (imageWidth/2 + 1); })
         .attr('y', function(d) { return yScale(d[3]) - (imageHeight/2 + 1); })
         .attr('opacity', function(d) {
