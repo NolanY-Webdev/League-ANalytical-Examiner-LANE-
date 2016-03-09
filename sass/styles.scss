@@ -2,20 +2,33 @@
     min-width: 950px;
 }
 body {
-  background-color: #031013;
+  background-color: #011627;
 }
 
-label#summonerNameLabel {
-  margin-top : 150px;
-  color : #eee;
-  font-size : 1.5em;
-  font-family : 'Freemont';
+.header {
+  display: table;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  // background-color: #4CAF50;
+
+  background: url('/views/images/sona-background.jpg') no-repeat center;
+  background-size: cover;
+  -o-background-size: cover;
+  margin-bottom: 0px;
 }
 
 input#summonerNameInput {
-  height : 50px;
+  position : relative;
+  top : 50vh;
+  width : 50vw;
   font-size : 1.5em;
   font-family : 'Freemont';
+  color: #EFFFE9;
+
+  &:focus {
+    border: none;
+  }
 }
 
 $box-shadow : 0 1px 0 #ccc,
@@ -229,7 +242,7 @@ li {
 }
 
 .logo {
-  background-image: url('/views/images/LaneLogoFull.png');
+  // background-image: url('/views/images/LaneLogoFull.png');
   width: 950px;
   background-repeat: none;
   background-size: 100%;
@@ -239,11 +252,13 @@ li {
 }
 
 .disclaimer {
-  margin-top: 300px;
-  display: block;
-  color: #AA7420;
-  font-family: 'Freemont';
-  text-align: center;
+  color: #EFFFE9;
+
+  // margin-top: 300px;
+  // display: block;
+  // color: #AA7420;
+  // font-family: 'Freemont';
+  // text-align: center;
 }
 
 .victim {
@@ -293,4 +308,10 @@ div.match-container {
   width :50px;
   margin-left: 30px;
   margin-bottom: 10px;
+}
+
+footer.page-footer, .nav-wrapper {
+  margin-top: 0px;
+  padding-top: 0px;
+  background-color: #2EC4B6;
 }

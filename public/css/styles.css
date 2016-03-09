@@ -4,22 +4,32 @@
 
 /* line 4, stdin */
 body {
-  background-color: #031013; }
+  background-color: #011627; }
 
 /* line 8, stdin */
-label#summonerNameLabel {
-  margin-top: 150px;
-  color: #eee;
-  font-size: 1.5em;
-  font-family: 'Freemont'; }
+.header {
+  display: table;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: url("/views/images/sona-background.jpg") no-repeat center;
+  background-size: cover;
+  -o-background-size: cover;
+  margin-bottom: 0px; }
 
-/* line 15, stdin */
+/* line 21, stdin */
 input#summonerNameInput {
-  height: 50px;
+  position: relative;
+  top: 50vh;
+  width: 50vw;
   font-size: 1.5em;
-  font-family: 'Freemont'; }
+  font-family: 'Freemont';
+  color: #EFFFE9; }
+  /* line 29, stdin */
+  input#summonerNameInput:focus {
+    border: none; }
 
-/* line 37, stdin */
+/* line 50, stdin */
 .axisLabel {
   margin-top: -50px;
   display: block;
@@ -28,39 +38,39 @@ input#summonerNameInput {
   font-family: 'Freemont';
   font-weight: bold; }
 
-/* line 46, stdin */
+/* line 59, stdin */
 .tick text {
   fill: #E2BE30; }
 
-/* line 50, stdin */
+/* line 63, stdin */
 label {
   color: #E2BE30; }
 
-/* line 54, stdin */
+/* line 67, stdin */
 .box {
   box-sizing: border-box;
   height: 125px;
   background-size: 100%; }
 
-/* line 63, stdin */
+/* line 76, stdin */
 .portrait {
   margin-bottom: 25px; }
 
-/* line 67, stdin */
+/* line 80, stdin */
 .match-tab {
   text-decoration: none; }
 
-/* line 71, stdin */
+/* line 84, stdin */
 li {
   display: inline; }
 
-/* line 75, stdin */
+/* line 88, stdin */
 #tabs {
   display: block;
   margin: auto;
   padding: auto;
   width: 100%; }
-  /* line 81, stdin */
+  /* line 94, stdin */
   #tabs .matchTabs {
     box-sizing: border-box;
     text-align: center;
@@ -74,20 +84,20 @@ li {
     font-weight: bold;
     font-family: 'Freemont';
     font-size: 20px; }
-    /* line 96, stdin */
+    /* line 109, stdin */
     #tabs .matchTabs:hover {
       border: 2px solid orange;
       border: 2px solid gold;
       box-shadow: none; }
-    /* line 102, stdin */
+    /* line 115, stdin */
     #tabs .matchTabs a {
       text-decoration: none; }
 
-/* line 110, stdin */
+/* line 123, stdin */
 #map-d {
   box-sizing: border-box; }
 
-/* line 114, stdin */
+/* line 127, stdin */
 .game-info {
   box-sizing: border-box;
   display: block;
@@ -99,11 +109,11 @@ li {
   font-weight: bold;
   font-family: 'Freemont';
   padding-left: 15px; }
-  /* line 128, stdin */
+  /* line 141, stdin */
   .game-info:hover {
     box-shadow: none; }
 
-/* line 133, stdin */
+/* line 146, stdin */
 .d3-tip {
   line-height: 1;
   font-weight: bold;
@@ -113,7 +123,7 @@ li {
   border-radius: 2px; }
 
 /* Creates a small triangle extender for the tooltip */
-/* line 143, stdin */
+/* line 156, stdin */
 .d3-tip:after {
   box-sizing: border-box;
   display: inline;
@@ -126,81 +136,80 @@ li {
   text-align: center; }
 
 /* Style northward tooltips differently */
-/* line 156, stdin */
+/* line 169, stdin */
 .d3-tip.n:after {
   margin: -1px 0 0 0;
   top: 100%;
   left: 0; }
 
-/* line 165, stdin */
+/* line 178, stdin */
 .tooltip {
   height: 50px;
   width: 50px; }
 
-/* line 170, stdin */
+/* line 183, stdin */
 .player0 {
   border: 4px solid #ffffff; }
 
-/* line 174, stdin */
+/* line 187, stdin */
 .player1 {
   border: 4px solid #df3b20; }
 
-/* line 178, stdin */
+/* line 191, stdin */
 .player2 {
   border: 4px solid #df3b20; }
 
-/* line 182, stdin */
+/* line 195, stdin */
 .player3 {
   border: 4px solid #df3b20; }
 
-/* line 186, stdin */
+/* line 199, stdin */
 .player4 {
   border: 4px solid #df3b20; }
 
-/* line 190, stdin */
+/* line 203, stdin */
 .player5 {
   border: 4px solid #df3b20; }
 
-/* line 194, stdin */
+/* line 207, stdin */
 .player6 {
   border: 4px solid #42C0FB; }
 
-/* line 198, stdin */
+/* line 211, stdin */
 .player7 {
   border: 4px solid #42C0FB; }
 
-/* line 202, stdin */
+/* line 215, stdin */
 .player8 {
   border: 4px solid #42C0FB; }
 
-/* line 206, stdin */
+/* line 219, stdin */
 .player9 {
   border: 4px solid #42C0FB; }
 
-/* line 210, stdin */
+/* line 223, stdin */
 .player10 {
   border: 4px solid #42C0FB; }
 
-/* line 214, stdin */
+/* line 227, stdin */
 .team100 {
   border: 4px solid #df3b20; }
 
-/* line 218, stdin */
+/* line 231, stdin */
 .team200 {
   border: 4px solid #42C0FB; }
 
-/* line 222, stdin */
+/* line 235, stdin */
 .assistor {
   height: 20px;
   width: 20px; }
 
-/* line 227, stdin */
+/* line 240, stdin */
 .team200 {
   border: 4px solid #42C0FB; }
 
-/* line 231, stdin */
+/* line 244, stdin */
 .logo {
-  background-image: url("/views/images/LaneLogoFull.png");
   width: 950px;
   background-repeat: none;
   background-size: 100%;
@@ -208,20 +217,16 @@ li {
   height: 100px;
   margin: auto; }
 
-/* line 241, stdin */
+/* line 254, stdin */
 .disclaimer {
-  margin-top: 300px;
-  display: block;
-  color: #AA7420;
-  font-family: 'Freemont';
-  text-align: center; }
+  color: #EFFFE9; }
 
-/* line 249, stdin */
+/* line 264, stdin */
 .victim {
   height: 40px;
   width: 40px; }
 
-/* line 254, stdin */
+/* line 269, stdin */
 .tooltipX {
   position: hover;
   margin-left: -44px;
@@ -229,13 +234,13 @@ li {
   height: 40px;
   width: 40px; }
 
-/* line 263, stdin */
+/* line 278, stdin */
 .teams {
   margin-bottom: 20px; }
-  /* line 268, stdin */
+  /* line 283, stdin */
   .teams ul {
     display: inline; }
-    /* line 271, stdin */
+    /* line 286, stdin */
     .teams ul li img {
       opacity: 1;
       margin-top: 35px;
@@ -243,18 +248,24 @@ li {
       height: 75px;
       width: 75px; }
 
-/* line 282, stdin */
+/* line 297, stdin */
 div.match-container {
   border: 4px solid #E2AD5F;
   margin-bottom: 35px;
   background-color: #03181E; }
-  /* line 286, stdin */
+  /* line 301, stdin */
   div.match-container:hover {
     border: 4px solid gold; }
 
-/* line 291, stdin */
+/* line 306, stdin */
 #vs {
   height: 50px;
   width: 50px;
   margin-left: 30px;
   margin-bottom: 10px; }
+
+/* line 313, stdin */
+footer.page-footer, .nav-wrapper {
+  margin-top: 0px;
+  padding-top: 0px;
+  background-color: #2EC4B6; }

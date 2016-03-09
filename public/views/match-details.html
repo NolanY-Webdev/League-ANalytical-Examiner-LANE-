@@ -1,22 +1,24 @@
 <div class="row">
 
-  <div class="two columns">
+  <div class="col s2">
     <div ng-repeat="participant in mostRecentMatch.participants | filter: {  teamId: 100 }" class="team100 portrait player{{participant.participantId}}">
-      <div class="box" ng-style="{'background-image' : 'url( {{ participant.championImage }} )'}"></div>
+      <div class="box circle responsive-img" ng-style="{'background-image' : 'url( {{ participant.championImage }} )'}"></div>
     </div>
   </div>
 
-  <div class="eight columns">
-      <div id="tabs">
-          <a ui-sref="match.recentMatch({summoner_id : summoner.id})" class="match-tab"  ng-if="disableTab.current.name == 'match.matchDetails'"><li class="matchTabs">LIST OF RECENT MATCHES</li></a>
+  <div class="col s8">
+    <div id="tabs">
+      <a ui-sref="match.recentMatch({summoner_id : summoner.id})" class="match-tab"  ng-if="disableTab.current.name == 'match.matchDetails'">
+        <li class="matchTabs">LIST OF RECENT MATCHES</li>
+      </a>
     </div>
     <map-d my-recent-games = "mostRecentMatch"></map-d>
     <p class="axisLabel">GAME TIME (min)</h1>
   </div>
 
-  <div class="two columns">
+  <div class="col s2">
     <div ng-repeat="participant in mostRecentMatch.participants | filter: {  teamId: 200 }" class="team200 portrait player{{participant.participantId}}" >
-      <div class="box" ng-style="{'background-image' : 'url( {{ participant.championImage }} )'}"></div>
+      <div class="box circle responsive-img" ng-style="{'background-image' : 'url( {{ participant.championImage }} )'}"></div>
     </div>
   </div>
 

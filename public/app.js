@@ -35,6 +35,10 @@ angular.module('laneApp', [
     .state('login', {
     url : '/login',
     templateUrl : 'views/login.html'
+  })
+  .state('disclosure', {
+    url : '/disclosure',
+    templateUrl : 'views/disclosure.html'
   });
 }])
 .run(['$rootScope', function($rootScope) {
