@@ -31,7 +31,11 @@ input#summonerNameInput {
   input#summonerNameInput:focus {
     border: none; }
 
-/* line 49, stdin */
+/* line 34, stdin */
+a#loginButton.grey-text.text-lighten-3:hover {
+  color: red; }
+
+/* line 55, stdin */
 .axisLabel {
   margin-top: -50px;
   display: block;
@@ -40,39 +44,39 @@ input#summonerNameInput {
   font-family: 'Freemont';
   font-weight: bold; }
 
-/* line 58, stdin */
+/* line 64, stdin */
 .tick text {
   fill: #E2BE30; }
 
-/* line 62, stdin */
+/* line 68, stdin */
 label {
   color: #E2BE30; }
 
-/* line 66, stdin */
+/* line 72, stdin */
 .box {
   box-sizing: border-box;
   height: 125px;
   background-size: 100%; }
 
-/* line 72, stdin */
+/* line 78, stdin */
 .portrait {
   margin-bottom: 5%; }
 
-/* line 76, stdin */
+/* line 82, stdin */
 .match-tab {
   text-decoration: none; }
 
-/* line 80, stdin */
+/* line 86, stdin */
 li {
   display: inline; }
 
-/* line 84, stdin */
+/* line 90, stdin */
 #tabs {
   display: block;
   margin: auto;
   padding: auto;
   width: 100%; }
-  /* line 90, stdin */
+  /* line 96, stdin */
   #tabs .matchTabs {
     box-sizing: border-box;
     text-align: center;
@@ -86,20 +90,20 @@ li {
     font-weight: bold;
     font-family: 'Freemont';
     font-size: 20px; }
-    /* line 105, stdin */
+    /* line 111, stdin */
     #tabs .matchTabs:hover {
       border: 2px solid orange;
       border: 2px solid gold;
       box-shadow: none; }
-    /* line 111, stdin */
+    /* line 117, stdin */
     #tabs .matchTabs a {
       text-decoration: none; }
 
-/* line 119, stdin */
+/* line 125, stdin */
 #map-d {
   box-sizing: border-box; }
 
-/* line 123, stdin */
+/* line 129, stdin */
 .game-info {
   box-sizing: border-box;
   display: block;
@@ -111,11 +115,11 @@ li {
   font-weight: bold;
   font-family: 'Freemont';
   padding-left: 15px; }
-  /* line 137, stdin */
+  /* line 143, stdin */
   .game-info:hover {
     box-shadow: none; }
 
-/* line 142, stdin */
+/* line 148, stdin */
 .d3-tip {
   line-height: 1;
   font-weight: bold;
@@ -125,7 +129,7 @@ li {
   border-radius: 2px; }
 
 /* Creates a small triangle extender for the tooltip */
-/* line 152, stdin */
+/* line 158, stdin */
 .d3-tip:after {
   box-sizing: border-box;
   display: inline;
@@ -138,23 +142,23 @@ li {
   text-align: center; }
 
 /* Style northward tooltips differently */
-/* line 165, stdin */
+/* line 171, stdin */
 .d3-tip.n:after {
   margin: -1px 0 0 0;
   top: 100%;
   left: 0; }
 
-/* line 174, stdin */
+/* line 180, stdin */
 .tooltip {
   height: 50px;
   width: 50px; }
 
-/* line 231, stdin */
+/* line 237, stdin */
 .assistor {
   height: 20px;
   width: 20px; }
 
-/* line 236, stdin */
+/* line 242, stdin */
 .logo {
   width: 950px;
   background-repeat: none;
@@ -163,16 +167,16 @@ li {
   height: 100px;
   margin: auto; }
 
-/* line 246, stdin */
+/* line 252, stdin */
 .disclaimer {
   color: #EFFFE9; }
 
-/* line 256, stdin */
+/* line 262, stdin */
 .victim {
   height: 40px;
   width: 40px; }
 
-/* line 261, stdin */
+/* line 267, stdin */
 .tooltipX {
   position: hover;
   margin-left: -44px;
@@ -180,13 +184,13 @@ li {
   height: 40px;
   width: 40px; }
 
-/* line 272, stdin */
+/* line 278, stdin */
 .teams {
   margin-bottom: 20px; }
-  /* line 275, stdin */
+  /* line 281, stdin */
   .teams ul {
     display: inline; }
-    /* line 278, stdin */
+    /* line 284, stdin */
     .teams ul li img {
       opacity: 1;
       margin-top: 35px;
@@ -194,23 +198,23 @@ li {
       height: 75px;
       width: 75px; }
 
-/* line 297, stdin */
+/* line 303, stdin */
 div.match-container {
   border: 4px solid #E2AD5F;
   margin-bottom: 35px;
   background-color: #03181E; }
-  /* line 301, stdin */
+  /* line 307, stdin */
   div.match-container:hover {
     border: 4px solid gold; }
 
-/* line 306, stdin */
+/* line 312, stdin */
 #vs {
   height: 50px;
   width: 50px;
   margin-left: 30px;
   margin-bottom: 10px; }
 
-/* line 314, stdin */
+/* line 320, stdin */
 footer.page-footer, .nav-wrapper {
   margin-top: 0px;
   padding-top: 0px;

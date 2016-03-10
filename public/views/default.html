@@ -17,7 +17,8 @@
         <p class="error" ng-show="summonerForm.summonerName.$error.minlength">Not less than 2 characters</p>
 
 
-      <button type="submit" class="button u-full-width" ng-show="summonerForm.$valid">Search</button>
+
+      <a class="grey-text text-lighten-3" ng-show="summonerForm.$valid" ng-click="getSummonerInfo(summonerName)" id="loginButton">Search</a>
 
   </form>
 
