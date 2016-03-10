@@ -10,8 +10,6 @@ body {
   position: relative;
   width: 100vw;
   height: 100vh;
-  // background-color: #4CAF50;
-
   background: url('/views/images/sona-background.jpg') no-repeat center;
   background-size: cover;
   -o-background-size: cover;
@@ -20,12 +18,13 @@ body {
 
 input#summonerNameInput {
   position : relative;
-  top : 50vh;
+  top : 37vh;
+  left: 46vw;
   width : 50vw;
   font-size : 1.5em;
   font-family : 'Freemont';
   color: #EFFFE9;
-
+  border-bottom: none;
   &:focus {
     border: none;
   }
@@ -66,15 +65,12 @@ label{
 
 .box {
   box-sizing: border-box;
-  height : 125px;
-  // width : 125px;
-  // border: 1px solid black;
-  // margin-bottom: 25px;
+  height: 125px;
   background-size: 100%;
 }
 
 .portrait {
-  margin-bottom: 25px;
+  margin-bottom: 5%;
 }
 
 .match-tab {
@@ -121,7 +117,7 @@ li {
 
 
 #map-d {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .game-info {
@@ -180,65 +176,61 @@ li {
   width: 50px;
 }
 
-.player0{
-  border: 4px solid #ffffff;
-}
+// .player0{
+//   border: 4px solid #ffffff;
+// }
 
-.player1{
-  border: 4px solid $red;
-}
+// .player1{
+//   border: 4px solid $red;
+// }
 
-.player2{
-  border: 4px solid $red;
-}
+// .player2{
+//   border: 4px solid $red;
+// }
 
-.player3{
-  border: 4px solid $red;
-}
+// .player3{
+//   border: 4px solid $red;
+// }
 
-.player4{
-  border: 4px solid $red;
-}
+// .player4{
+//   border: 4px solid $red;
+// }
 
-.player5{
-  border: 4px solid $red;
-}
+// .player5{
+//   border: 4px solid $red;
+// }
 
-.player6{
-  border: 4px solid $blue;
-}
+// .player6{
+//   border: 4px solid $blue;
+// }
 
-.player7{
-  border: 4px solid $blue;
-}
+// .player7{
+//   border: 4px solid $blue;
+// }
 
-.player8{
-  border: 4px solid $blue;
-}
+// .player8{
+//   border: 4px solid $blue;
+// }
 
-.player9{
-  border: 4px solid $blue;
-}
+// .player9{
+//   border: 4px solid $blue;
+// }
 
-.player10{
-  border: 4px solid $blue;
-}
+// .player10{
+//   border: 4px solid $blue;
+// }
 
-.team100{
-  border: 4px solid $red;
-}
+// .team100{
+//   border: 4px solid $red;
+// }
 
-.team200{
-  border: 4px solid $blue;
-}
+// .team200{
+//   border: 4px solid $blue;
+// }
 
 .assistor{
   height: 20px;
   width: 20px;
-}
-
-.team200 {
-  border: 4px solid $blue;
 }
 
 .logo {
@@ -275,10 +267,10 @@ li {
 
 }
 
+// ---------------- MATCH DETAILS
+
 .teams {
   margin-bottom : 20px;
-  // background-size: 100% 100%;
-  // background-repeat: no-repeat;
 
   ul {
     display : inline;
@@ -293,6 +285,14 @@ li {
     }
   }
 }
+
+// #team-one {
+// background-color: red;
+// }
+
+// #team-two {
+// background-color: blue;
+// }
 
 div.match-container {
   border: 4px solid #E2AD5F;
@@ -310,6 +310,7 @@ div.match-container {
   margin-bottom: 10px;
 }
 
+// ---------------- Header and Footer DETAILS
 footer.page-footer, .nav-wrapper {
   margin-top: 0px;
   padding-top: 0px;
