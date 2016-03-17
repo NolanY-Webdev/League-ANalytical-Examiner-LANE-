@@ -1,24 +1,22 @@
-.teams {
-  margin-bottom : 20px;
-
-  ul {
-    display : inline;
-    li {
-      img {
-        opacity: 1;
-        margin-top : 35px;
-        display : inline;
-        height : 75px;
-        width : 75px;
-      }
-    }
-  }
-}
-
 #label-red-team {
   color: red;
 }
 
 #label-blue-team {
   color: blue;
+}
+
+#team-one {
+  background-color: #FFF;
+}
+
+#team-two {
+  background-color: #FFF;
+}
+
+.box {
+  box-sizing: border-box;
+  height: 125px;
+  width: 125px;
+  background-size: 100%;
 }

@@ -81,36 +81,31 @@ label {
   color: #EFFFE9; }
 
 /* line 87, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_map-scrubber.scss */
-.box {
-  box-sizing: border-box;
-  height: 125px;
-  background-size: 100%; }
-
-/* line 93, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_map-scrubber.scss */
 rect.background {
   background-color: #EFFFE9; }
 
 /* line 1, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
-.teams {
-  margin-bottom: 20px; }
-  /* line 4, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
-  .teams ul {
-    display: inline; }
-    /* line 7, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
-    .teams ul li img {
-      opacity: 1;
-      margin-top: 35px;
-      display: inline;
-      height: 75px;
-      width: 75px; }
-
-/* line 18, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
 #label-red-team {
   color: red; }
 
-/* line 22, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+/* line 5, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
 #label-blue-team {
   color: blue; }
+
+/* line 9, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+#team-one {
+  background-color: #FFF; }
+
+/* line 13, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+#team-two {
+  background-color: #FFF; }
+
+/* line 17, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+.box {
+  box-sizing: border-box;
+  height: 125px;
+  width: 125px;
+  background-size: 100%; }
 
 /* line 1, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
 div.match-container {
@@ -216,47 +211,40 @@ input#summonerNameInput {
 li {
   display: inline; }
 
-/* line 108, stdin */
-#tabs {
-  display: block;
-  margin: auto;
-  padding: auto;
-  width: 100%; }
-  /* line 114, stdin */
-  #tabs .matchTabs {
-    box-sizing: border-box;
-    text-align: center;
-    display: block;
-    margin: auto;
-    width: 628px;
-    border: 2px solid black;
-    background-color: black;
-    background-size: 100px;
-    color: #EFD5A2;
-    font-weight: bold;
-    font-family: 'Freemont';
-    font-size: 20px; }
-    /* line 129, stdin */
-    #tabs .matchTabs:hover {
-      border: 2px solid orange;
-      border: 2px solid gold;
-      box-shadow: none; }
-    /* line 135, stdin */
-    #tabs .matchTabs a {
-      text-decoration: none; }
+/* line 141, stdin */
+#map-svg-img-canvas {
+  margin-left: auto; }
 
-/* line 145, stdin */
+/* line 147, stdin */
 footer.page-footer, .nav-wrapper {
   margin-top: 0px;
   padding-top: 0px;
   background-color: #2EC4B6; }
 
+@media screen and (min-width: 1px) and (max-width: 479px) {
+  /* line 155, stdin */
+  .portrait {
+    display: inline-block;
+    margin-right: 2%; }
+  /* line 160, stdin */
+  .box {
+    height: 50px;
+    width: 50px; } }
+
 @media screen and (min-width: 480px) and (max-width: 992px) {
-  /* line 153, stdin */
+  /* line 168, stdin */
   body {
-    background-color: #011627; } }
+    background-color: #011627; }
+  /* line 171, stdin */
+  .portrait {
+    display: inline-block;
+    margin-right: 2%; }
+  /* line 175, stdin */
+  .box {
+    height: 75px;
+    width: 75px; } }
 
 @media screen and (min-width: 993px) {
-  /* line 160, stdin */
+  /* line 183, stdin */
   body {
     background-color: #011627; } }

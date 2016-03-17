@@ -246,10 +246,12 @@ function runD3(match) {
       .range([height, 0]);
 
     svg = d3.select('#map-d').append('svg:svg')
+      .attr('id', 'map-svg-img-canvas')
       .attr('width', width)
       .attr('height', height);
 
     svg.append('image')
+      .attr('id', 'map-svg-img')
       .attr('xlink:href', bg)
       .attr('x', '0')
       .attr('y', '0')
