@@ -1,0 +1,95 @@
+// MAP STYLES
+#map-d {
+  box-sizing: border-box;
+}
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 16px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+
+
+//tooltip sizes and hard coded boarders per player
+.tooltip{
+  height: 50px;
+  width: 50px;
+}
+
+.assistor{
+  height: 20px;
+  width: 20px;
+}
+
+.logo {
+  width: 950px;
+  background-repeat: none;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 100px;
+  margin: auto;
+}
+
+.victim {
+  height: 40px;
+  width: 40px;
+}
+
+.tooltipX {
+  position: hover;
+  margin-left: -44px;
+  margin-bottom: 4px;
+  height: 40px;
+  width: 40px;
+}
+
+// SCRUBBER
+.axisLabel {
+  margin-top: -50px;
+  text-align: center;
+  color: $white-color;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  font-size: .8em;
+}
+
+.tick text {
+  fill: $white-color;
+}
+
+label {
+  color: $white-color;
+}
+
+.box {
+  box-sizing: border-box;
+  height: 125px;
+  background-size: 100%;
+}
+
+rect.background {
+  background-color: $white-color;
+}

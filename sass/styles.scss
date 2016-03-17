@@ -1,8 +1,21 @@
+// Variables
+$white-color: #EFFFE9;
+$black-color: #011627;
+$red-color: #E71D36;
+$green-color: #2EC4B6;
+
+// ---------------- SCRUBBER STYLES
+@import 'map-scrubber';
+// ---------------- MATCH DETAILS
+@import 'match-details';
+// ---------------- RECENT MATCH DETAILS
+@import 'recent-match';
+
 .container {
     min-width: 950px;
 }
 body {
-  background-color: #011627;
+  background-color: $black-color;
 }
 
 h1 {
@@ -34,7 +47,7 @@ input#summonerNameInput {
   width: 270px;
   font-size: 1.5em;
   font-family: 'Freemont';
-  color: #EFFFE9;
+  color: $white-color;
   border-bottom: none;
   &:focus {
     border: none;
@@ -73,7 +86,7 @@ $blue : #42C0FB;
 // ------------- RECENT MATCH
 
 #recent-games-tab {
-  background-color: #E71D36;
+  background-color: $red-color;
 
   a {
   font-size: 1.2em;
@@ -127,229 +140,24 @@ li {
 
 
 
-#map-d {
-  box-sizing: border-box;
-}
 
-.d3-tip {
-  line-height: 1;
-  font-weight: bold;
-  padding: 12px;
-  background: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  border-radius: 2px;
-}
-
-/* Creates a small triangle extender for the tooltip */
-.d3-tip:after {
-  box-sizing: border-box;
-  display: inline;
-  font-size: 16px;
-  width: 100%;
-  line-height: 1;
-  color: rgba(0, 0, 0, 0.8);
-  content: "\25BC";
-  position: absolute;
-  text-align: center;
-}
-
-/* Style northward tooltips differently */
-.d3-tip.n:after {
-  margin: -1px 0 0 0;
-  top: 100%;
-  left: 0;
-}
-
-
-
-//tooltip sizes and hard coded boarders per player
-.tooltip{
-  height: 50px;
-  width: 50px;
-}
-
-// .player0{
-//   border: 4px solid #ffffff;
-// }
-
-// .player1{
-//   border: 4px solid $red;
-// }
-
-// .player2{
-//   border: 4px solid $red;
-// }
-
-// .player3{
-//   border: 4px solid $red;
-// }
-
-// .player4{
-//   border: 4px solid $red;
-// }
-
-// .player5{
-//   border: 4px solid $red;
-// }
-
-// .player6{
-//   border: 4px solid $blue;
-// }
-
-// .player7{
-//   border: 4px solid $blue;
-// }
-
-// .player8{
-//   border: 4px solid $blue;
-// }
-
-// .player9{
-//   border: 4px solid $blue;
-// }
-
-// .player10{
-//   border: 4px solid $blue;
-// }
-
-// .team100{
-//   border: 4px solid $red;
-// }
-
-// .team200{
-//   border: 4px solid $blue;
-// }
-
-.assistor{
-  height: 20px;
-  width: 20px;
-}
-
-.logo {
-  // background-image: url('/views/images/LaneLogoFull.png');
-  width: 950px;
-  background-repeat: none;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  height: 100px;
-  margin: auto;
-}
-
-.victim {
-  height: 40px;
-  width: 40px;
-}
-
-.tooltipX {
-  position: hover;
-  margin-left: -44px;
-  margin-bottom: 4px;
-  height: 40px;
-  width: 40px;
-
-}
-
-// ---------------- SCRUBBER STYLES
-.axisLabel {
-  margin-top: -50px;
-  text-align: center;
-  color: #EFFFE9;
-  font-family: 'Open Sans';
-  font-weight: bold;
-  font-size: .8em;
-}
-
-.tick text {
-  fill: #EFFFE9;
-}
-
-label{
-  color: #EFFFE9;
-}
-
-.box {
-  box-sizing: border-box;
-  height: 125px;
-  background-size: 100%;
-}
-
-rect.background {
-  background-color: #EFFFE9;
-}
-// ---------------- MATCH DETAILS
-
-.teams {
-  margin-bottom : 20px;
-
-  ul {
-    display : inline;
-    li {
-      img {
-        opacity: 1;
-        margin-top : 35px;
-        display : inline;
-        height : 75px;
-        width : 75px;
-      }
-    }
-  }
-}
-
-#label-red-team {
-  color: red;
-}
-
-#label-blue-team {
-  color: blue;
-}
-// ---------------- RECENT MATCH DETAILS
-div.match-container {
-  border: 2px solid #2EC4B6;
-  margin-bottom : 35px;
-  background-color: #EFFFE9;
-  &:hover {
-    .game-info {
-      background-color: #E71D36;
-    }
-
-    border: 2px solid #E71D36;
-  }
-}
-
-#vs {
-  height :50px;
-  width :50px;
-  margin-left: 30px;
-  margin-bottom: 10px;
-}
-
-.game-info {
-  background-color: #2EC4B6;
-  box-sizing: border-box;
-  display: block;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  font-weight: bold;
-  font-family: 'Freemont';
-  padding-left: 15px;
-}
 // ---------------- Header and Footer DETAILS
 footer.page-footer, .nav-wrapper {
   margin-top: 0px;
   padding-top: 0px;
-  background-color: #2EC4B6;
+  background-color: $green-color;
 }
 
 // Med screen
 @media screen and (min-width: 480px) and (max-width:992px) {
     body {
-        background-color:#011627;;
+        background-color:$black-color;;
     }
 }
 
 // Large screen
 @media screen and (min-width:993px) {
     body {
-        background-color:#011627;;
+        background-color:$black-color;;
     }
 }

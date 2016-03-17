@@ -8,8 +8,8 @@ gulp.task('sass', function () {
   return gulp.src('./sass/*.scss')
       .pipe(sass({
         errLogToConsole: true,
-        sourceComments: true,
-        includePaths: ['bower_components/foundation/scss']
+        sourceComments: true
+        //includePaths: ['bower_components/foundation/scss']
       }).on('error', sass.logError))
       .pipe(gulp.dest('./public/css'));
 });
