@@ -1,14 +1,15 @@
 <nav>
   <div class="nav-wrapper">
-    <a href="#" class="brand-logo">LANEWINS</a>
+    <a href="#" class="brand-logo">LANEWINS : {{ summonerName }}</a>
     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li>{{ summonerName }}</li>
-      <li><a ui-sref="match.recentMatch({summoner_id : summoner.id})">Recent Games</a></li>
+      <!-- <li>{{ summonerName }}</li> -->
+      <li id="recent-games-tab"><a ui-sref="match.recentMatch({summoner_id : summoner.id})">Recent Games</a></li>
     </ul>
     <ul class="side-nav" id="mobile-demo">
-      <li>{{ summonerName }}</li>
-      <li><a ui-sref="match.recentMatch({summoner_id : summoner.id})">Recent Games</a></li>
+      <li id="recent-games-tab">
+        <a ui-sref="match.recentMatch({summoner_id : summoner.id})">Recent Games</a>
+      </li>
     </ul>
   </div>
 </nav>

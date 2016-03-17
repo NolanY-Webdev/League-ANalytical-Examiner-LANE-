@@ -1,24 +1,20 @@
-<div class="row header">
 
+<div class="row header">
+<h1>League ANalytical Examiner</h1>
   <form class="form" name="summonerForm" ng-disabled="summonerName.$invalid" ng-submit="getSummonerInfo(summonerName)">
 
-      <h1 class='logo'></h1>
-
-
-        <input
-        id="summonerNameInput"
-        required
-        type="text"
-        placeholder="summoner name"
-        ng-model="summonerName"
-        ng-minlength="2">
+    <div class="col s4">
+      <div class="row">
+        <input id="summonerNameInput" required type="text" placeholder="summoner name" ng-model="summonerName" ng-minlength="2" />
         <!-- <p class="error" ng-show="summonerForm.$dirty && summonerForm.summonerName.$invalid">Required</p> -->
         <p class="error" ng-show="summonerForm.summonerName.$pristine">Required</p>
         <p class="error" ng-show="summonerForm.summonerName.$error.minlength">Not less than 2 characters</p>
+      </div>
+      <div class="row">
+        <button type="submit" class="btn waves-effect waves-light btn-login" ng-show="summonerForm.$valid" name="action">Search</button>
+      </div>
 
-
-
-      <a class="grey-text text-lighten-3" ng-show="summonerForm.$valid" ng-click="getSummonerInfo(summonerName)" id="loginButton">Search</a>
+    </div>
 
   </form>
 

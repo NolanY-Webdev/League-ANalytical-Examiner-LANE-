@@ -1,7 +1,7 @@
 <div class="row">
 
   <div class="col s2" id="team-one">
-    <div>Red Team</div>
+    <div id="label-red-team">Red Team</div>
     <div ng-repeat="participant in mostRecentMatch.participants | filter: {  teamId: 100 }" class="team100 portrait player{{participant.participantId}}">
       <div class="box circle responsive-img" ng-style="{'background-image' : 'url( {{ participant.championImage }} )'}"></div>
     </div>
@@ -18,7 +18,7 @@
   </div>
 
   <div class="col s2" id="team-two">
-    <div>Blue Team</div>
+    <div id="label-blue-team">Blue Team</div>
     <div ng-repeat="participant in mostRecentMatch.participants | filter: {  teamId: 200 }" class="team200 portrait player{{participant.participantId}}" >
       <div class="box circle responsive-img" ng-style="{'background-image' : 'url( {{ participant.championImage }} )'}"></div>
     </div>

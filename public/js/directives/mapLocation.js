@@ -194,14 +194,15 @@ function runD3(match) {
       update(filteredData);
     });
 
-
+    // SCRUBBER
     var g = svg.append("g");
     brush(g);
     g.attr("transform", "translate(" + brushX + "," + brushY +")")
 
     g.selectAll("rect").attr("height", brushHeight);
     g.selectAll(".background")
-      .style({fill: "#4B9E9E", visibility: "visible"});
+    // background
+      .style({fill: "EFFFE9", visibility: "visible"});
     g.selectAll(".extent")
       .style({fill: "#78C5C5", visibility: "visible"});
     g.selectAll(".resize rect")
@@ -222,11 +223,11 @@ function runD3(match) {
 
     g.attr("transform", "translate(" + (brushX - 6) + "," + (brushY + 35) +")");
     g.attr('class', 'scale')
-        .style({fill: '#E2BE30', visibility: 'visible'});
+        .style({fill: '#EFFFE9', visibility: 'visible'});
     g.selectAll("path")
-      .style({ fill: "none", stroke: "#E2BE30"});
+      .style({ fill: "none", stroke: "#EFFFE9"});
     g.selectAll("line")
-      .style({ stroke: "#E2BE30"})
+      .style({ stroke: "#EFFFE9"})
       .attr("class", "brush");
 
 //MAP DATA

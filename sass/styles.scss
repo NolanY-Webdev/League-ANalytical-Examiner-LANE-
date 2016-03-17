@@ -5,6 +5,17 @@ body {
   background-color: #011627;
 }
 
+h1 {
+  font-family: 'Open Sans', serif;
+}
+
+p#footer-disc.center-align {
+  font-size: .55em;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-bottom: 0px;
+}
+
 .header {
   display: table;
   position: relative;
@@ -18,11 +29,11 @@ body {
 
 input#summonerNameInput {
   position : relative;
-  top : 37vh;
-  left: 46vw;
-  width : 50vw;
-  font-size : 1.5em;
-  font-family : 'Freemont';
+  top: 55vh;
+  left: 30vw;
+  width: 270px;
+  font-size: 1.5em;
+  font-family: 'Freemont';
   color: #EFFFE9;
   border-bottom: none;
   &:focus {
@@ -30,10 +41,12 @@ input#summonerNameInput {
   }
 }
 
-a#loginButton.grey-text.text-lighten-3 {
-  &:hover {
-    color:red;
-  }
+.btn-login {
+  top: 55vh;
+  left: 25vw;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
 }
 
 $box-shadow : 0 1px 0 #ccc,
@@ -52,31 +65,23 @@ $box-shadow : 0 1px 0 #ccc,
 $red : #df3b20;
 $blue : #42C0FB;
 
-.axisLabel {
-  margin-top: -50px;
-  display: block;
-  text-align: center;
-  color: #E2BE30;
-  font-family: 'Freemont';
-  font-weight: bold;
-}
-
-.tick text {
-  fill: #E2BE30;
-}
-
-label{
-  color: #E2BE30;
-}
-
-.box {
-  box-sizing: border-box;
-  height: 125px;
-  background-size: 100%;
-}
 
 .portrait {
   margin-bottom: 5%;
+}
+
+// ------------- RECENT MATCH
+
+#recent-games-tab {
+  background-color: #E71D36;
+
+  a {
+  font-size: 1.2em;
+
+    &:hover{
+    color:#FFF;
+    }
+  }
 }
 
 .match-tab {
@@ -124,25 +129,6 @@ li {
 
 #map-d {
   box-sizing: border-box;
-}
-
-.game-info {
-
-  box-sizing: border-box;
-  display: block;
-  line-height: 140%;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  background-image: url('https://s3-us-west-1.amazonaws.com/riot-api/img/rune-bg.png');
-
-  font-size: 1.2em;
-  font-weight: bold;
-  font-family: 'Freemont';
-  padding-left: 15px;
-
-  &:hover {
-    box-shadow: none;
-  }
 }
 
 .d3-tip {
@@ -249,16 +235,6 @@ li {
   margin: auto;
 }
 
-.disclaimer {
-  color: #EFFFE9;
-
-  // margin-top: 300px;
-  // display: block;
-  // color: #AA7420;
-  // font-family: 'Freemont';
-  // text-align: center;
-}
-
 .victim {
   height: 40px;
   width: 40px;
@@ -273,6 +249,33 @@ li {
 
 }
 
+// ---------------- SCRUBBER STYLES
+.axisLabel {
+  margin-top: -50px;
+  text-align: center;
+  color: #EFFFE9;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  font-size: .8em;
+}
+
+.tick text {
+  fill: #EFFFE9;
+}
+
+label{
+  color: #EFFFE9;
+}
+
+.box {
+  box-sizing: border-box;
+  height: 125px;
+  background-size: 100%;
+}
+
+rect.background {
+  background-color: #EFFFE9;
+}
 // ---------------- MATCH DETAILS
 
 .teams {
@@ -292,20 +295,24 @@ li {
   }
 }
 
-// #team-one {
-// background-color: red;
-// }
+#label-red-team {
+  color: red;
+}
 
-// #team-two {
-// background-color: blue;
-// }
-
+#label-blue-team {
+  color: blue;
+}
+// ---------------- RECENT MATCH DETAILS
 div.match-container {
-  border: 4px solid #E2AD5F;
+  border: 2px solid #2EC4B6;
   margin-bottom : 35px;
-  background-color: #03181E;
+  background-color: #EFFFE9;
   &:hover {
-    border: 4px solid gold;
+    .game-info {
+      background-color: #E71D36;
+    }
+
+    border: 2px solid #E71D36;
   }
 }
 
@@ -316,9 +323,33 @@ div.match-container {
   margin-bottom: 10px;
 }
 
+.game-info {
+  background-color: #2EC4B6;
+  box-sizing: border-box;
+  display: block;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font-weight: bold;
+  font-family: 'Freemont';
+  padding-left: 15px;
+}
 // ---------------- Header and Footer DETAILS
 footer.page-footer, .nav-wrapper {
   margin-top: 0px;
   padding-top: 0px;
   background-color: #2EC4B6;
+}
+
+// Med screen
+@media screen and (min-width: 480px) and (max-width:992px) {
+    body {
+        background-color:#011627;;
+    }
+}
+
+// Large screen
+@media screen and (min-width:993px) {
+    body {
+        background-color:#011627;;
+    }
 }

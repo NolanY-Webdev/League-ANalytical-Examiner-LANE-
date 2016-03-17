@@ -7,6 +7,17 @@ body {
   background-color: #011627; }
 
 /* line 8, stdin */
+h1 {
+  font-family: 'Open Sans', serif; }
+
+/* line 12, stdin */
+p#footer-disc.center-align {
+  font-size: .55em;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-bottom: 0px; }
+
+/* line 19, stdin */
 .header {
   display: table;
   position: relative;
@@ -17,66 +28,57 @@ body {
   -o-background-size: cover;
   margin-bottom: 0px; }
 
-/* line 19, stdin */
+/* line 30, stdin */
 input#summonerNameInput {
   position: relative;
-  top: 37vh;
-  left: 46vw;
-  width: 50vw;
+  top: 55vh;
+  left: 30vw;
+  width: 270px;
   font-size: 1.5em;
   font-family: 'Freemont';
   color: #EFFFE9;
   border-bottom: none; }
-  /* line 28, stdin */
+  /* line 39, stdin */
   input#summonerNameInput:focus {
     border: none; }
 
-/* line 34, stdin */
-a#loginButton.grey-text.text-lighten-3:hover {
-  color: red; }
+/* line 44, stdin */
+.btn-login {
+  top: 55vh;
+  left: 25vw;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out; }
 
-/* line 55, stdin */
-.axisLabel {
-  margin-top: -50px;
-  display: block;
-  text-align: center;
-  color: #E2BE30;
-  font-family: 'Freemont';
-  font-weight: bold; }
-
-/* line 64, stdin */
-.tick text {
-  fill: #E2BE30; }
-
-/* line 68, stdin */
-label {
-  color: #E2BE30; }
-
-/* line 72, stdin */
-.box {
-  box-sizing: border-box;
-  height: 125px;
-  background-size: 100%; }
-
-/* line 78, stdin */
+/* line 69, stdin */
 .portrait {
   margin-bottom: 5%; }
 
-/* line 82, stdin */
+/* line 75, stdin */
+#recent-games-tab {
+  background-color: #E71D36; }
+  /* line 78, stdin */
+  #recent-games-tab a {
+    font-size: 1.2em; }
+    /* line 81, stdin */
+    #recent-games-tab a:hover {
+      color: #FFF; }
+
+/* line 87, stdin */
 .match-tab {
   text-decoration: none; }
 
-/* line 86, stdin */
+/* line 91, stdin */
 li {
   display: inline; }
 
-/* line 90, stdin */
+/* line 95, stdin */
 #tabs {
   display: block;
   margin: auto;
   padding: auto;
   width: 100%; }
-  /* line 96, stdin */
+  /* line 101, stdin */
   #tabs .matchTabs {
     box-sizing: border-box;
     text-align: center;
@@ -90,36 +92,20 @@ li {
     font-weight: bold;
     font-family: 'Freemont';
     font-size: 20px; }
-    /* line 111, stdin */
+    /* line 116, stdin */
     #tabs .matchTabs:hover {
       border: 2px solid orange;
       border: 2px solid gold;
       box-shadow: none; }
-    /* line 117, stdin */
+    /* line 122, stdin */
     #tabs .matchTabs a {
       text-decoration: none; }
 
-/* line 125, stdin */
+/* line 130, stdin */
 #map-d {
   box-sizing: border-box; }
 
-/* line 129, stdin */
-.game-info {
-  box-sizing: border-box;
-  display: block;
-  line-height: 140%;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  background-image: url("https://s3-us-west-1.amazonaws.com/riot-api/img/rune-bg.png");
-  font-size: 1.2em;
-  font-weight: bold;
-  font-family: 'Freemont';
-  padding-left: 15px; }
-  /* line 143, stdin */
-  .game-info:hover {
-    box-shadow: none; }
-
-/* line 148, stdin */
+/* line 134, stdin */
 .d3-tip {
   line-height: 1;
   font-weight: bold;
@@ -129,7 +115,7 @@ li {
   border-radius: 2px; }
 
 /* Creates a small triangle extender for the tooltip */
-/* line 158, stdin */
+/* line 144, stdin */
 .d3-tip:after {
   box-sizing: border-box;
   display: inline;
@@ -142,23 +128,23 @@ li {
   text-align: center; }
 
 /* Style northward tooltips differently */
-/* line 171, stdin */
+/* line 157, stdin */
 .d3-tip.n:after {
   margin: -1px 0 0 0;
   top: 100%;
   left: 0; }
 
-/* line 180, stdin */
+/* line 166, stdin */
 .tooltip {
   height: 50px;
   width: 50px; }
 
-/* line 237, stdin */
+/* line 223, stdin */
 .assistor {
   height: 20px;
   width: 20px; }
 
-/* line 242, stdin */
+/* line 228, stdin */
 .logo {
   width: 950px;
   background-repeat: none;
@@ -167,16 +153,12 @@ li {
   height: 100px;
   margin: auto; }
 
-/* line 252, stdin */
-.disclaimer {
-  color: #EFFFE9; }
-
-/* line 262, stdin */
+/* line 238, stdin */
 .victim {
   height: 40px;
   width: 40px; }
 
-/* line 267, stdin */
+/* line 243, stdin */
 .tooltipX {
   position: hover;
   margin-left: -44px;
@@ -184,13 +166,40 @@ li {
   height: 40px;
   width: 40px; }
 
-/* line 278, stdin */
+/* line 253, stdin */
+.axisLabel {
+  margin-top: -50px;
+  text-align: center;
+  color: #EFFFE9;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  font-size: .8em; }
+
+/* line 262, stdin */
+.tick text {
+  fill: #EFFFE9; }
+
+/* line 266, stdin */
+label {
+  color: #EFFFE9; }
+
+/* line 270, stdin */
+.box {
+  box-sizing: border-box;
+  height: 125px;
+  background-size: 100%; }
+
+/* line 276, stdin */
+rect.background {
+  background-color: #EFFFE9; }
+
+/* line 281, stdin */
 .teams {
   margin-bottom: 20px; }
-  /* line 281, stdin */
+  /* line 284, stdin */
   .teams ul {
     display: inline; }
-    /* line 284, stdin */
+    /* line 287, stdin */
     .teams ul li img {
       opacity: 1;
       margin-top: 35px;
@@ -198,24 +207,56 @@ li {
       height: 75px;
       width: 75px; }
 
-/* line 303, stdin */
-div.match-container {
-  border: 4px solid #E2AD5F;
-  margin-bottom: 35px;
-  background-color: #03181E; }
-  /* line 307, stdin */
-  div.match-container:hover {
-    border: 4px solid gold; }
+/* line 298, stdin */
+#label-red-team {
+  color: red; }
 
-/* line 312, stdin */
+/* line 302, stdin */
+#label-blue-team {
+  color: blue; }
+
+/* line 306, stdin */
+div.match-container {
+  border: 2px solid #2EC4B6;
+  margin-bottom: 35px;
+  background-color: #EFFFE9; }
+  /* line 310, stdin */
+  div.match-container:hover {
+    border: 2px solid #E71D36; }
+    /* line 311, stdin */
+    div.match-container:hover .game-info {
+      background-color: #E71D36; }
+
+/* line 319, stdin */
 #vs {
   height: 50px;
   width: 50px;
   margin-left: 30px;
   margin-bottom: 10px; }
 
-/* line 320, stdin */
+/* line 326, stdin */
+.game-info {
+  background-color: #2EC4B6;
+  box-sizing: border-box;
+  display: block;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font-weight: bold;
+  font-family: 'Freemont';
+  padding-left: 15px; }
+
+/* line 337, stdin */
 footer.page-footer, .nav-wrapper {
   margin-top: 0px;
   padding-top: 0px;
   background-color: #2EC4B6; }
+
+@media screen and (min-width: 480px) and (max-width: 992px) {
+  /* line 345, stdin */
+  body {
+    background-color: #011627; } }
+
+@media screen and (min-width: 993px) {
+  /* line 352, stdin */
+  body {
+    background-color: #011627; } }
