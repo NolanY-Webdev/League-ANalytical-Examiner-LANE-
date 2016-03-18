@@ -85,22 +85,27 @@ rect.background {
   background-color: #EFFFE9; }
 
 /* line 1, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
-#label-red-team {
-  color: red; }
+#match-row-one, h3 {
+  margin-bottom: 0px; }
+  /* line 3, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+  #match-row-one #label-red-team, h3 #label-red-team {
+    color: red; }
+  /* line 7, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+  #match-row-one #label-blue-team, h3 #label-blue-team {
+    color: blue; }
+  /* line 11, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+  #match-row-one #label-map, h3 #label-map {
+    color: white; }
 
-/* line 5, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
-#label-blue-team {
-  color: blue; }
-
-/* line 9, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+/* line 16, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
 #team-one {
   background-color: #FFF; }
 
-/* line 13, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+/* line 20, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
 #team-two {
   background-color: #FFF; }
 
-/* line 17, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+/* line 24, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
 .box {
   box-sizing: border-box;
   height: 125px;

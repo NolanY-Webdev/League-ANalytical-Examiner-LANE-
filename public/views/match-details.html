@@ -1,15 +1,26 @@
+<div class="row" id="match-row-one">
+  <div class="col l3 center-align">
+    <h3 id="label-red-team">Red Team</h3>
+  </div>
+  <div class="col l6 center-align">
+    <h3 id="label-map">Map Name</h3>
+  </div>
+  <div class="col l3 center-align">
+    <h3 id="label-blue-team">Blue Team</h3>
+  </div>
+</div>
+
 <div class="row">
 
   <div class="col s12 m6 l3" id="team-one">
-    <div class="row" id="label-red-team">Red Team</div>
-    <!-- <div class="col s6 m0">charactername</div> -->
-      <div ng-repeat="participant in mostRecentMatch.participants | filter: {  teamId: 100 }" class="team100 box circle responsive-img portrait player{{participant.participantId}}" ng-style="{'background-image' : 'url( {{ participant.championImage }} )'}"></div>
+      <div ng-repeat="participant in mostRecentMatch.participants | filter: {  teamId: 100 }">
+        <div class="col s5">class="team100 box circle responsive-img portrait player{{participant.participantId}}" ng-style="{'background-image' : 'url( {{ participant.championImage }} )'}"</div>
+        <div class="col s7">player info player info</div>
+      </div>
   </div>
 
   <div class="col s12 m6 l3 push-l6" id="team-two">
-    <div class="row" id="label-blue-team">Blue Team</div>
       <div ng-repeat="participant in mostRecentMatch.participants | filter: {  teamId: 200 }" class="team200 portrait box circle responsive-img player{{participant.participantId}}" ng-style="{'background-image' : 'url( {{ participant.championImage }} )'}"></div>
-    <!-- <div class="col s6">charactername</div> -->
   </div>
 
   <div class="col s12 m8 offset-m2 l6 pull-l3">
