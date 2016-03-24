@@ -30,7 +30,7 @@ function runD3(match) {
     var imageWidth = 25;
     var imageHeight = 25;
 
-//=====================Building Data============================
+//BUILDING DATA
 
     var deadBuildings = jsonData.deadBuildings;
 
@@ -84,7 +84,7 @@ function runD3(match) {
     jsonData.currentInhibs = JSON.parse(JSON.stringify(inhibCords));
     var summonersRift = "http://ddragon.leagueoflegends.com/cdn/5.22.3/img/map/map" + ((scope.mostRecentMatch.mapId !== 11) ? scope.mostRecentMatch.mapId : 1)  + ".png"  ;
 
-//============================= MAP DATA ====================================
+//------------------- MAP DATA -------------------
     //app page map display size
     var mapWidth = 628;
     var mapHeight = 628;

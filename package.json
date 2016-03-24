@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/SkinnyFatMan/League-ANalytical-Examiner-LANE-.git"
   },
-  "author": "Nolan, eL, Mike",
+  "author": "Eleazar, Nolan Yee, Mike Lim",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/SkinnyFatMan/League-ANalytical-Examiner-LANE-/issues"
@@ -18,7 +18,7 @@
   "homepage": "https://github.com/SkinnyFatMan/League-ANalytical-Examiner-LANE-#readme",
   "devDependencies": {
     "gulp": "^3.9.0",
-    "gulp-sass": "^2.1.0",
+    "gulp-sass": "^2.2.0",
     "gulp-shell": "^0.5.1"
   },
   "dependencies": {
