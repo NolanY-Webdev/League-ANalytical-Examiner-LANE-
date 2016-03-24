@@ -1,19 +1,23 @@
 <div class="row" id="match-row-one">
   <div class="col l3 center-align">
-    <h3 id="label-red-team">Red Team</h3>
+    <h3 id="label-red-team">Red Team
+      <div ng-if="mostRecentMatch.teams[0].winner">(Winner)</div>
+    </h3>
   </div>
   <div class="col l6 center-align">
-    <h3 id="label-map">Map Name</h3>
+    <h3 id="label-map">{{mostRecentMatch.matchMode}}</h3>
   </div>
   <div class="col l3 center-align">
-    <h3 id="label-blue-team">Blue Team</h3>
+    <h3 id="label-blue-team">Blue Team
+      <div ng-if="mostRecentMatch.teams[1].winner">(Winner)</div>
+    </h3>
   </div>
 </div>
 
 <div class="row">
 
-  <div class="col s12 m6 l3" id="team-one">
-    <div class="row" ng-repeat="participant in mostRecentMatch.participants | filter: {  teamId: 100 }">
+  <div class="col s12 m6 l3">
+    <div class="row player-stats" ng-repeat="participant in mostRecentMatch.participants | filter: {  teamId: 100 }">
       <div class="col s5 team100 box circle responsive-img portrait player{{participant.participantId}}" ng-style="{'background-image' : 'url( {{ participant.championImage }} )'}"></div>
       <div class="col s7 player-stat-container">
         <div class="row player-stats" id="player-name">Participant Id: {{ participant.participantId}}</div>
@@ -23,8 +27,8 @@
     </div>
   </div>
 
-  <div class="col s12 m6 l3 push-l6" id="team-two">
-    <div class="row" ng-repeat="participant in mostRecentMatch.participants | filter: {  teamId: 200 }">
+  <div class="col s12 m6 l3 push-l6">
+    <div class="row player-stats" ng-repeat="participant in mostRecentMatch.participants | filter: {  teamId: 200 }">
       <div class="col s5 team200 portrait box circle responsive-img player{{participant.participantId}}" ng-style="{'background-image' : 'url( {{ participant.championImage }} )'}"></div>
       <div class="col s7 player-stat-container">
         <div class="row player-stats" id="player-name">Participant Id: {{ participant.participantId}}</div>
@@ -36,9 +40,7 @@
 
   <div class="col s12 m8 offset-m2 l6 pull-l3">
     <map-d my-recent-games = "mostRecentMatch"></map-d>
-    <div class="row">
-      <h5 class="center-align">GAME TIME (min)</h5>
-    </div>
+    <h5 class="axisLabel">GAME TIME (min)</h5>
   </div>
 
 </div>

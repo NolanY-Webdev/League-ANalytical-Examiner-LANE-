@@ -65,7 +65,7 @@
 
 /* line 70, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_map-scrubber.scss */
 .axisLabel {
-  margin-top: -50px;
+  margin-top: -40px;
   text-align: center;
   color: #EFFFE9;
   font-family: 'Open Sans';
@@ -92,23 +92,24 @@ rect.background {
     color: red; }
   /* line 12, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
   #match-row-one #label-blue-team, h3 #label-blue-team {
+    margin-top: 5px;
     color: blue; }
-  /* line 16, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+  /* line 17, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
   #match-row-one #label-map, h3 #label-map {
     color: white; }
 
-/* line 27, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+/* line 22, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
 .box {
   box-sizing: border-box;
   height: 125px;
   width: 125px;
   background-size: 100%; }
 
-/* line 34, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+/* line 29, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
 .player-stats {
   margin-bottom: 0px; }
 
-/* line 38, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+/* line 33, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
 .player-stat-container {
   background-color: #011627;
   color: #EFFFE9;
@@ -218,40 +219,40 @@ input#summonerNameInput {
 li {
   display: inline; }
 
-/* line 141, stdin */
+/* line 108, stdin */
 #map-svg-img-canvas {
   margin-left: auto; }
 
-/* line 147, stdin */
+/* line 114, stdin */
 footer.page-footer, .nav-wrapper {
   margin-top: 0px;
   padding-top: 0px;
   background-color: #2EC4B6; }
 
 @media screen and (min-width: 1px) and (max-width: 479px) {
-  /* line 155, stdin */
+  /* line 122, stdin */
   .portrait {
     display: inline-block;
     margin-right: 2%; }
-  /* line 160, stdin */
+  /* line 127, stdin */
   .box {
     height: 50px;
     width: 50px; } }
 
 @media screen and (min-width: 480px) and (max-width: 992px) {
-  /* line 168, stdin */
+  /* line 135, stdin */
   body {
     background-color: #011627; }
-  /* line 171, stdin */
+  /* line 138, stdin */
   .portrait {
     display: inline-block;
     margin-right: 2%; }
-  /* line 175, stdin */
+  /* line 142, stdin */
   .box {
     height: 75px;
     width: 75px; } }
 
 @media screen and (min-width: 993px) {
-  /* line 183, stdin */
+  /* line 150, stdin */
   body {
     background-color: #011627; } }
