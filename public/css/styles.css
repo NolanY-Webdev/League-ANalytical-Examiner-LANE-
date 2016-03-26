@@ -4,7 +4,7 @@
   position: relative;
   width: 100vw;
   height: 100vh;
-  background: url("/views/images/sona-background.jpg") no-repeat center;
+  background: url("/views/images/sona-background-half3.jpg") no-repeat center;
   background-size: cover;
   -o-background-size: cover;
   margin-bottom: 0px; }
@@ -15,32 +15,74 @@ h1 {
 
 /* line 26, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
 #lane-header-race {
+  position: absolute;
+  top: 0px;
   font-family: "Racing Sans One", serif;
-  margin-bottom: 5px; }
+  font-size: 4em; }
 
-/* line 31, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
-#lane-header-lobster {
-  font-family: "Lobster", serif;
-  margin-top: -20px;
-  margin-left: 3%; }
+/* line 33, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+.landing-quote {
+  color: #2EC4B6;
+  font-family: 'Open Sans', serif;
+  font-size: 1em;
+  position: relative;
+  top: 20vh;
+  left: 127px; }
 
-/* line 38, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+/* line 44, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
 input#summonerNameInput {
   position: relative;
-  width: 270px;
-  font-size: 1.5em;
+  top: 30vh;
+  left: 3vw;
+  width: 350px;
+  font-size: 2em;
   font-family: 'Freemont';
   color: #EFFFE9;
   border-bottom: none; }
-  /* line 47, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  /* line 53, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
   input#summonerNameInput:focus {
     border: none; }
 
-/* line 53, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+/* line 58, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+.input-field input[type=text]:focus + label {
+  color: #2EC4B6; }
+
+/* line 63, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
 .btn-login {
-  transition: opacity .25s ease-in-out;
-  -moz-transition: opacity .25s ease-in-out;
-  -webkit-transition: opacity .25s ease-in-out; }
+  transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -webkit-transition: opacity 1s ease-in-out;
+  position: absolute;
+  top: 53vh;
+  left: 7.5vw;
+  font-family: "Racing Sans One", serif;
+  font-size: 2em;
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  padding: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: #2EC4B6; }
+  /* line 86, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  .btn-login:hover {
+    color: #E71D36;
+    background-color: transparent; }
+
+/* line 93, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+i.material-icons.right {
+  font-size: 1.2em; }
+
+/* line 96, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+.elementToFadeInAndOut {
+  opacity: 1;
+  amimation: fade 2s linear; }
+
+@keyframes fade {
+  0%, 100% {
+    opacity: 0; }
+  50% {
+    opacity: 1; } }
 
 /* line 2, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_map-scrubber.scss */
 #map-d {
@@ -160,9 +202,13 @@ rect.background {
   font-size: 0.8em; }
 
 /* line 39, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+img.riot-icon {
+  border: 0;
+  top: 18px; }
+
+/* line 43, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
 .riot-icon {
-  position: relative;
-  bottom: 0px; }
+  position: relative; }
 
 /* line 1, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
 div.match-container {
