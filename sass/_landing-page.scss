@@ -1,0 +1,59 @@
+$white-color: #EFFFE9;
+$black-color: #011627;
+$red-color: #E71D36;
+$green-color: #2EC4B6;
+
+$google-font-lobster: 'Lobster', serif;
+$google-font-racing: 'Racing Sans One', serif;
+
+// background-picture
+.header {
+  display: table;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: url('/views/images/sona-background.jpg') no-repeat center;
+  background-size: cover;
+  -o-background-size: cover;
+  margin-bottom: 0px;
+}
+
+// LANE WINS LOGO
+h1 {
+  color: $white-color;
+}
+
+#lane-header-race {
+  font-family: $google-font-racing;
+  margin-bottom: 5px;
+}
+
+#lane-header-lobster {
+  font-family: $google-font-lobster;
+  margin-top: -20px;
+  margin-left: 3%;
+}
+
+// INPUT SUMMONER NAME
+input#summonerNameInput {
+  position : relative;
+  // top: 55vh;
+  // left: 30vw;
+  width: 270px;
+  font-size: 1.5em;
+  font-family: 'Freemont';
+  color: $white-color;
+  border-bottom: none;
+  &:focus {
+    border: none;
+  }
+}
+
+// ENTER BUTTON
+.btn-login {
+  // top: 55vh;
+  // left: 25vw;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
+}

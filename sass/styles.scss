@@ -4,6 +4,8 @@ $black-color: #011627;
 $red-color: #E71D36;
 $green-color: #2EC4B6;
 
+// ---------------- LANDING PAGE STYLES
+@import 'landing-page';
 // ---------------- SCRUBBER STYLES
 @import 'map-scrubber';
 // ---------------- MATCH DETAILS
@@ -27,39 +29,6 @@ p#footer-disc.center-align {
   padding-top: 12px;
   padding-bottom: 12px;
   margin-bottom: 0px;
-}
-
-.header {
-  display: table;
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  background: url('/views/images/sona-background.jpg') no-repeat center;
-  background-size: cover;
-  -o-background-size: cover;
-  margin-bottom: 0px;
-}
-
-input#summonerNameInput {
-  position : relative;
-  top: 55vh;
-  left: 30vw;
-  width: 270px;
-  font-size: 1.5em;
-  font-family: 'Freemont';
-  color: $white-color;
-  border-bottom: none;
-  &:focus {
-    border: none;
-  }
-}
-
-.btn-login {
-  top: 55vh;
-  left: 25vw;
-  transition: opacity .25s ease-in-out;
-  -moz-transition: opacity .25s ease-in-out;
-  -webkit-transition: opacity .25s ease-in-out;
 }
 
 $box-shadow : 0 1px 0 #ccc,

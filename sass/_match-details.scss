@@ -15,7 +15,7 @@ $green-color: #2EC4B6;
   }
 
   #label-map {
-    color: white;
+    color: $white-color;
   }
 }
 
@@ -34,4 +34,9 @@ $green-color: #2EC4B6;
   background-color: $black-color;
   color: $white-color;
   font-size: 0.8em;
+}
+
+.riot-icon {
+  position: relative;
+  bottom: 0px;
 }

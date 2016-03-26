@@ -1,3 +1,47 @@
+/* line 10, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+.header {
+  display: table;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: url("/views/images/sona-background.jpg") no-repeat center;
+  background-size: cover;
+  -o-background-size: cover;
+  margin-bottom: 0px; }
+
+/* line 22, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+h1 {
+  color: #EFFFE9; }
+
+/* line 26, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+#lane-header-race {
+  font-family: "Racing Sans One", serif;
+  margin-bottom: 5px; }
+
+/* line 31, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+#lane-header-lobster {
+  font-family: "Lobster", serif;
+  margin-top: -20px;
+  margin-left: 3%; }
+
+/* line 38, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+input#summonerNameInput {
+  position: relative;
+  width: 270px;
+  font-size: 1.5em;
+  font-family: 'Freemont';
+  color: #EFFFE9;
+  border-bottom: none; }
+  /* line 47, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  input#summonerNameInput:focus {
+    border: none; }
+
+/* line 53, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+.btn-login {
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out; }
+
 /* line 2, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_map-scrubber.scss */
 #map-d {
   box-sizing: border-box; }
@@ -96,7 +140,7 @@ rect.background {
     color: blue; }
   /* line 17, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
   #match-row-one #label-map, h3 #label-map {
-    color: white; }
+    color: #EFFFE9; }
 
 /* line 22, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
 .box {
@@ -114,6 +158,11 @@ rect.background {
   background-color: #011627;
   color: #EFFFE9;
   font-size: 0.8em; }
+
+/* line 39, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+.riot-icon {
+  position: relative;
+  bottom: 0px; }
 
 /* line 1, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
 div.match-container {
@@ -145,114 +194,81 @@ div.match-container {
   font-family: 'Freemont';
   padding-left: 15px; }
 
-/* line 14, stdin */
+/* line 16, stdin */
 .container {
   min-width: 950px; }
 
-/* line 17, stdin */
+/* line 19, stdin */
 body {
   background-color: #011627; }
 
-/* line 21, stdin */
+/* line 23, stdin */
 h1 {
   font-family: 'Open Sans', serif; }
 
-/* line 25, stdin */
+/* line 27, stdin */
 p#footer-disc.center-align {
   font-size: .55em;
   padding-top: 12px;
   padding-bottom: 12px;
   margin-bottom: 0px; }
 
-/* line 32, stdin */
-.header {
-  display: table;
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  background: url("/views/images/sona-background.jpg") no-repeat center;
-  background-size: cover;
-  -o-background-size: cover;
-  margin-bottom: 0px; }
-
-/* line 43, stdin */
-input#summonerNameInput {
-  position: relative;
-  top: 55vh;
-  left: 30vw;
-  width: 270px;
-  font-size: 1.5em;
-  font-family: 'Freemont';
-  color: #EFFFE9;
-  border-bottom: none; }
-  /* line 52, stdin */
-  input#summonerNameInput:focus {
-    border: none; }
-
-/* line 57, stdin */
-.btn-login {
-  top: 55vh;
-  left: 25vw;
-  transition: opacity .25s ease-in-out;
-  -moz-transition: opacity .25s ease-in-out;
-  -webkit-transition: opacity .25s ease-in-out; }
-
-/* line 82, stdin */
+/* line 51, stdin */
 .portrait {
   margin-bottom: 5%; }
 
-/* line 88, stdin */
+/* line 57, stdin */
 #recent-games-tab {
   background-color: #E71D36; }
-  /* line 91, stdin */
+  /* line 60, stdin */
   #recent-games-tab a {
     font-size: 1.2em; }
-    /* line 94, stdin */
+    /* line 63, stdin */
     #recent-games-tab a:hover {
       color: #FFF; }
 
-/* line 100, stdin */
+/* line 69, stdin */
 .match-tab {
   text-decoration: none; }
 
-/* line 104, stdin */
+/* line 73, stdin */
 li {
   display: inline; }
 
-/* line 108, stdin */
+/* line 77, stdin */
 #map-svg-img-canvas {
   margin-left: auto; }
 
-/* line 114, stdin */
+/* line 83, stdin */
 footer.page-footer, .nav-wrapper {
   margin-top: 0px;
   padding-top: 0px;
   background-color: #2EC4B6; }
 
 @media screen and (min-width: 1px) and (max-width: 479px) {
-  /* line 122, stdin */
+  /* line 91, stdin */
   .portrait {
     display: inline-block;
     margin-right: 2%; }
-  /* line 127, stdin */
+  /* line 96, stdin */
   .box {
     height: 50px;
     width: 50px; } }
 
 @media screen and (min-width: 480px) and (max-width: 992px) {
-  /* line 135, stdin */
+  /* line 104, stdin */
   body {
     background-color: #011627; }
-  /* line 138, stdin */
+  /* line 107, stdin */
   .portrait {
     display: inline-block;
     margin-right: 2%; }
-  /* line 142, stdin */
+  /* line 111, stdin */
   .box {
     height: 75px;
     width: 75px; } }
 
 @media screen and (min-width: 993px) {
-  /* line 150, stdin */
+  /* line 119, stdin */
   body {
     background-color: #011627; } }
