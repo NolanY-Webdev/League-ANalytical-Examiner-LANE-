@@ -36,8 +36,12 @@
       <div class="col s5 team200 portrait box circle responsive-img player{{participant.participantId}}" ng-style="{'background-image' : 'url( {{ participant.championImage }} )'}"></div>
       <div class="col s7 player-stat-container">
         <div class="row player-stats" id="player-name">Participant Id: {{ participant.participantId}}</div>
-        <div class="row player-stats" id="player-gold-count">Gold Earned: {{ participant.stats.goldEarned}}</div>
-        <div class="row player-stats" id="player-kill-count">Kill Count: {{ participant.stats.kills}}</div>
+        <div class="row player-stats" id="player-gold-count">
+          <img class="riot-icon" src="http://ddragon.leagueoflegends.com/cdn/5.5.1/img/ui/gold.png">: {{ participant.stats.goldEarned}}
+        </div>
+        <div class="row player-stats" id="player-kill-count">
+          <img class="riot-icon" src="http://ddragon.leagueoflegends.com/cdn/5.5.1/img/ui/score.png" alt="Player kill count">: {{ participant.stats.kills}}
+        </div>
       </div>
     </div>
   </div>
