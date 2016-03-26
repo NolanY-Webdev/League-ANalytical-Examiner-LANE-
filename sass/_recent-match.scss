@@ -1,13 +1,17 @@
+$google-font-lobster: 'Lobster', serif;
+$google-font-racing: 'Racing Sans One', serif;
+
 div.match-container {
   border: 2px solid $green-color;
-  margin-bottom : 35px;
+  margin-top : 20px;
   background-color: $white-color;
+
   &:hover {
+    border: 2px solid $red-color;
+
     .game-info {
       background-color: $red-color;
     }
-
-    border: 2px solid $red-color;
   }
 }
 
@@ -25,6 +29,25 @@ div.match-container {
   padding-top: 7px;
   padding-bottom: 7px;
   font-weight: bold;
-  font-family: 'Freemont';
+  font-family: $google-font-racing;
   padding-left: 15px;
+}
+
+.teams {
+  margin-top: 15px;
+}
+
+#recent-game-team-one {
+  margin-left: 15px;
+}
+
+#recent-game-team-two {
+  margin-left: 20px;
+}
+
+.recent-match-picture {
+  display: inline;
+  width: 70px;
+  height: 70px;
+  margin-right: 7px;
 }
