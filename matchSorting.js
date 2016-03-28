@@ -31,13 +31,15 @@ function sort(data) {
       return c.championId;
     });
 
+    var computedGameLength = Math.floor(currentGame.stats.timePlayed / 60);
+
     gameData = {
       'gameId' : currentGame.gameId,
       'gameMode' : currentGame.gameMode,
       'subType' : currentGame.subType,
       'mapId' : currentGame.mapId,
       'createDate' : currentGame.createDate,
-      'gameLength' : currentGame.stats.timePlayed
+      'gameLength' : computedGameLength
     };
 
     if (currentGame.teamId == 100) {

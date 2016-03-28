@@ -1,51 +1,17 @@
-<!-- <div class="row">
-  <ul class="recents">
-    <li ng-repeat="game in sortedData">
-      <div class="match-container" ng-click="getMatch(game.gameId)">
-
-        <div class="row game-info">
-          <div class="col s4"><div id="match-info-columns">{{game.gameMode}}</div></div>
-          <div class="col s4">{{game.subType}}</div>
-          <div class="col s4">Game Length: {{gameLength}}</div>
-        </div>
-
-     <div class="row teams u-full-width" ng-style="{'background-image' : 'url( http://ddragon.leagueoflegends.com/cdn/5.22.3/img/map/map'+game.mapId+'.png )'}">
-        <div class="row teams u-full-width">
-          <ul>
-            <li ng-repeat="friend in game.myTeam">
-              <img src="{{friend}}">
-            </li>
-          </ul>
-          <img id="vs" src="./views/images/score.png">
-          <ul>
-            <li ng-repeat="foe in game.enemyTeam">
-              <img src="{{foe}}">
-            </li>
-          </ul>
-        </div>
-
-      </div>
-    </li>
-
-  </ul>
-</div>
- -->
 <div class="container">
   <div class="row" ng-repeat="game in sortedData">
     <div class="match-container" ng-click="getMatch(game.gameId)">
-      <div class="col s4 game-info">
-        <div id="match-info-columns">{{game.gameMode}}</div>
-      </div>
+      <div class="col s4 game-info">{{game.gameMode}}</div>
       <div class="col s4 game-info">{{game.subType}}</div>
-      <div class="col s4 game-info">Game Length: {{gameLength}}</div>
+      <div class="col s4 game-info">GAME LENGTH: {{game.gameLength}} mins</div>
 
     <div class="row">
       <div class="col s5 m5 l5  teams" id="recent-game-team-one">
         <img class="recent-match-picture" ng-repeat="friend in game.myTeam" src="{{friend}}">
       </div>
 
-      <div class="col s1 m1 l1">
-        <img id="vs" src="./views/images/score.png">
+      <div class="col s1 m1 l1"  ng-if="game.enemyTeam.length">
+        <img id="vs" src="./views/images/vs-icon.png">
       </div>
 
       <div class="col s5  m5 l5  teams" id="recent-game-team-two">
