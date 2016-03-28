@@ -20,7 +20,7 @@ h1 {
   font-family: "Racing Sans One", serif;
   font-size: 4em; }
 
-/* line 33, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+/* line 32, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
 .landing-quote {
   color: #2EC4B6;
   font-family: 'Open Sans', serif;
@@ -29,7 +29,7 @@ h1 {
   top: 20vh;
   left: 127px; }
 
-/* line 44, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+/* line 43, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
 input#summonerNameInput {
   position: relative;
   top: 30vh;
@@ -43,15 +43,15 @@ input#summonerNameInput {
   border-radius: 8px;
   padding-left: 15px;
   padding-right: 15px; }
-  /* line 59, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  /* line 58, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
   input#summonerNameInput:focus {
     border: none; }
 
-/* line 64, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+/* line 63, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
 .input-field input[type=text]:focus + label {
   color: #2EC4B6; }
 
-/* line 69, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+/* line 68, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
 .btn-login {
   transition: opacity 1s ease-in-out;
   -moz-transition: opacity 1s ease-in-out;
@@ -68,17 +68,17 @@ input#summonerNameInput {
   padding-top: 0px;
   padding-bottom: 0px;
   color: #2EC4B6; }
-  /* line 92, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  /* line 91, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
   .btn-login:hover {
     color: #E71D36;
     background-color: transparent; }
 
-/* line 99, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+/* line 98, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
 i.material-icons.left {
   font-size: 1.2em;
   margin-right: 0px; }
 
-/* line 103, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+/* line 102, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
 .elementToFadeInAndOut {
   opacity: 1;
   amimation: fade 2s linear; }
@@ -175,45 +175,97 @@ label {
 rect.background {
   background-color: #EFFFE9; }
 
-/* line 6, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
-#match-row-one, h3 {
-  margin-bottom: 0px; }
-  /* line 8, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
-  #match-row-one #label-red-team, h3 #label-red-team {
-    color: red; }
-  /* line 12, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
-  #match-row-one #label-blue-team, h3 #label-blue-team {
-    margin-top: 5px;
-    color: blue; }
-  /* line 17, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
-  #match-row-one #label-map, h3 #label-map {
-    color: #EFFFE9; }
+/* line 11, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+span#brand-logo.lane-header-race {
+  font-family: "Racing Sans One", serif;
+  margin-left: 2%;
+  font-size: 2em;
+  color: #EFFFE9; }
+  /* line 16, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+  span#brand-logo.lane-header-race:hover {
+    color: #011627; }
 
-/* line 22, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+/* line 21, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+#summoner-name-nav {
+  padding-right: 20px;
+  color: #EFFFE9; }
+
+/* line 26, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+#recent-games-tab {
+  background-color: #E71D36; }
+  /* line 28, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+  #recent-games-tab a {
+    color: #EFFFE9;
+    font-size: 1.2em;
+    padding-right: 20px;
+    padding-left: 20px; }
+    /* line 34, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+    #recent-games-tab a:hover {
+      color: #FFF; }
+
+/* line 40, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+nav ul {
+  height: 100%; }
+
+/* line 44, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+.match-tab {
+  text-decoration: none; }
+
+/* line 50, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+#match-row-one {
+  background-color: #EFFFE9;
+  margin-bottom: 20px; }
+
+/* line 55, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+#match-row-one,
+h4 {
+  padding-top: 5px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  color: #011627;
+  font-weight: bold; }
+
+/* line 80, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
 .box {
   box-sizing: border-box;
   height: 125px;
   width: 125px;
   background-size: 100%; }
 
-/* line 29, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+/* line 87, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
 .player-stats {
   margin-bottom: 0px; }
 
-/* line 33, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+/* line 91, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
 .player-stat-container {
   background-color: #011627;
   color: #EFFFE9;
   font-size: 0.8em; }
 
-/* line 39, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+/* line 97, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
 img.riot-icon {
   border: 0;
   top: 18px; }
 
-/* line 43, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+/* line 101, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
 .riot-icon {
   position: relative; }
+
+/* line 107, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+.player-score:hover .stats-tooltip {
+  display: block;
+  color: #011627;
+  background-color: #EFFFE9; }
+
+/* line 114, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+.stats-tooltip {
+  display: none;
+  padding: 5px;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 1000;
+  background: #EFFFE9;
+  color: #011627; }
 
 /* line 4, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
 div.match-container {
@@ -288,57 +340,43 @@ p#footer-disc.center-align {
   margin-bottom: 5%; }
 
 /* line 57, stdin */
-#recent-games-tab {
-  background-color: #E71D36; }
-  /* line 60, stdin */
-  #recent-games-tab a {
-    font-size: 1.2em; }
-    /* line 63, stdin */
-    #recent-games-tab a:hover {
-      color: #FFF; }
-
-/* line 69, stdin */
-.match-tab {
-  text-decoration: none; }
-
-/* line 73, stdin */
 li {
   display: inline; }
 
-/* line 77, stdin */
+/* line 61, stdin */
 #map-svg-img-canvas {
   margin-left: auto; }
 
-/* line 83, stdin */
+/* line 67, stdin */
 footer.page-footer, .nav-wrapper {
   margin-top: 0px;
   padding-top: 0px;
   background-color: #2EC4B6; }
 
 @media screen and (min-width: 1px) and (max-width: 479px) {
-  /* line 91, stdin */
+  /* line 75, stdin */
   .portrait {
     display: inline-block;
     margin-right: 2%; }
-  /* line 96, stdin */
+  /* line 80, stdin */
   .box {
     height: 50px;
     width: 50px; } }
 
 @media screen and (min-width: 480px) and (max-width: 992px) {
-  /* line 104, stdin */
+  /* line 88, stdin */
   body {
     background-color: #011627; }
-  /* line 107, stdin */
+  /* line 91, stdin */
   .portrait {
     display: inline-block;
     margin-right: 2%; }
-  /* line 111, stdin */
+  /* line 95, stdin */
   .box {
     height: 75px;
     width: 75px; } }
 
 @media screen and (min-width: 993px) {
-  /* line 119, stdin */
+  /* line 103, stdin */
   body {
     background-color: #011627; } }

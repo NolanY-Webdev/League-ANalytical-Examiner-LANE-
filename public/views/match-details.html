@@ -1,16 +1,16 @@
 <div class="row" id="match-row-one">
   <div class="col l3 center-align">
-    <h3 id="label-red-team">Red Team
-      <div ng-if="mostRecentMatch.teams[0].winner">(Winner)</div>
-    </h3>
+    <h4 id="label-red-team">Red Team
+      <span ng-if="mostRecentMatch.teams[0].winner">( Won )</span>
+    </h4>
   </div>
   <div class="col l6 center-align">
-    <h3 id="label-map">{{mostRecentMatch.matchMode}}</h3>
+    <h4 id="label-map">{{mostRecentMatch.matchMode}}</h4>
   </div>
   <div class="col l3 center-align">
-    <h3 id="label-blue-team">Blue Team
-      <div ng-if="mostRecentMatch.teams[1].winner">(Winner)</div>
-    </h3>
+    <h4 id="label-blue-team">Blue Team
+      <span ng-if="mostRecentMatch.teams[1].winner">( Won )</span>
+    </h4>
   </div>
 </div>
 
@@ -25,7 +25,16 @@
           <img class="riot-icon" src="http://ddragon.leagueoflegends.com/cdn/5.5.1/img/ui/gold.png">: {{ participant.stats.goldEarned}}
         </div>
         <div class="row player-stats" id="player-kill-count">
-          <img class="riot-icon" src="http://ddragon.leagueoflegends.com/cdn/5.5.1/img/ui/score.png" alt="Player kill count">: {{ participant.stats.kills}}
+          <img class="riot-icon" src="http://ddragon.leagueoflegends.com/cdn/5.5.1/img/ui/score.png" alt="Player kill count">:
+          <span class="player-score">{{participant.stats.kills}}
+            <span class="stats-tooltip">Kills</span>
+          </span> /
+          <span class="player-score">{{ participant.stats.deaths}}
+            <span class="stats-tooltip">Deaths</span>
+          </span> /
+          <span class="player-score">{{ participant.stats.assists}}
+            <span class="stats-tooltip">Assists</span>
+          </span>
         </div>
       </div>
     </div>
@@ -40,7 +49,15 @@
           <img class="riot-icon" src="http://ddragon.leagueoflegends.com/cdn/5.5.1/img/ui/gold.png">: {{ participant.stats.goldEarned}}
         </div>
         <div class="row player-stats" id="player-kill-count">
-          <img class="riot-icon" src="http://ddragon.leagueoflegends.com/cdn/5.5.1/img/ui/score.png" alt="Player kill count">: {{ participant.stats.kills}}
+          <img class="riot-icon" src="http://ddragon.leagueoflegends.com/cdn/5.5.1/img/ui/score.png" alt="Player kill count">: <span class="player-score">{{participant.stats.kills}}
+            <span class="stats-tooltip">Kills</span>
+          </span> /
+          <span class="player-score">{{ participant.stats.deaths}}
+            <span class="stats-tooltip">Deaths</span>
+          </span> /
+          <span class="player-score">{{ participant.stats.assists}}
+            <span class="stats-tooltip">Assists</span>
+          </span>
         </div>
       </div>
     </div>

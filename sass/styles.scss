@@ -54,22 +54,6 @@ $blue : #42C0FB;
 
 // ------------- RECENT MATCH
 
-#recent-games-tab {
-  background-color: $red-color;
-
-  a {
-  font-size: 1.2em;
-
-    &:hover{
-    color:#FFF;
-    }
-  }
-}
-
-.match-tab {
-  text-decoration: none;
-}
-
 li {
   display: inline;
 }

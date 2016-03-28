@@ -3,21 +3,79 @@ $black-color: #011627;
 $red-color: #E71D36;
 $green-color: #2EC4B6;
 
-#match-row-one, h3 {
-  margin-bottom: 0px;
+$google-font-racing: 'Racing Sans One', serif;
+$google-font-lobster: 'Lobster', serif;
+
+// NAV BAR STYLES
+
+span#brand-logo.lane-header-race {
+  font-family: $google-font-racing;
+  margin-left: 2%;
+  font-size: 2em;
+  color: $white-color;
+  &:hover {
+    color: $black-color;
+  }
+}
+
+#summoner-name-nav {
+  padding-right: 20px;
+  color: $white-color;
+}
+
+#recent-games-tab {
+  background-color: $red-color;
+  a {
+  color: $white-color;
+  font-size: 1.2em;
+  padding-right: 20px;
+  padding-left: 20px;
+
+    &:hover{
+      color: #FFF;
+    }
+  }
+}
+
+nav ul {
+  height: 100%;
+}
+
+.match-tab {
+  text-decoration: none;
+}
+
+// TOP CONTAINER
+
+#match-row-one {
+  background-color: $white-color;
+  margin-bottom: 20px;
+}
+
+#match-row-one,
+
+h4 {
+  padding-top: 5px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  color: $black-color;
+  font-weight: bold;
+
   #label-red-team {
-    color: red;
+    // color: red;
   }
 
   #label-blue-team {
-    margin-top: 5px;
-    color: blue;
+    // color: blue;
   }
 
   #label-map {
-    color: $white-color;
+    // color: $white-color;
   }
 }
+
+
+// Player Stats
 
 .box {
   box-sizing: border-box;
@@ -42,4 +100,23 @@ img.riot-icon {
 }
 .riot-icon {
   position: relative;
+}
+
+// TOOL TIPS
+
+.player-score:hover .stats-tooltip {
+    display: block;
+    color: $black-color;
+    background-color: $white-color;
+}
+
+
+.stats-tooltip {
+    display: none;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 1000;
+    background: $white-color;
+    color: $black-color;
 }
