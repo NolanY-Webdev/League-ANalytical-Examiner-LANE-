@@ -1,20 +1,20 @@
 <div class="container">
   <div class="row" ng-repeat="game in sortedData">
     <div class="match-container" ng-click="getMatch(game.gameId)">
-      <div class="col s4 game-info">{{game.gameMode}}</div>
-      <div class="col s4 game-info">{{game.subType}}</div>
-      <div class="col s4 game-info">GAME LENGTH: {{game.gameLength}} mins</div>
+      <div class="col s3 game-info center-align">{{game.gameMode}}</div>
+      <div class="col s5 game-info center-align">{{game.subType}}</div>
+      <div class="col s4 game-info center-align">GAME LENGTH: {{game.gameLength}} mins</div>
 
     <div class="row">
-      <div class="col s5 m5 l5  teams" id="recent-game-team-one">
+      <div class="col s5 m5 l5 teams" id="recent-game-team-one">
         <img class="recent-match-picture" ng-repeat="friend in game.myTeam" src="{{friend}}">
       </div>
 
-      <div class="col s1 m1 l1"  ng-if="game.enemyTeam.length">
+      <div class="col s1 m1 l1" ng-if="game.enemyTeam.length">
         <img id="vs" src="./views/images/vs.png">
       </div>
 
-      <div class="col s5  m5 l5  teams" id="recent-game-team-two">
+      <div class="col s5  m5 l5 teams" id="recent-game-team-two">
         <img class="recent-match-picture" ng-repeat="foe in game.enemyTeam" src="{{foe}}">
       </div>
     </div>

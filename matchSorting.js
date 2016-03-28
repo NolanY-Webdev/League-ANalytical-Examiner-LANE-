@@ -32,11 +32,16 @@ function sort(data) {
     });
 
     var computedGameLength = Math.floor(currentGame.stats.timePlayed / 60);
+    var subGameType = currentGame.subType;
+
+    if (subGameType === "ARAM_UNRANKED_5x5") {
+      subGameType = '5x5';
+    }
 
     gameData = {
       'gameId' : currentGame.gameId,
       'gameMode' : currentGame.gameMode,
-      'subType' : currentGame.subType,
+      'subType' : subGameType,
       'mapId' : currentGame.mapId,
       'createDate' : currentGame.createDate,
       'gameLength' : computedGameLength
