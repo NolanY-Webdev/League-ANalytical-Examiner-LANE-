@@ -89,6 +89,50 @@ i.material-icons.left {
   50% {
     opacity: 1; } }
 
+@media screen and (min-width: 1px) and (max-width: 479px) {
+  /* line 115, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  body {
+    max-width: 480px; }
+  /* line 119, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  .header {
+    background: none;
+    height: 50vh; }
+  /* line 124, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  .small-header {
+    width: 97vw;
+    height: 50vh;
+    background: url("/views/images/sona-background-small.jpg") no-repeat center;
+    background-size: cover;
+    -o-background-size: cover;
+    margin-bottom: 0px; }
+  /* line 133, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  h1#lane-header-race {
+    margin-top: 0px;
+    margin-bottom: 0px; }
+  /* line 138, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  p#quote-one.landing-quote.lighter {
+    margin-top: -30px;
+    margin-bottom: 0px; }
+  /* line 143, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  input#summonerNameInput {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    top: 25vh; }
+  /* line 149, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  .btn-login {
+    top: 35.5vh;
+    left: 23vw; }
+  /* line 154, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  #footer-row {
+    margin-bottom: 0px; }
+  /* line 158, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  p#footer-disc.center-align {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    padding-right: 4%;
+    padding-left: 4%; } }
+
 /* line 2, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_map-scrubber.scss */
 #map-d {
   box-sizing: border-box; }
@@ -322,61 +366,64 @@ div.match-container {
 
 /* line 19, stdin */
 body {
-  background-color: #011627; }
+  background-color: #011627;
+  font-size: 1.5em;
+  line-height: 1.6;
+  font-weight: 400; }
 
-/* line 23, stdin */
+/* line 26, stdin */
 h1 {
   font-family: 'Open Sans', serif; }
 
-/* line 27, stdin */
+/* line 30, stdin */
 p#footer-disc.center-align {
   font-size: .55em;
   padding-top: 12px;
   padding-bottom: 12px;
   margin-bottom: 0px; }
 
-/* line 51, stdin */
+/* line 54, stdin */
 .portrait {
   margin-bottom: 5%; }
 
-/* line 57, stdin */
+/* line 60, stdin */
 li {
   display: inline; }
 
-/* line 61, stdin */
+/* line 64, stdin */
 #map-svg-img-canvas {
   margin-left: auto; }
 
-/* line 67, stdin */
+/* line 70, stdin */
 footer.page-footer, .nav-wrapper {
   margin-top: 0px;
   padding-top: 0px;
   background-color: #2EC4B6; }
 
 @media screen and (min-width: 1px) and (max-width: 479px) {
-  /* line 75, stdin */
+  /* line 78, stdin */
   .portrait {
     display: inline-block;
     margin-right: 2%; }
-  /* line 80, stdin */
+  /* line 83, stdin */
   .box {
     height: 50px;
     width: 50px; } }
 
 @media screen and (min-width: 480px) and (max-width: 992px) {
-  /* line 88, stdin */
+  /* line 91, stdin */
   body {
     background-color: #011627; }
-  /* line 91, stdin */
+  /* line 94, stdin */
   .portrait {
     display: inline-block;
     margin-right: 2%; }
-  /* line 95, stdin */
+  /* line 98, stdin */
   .box {
     height: 75px;
     width: 75px; } }
 
 @media screen and (min-width: 993px) {
-  /* line 103, stdin */
+  /* line 106, stdin */
   body {
     background-color: #011627; } }

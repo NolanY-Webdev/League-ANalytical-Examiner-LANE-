@@ -109,3 +109,58 @@ i.material-icons.left {
   0%,100% { opacity: 0 }
   50% { opacity: 1 }
 }
+
+// Small screen
+@media screen and (min-width: 1px) and (max-width:479px) {
+  body {
+    max-width: 480px;
+  }
+
+  .header {
+    background: none;
+    height: 50vh;
+  }
+
+  .small-header {
+    width: 97vw;
+    height: 50vh;
+    background: url('/views/images/sona-background-small.jpg') no-repeat center;
+    background-size: cover;
+    -o-background-size: cover;
+    margin-bottom: 0px;
+  }
+
+  h1#lane-header-race {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  p#quote-one.landing-quote.lighter {
+    margin-top: -30px;
+    margin-bottom: 0px;
+  }
+
+  input#summonerNameInput {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    top: 25vh;
+  }
+
+  .btn-login {
+    top: 35.5vh;
+    left: 23vw;
+  }
+
+  #footer-row {
+    margin-bottom: 0px;
+  }
+
+  p#footer-disc.center-align {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    padding-right: 4%;
+    padding-left: 4%;
+
+  }
+}
