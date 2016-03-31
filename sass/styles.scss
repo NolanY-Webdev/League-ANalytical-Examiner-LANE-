@@ -75,15 +75,15 @@ footer.page-footer, .nav-wrapper {
 
 // Small screen
 @media screen and (min-width: 1px) and (max-width:479px) {
-    .portrait {
-      display: inline-block;
-      margin-right: 2%;
-    }
+  .portrait {
+    display: inline-block;
+    margin-right: 2%;
+  }
 
-    .box {
-      height: 50px;
-      width: 50px;
-    }
+  .box {
+    height: 50px;
+    width: 50px;
+  }
 }
 
 // Medium screen

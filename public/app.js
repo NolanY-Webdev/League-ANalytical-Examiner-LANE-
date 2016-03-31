@@ -39,6 +39,10 @@ angular.module('laneApp', [
   .state('disclosure', {
     url : '/disclosure',
     templateUrl : 'views/disclosure.html'
+  })
+  .state('riot.txt', {
+    url : '/riot.txt',
+    templateUrl : 'views/riot.txt'
   });
 }])
 .run(['$rootScope', function($rootScope) {

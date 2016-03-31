@@ -86,7 +86,13 @@ h4 {
 
 .player-stats {
   margin-bottom: 0px;
+
 }
+
+// div.row.player-stats.ng-scope:hover {
+//   border: 1px solid $white-color;
+//   cursor: pointer;
+// }
 
 .player-stat-container {
   background-color: $black-color;
@@ -119,4 +125,17 @@ img.riot-icon {
     z-index: 1000;
     background: $white-color;
     color: $black-color;
+}
+
+img.picture {
+  border-radius: 50%;
+}
+
+// Small screen
+@media screen and (min-width: 1px) and (max-width:479px) {
+  img.picture {
+    border-radius: 50%;
+    height: 10vh;
+    width: 15vw;
+  }
 }

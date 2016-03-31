@@ -3,15 +3,15 @@
 </div>
 <div class="row header">
   <div class="col s12">
-    <h1 id="lane-header-race">LANE WINS</h1>
-    <p class="landing-quote lighter" id="quote-one"><span id="quote-two">gameplay</span> and <span id="quote-two">analytics tool</span></p>
+    <h1 id="lane-header-race" class="left-align">LANE WINS</h1>
+    <p class="landing-quote lighter left-align" id="quote-one"><span id="quote-two">gameplay</span> and <span id="quote-two">analytics tool</span></p>
   </div>
 
   <div class="col s12">
     <form class="form" name="summonerForm" ng-disabled="summonerName.$invalid" ng-submit="getSummonerInfo(summonerName)">
 
       <div class="col s12">
-        <input id="summonerNameInput" required type="text" placeholder="Summoner Name" ng-model="summonerName" ng-minlength="3" />
+        <input class="center-align" id="summonerNameInput" required type="text" placeholder="Summoner Name" ng-model="summonerName" ng-minlength="3" />
         <p class="error" ng-show="summonerForm.$dirty && summonerForm.summonerName.$invalid">Required</p>
         <p class="error" ng-show="summonerForm.summonerName.$pristine">Required</p>
         <p class="error" ng-show="summonerForm.summonerName.$error.minlength">Not less than 3 characters</p>
@@ -19,7 +19,7 @@
       <div class="col s12">
         <!-- <button type="submit" class="btn waves-effect waves-light btn-login" ng-show="summonerForm.$valid" name="action"> Search
         </button> -->
-        <button type="submit" class="btn waves-effect waves-light btn-login elementToFadeInAndOut" name="action" ng-show="summonerForm.$valid"><i class="material-icons left">play_arrow</i> View Stats
+        <button type="submit" class="btn waves-effect waves-light btn-login elementToFadeInAndOut" name="action" ng-show="summonerForm.$valid"><i class="material-icons left">play_arrow</i>View Stats
         </button>
       </div>
 
