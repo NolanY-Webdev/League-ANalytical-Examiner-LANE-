@@ -286,28 +286,36 @@ h4 {
 .player-stats {
   margin-bottom: 0px; }
 
-/* line 97, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+/* line 91, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+div#player-kill-count, div#player-gold-count {
+  margin-top: -18px; }
+
+/* line 95, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+#player-name {
+  margin-bottom: 0px; }
+
+/* line 103, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
 .player-stat-container {
   background-color: #011627;
   color: #EFFFE9;
   font-size: 0.8em; }
 
-/* line 103, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+/* line 109, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
 img.riot-icon {
   border: 0;
   top: 18px; }
 
-/* line 107, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+/* line 113, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
 .riot-icon {
   position: relative; }
 
-/* line 113, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+/* line 119, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
 .player-score:hover .stats-tooltip {
   display: block;
   color: #011627;
   background-color: #EFFFE9; }
 
-/* line 120, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+/* line 126, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
 .stats-tooltip {
   display: none;
   padding: 5px;
@@ -317,12 +325,18 @@ img.riot-icon {
   background: #EFFFE9;
   color: #011627; }
 
-/* line 130, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+/* line 136, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
 img.picture {
   border-radius: 50%; }
 
+/* line 140, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+.item-picture {
+  width: 32px;
+  height: 32px;
+  border-radius: 13%; }
+
 @media screen and (min-width: 1px) and (max-width: 479px) {
-  /* line 136, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+  /* line 148, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
   img.picture {
     border-radius: 50%;
     height: 10vh;

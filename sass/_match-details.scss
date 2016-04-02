@@ -86,9 +86,15 @@ h4 {
 
 .player-stats {
   margin-bottom: 0px;
-
 }
 
+div#player-kill-count, div#player-gold-count {
+  margin-top: -18px;
+}
+
+#player-name {
+  margin-bottom: 0px;
+}
 // div.row.player-stats.ng-scope:hover {
 //   border: 1px solid $white-color;
 //   cursor: pointer;
@@ -129,6 +135,12 @@ img.riot-icon {
 
 img.picture {
   border-radius: 50%;
+}
+
+.item-picture {
+  width: 32px;
+  height: 32px;
+  border-radius: 13%;
 }
 
 // Small screen
