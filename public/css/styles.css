@@ -121,23 +121,50 @@ i.material-icons.left {
     top: 23vh;
     left: -5px;
     width: 86%;
-    width: 86%;
     font-size: 7vw; }
-  /* line 162, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  /* line 161, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
   .btn-login {
     top: 35vh;
     left: 4px;
     font-size: 8vw; }
-  /* line 168, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  /* line 167, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
   #footer-row {
     margin-bottom: 0px; }
-  /* line 172, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  /* line 171, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
   p#footer-disc.center-align {
     margin-top: 0px;
     margin-bottom: 0px;
     padding-bottom: 0px;
     padding-right: 4%;
     padding-left: 4%; } }
+
+@media screen and (min-width: 480px) and (max-width: 992px) {
+  /* line 183, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  p#quote-one.landing-quote.lighter {
+    margin-top: -3vh;
+    margin-bottom: 0px;
+    top: 21.5vh;
+    left: 35px;
+    font-size: 2em; }
+  /* line 191, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  .btn-login {
+    margin-top: -8.5vh;
+    left: 85px;
+    font-size: 4vw; } }
+
+@media screen and (min-width: 993px) {
+  /* line 201, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  p#quote-one.landing-quote.lighter {
+    margin-top: -3vh;
+    margin-bottom: 0px;
+    top: 22.5vh;
+    left: 35px;
+    font-size: 1.4em; }
+  /* line 209, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  .btn-login {
+    margin-top: -8.5vh;
+    left: 85px;
+    font-size: 3.1vw; } }
 
 /* line 2, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_map-scrubber.scss */
 #map-d {

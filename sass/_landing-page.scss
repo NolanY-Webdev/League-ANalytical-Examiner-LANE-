@@ -155,7 +155,6 @@ i.material-icons.left {
     top: 23vh;
     left: -5px;
     width: 86%;
-    width: 86%;
     font-size: 7vw;
   }
 
@@ -177,4 +176,40 @@ i.material-icons.left {
     padding-left: 4%;
 
   }
+}
+
+// Medium screen
+@media screen and (min-width: 480px) and (max-width:992px) {
+   p#quote-one.landing-quote.lighter {
+    margin-top: -3vh;
+    margin-bottom: 0px;
+    top: 21.5vh;
+    left: 35px;
+    font-size: 2em;
+  }
+
+    .btn-login {
+    margin-top: -8.5vh;
+    left: 85px;
+    font-size: 4vw;
+  }
+}
+
+// Large screen
+@media screen and (min-width:993px) {
+
+  p#quote-one.landing-quote.lighter {
+    margin-top: -3vh;
+    margin-bottom: 0px;
+    top: 22.5vh;
+    left: 35px;
+    font-size: 1.4em;
+  }
+
+  .btn-login {
+    margin-top: -8.5vh;
+    left: 85px;
+    font-size: 3.1vw;
+  }
+
 }
