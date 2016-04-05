@@ -77,13 +77,6 @@ h4 {
 
 // Player Stats
 
-.box {
-  box-sizing: border-box;
-  height: 125px;
-  width: 125px;
-  background-size: 100%;
-}
-
 .player-stats {
   margin-bottom: 0px;
 }
@@ -95,10 +88,6 @@ div#player-kill-count, div#player-gold-count {
 #player-name {
   margin-bottom: 0px;
 }
-// div.row.player-stats.ng-scope:hover {
-//   border: 1px solid $white-color;
-//   cursor: pointer;
-// }
 
 .player-stat-container {
   background-color: $black-color;
@@ -147,7 +136,20 @@ img.picture {
 @media screen and (min-width: 1px) and (max-width:479px) {
   img.picture {
     border-radius: 50%;
-    height: 10vh;
-    width: 15vw;
+    height: 85%;
+    width: 85px;
+  }
+
+  .player-stats {
+    margin-top: 20px;
+  }
+
+  #red-team {
+    background-color: red;
+    height: 27vh;
+  }
+  #blue-team {
+    background-color: blue;
+    height: 27vh;
   }
 }

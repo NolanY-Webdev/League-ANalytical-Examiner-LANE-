@@ -1,4 +1,4 @@
-<div class="row" id="match-row-one">
+<div class="row hide-on-small-only" id="match-row-one">
   <div class="col l3 center-align">
     <h4 id="label-red-team">Red Team
       <span ng-if="mostRecentMatch.teams[0].winner">( Won )</span>
@@ -18,12 +18,19 @@
 
   <div class="col s12 m6 l3">
     <div class="row player-stats" ng-repeat="participant in mostRecentMatch.participants | filter: {  teamId: 100 }">
-      <div class="col s5 team100 box circle responsive-img portrait player{{participant.participantId}}">
-      <!-- ng-style="{'background-image' : 'url( {{ participant.championImage }} )'}" -->
+
+      <div class="col s1 hide-on-med-and-up" id="red-team"></div>
+
+      <div class="col s4 m5 team100 circle responsive-img player{{participant.participantId}}">
+
+        <!-- Character picture -->
         <img class="picture" src="{{ participant.championImage }}" alt="">
 
+        <!-- Summoner spells  -->
+        <!-- <img class="item-picture" ng-src="http://ddragon.leagueoflegends.com/cdn/6.6.1/img/spell/SummonerFlash.png" alt="item 1"> -->
       </div>
-      <div class="col s7 player-stat-container">
+
+      <div class="col s7 m7 player-stat-container">
         <div class="row" id="player-name">Champion Level: {{ participant.stats.champLevel}}</div>
         <div class="row player-stats" id="player-gold-count">
           <img class="riot-icon" src="http://ddragon.leagueoflegends.com/cdn/5.5.1/img/ui/gold.png">: {{ participant.stats.goldEarned}}
@@ -55,11 +62,16 @@
 
   <div class="col s12 m6 l3 push-l6">
     <div class="row player-stats" ng-repeat="participant in mostRecentMatch.participants | filter: {  teamId: 200 }">
-      <div class="col s5 team200 portrait box circle responsive-img player{{participant.participantId}}">
+
+      <div class="col s1 hide-on-med-and-up" id="blue-team"></div>
+
+      <div class="col s4 m5 team200 circle responsive-img player{{participant.participantId}}">
         <img class="picture"src="{{ participant.championImage }}" alt="">
       </div>
-      <div class="col s7 player-stat-container">
-        <div class="row player-stats" id="player-name">Champion Level: {{ participant.stats.champLevel}}</div>
+
+      <div class="col s7 m7 player-stat-container">
+
+        <div class="row" id="player-name">Champion Level: {{ participant.stats.champLevel}}</div>
         <div class="row player-stats" id="player-gold-count">
           <img class="riot-icon" src="http://ddragon.leagueoflegends.com/cdn/5.5.1/img/ui/gold.png">: {{ participant.stats.goldEarned}}
         </div>
@@ -83,13 +95,19 @@
           <img class="item-picture" ng-src="http://ddragon.leagueoflegends.com/cdn/6.6.1/img/item/{{ participant.stats.item5 }}.png" alt="item 6">
           <img class="item-picture" ng-src="http://ddragon.leagueoflegends.com/cdn/6.6.1/img/item/{{ participant.stats.item6 }}.png" alt="item 7">
         </div>
+
       </div>
+
     </div>
   </div>
 
-  <div class="col s12 m8 offset-m2 l6 pull-l3">
+  <div class="col s12 m8 offset-m2 l6 pull-l3 hide-on-small-only">
     <map-d my-recent-games = "mostRecentMatch"></map-d>
     <h5 class="axisLabel">GAME TIME (min)</h5>
   </div>
+
+ <!--  <div class="col s8 offset-s2 hide-on-med-and-up">
+    <a class="waves-effect waves-light btn">See Map</a>
+  </div> -->
 
 </div>

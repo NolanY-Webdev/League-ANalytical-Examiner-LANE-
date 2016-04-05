@@ -48,10 +48,6 @@ $red : #df3b20;
 $blue : #42C0FB;
 
 
-.portrait {
-  margin-bottom: 5%;
-}
-
 // ------------- RECENT MATCH
 
 li {
@@ -79,35 +75,5 @@ p#footer-disc.center-align {
 
 // Small screen
 @media screen and (min-width: 1px) and (max-width:479px) {
-  .portrait {
-    display: inline-block;
-    margin-right: 2%;
-  }
 
-  .box {
-    height: 50px;
-    width: 50px;
-  }
-}
-
-// Medium screen
-@media screen and (min-width: 480px) and (max-width:992px) {
-    body {
-        background-color:$black-color;;
-    }
-    .portrait {
-      display: inline-block;
-      margin-right: 2%;
-    }
-    .box {
-      height: 75px;
-      width: 75px;
-    }
-}
-
-// Large screen
-@media screen and (min-width:993px) {
-    body {
-        background-color:$black-color;;
-    }
 }
