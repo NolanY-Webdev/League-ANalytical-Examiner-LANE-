@@ -886,7 +886,7 @@ function runD3(match) {
           if(d[5] == 'DRAGON') {
             var victim = '<image class="tooltip player0" src="http://vignette3.wikia.nocookie.net/leagueoflegends/images/c/c9/DragonSquare.png/revision/latest/scale-to-width-down/48?cb=20140620025407">';
           } else if (d[5] == 'BARON_NASHOR') {
-            var victim = '<image class="tooltip player0" src="http://vignette2.wikia.nocookie.net/leagueoflegends/images/3/38/Baron_NashorSquare.png/revision/latest/scale-to-width-down/48?cb=20140620025404">';
+            var victim = '<image class="tooltip player0" src="http://apollo-eu-uploads.s3.amazonaws.com/1430078459025/profileIcon839.png">';
           } else if (d[5] == 'VILEMAW') {
             var victim = '<image class="tooltip player0" src="http://vignette1.wikia.nocookie.net/leagueoflegends/images/5/5d/VilemawSquare.png/revision/latest/scale-to-width-down/48?cb=20140308093146">';
           }
@@ -915,7 +915,6 @@ function runD3(match) {
         })
         .on('mouseover', tip.show)
         .on('mouseout', tip.hide)
-
     }
 
     update(jsonData);

@@ -13,9 +13,6 @@ $green-color: #2EC4B6;
 // ---------------- RECENT MATCH DETAILS
 @import 'recent-match';
 
-.container {
-    min-width: 950px;
-}
 body {
   background-color: $black-color;
   font-size: 1.5em;
@@ -71,6 +68,13 @@ footer.page-footer, .nav-wrapper {
   margin-top: 0px;
   padding-top: 0px;
   background-color: $green-color;
+}
+
+p#footer-disc.center-align {
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 // Small screen

@@ -369,26 +369,26 @@ img.picture {
     height: 10vh;
     width: 15vw; } }
 
-/* line 4, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+/* line 9, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
 div.match-container {
   border: 4px solid #2EC4B6;
   margin-top: 20px;
   background-color: #EFFFE9; }
-  /* line 9, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+  /* line 14, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
   div.match-container:hover {
     border: 4px solid #E71D36;
     cursor: pointer; }
-    /* line 13, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+    /* line 18, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
     div.match-container:hover .game-info {
       background-color: #E71D36; }
 
-/* line 19, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+/* line 24, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
 #vs {
   height: 100%;
   width: 100%;
   margin-top: 10px; }
 
-/* line 25, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+/* line 30, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
 .game-info {
   background-color: #2EC4B6;
   box-sizing: border-box;
@@ -399,89 +399,139 @@ div.match-container {
   font-family: "Racing Sans One", serif;
   padding-left: 15px; }
 
-/* line 36, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+/* line 41, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
 .teams {
   margin-top: 30px; }
 
-/* line 40, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+/* line 45, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
 #recent-game-team-one {
   margin-left: 35px; }
 
-/* line 44, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+/* line 49, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
 #recent-game-team-two {
   margin-left: 20px; }
 
-/* line 48, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+/* line 53, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
 .recent-match-picture {
   display: inline;
   width: 70px;
   height: 70px;
   margin-right: 7px; }
 
-/* line 16, stdin */
-.container {
-  min-width: 950px; }
+@media screen and (min-width: 1px) and (max-width: 479px) {
+  /* line 63, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+  #recent-game-team-one, #recent-game-team-two {
+    text-align: center; }
+  /* line 67, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+  #recent-game-team-one {
+    margin-left: 3%; }
+  /* line 70, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+  #recent-game-team-two {
+    margin-left: 0px; }
+  /* line 74, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+  .recent-match-picture {
+    width: 40px;
+    height: 40px;
+    margin-right: 1px; }
+  /* line 80, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+  #vs {
+    width: 30px;
+    margin-top: 45px;
+    margin-left: -15px; } }
 
-/* line 19, stdin */
+@media screen and (min-width: 480px) and (max-width: 992px) {
+  /* line 90, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+  #recent-game-team-one, #recent-game-team-two {
+    text-align: center; }
+  /* line 94, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+  #recent-game-team-two {
+    margin-left: 0px; }
+  /* line 98, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+  .recent-match-picture {
+    width: 55px;
+    height: 55px;
+    margin-right: 5px; }
+  /* line 104, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+  #vs {
+    width: 50px;
+    margin-top: 65px;
+    margin-left: -15px; } }
+
+@media screen and (min-width: 993px) {
+  /* line 115, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+  body.ng-scope #recent-game-team-one, body.ng-scope #recent-game-team-two {
+    text-align: center; }
+  /* line 119, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+  body.ng-scope #vs {
+    margin-top: 10vh; } }
+
+/* line 16, stdin */
 body {
   background-color: #011627;
   font-size: 1.5em;
   line-height: 1.6;
   font-weight: 400; }
 
-/* line 26, stdin */
+/* line 23, stdin */
 h1 {
   font-family: 'Open Sans', serif; }
 
-/* line 30, stdin */
+/* line 27, stdin */
 p#footer-disc.center-align {
   font-size: .55em;
   padding-top: 12px;
   padding-bottom: 12px;
   margin-bottom: 0px; }
 
-/* line 54, stdin */
+/* line 51, stdin */
 .portrait {
   margin-bottom: 5%; }
 
-/* line 60, stdin */
+/* line 57, stdin */
 li {
   display: inline; }
 
-/* line 64, stdin */
+/* line 61, stdin */
 #map-svg-img-canvas {
   margin-left: auto; }
 
-/* line 70, stdin */
+/* line 67, stdin */
 footer.page-footer, .nav-wrapper {
   margin-top: 0px;
   padding-top: 0px;
   background-color: #2EC4B6; }
 
+/* line 73, stdin */
+p#footer-disc.center-align {
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 0px;
+  margin-bottom: 0px; }
+
 @media screen and (min-width: 1px) and (max-width: 479px) {
-  /* line 78, stdin */
+  /* line 82, stdin */
   .portrait {
     display: inline-block;
     margin-right: 2%; }
-  /* line 83, stdin */
+  /* line 87, stdin */
   .box {
     height: 50px;
     width: 50px; } }
 
 @media screen and (min-width: 480px) and (max-width: 992px) {
-  /* line 91, stdin */
+  /* line 95, stdin */
   body {
     background-color: #011627; }
-  /* line 94, stdin */
+  /* line 98, stdin */
   .portrait {
     display: inline-block;
     margin-right: 2%; }
-  /* line 98, stdin */
+  /* line 102, stdin */
   .box {
     height: 75px;
     width: 75px; } }
 
 @media screen and (min-width: 993px) {
-  /* line 106, stdin */
+  /* line 110, stdin */
   body {
     background-color: #011627; } }
