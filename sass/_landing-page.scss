@@ -95,11 +95,6 @@ input#summonerNameInput {
 
 }
 
-#btn-demo {
-  top: 60vh;
-  left: 7.5vw;
-}
-
 i.material-icons.left {
   font-size: 1.2em;
   margin-right: 0px;
@@ -169,6 +164,11 @@ i.material-icons.left {
     font-size: 8vw;
   }
 
+   #btn-demo {
+    top: 25vh;
+    left: 20vw;
+  }
+
   #footer-row {
     margin-bottom: 0px;
   }
@@ -198,6 +198,11 @@ i.material-icons.left {
     left: 85px;
     font-size: 4vw;
   }
+
+  #btn-demo {
+    top: 29vh;
+    left: 19.5vw;
+  }
 }
 
 // Large screen
@@ -215,5 +220,10 @@ i.material-icons.left {
     margin-top: -8.5vh;
     left: 85px;
     font-size: 3.1vw;
+  }
+
+  #btn-demo {
+    top: 29vh;
+    left: 10.5vw;
   }
 }
