@@ -74,11 +74,16 @@ input#summonerNameInput {
     background-color: transparent; }
 
 /* line 98, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+#btn-demo {
+  top: 60vh;
+  left: 7.5vw; }
+
+/* line 103, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
 i.material-icons.left {
   font-size: 1.2em;
   margin-right: 0px; }
 
-/* line 102, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+/* line 107, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
 .elementToFadeInAndOut {
   opacity: 1;
   amimation: fade 2s linear; }
@@ -90,11 +95,11 @@ i.material-icons.left {
     opacity: 1; } }
 
 @media screen and (min-width: 1px) and (max-width: 479px) {
-  /* line 124, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  /* line 129, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
   .header {
     background: none;
     height: 50vh; }
-  /* line 129, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  /* line 134, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
   .small-header {
     width: 99vw;
     height: 50vh;
@@ -102,19 +107,19 @@ i.material-icons.left {
     background-size: cover;
     -o-background-size: cover;
     margin-bottom: 0px; }
-  /* line 138, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  /* line 143, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
   h1#lane-header-race {
     margin-top: 0px;
     margin-bottom: 0px;
     font-size: 18.7vw; }
-  /* line 144, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  /* line 149, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
   p#quote-one.landing-quote.lighter {
     margin-top: -5vh;
     margin-bottom: 0px;
     top: 18.5vh;
     left: 0px;
     font-size: 6vw; }
-  /* line 152, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  /* line 157, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
   input#summonerNameInput {
     margin-bottom: 0px;
     margin-top: 0px;
@@ -122,15 +127,15 @@ i.material-icons.left {
     left: -5px;
     width: 86%;
     font-size: 7vw; }
-  /* line 161, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  /* line 166, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
   .btn-login {
     top: 35vh;
     left: 4px;
     font-size: 8vw; }
-  /* line 167, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  /* line 172, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
   #footer-row {
     margin-bottom: 0px; }
-  /* line 171, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  /* line 176, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
   p#footer-disc.center-align {
     margin-top: 0px;
     margin-bottom: 0px;
@@ -139,28 +144,28 @@ i.material-icons.left {
     padding-left: 4%; } }
 
 @media screen and (min-width: 480px) and (max-width: 992px) {
-  /* line 183, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  /* line 188, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
   p#quote-one.landing-quote.lighter {
     margin-top: -3vh;
     margin-bottom: 0px;
     top: 21.5vh;
     left: 35px;
     font-size: 2em; }
-  /* line 191, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  /* line 196, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
   .btn-login {
     margin-top: -8.5vh;
     left: 85px;
     font-size: 4vw; } }
 
 @media screen and (min-width: 993px) {
-  /* line 201, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  /* line 206, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
   p#quote-one.landing-quote.lighter {
     margin-top: -3vh;
     margin-bottom: 0px;
     top: 22.5vh;
     left: 35px;
     font-size: 1.4em; }
-  /* line 209, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  /* line 214, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
   .btn-login {
     margin-top: -8.5vh;
     left: 85px;

@@ -1,6 +1,3 @@
-<div class="small-header">
-
-</div>
 <div class="row header">
   <div class="col s12">
     <h1 id="lane-header-race" class="left-align">LANE WINS</h1>
@@ -22,7 +19,9 @@
         <button type="submit" class="btn waves-effect waves-light btn-login elementToFadeInAndOut" name="action" ng-show="summonerForm.$valid"><i class="material-icons left">play_arrow</i>View Stats
         </button>
       </div>
-
+      <div class="col s12">
+        <a ng-click="getSummonerInfo('styel')" class="btn waves-effect waves-light" ng-show="summonerForm.$pristine" id="btn-demo"><i class="material-icons left">play_arrow</i>Demo</a>
+      </div>
     </form>
   </div>
 
