@@ -2,9 +2,10 @@
 angular.module('laneApp', [
 'ui.router'
 ])
-.config(['$stateProvider', '$urlRouterProvider', function( $stateProvider, $urlRouteProvider) {
+.config(['$stateProvider', '$urlRouterProvider','$locationProvider', function( $stateProvider, $urlRouteProvider) {
 
   $urlRouteProvider.otherwise('/');
+  // $locationProvider.html5Mode(true);
 
 //routes
   $stateProvider
