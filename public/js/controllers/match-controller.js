@@ -4,17 +4,13 @@ angular.module('laneApp')
     '$scope',
     '$state',
     'matchInfo',
-    '$rootScope',
     '$stateParams',
     'summonerInfo',
     'recentMatchInfo',
-   function($scope, $state, matchInfo, $rootScope, $stateParams, summonerInfo, recentMatchInfo) {
-      // $scope.mostRecentMatch = $rootScope.mostRecentMatch;
-      // $scope.summonerName = $rootScope.summonerName;
+   function($scope, $state, matchInfo, $stateParams, summonerInfo, recentMatchInfo) {
       $scope.summoner = {};
       summonerInfo.getSummoner($stateParams.summoner_name)
         .success( ( data ) => {
-          // console.log('a string', $state)
           $scope.summonerName = $stateParams.summoner_name;
           $scope.disableTab = $state
           for (var key in data) {
@@ -26,7 +22,6 @@ angular.module('laneApp')
               $state.go('match.matchDetails', {
                 match_id : $scope.recentMatch.games[0].gameId
               });
-              // });
             });
         });
     }]);

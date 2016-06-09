@@ -707,6 +707,13 @@ var champion = [
     "image" : "http://ddragon.leagueoflegends.com/cdn/6.6.1/img/champion/TahmKench.png"
   },
   {
+    "id" : "Taliyah",
+    "key" : "163",
+    "name" : "the Stoneweaver",
+    "title" : "the River King",
+    "image" : "http://ddragon.leagueoflegends.com/cdn/6.6.1/img/champion/Taliyah.png"
+  },
+  {
     "id" : "Talon",
     "key" : "91",
     "name" : "Talon",

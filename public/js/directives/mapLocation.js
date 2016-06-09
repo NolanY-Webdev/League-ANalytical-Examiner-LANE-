@@ -13,8 +13,10 @@ angular.module('laneApp')
       template : '<div id="map-d"></div><div id="brush-d"></div>',
       link : function (scope, element, attr) {
         scope.$watch('mostRecentMatch', function(match) {
-          if (match != null) {
+          if (match !== null) {
             runD3(match);
+          } else {
+            // redirect to 404.html
           }
         });
       }
@@ -30,13 +32,11 @@ function runD3(match) {
     var imageWidth = 25;
     var imageHeight = 25;
 
-//BUILDING DATA
+    //BUILDING DATA
 
     var deadBuildings = jsonData.deadBuildings;
 
-    //console.log(deadBuildings);
-
-    //summoners rift
+    // Summoners Rift Data
     var towerCords = [
       [12400, 13000, 'TowerNexusTopMidB'], [12900, 12500, 'TowerNexusBotMidB'], [10500, 13800, 'TowerBaseTopB'], [11100, 11100, 'TowerBaseMidB'],
       [13800, 10500, 'TowerBaseBotB'], [7700, 13600, 'TowerInnerTopB'], [4500, 14000, 'TowerOuterTopB'], [9800, 9900, 'TowerInnerMidB'],
@@ -84,17 +84,17 @@ function runD3(match) {
     jsonData.currentInhibs = JSON.parse(JSON.stringify(inhibCords));
     var summonersRift = "http://ddragon.leagueoflegends.com/cdn/5.22.3/img/map/map" + ((scope.mostRecentMatch.mapId !== 11) ? scope.mostRecentMatch.mapId : 1)  + ".png"  ;
 
-//------------------- MAP DATA -------------------
-    //app page map display size
+    //------------------- MAP DATA -------------------
+    // App Page Map Display Size
     var mapWidth = 628;
     var mapHeight = 628;
 
-//MAP OPTIONS/VARIABLES
+    //MAP OPTIONS/VARIABLES
 
     var domain = {
         //Summoners Rift
-        min: {x: -570, y: -420},
-        max: {x: 15220, y: 14980}
+        min : { x : -570, y : -420 },
+        max : { x : 15220, y : 14980 }
       },
       width = mapWidth,
       height = mapHeight,
@@ -103,9 +103,9 @@ function runD3(match) {
 
     if (scope.mostRecentMatch.mapId == 8) {
       domain = {
-          //Crystal Scar
-          min: {x: 0, y: 0},
-          max: {x: 13987, y: 13987}
+          // Crystal Scar 5v5
+          min : { x : 0, y : 0 },
+          max : { x : 13987, y : 13987 }
         },
         width = mapWidth,
         height = mapHeight,
@@ -113,9 +113,9 @@ function runD3(match) {
         xScale, yScale, svg;
     } else if (scope.mostRecentMatch.mapId == 10) {
       domain = {
-          //Twisted Treeline
-          min: {x: 0, y: 0},
-          max: {x: 15398, y: 15398}
+          // Twisted Treeline 3v3
+          min : { x : 0, y : 0 },
+          max : { x : 15398, y : 15398 }
         },
         width = mapWidth,
         height = mapHeight,
@@ -123,9 +123,9 @@ function runD3(match) {
         xScale, yScale, svg;
     } else if (scope.mostRecentMatch.mapId == 12) {
       domain = {
-          //Howling Abyss
-          min: {x: -28, y: -19},
-          max: {x: 12849, y: 12858}
+          // Howling Abyss ARAM 5v5
+          min : { x : -28, y : -19},
+          max : { x : 12849, y : 12858}
         },
         width = mapWidth,
         height = mapHeight,
@@ -135,10 +135,10 @@ function runD3(match) {
 
     var filteredData = {};
 
-//BRUSH DATA
+    // BRUSH DATA
 
     var gameLength = scope.mostRecentMatch.sortedData.gameLength;
-    var gameLengthByMin = gameLength/60000;
+    var gameLengthByMin = gameLength / 60000;
     var brushX = 5;
     var brushY = 18;
     var brushHeight = 30;
@@ -146,21 +146,21 @@ function runD3(match) {
 
     svg = d3.select("#brush-d").append("svg:svg")
       .attr("width", width)
-      .attr("height", brushY+100);
+      .attr("height", brushY + 100);
 
     var scale = d3.scale.linear()
-      //length of data
+      // Length of Srubber Data
       .domain([0, gameLengthByMin])
-      //size of bar
+      // Size of Bar
       .range([brushPositionX + 0, mapWidth - 7]);
 
     var brush = d3.svg.brush();
     brush.x(scale);
-    brush.extent([0, gameLengthByMin/10]);
+    brush.extent([0, gameLengthByMin / 10]);
 
     brush.on('brushend', function() {
-      for(var player in jsonData) {
-        if (player!== 'gameLength' && player !== 'deadBuildings') {
+      for (var player in jsonData) {
+        if (player !== 'gameLength' && player !== 'deadBuildings') {
           filteredData[player] = jsonData[player].filter(function (d) {
             return (d[0] >= (brush.extent()[0] * 60000) && d[0] <= (brush.extent()[1] * 60050));
           });
@@ -169,23 +169,23 @@ function runD3(match) {
       var currentTowers = JSON.parse(JSON.stringify(towerCords));
       var currentInhibs = JSON.parse(JSON.stringify(inhibCords));
       var buildingsDestroyed = deadBuildings.filter(function(buildingDeaths) {
-        return (buildingDeaths[0] <= (brush.extent()[1] * 60050))
-      })
-      //console.log(buildingsDestroyed);
-      for(var j = 0; j < buildingsDestroyed.length; j++) {
-        for(var i = 0; i < currentTowers.length; i++) {
+        return (buildingDeaths[0] <= (brush.extent()[1] * 60050));
+      });
+
+      for (var j = 0; j < buildingsDestroyed.length; j++) {
+        for (var i = 0; i < currentTowers.length; i++) {
           if (buildingsDestroyed[j][1] == currentTowers[i][2]) {
             currentTowers.splice(i, 1);
           }
         }
-        if(buildingsDestroyed[j][1].substr(9,16)=='Respawned') {
+        if (buildingsDestroyed[j][1].substr(9, 16) == 'Respawned') {
           var inhibSpawn = inhibCords.filter(function(c,i,a) {
-            return c[2] == buildingsDestroyed[j][1].substr(0,9);
-          })
+            return c[2] == buildingsDestroyed[j][1].substr(0, 9);
+          });
           currentInhibs.push(inhibSpawn[0]);
         }
-        for(i = 0; i < currentInhibs.length; i++) {
-          if(buildingsDestroyed[j][1] == currentInhibs[i][2])
+        for (i = 0; i < currentInhibs.length; i++) {
+          if (buildingsDestroyed[j][1] == currentInhibs[i][2])
           currentInhibs.splice(i, 1);
         }
       }
@@ -194,21 +194,20 @@ function runD3(match) {
       update(filteredData);
     });
 
-    // SCRUBBER
+    // SCRUBBER DATA
     var g = svg.append("g");
     brush(g);
-    g.attr("transform", "translate(" + brushX + "," + brushY +")")
+    g.attr("transform", "translate(" + brushX + "," + brushY +")");
 
     g.selectAll("rect").attr("height", brushHeight);
+    // Background
     g.selectAll(".background")
-    // background
-      .style({fill: "EFFFE9", visibility: "visible"});
+      .style({ fill : "EFFFE9", visibility : "visible" });
     g.selectAll(".extent")
-      .style({fill: "#78C5C5", visibility: "visible"});
+      .style({ fill : "#78C5C5", visibility : "visible" });
     g.selectAll(".resize rect")
-      .style({fill: "#276C86", visibility: "visible"})
+      .style({ fill : "#276C86", visibility : "visible" })
       .attr("class", "brush");
-
 
     var scale = d3.scale.linear()
       .domain([0, gameLengthByMin])
@@ -223,14 +222,14 @@ function runD3(match) {
 
     g.attr("transform", "translate(" + (brushX - 6) + "," + (brushY + 35) +")");
     g.attr('class', 'scale')
-        .style({fill: '#EFFFE9', visibility: 'visible'});
+        .style({ fill : '#EFFFE9', visibility : 'visible' });
     g.selectAll("path")
-      .style({ fill: "none", stroke: "#EFFFE9"});
+      .style({ fill : "none", stroke : "#EFFFE9"});
     g.selectAll("line")
-      .style({ stroke: "#EFFFE9"})
+      .style({ stroke : "#EFFFE9"})
       .attr("class", "brush");
 
-//MAP DATA
+    // MAP DATA
 
     var color = d3.scale.linear()
       .domain([0, 3])
@@ -914,7 +913,7 @@ function runD3(match) {
           }
         })
         .on('mouseover', tip.show)
-        .on('mouseout', tip.hide)
+        .on('mouseout', tip.hide);
     }
 
     update(jsonData);
