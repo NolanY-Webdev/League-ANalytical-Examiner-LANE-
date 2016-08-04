@@ -1,10 +1,16 @@
 'use strict';
-angular.module('laneApp', [
-'ui.router'
+angular
+.module('laneApp', [
+  'ui.router'
 ])
-.config(['$stateProvider', '$urlRouterProvider','$locationProvider', function( $stateProvider, $urlRouteProvider) {
+.config(
+  ['$stateProvider',
+  '$urlRouterProvider',
+  '$locationProvider',
+  function( $stateProvider, $urlRouteProvider, $locationProvider) {
 
   $urlRouteProvider.otherwise('/');
+  $locationProvider.html5Mode(true);
 
   // Routes
   $stateProvider
