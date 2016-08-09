@@ -10,7 +10,6 @@ router
   // get match info
   .get(function(req,res) {
     var region = 'na';
-    console.log(req.query);
     request.get({
       // /api/lol/{region}/v2.2/match/{matchId}
       url : 'https://' + region + '.api.pvp.net/api/lol/' + region + '/v2.2/match/' + req.query.matchId + '?includeTimeline=true&api_key=' + process.env.LOL_API_KEY
@@ -43,6 +42,7 @@ router
           }
         }
       }
+      console.log('MATCH BRAH');
       res.send(parsed);
     });
   });

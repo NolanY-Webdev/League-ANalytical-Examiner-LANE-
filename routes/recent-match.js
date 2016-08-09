@@ -24,6 +24,7 @@ router
       // prune body
       var parsed = JSON.parse(body);
       console.log('match info->',parsed.games[0].gameId);
+      console.log('RECENTMATCH BRAH');
 
       //parsing server data into match data
       var sorted = sort(parsed);

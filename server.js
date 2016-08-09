@@ -26,4 +26,5 @@ app.get('/riot.txt', function(req, res) {
 
 app.listen(PORT, function() {
   console.log('listening on port:', PORT);
+  console.log('LISTENBRAH');
 });
