@@ -1,18 +1,17 @@
 'use strict';
 angular.module('laneApp')
   .service('summonerInfo', [ '$http', function($http) {
-    this.getSummonerInfo = function() {
-      return $http.get('http://localhost:3000/getSummoner');
-    };
-
-  }])
-  .service('recentMatchInfo', ['$http', function($http) {
-    this.getRecentMatchInfo = function() {
-      return $http.get('http://localhost:3000/getRecentMatch');
+    this.getSummoner = function(name) {
+      return $http.get('/getSummoner?summonerName=' + name);
     };
   }])
-  .service('MatchInfo', ['$http', function($http) {
-    this.getMatchInfo = function() {
-      return $http.get('http://localhost:3000/getMatch');
+  .service('recentMatchInfo', [ '$http', function($http) {
+    this.getRecentMatch = function(summonerId) {
+      return $http.get('/getRecentMatch?summonerId=' + summonerId);
+    };
+  }])
+  .service('matchInfo', [ '$http', function($http) {
+    this.getMatch = function(matchId) {
+      return $http.get('/getMatch?matchId=' + matchId);
     };
   }]);

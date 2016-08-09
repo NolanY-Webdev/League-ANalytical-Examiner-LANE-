@@ -1,23 +1,24 @@
-<div class="container">
-  <div class="row">
-    <h1>Home Page</h1>
-    <h2>{{message}}</h2>
+<div class="row header">
+  <div class="col s12">
+    <h1 id="lane-header-race" class="left-align">LANE WINS</h1>
+    <p class="landing-quote lighter left-align" id="quote-one"><span id="quote-two">gameplay</span> and <span id="quote-two">analytics tool</span></p>
   </div>
 
-  <div class="row">
-    <div class="six columns">
-        <label for="exampleEmailInput">Summoner name</label>
-        <input class="u-full-width" type="text" placeholder="summoner name" id="summonerNameInput" ng-model="summonerInfo">
-    </div>
-  </div>
-
-  <div class="row">
-    <a class="button" ng-href={{summoner}}>Player Stats</a>
-    <!-- <a class="button" ng-href="/#/default">Death Map</a> -->
-  </div>
-
-  <div class="row">
-    <p>{{summoner}}</p>
-    <p ng-repeat="single in isheetonyou">{{summoner.single.id}}</p>
+  <div class="col s12">
+    <form class="form" name="summonerForm" ng-disabled="summonerName.$invalid" ng-submit="getSummonerInfo(summonerName)">
+      <div class="col s12">
+        <input class="center-align" id="summonerNameInput" required type="text" placeholder="Summoner Name" ng-model="summonerName" ng-minlength="3" />
+        <p class="error" ng-show="summonerForm.$dirty && summonerForm.summonerName.$invalid">Required</p>
+        <p class="error" ng-show="summonerForm.summonerName.$pristine">Required</p>
+        <p class="error" ng-show="summonerForm.summonerName.$error.minlength">Not less than 3 characters</p>
+      </div>
+      <div class="col s12">
+        <button type="submit" class="btn waves-effect waves-light btn-login elementToFadeInAndOut" name="action" ng-show="summonerForm.$valid"><i class="material-icons left">play_arrow</i>View Stats
+        </button>
+      </div>
+      <div class="col s12">
+        <a ng-click="getSummonerInfo('styel')" class="btn waves-effect waves-light" ng-show="summonerForm.$pristine" id="btn-demo">Demo App</a>
+      </div>
+    </form>
   </div>
 </div>

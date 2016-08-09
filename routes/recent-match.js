@@ -3,6 +3,7 @@ var express = require('express');
 var router = express.Router();
 var request = require('request');
 
+var sort = require('../matchSorting');
 router
   .route('/recent')
 
@@ -10,17 +11,28 @@ router
   // /api/lol/{region}/v1.3/game/by-summoner/{summonerId}/recent
   .get(function(req,res) {
     var region = 'na';
-    var summonerId = '70460493';
+    // console.log('query',req.query);
+    // var summonerId = '59698121';
     request.get({
       url : 'https://' + region + '.api.pvp.net/api/lol/' + region +
-            '/v1.3/game/by-summoner/' + summonerId +
+            '/v1.3/game/by-summoner/' + req.query.summonerId +
             '/recent?api_key=' + process.env.LOL_API_KEY
     }, function(err, response, body) {
       //err handling
       if (err) {
         return res.status(500).json(err);
       }
-      res.json(JSON.parse(body));
+
+      // prune body
+      var parsed = JSON.parse(body);
+      console.log('2HALOOOOOOOOOOOOOO->',parsed.games[0].gameId);
+
+      //parsing server data into match data
+      var sorted = sort(parsed);
+      // console.log('IT IS NOW SORTED',sorted);
+      parsed.sortedData = sorted;
+      // console.log(parsed.sortedData);
+      res.send(parsed);
     });
   });
 

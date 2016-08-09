@@ -1,19 +1,42 @@
-<div class="row">
-  <div class="two columns">
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-  </div>
+<div class="navbar-fixed">
 
-  <div class="eight columns" id="image-div"></div>
+<nav>
+  <div class="nav-wrapper">
+    <a ui-sref="default">
+      <span class="lane-header-race" id="brand-logo">LW</span>
+    </a>
 
-  <div class="two columns">
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
+    <ul class="side-nav" id="mobile-demo">
+      <li id="recent-games-tab">
+        <a ui-sref="match.recentMatch({ summoner_id : summoner.id })">Recent Games</a>
+      </li>
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
+    </ul>
+
+    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li id="summoner-name-nav">
+        {{ summonerName }}
+      </li>
+      <li class="lane-header-race" id="recent-games-tab">
+        <a ui-sref="match.recentMatch({ summoner_id : summoner.id })">Recent Games</a>
+      </li>
+    </ul>
+
   </div>
+</nav>
 </div>
+
+<div class="row">
+
+  <div ui-view></div>
+
+</div>
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
+<script src="js/mapLocation.js"></script>

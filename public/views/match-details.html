@@ -1,0 +1,109 @@
+<div class="row hide-on-small-only" id="match-row-one">
+  <div class="col l3 center-align">
+    <h4 id="label-red-team">Red Team
+      <span ng-if="mostRecentMatch.teams[0].winner">( Won )</span>
+    </h4>
+  </div>
+  <div class="col l6 center-align">
+    <h4 id="label-map">{{mostRecentMatch.matchMode}}</h4>
+  </div>
+  <div class="col l3 center-align">
+    <h4 id="label-blue-team">Blue Team
+      <span ng-if="mostRecentMatch.teams[1].winner">( Won )</span>
+    </h4>
+  </div>
+</div>
+
+<div class="row">
+
+  <div class="col s12 m6 l3">
+    <div class="row player-stats" ng-repeat="participant in mostRecentMatch.participants | filter: {  teamId: 100 }">
+
+      <div class="col s1 hide-on-med-and-up" id="red-team"></div>
+
+      <div class="col s4 m5 team100 circle responsive-img player{{participant.participantId}}">
+
+        <!-- Character picture -->
+        <img class="picture" src="{{ participant.championImage }}" alt="">
+
+        <!-- Summoner spells  -->
+        <!-- <img class="item-picture" ng-src="http://ddragon.leagueoflegends.com/cdn/6.6.1/img/spell/SummonerFlash.png" alt="item 1"> -->
+      </div>
+
+      <div class="col s7 m7 player-stat-container">
+        <div class="row" id="player-name">Champion Level: {{ participant.stats.champLevel}}</div>
+        <div class="row player-stats" id="player-gold-count">
+          <img class="riot-icon" src="http://ddragon.leagueoflegends.com/cdn/5.5.1/img/ui/gold.png">: {{ participant.stats.goldEarned}}
+        </div>
+        <div class="row player-stats" id="player-kill-count">
+          <img class="riot-icon" src="http://ddragon.leagueoflegends.com/cdn/5.5.1/img/ui/score.png" alt="Player kill count">:
+          <span class="player-score">{{ participant.stats.kills }}
+            <span class="stats-tooltip">Kills</span>
+          </span> /
+          <span class="player-score">{{ participant.stats.deaths }}
+            <span class="stats-tooltip">Deaths</span>
+          </span> /
+          <span class="player-score">{{ participant.stats.assists }}
+            <span class="stats-tooltip">Assists</span>
+          </span>
+        </div>
+        <div class="row player-stats">
+          <img ng-if="participant.stats.item0 > 0" class="item-picture" ng-src="http://ddragon.leagueoflegends.com/cdn/6.6.1/img/item/{{ participant.stats.item0 }}.png" alt="item 1">
+          <img ng-if="participant.stats.item1 > 0" class="item-picture" ng-src="http://ddragon.leagueoflegends.com/cdn/6.6.1/img/item/{{ participant.stats.item1 }}.png" alt="item 2">
+          <img ng-if="participant.stats.item2 > 0" class="item-picture" ng-src="http://ddragon.leagueoflegends.com/cdn/6.6.1/img/item/{{ participant.stats.item2 }}.png" alt="item 3">
+          <img ng-if="participant.stats.item3 > 0" class="item-picture" ng-src="http://ddragon.leagueoflegends.com/cdn/6.6.1/img/item/{{ participant.stats.item3 }}.png" alt="item 4">
+          <img ng-if="participant.stats.item4 > 0" class="item-picture" ng-src="http://ddragon.leagueoflegends.com/cdn/6.6.1/img/item/{{ participant.stats.item4 }}.png" alt="item 5">
+          <img ng-if="participant.stats.item5 > 0" class="item-picture" ng-src="http://ddragon.leagueoflegends.com/cdn/6.6.1/img/item/{{ participant.stats.item5 }}.png" alt="item 6">
+          <img ng-if="participant.stats.item6 > 0" class="item-picture" ng-src="http://ddragon.leagueoflegends.com/cdn/6.6.1/img/item/{{ participant.stats.item6 }}.png" alt="item 7">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s12 m6 l3 push-l6">
+    <div class="row player-stats" ng-repeat="participant in mostRecentMatch.participants | filter: {  teamId: 200 }">
+
+      <div class="col s1 hide-on-med-and-up" id="blue-team"></div>
+
+      <div class="col s4 m5 team200 circle responsive-img player{{participant.participantId}}">
+        <img class="picture"src="{{ participant.championImage }}" alt="">
+      </div>
+
+      <div class="col s7 m7 player-stat-container">
+
+        <div class="row" id="player-name">Champion Level: {{ participant.stats.champLevel }}</div>
+        <div class="row player-stats" id="player-gold-count">
+          <img class="riot-icon" src="http://ddragon.leagueoflegends.com/cdn/5.5.1/img/ui/gold.png">: {{ participant.stats.goldEarned }}
+        </div>
+        <div class="row player-stats" id="player-kill-count">
+          <img class="riot-icon" src="http://ddragon.leagueoflegends.com/cdn/5.5.1/img/ui/score.png" alt="Player kill count">: <span class="player-score">{{ participant.stats.kills }}
+            <span class="stats-tooltip">Kills</span>
+          </span> /
+          <span class="player-score">{{ participant.stats.deaths }}
+            <span class="stats-tooltip">Deaths</span>
+          </span> /
+          <span class="player-score">{{ participant.stats.assists }}
+            <span class="stats-tooltip">Assists</span>
+          </span>
+        </div>
+        <div class="row player-stats">
+          <img ng-if="participant.stats.item0 > 0" class="item-picture" ng-src="http://ddragon.leagueoflegends.com/cdn/6.6.1/img/item/{{ participant.stats.item0 }}.png" alt="item 1">
+          <img ng-if="participant.stats.item1 > 0" class="item-picture" ng-src="http://ddragon.leagueoflegends.com/cdn/6.6.1/img/item/{{ participant.stats.item1 }}.png" alt="item 2">
+          <img ng-if="participant.stats.item2 > 0" class="item-picture" ng-src="http://ddragon.leagueoflegends.com/cdn/6.6.1/img/item/{{ participant.stats.item2 }}.png" alt="item 3">
+          <img ng-if="participant.stats.item3 > 0" class="item-picture" ng-src="http://ddragon.leagueoflegends.com/cdn/6.6.1/img/item/{{ participant.stats.item3 }}.png" alt="item 4">
+          <img ng-if="participant.stats.item4 > 0" class="item-picture" ng-src="http://ddragon.leagueoflegends.com/cdn/6.6.1/img/item/{{ participant.stats.item4 }}.png" alt="item 5">
+          <img ng-if="participant.stats.item5 > 0" class="item-picture" ng-src="http://ddragon.leagueoflegends.com/cdn/6.6.1/img/item/{{ participant.stats.item5 }}.png" alt="item 6">
+          <img ng-if="participant.stats.item6 > 0" class="item-picture" ng-src="http://ddragon.leagueoflegends.com/cdn/6.6.1/img/item/{{ participant.stats.item6 }}.png" alt="item 7">
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="col s12 m8 offset-m2 l6 pull-l3 hide-on-small-only">
+    <map-d my-recent-games = "mostRecentMatch"></map-d>
+    <h5 class="axisLabel">GAME TIME (min)</h5>
+  </div>
+
+</div>

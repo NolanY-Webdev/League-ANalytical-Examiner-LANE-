@@ -1,0 +1,123 @@
+// Variables
+$white-color: #EFFFE9;
+$black-color: #011627;
+$red-color: #E71D36;
+$green-color: #2EC4B6;
+$google-font-lobster: 'Lobster', serif;
+$google-font-racing: 'Racing Sans One', serif;
+
+div.match-container {
+  border: 4px solid $green-color;
+  margin-top : 20px;
+  background-color: $white-color;
+
+  &:hover {
+    border: 4px solid $red-color;
+    cursor: pointer;
+
+    .game-info {
+      background-color: $red-color;
+    }
+  }
+}
+
+#vs {
+  height :100%;
+  width :100%;
+  margin-top: 10px;
+}
+
+.game-info {
+  background-color: $green-color;
+  box-sizing: border-box;
+  display: block;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font-weight: bold;
+  font-family: $google-font-racing;
+  padding-left: 15px;
+}
+
+.teams {
+  margin-top: 30px;
+}
+
+#recent-game-team-one {
+  margin-left: 35px;
+}
+
+#recent-game-team-two {
+  margin-left: 20px;
+}
+
+.recent-match-picture {
+  display: inline;
+  width: 70px;
+  height: 70px;
+  margin-right: 7px;
+}
+
+// Small screen
+@media screen and (min-width: 1px) and (max-width:479px) {
+
+  #recent-game-team-one, #recent-game-team-two {
+    text-align: center;
+  }
+
+  #recent-game-team-one {
+    margin-left: 3%;
+  }
+  #recent-game-team-two {
+    margin-left: 0px;
+  }
+
+  .recent-match-picture {
+    width: 40px;
+    height: 40px;
+    margin-right: 1px;
+  }
+
+  #vs {
+    width: 30px;
+    margin-top: 45px;
+    margin-left: -15px;
+  }
+}
+
+// Medium screen
+@media screen and (min-width: 480px) and (max-width:992px) {
+
+  #recent-game-team-one, #recent-game-team-two {
+    text-align: center;
+  }
+
+  #recent-game-team-two {
+    margin-left: 0px;
+  }
+
+  .recent-match-picture {
+    width: 55px;
+    height: 55px;
+    margin-right: 5px;
+  }
+
+  #vs {
+    width: 50px;
+    margin-top: 65px;
+    margin-left: -15px;
+  }
+}
+
+// Large screen
+@media screen and (min-width:993px) {
+  body.ng-scope {
+
+    #recent-game-team-one, #recent-game-team-two {
+      text-align: center;
+    }
+
+    #vs {
+      margin-top: 10vh;
+    }
+  }
+}

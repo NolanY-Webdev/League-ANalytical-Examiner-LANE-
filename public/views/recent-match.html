@@ -1,9 +1,24 @@
-<div class="row">
-  <div class=" three columns"></div>
+<div class="container">
+  <div class="row" ng-repeat="game in sortedData">
+    <div class="match-container" ng-click="getMatch(game.gameId)">
+      <div class="col s3 game-info center-align">{{game.gameMode}}</div>
+      <div class="col s5 game-info center-align">{{game.subType}}</div>
+      <div class="col s4 game-info center-align">{{game.gameLength}} mins</div>
 
-  <div class=" six columns">
-    // add ng-repeat here that auto fills divs
+      <div class="row individual-game">
+        <div class="col s5 m5 l5 teams" id="recent-game-team-one">
+          <img class="recent-match-picture" ng-repeat="friend in game.myTeam" src="{{friend}}">
+        </div>
+
+        <div class="col s1 m1 l1" ng-if="game.enemyTeam.length">
+          <img id="vs" src="./views/images/vs.png">
+        </div>
+
+        <div class="col s5  m5 l5 teams" id="recent-game-team-two">
+          <img class="recent-match-picture" ng-repeat="foe in game.enemyTeam" src="{{foe}}">
+        </div>
+      </div>
+
+    </div>
   </div>
-
-  <div class=" three columns"></div>
 </div>

@@ -1,13 +1,79 @@
-.box {
-  height : 100px;
-  width : 100px;
-  border: 1px solid black;
-  margin-bottom: 25px;
+// Variables
+$white-color: #EFFFE9;
+$black-color: #011627;
+$red-color: #E71D36;
+$green-color: #2EC4B6;
+
+// ---------------- LANDING PAGE STYLES
+@import 'landing-page';
+// ---------------- SCRUBBER STYLES
+@import 'map-scrubber';
+// ---------------- MATCH DETAILS
+@import 'match-details';
+// ---------------- RECENT MATCH DETAILS
+@import 'recent-match';
+
+body {
+  background-color: $black-color;
+  font-size: 1.5em;
+  line-height: 1.6;
+  font-weight: 400;
 }
 
-#image-div {
-  background-image: url("https://s3-us-west-1.amazonaws.com/riot-api/img/minimap-ig.png");
-  width:600px;
-  height:600px;
-  background-repeat: no-repeat;
+h1 {
+  font-family: 'Open Sans', serif;
+}
+
+p#footer-disc.center-align {
+  font-size: .55em;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-bottom: 0px;
+}
+
+$box-shadow : 0 1px 0 #ccc,
+              0 2px 0 #c9c9c9,
+              0 3px 0 #bbb,
+              0 4px 0 #b9b9b9,
+              0 5px 0 #aaa,
+              0 6px 1px rgba(0,0,0,.1),
+              0 0 5px rgba(0,0,0,.1),
+              0 1px 3px rgba(0,0,0,.3),
+              0 3px 5px rgba(0,0,0,.2),
+              0 5px 10px rgba(0,0,0,.25),
+              0 10px 10px rgba(0,0,0,.2),
+              0 20px 20px rgba(0,0,0,.15);
+
+$red : #df3b20;
+$blue : #42C0FB;
+
+
+// ------------- RECENT MATCH
+
+li {
+  display: inline;
+}
+
+#map-svg-img-canvas {
+  margin-left: auto;
+}
+
+
+// ---------------- Header and Footer DETAILS
+footer.page-footer, .nav-wrapper {
+  margin-top: 0px;
+  padding-top: 0px;
+  background-color: $green-color;
+}
+
+p#footer-disc.center-align {
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+// Small screen
+@media screen and (min-width: 1px) and (max-width:479px) {
+
 }

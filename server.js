@@ -20,7 +20,10 @@ app.get('/', function(req, res) {
   res.render('index');
 });
 
-app.listen(PORT, function() {
+app.get('/riot.txt', function(req, res) {
+  res.render('riot.txt');
+});
 
+app.listen(PORT, function() {
   console.log('listening on port:', PORT);
 });

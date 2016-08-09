@@ -1,0 +1,229 @@
+$white-color: #EFFFE9;
+$black-color: #011627;
+$red-color: #E71D36;
+$green-color: #2EC4B6;
+
+$google-font-lobster: 'Lobster', serif;
+$google-font-racing: 'Racing Sans One', serif;
+
+// background-picture
+.header {
+  display: table;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: url('/views/images/sona-background-half3.jpg') no-repeat center;
+  background-size: cover;
+  -o-background-size: cover;
+  margin-bottom: 0px;
+}
+
+// LANE WINS LOGO
+h1 {
+  color: $white-color;
+}
+
+#lane-header-race {
+  position: absolute;
+  top: 0px;
+  font-family: $google-font-racing;
+  font-size: 4em;
+}
+.landing-quote {
+  color: $green-color;
+  font-family: 'Open Sans', serif;
+  font-size: 1em;
+  position: relative;
+  top: 20vh;
+  left: 127px;
+}
+
+
+// INPUT SUMMONER NAME
+input#summonerNameInput {
+  position : relative;
+  top: 30vh;
+  left: 3vw;
+  width: 320px;
+  font-size: 1.5em;
+  font-family: 'Open Sans', serif;
+  color: $black-color;
+  background-color: $white-color;
+
+  border-bottom: none;
+  border-radius: 8px;
+
+  padding-left: 15px;
+  padding-right: 15px;
+  &:focus {
+    border: none;
+  }
+}
+
+.input-field input[type=text]:focus + label {
+     color: $green-color;
+   }
+
+// ENTER BUTTON
+.btn-login {
+
+  transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -webkit-transition: opacity 1s ease-in-out;
+  position: absolute;
+
+  top: 53vh;
+  left: 7.5vw;
+
+  font-family: $google-font-racing;
+  font-size: 2em;
+
+  position: absolute;
+  background-color: transparent;
+  border: none;
+
+  padding: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+
+  color: $green-color;
+
+    &:hover {
+    color: $red-color;
+    background-color: transparent;
+  }
+
+}
+
+i.material-icons.left {
+  font-size: 1.2em;
+  margin-right: 0px;
+}
+.elementToFadeInAndOut {
+    opacity: 1;
+    amimation: fade 2s linear;
+}
+
+
+@keyframes fade {
+  0%,100% { opacity: 0 }
+  50% { opacity: 1 }
+}
+
+// XSmall screen
+// @media screen and (min-width: 300px) and (max-width:379px) {
+// p#quote-one.landing-quote.lighter {
+//     margin-top: -6vh;
+//     top: 0vh;
+//   }
+// }
+
+// Small screen
+@media screen and (min-width: 1px) and (max-width:479px) {
+
+  .header {
+    background: none;
+    height: 50vh;
+  }
+
+  .small-header {
+    width: 99vw;
+    height: 50vh;
+    background: url('/views/images/sona-background-small.jpg') no-repeat center;
+    background-size: cover;
+    -o-background-size: cover;
+    margin-bottom: 0px;
+  }
+
+  h1#lane-header-race {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 18.7vw;
+  }
+
+  p#quote-one.landing-quote.lighter {
+    margin-top: -5vh;
+    margin-bottom: 0px;
+    top: 18.5vh;
+    left: 0px;
+    font-size: 6vw;
+  }
+
+  input#summonerNameInput {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    top: 23vh;
+    left: -5px;
+    width: 86%;
+    font-size: 7vw;
+  }
+
+  .btn-login {
+    top: 35vh;
+    left: 4px;
+    font-size: 8vw;
+  }
+
+   #btn-demo {
+    top: 25vh;
+    left: 20vw;
+  }
+
+  #footer-row {
+    margin-bottom: 0px;
+  }
+
+  p#footer-disc.center-align {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    padding-right: 4%;
+    padding-left: 4%;
+
+  }
+}
+
+// Medium screen
+@media screen and (min-width: 480px) and (max-width:992px) {
+   p#quote-one.landing-quote.lighter {
+    margin-top: -3vh;
+    margin-bottom: 0px;
+    top: 21.5vh;
+    left: 35px;
+    font-size: 2em;
+  }
+
+    .btn-login {
+    margin-top: -8.5vh;
+    left: 85px;
+    font-size: 4vw;
+  }
+
+  #btn-demo {
+    top: 29vh;
+    left: 19.5vw;
+  }
+}
+
+// Large screen
+@media screen and (min-width:993px) {
+
+  p#quote-one.landing-quote.lighter {
+    margin-top: -3vh;
+    margin-bottom: 0px;
+    top: 22.5vh;
+    left: 35px;
+    font-size: 1.4em;
+  }
+
+  .btn-login {
+    margin-top: -8.5vh;
+    left: 85px;
+    font-size: 3.1vw;
+  }
+
+  #btn-demo {
+    top: 29vh;
+    left: 10.5vw;
+  }
+}

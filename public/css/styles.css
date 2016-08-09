@@ -1,13 +1,521 @@
-/* line 1, stdin */
-.box {
-  height: 100px;
-  width: 100px;
-  border: 1px solid black;
-  margin-bottom: 25px; }
+/* line 10, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+.header {
+  display: table;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: url("/views/images/sona-background-half3.jpg") no-repeat center;
+  background-size: cover;
+  -o-background-size: cover;
+  margin-bottom: 0px; }
 
-/* line 8, stdin */
-#image-div {
-  background-image: url("https://s3-us-west-1.amazonaws.com/riot-api/img/minimap-ig.png");
-  width: 600px;
-  height: 600px;
-  background-repeat: no-repeat; }
+/* line 22, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+h1 {
+  color: #EFFFE9; }
+
+/* line 26, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+#lane-header-race {
+  position: absolute;
+  top: 0px;
+  font-family: "Racing Sans One", serif;
+  font-size: 4em; }
+
+/* line 32, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+.landing-quote {
+  color: #2EC4B6;
+  font-family: 'Open Sans', serif;
+  font-size: 1em;
+  position: relative;
+  top: 20vh;
+  left: 127px; }
+
+/* line 43, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+input#summonerNameInput {
+  position: relative;
+  top: 30vh;
+  left: 3vw;
+  width: 320px;
+  font-size: 1.5em;
+  font-family: 'Open Sans', serif;
+  color: #011627;
+  background-color: #EFFFE9;
+  border-bottom: none;
+  border-radius: 8px;
+  padding-left: 15px;
+  padding-right: 15px; }
+  /* line 58, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  input#summonerNameInput:focus {
+    border: none; }
+
+/* line 63, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+.input-field input[type=text]:focus + label {
+  color: #2EC4B6; }
+
+/* line 68, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+.btn-login {
+  transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -webkit-transition: opacity 1s ease-in-out;
+  position: absolute;
+  top: 53vh;
+  left: 7.5vw;
+  font-family: "Racing Sans One", serif;
+  font-size: 2em;
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  padding: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: #2EC4B6; }
+  /* line 91, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  .btn-login:hover {
+    color: #E71D36;
+    background-color: transparent; }
+
+/* line 98, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+i.material-icons.left {
+  font-size: 1.2em;
+  margin-right: 0px; }
+
+/* line 102, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+.elementToFadeInAndOut {
+  opacity: 1;
+  amimation: fade 2s linear; }
+
+@keyframes fade {
+  0%, 100% {
+    opacity: 0; }
+  50% {
+    opacity: 1; } }
+
+@media screen and (min-width: 1px) and (max-width: 479px) {
+  /* line 124, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  .header {
+    background: none;
+    height: 50vh; }
+  /* line 129, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  .small-header {
+    width: 99vw;
+    height: 50vh;
+    background: url("/views/images/sona-background-small.jpg") no-repeat center;
+    background-size: cover;
+    -o-background-size: cover;
+    margin-bottom: 0px; }
+  /* line 138, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  h1#lane-header-race {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 18.7vw; }
+  /* line 144, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  p#quote-one.landing-quote.lighter {
+    margin-top: -5vh;
+    margin-bottom: 0px;
+    top: 18.5vh;
+    left: 0px;
+    font-size: 6vw; }
+  /* line 152, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  input#summonerNameInput {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    top: 23vh;
+    left: -5px;
+    width: 86%;
+    font-size: 7vw; }
+  /* line 161, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  .btn-login {
+    top: 35vh;
+    left: 4px;
+    font-size: 8vw; }
+  /* line 167, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  #btn-demo {
+    top: 25vh;
+    left: 20vw; }
+  /* line 172, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  #footer-row {
+    margin-bottom: 0px; }
+  /* line 176, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  p#footer-disc.center-align {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    padding-right: 4%;
+    padding-left: 4%; } }
+
+@media screen and (min-width: 480px) and (max-width: 992px) {
+  /* line 188, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  p#quote-one.landing-quote.lighter {
+    margin-top: -3vh;
+    margin-bottom: 0px;
+    top: 21.5vh;
+    left: 35px;
+    font-size: 2em; }
+  /* line 196, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  .btn-login {
+    margin-top: -8.5vh;
+    left: 85px;
+    font-size: 4vw; }
+  /* line 202, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  #btn-demo {
+    top: 29vh;
+    left: 19.5vw; } }
+
+@media screen and (min-width: 993px) {
+  /* line 211, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  p#quote-one.landing-quote.lighter {
+    margin-top: -3vh;
+    margin-bottom: 0px;
+    top: 22.5vh;
+    left: 35px;
+    font-size: 1.4em; }
+  /* line 219, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  .btn-login {
+    margin-top: -8.5vh;
+    left: 85px;
+    font-size: 3.1vw; }
+  /* line 225, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_landing-page.scss */
+  #btn-demo {
+    top: 29vh;
+    left: 10.5vw; } }
+
+/* line 2, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_map-scrubber.scss */
+#map-d {
+  box-sizing: border-box; }
+
+/* line 6, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_map-scrubber.scss */
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px; }
+
+/* Creates a small triangle extender for the tooltip */
+/* line 16, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_map-scrubber.scss */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 16px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center; }
+
+/* Style northward tooltips differently */
+/* line 29, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_map-scrubber.scss */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0; }
+
+/* line 37, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_map-scrubber.scss */
+.tooltip {
+  height: 50px;
+  width: 50px; }
+
+/* line 42, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_map-scrubber.scss */
+.assistor {
+  height: 20px;
+  width: 20px; }
+
+/* line 47, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_map-scrubber.scss */
+.logo {
+  width: 950px;
+  background-repeat: none;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 100px;
+  margin: auto; }
+
+/* line 56, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_map-scrubber.scss */
+.victim {
+  height: 40px;
+  width: 40px; }
+
+/* line 61, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_map-scrubber.scss */
+.tooltipX {
+  position: hover;
+  margin-left: -44px;
+  margin-bottom: 4px;
+  height: 40px;
+  width: 40px; }
+
+/* line 70, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_map-scrubber.scss */
+.axisLabel {
+  margin-top: -40px;
+  text-align: center;
+  color: #EFFFE9;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  font-size: .8em; }
+
+/* line 79, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_map-scrubber.scss */
+.tick text {
+  fill: #EFFFE9; }
+
+/* line 83, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_map-scrubber.scss */
+label {
+  color: #EFFFE9; }
+
+/* line 87, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_map-scrubber.scss */
+rect.background {
+  background-color: #EFFFE9; }
+
+/* line 11, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+span#brand-logo.lane-header-race {
+  font-family: "Racing Sans One", serif;
+  margin-left: 2%;
+  font-size: 2em;
+  color: #EFFFE9; }
+  /* line 16, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+  span#brand-logo.lane-header-race:hover {
+    color: #011627; }
+
+/* line 21, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+#summoner-name-nav {
+  padding-right: 20px;
+  color: #EFFFE9; }
+
+/* line 26, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+#recent-games-tab {
+  background-color: #E71D36; }
+  /* line 28, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+  #recent-games-tab a {
+    color: #EFFFE9;
+    font-size: 1.2em;
+    padding-right: 20px;
+    padding-left: 20px; }
+    /* line 34, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+    #recent-games-tab a:hover {
+      color: #FFF; }
+
+/* line 40, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+nav ul {
+  height: 100%; }
+
+/* line 44, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+.match-tab {
+  text-decoration: none; }
+
+/* line 50, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+#match-row-one {
+  background-color: #EFFFE9;
+  margin-bottom: 20px; }
+
+/* line 55, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+#match-row-one,
+h4 {
+  padding-top: 5px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  color: #011627;
+  font-weight: bold; }
+
+/* line 80, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+.player-stats {
+  margin-bottom: 0px; }
+
+/* line 84, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+div#player-kill-count, div#player-gold-count {
+  margin-top: -18px; }
+
+/* line 88, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+#player-name {
+  margin-bottom: 0px; }
+
+/* line 92, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+.player-stat-container {
+  background-color: #011627;
+  color: #EFFFE9;
+  font-size: 0.8em; }
+
+/* line 98, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+img.riot-icon {
+  border: 0;
+  top: 18px; }
+
+/* line 102, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+.riot-icon {
+  position: relative; }
+
+/* line 108, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+.player-score:hover .stats-tooltip {
+  display: block;
+  color: #011627;
+  background-color: #EFFFE9; }
+
+/* line 115, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+.stats-tooltip {
+  display: none;
+  padding: 5px;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 1000;
+  background: #EFFFE9;
+  color: #011627; }
+
+/* line 125, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+img.picture {
+  border-radius: 50%; }
+
+/* line 129, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+.item-picture {
+  width: 32px;
+  height: 32px;
+  border-radius: 13%; }
+
+@media screen and (min-width: 1px) and (max-width: 479px) {
+  /* line 137, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+  img.picture {
+    border-radius: 50%;
+    height: 85%;
+    width: 85px; }
+  /* line 143, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+  .player-stats {
+    margin-top: 20px; }
+  /* line 147, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+  #red-team {
+    background-color: red;
+    height: 27vh; }
+  /* line 151, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_match-details.scss */
+  #blue-team {
+    background-color: blue;
+    height: 27vh; } }
+
+/* line 9, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+div.match-container {
+  border: 4px solid #2EC4B6;
+  margin-top: 20px;
+  background-color: #EFFFE9; }
+  /* line 14, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+  div.match-container:hover {
+    border: 4px solid #E71D36;
+    cursor: pointer; }
+    /* line 18, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+    div.match-container:hover .game-info {
+      background-color: #E71D36; }
+
+/* line 24, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+#vs {
+  height: 100%;
+  width: 100%;
+  margin-top: 10px; }
+
+/* line 30, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+.game-info {
+  background-color: #2EC4B6;
+  box-sizing: border-box;
+  display: block;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font-weight: bold;
+  font-family: "Racing Sans One", serif;
+  padding-left: 15px; }
+
+/* line 41, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+.teams {
+  margin-top: 30px; }
+
+/* line 45, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+#recent-game-team-one {
+  margin-left: 35px; }
+
+/* line 49, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+#recent-game-team-two {
+  margin-left: 20px; }
+
+/* line 53, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+.recent-match-picture {
+  display: inline;
+  width: 70px;
+  height: 70px;
+  margin-right: 7px; }
+
+@media screen and (min-width: 1px) and (max-width: 479px) {
+  /* line 63, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+  #recent-game-team-one, #recent-game-team-two {
+    text-align: center; }
+  /* line 67, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+  #recent-game-team-one {
+    margin-left: 3%; }
+  /* line 70, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+  #recent-game-team-two {
+    margin-left: 0px; }
+  /* line 74, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+  .recent-match-picture {
+    width: 40px;
+    height: 40px;
+    margin-right: 1px; }
+  /* line 80, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+  #vs {
+    width: 30px;
+    margin-top: 45px;
+    margin-left: -15px; } }
+
+@media screen and (min-width: 480px) and (max-width: 992px) {
+  /* line 90, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+  #recent-game-team-one, #recent-game-team-two {
+    text-align: center; }
+  /* line 94, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+  #recent-game-team-two {
+    margin-left: 0px; }
+  /* line 98, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+  .recent-match-picture {
+    width: 55px;
+    height: 55px;
+    margin-right: 5px; }
+  /* line 104, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+  #vs {
+    width: 50px;
+    margin-top: 65px;
+    margin-left: -15px; } }
+
+@media screen and (min-width: 993px) {
+  /* line 115, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+  body.ng-scope #recent-game-team-one, body.ng-scope #recent-game-team-two {
+    text-align: center; }
+  /* line 119, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+  body.ng-scope #vs {
+    margin-top: 10vh; } }
+
+/* line 16, stdin */
+body {
+  background-color: #011627;
+  font-size: 1.5em;
+  line-height: 1.6;
+  font-weight: 400; }
+
+/* line 23, stdin */
+h1 {
+  font-family: 'Open Sans', serif; }
+
+/* line 27, stdin */
+p#footer-disc.center-align {
+  font-size: .55em;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-bottom: 0px; }
+
+/* line 53, stdin */
+li {
+  display: inline; }
+
+/* line 57, stdin */
+#map-svg-img-canvas {
+  margin-left: auto; }
+
+/* line 63, stdin */
+footer.page-footer, .nav-wrapper {
+  margin-top: 0px;
+  padding-top: 0px;
+  background-color: #2EC4B6; }
+
+/* line 69, stdin */
+p#footer-disc.center-align {
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 0px;
+  margin-bottom: 0px; }
