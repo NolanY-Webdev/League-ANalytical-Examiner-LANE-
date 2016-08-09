@@ -2,11 +2,9 @@
 var express = require('express');
 var router = express.Router();
 var request = require('request');
-
 var sort = require('../matchSorting');
 router
   .route('/')
-
   // get player recent match info
   // /api/lol/{region}/v1.3/game/by-summoner/{summonerId}/recent
   .get(function(req,res) {
@@ -25,7 +23,7 @@ router
 
       // prune body
       var parsed = JSON.parse(body);
-      console.log('2HALOOOOOOOOOOOOOO->',parsed.games[0].gameId);
+      console.log('match info->',parsed.games[0].gameId);
 
       //parsing server data into match data
       var sorted = sort(parsed);
