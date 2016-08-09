@@ -42,7 +42,6 @@ router
           }
         }
       }
-      console.log('MATCH BRAH');
       res.send(parsed);
     });
   });

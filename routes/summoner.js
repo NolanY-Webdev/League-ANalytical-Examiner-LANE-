@@ -19,7 +19,6 @@ router
         if (err) {
           return res.status(500).json(err);
         }
-        console.log('SUMMONER NAME BRAH');
         res.send(body);
       });
     });
