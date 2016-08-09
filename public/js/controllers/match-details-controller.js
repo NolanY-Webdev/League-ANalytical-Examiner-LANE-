@@ -9,7 +9,7 @@ angular.module('laneApp')
       $scope.mostRecentMatch = null;
       matchInfo.getMatch($stateParams.match_id)
         .success( ( mostRecentMatch ) => {
-          console.log('MATCH INFO', mostRecentMatch);
+          console.log('Match Information > ', mostRecentMatch);
           $scope.mostRecentMatch = mostRecentMatch;
         });
     }]);
