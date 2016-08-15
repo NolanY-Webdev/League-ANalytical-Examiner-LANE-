@@ -17,11 +17,11 @@ app.use('/getRecentMatch', getRecentMatch);
 app.use('/getMatch', getMatch);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Teemo Not Found');
-  err.status = 404;
-  next(err);
-});
+// app.use(function(req, res, next) {
+//   var err = new Error('Not Found');
+//   err.status = 404;
+//   next(err);
+// });
 
 app.get('/', function(req, res) {
   res.render('index');
