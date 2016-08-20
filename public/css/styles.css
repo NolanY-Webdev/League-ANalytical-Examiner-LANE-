@@ -434,50 +434,76 @@ div.match-container {
   height: 70px;
   margin-right: 7px; }
 
+/* line 61, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+.game {
+  overflow: hidden; }
+
+/* line 65, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+.game.ng-enter, .game.ng-leave {
+  transition: all linear 0.9s; }
+
+/* line 69, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+.game.ng-enter, .game.ng-leave.ng-leave-active {
+  margin-left: -2em;
+  max-height: 0; }
+
+/* line 75, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+.game.ng-leave, .game.ng-enter.ng-enter-active {
+  margin-left: 0;
+  max-height: 1em; }
+
+/* line 82, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+.animate.ng-enter-stagger {
+  transition-delay: 0.3s; }
+
+/* line 86, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+.animate.ng-leave-stagger {
+  transition-delay: 0.3s; }
+
 @media screen and (min-width: 1px) and (max-width: 479px) {
-  /* line 63, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+  /* line 92, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
   #recent-game-team-one, #recent-game-team-two {
     text-align: center; }
-  /* line 67, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+  /* line 96, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
   #recent-game-team-one {
     margin-left: 3%; }
-  /* line 70, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+  /* line 99, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
   #recent-game-team-two {
     margin-left: 0px; }
-  /* line 74, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+  /* line 103, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
   .recent-match-picture {
     width: 40px;
     height: 40px;
     margin-right: 1px; }
-  /* line 80, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+  /* line 109, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
   #vs {
     width: 30px;
     margin-top: 45px;
     margin-left: -15px; } }
 
 @media screen and (min-width: 480px) and (max-width: 992px) {
-  /* line 90, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+  /* line 119, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
   #recent-game-team-one, #recent-game-team-two {
     text-align: center; }
-  /* line 94, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+  /* line 123, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
   #recent-game-team-two {
     margin-left: 0px; }
-  /* line 98, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+  /* line 127, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
   .recent-match-picture {
     width: 55px;
     height: 55px;
     margin-right: 5px; }
-  /* line 104, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+  /* line 133, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
   #vs {
     width: 50px;
     margin-top: 65px;
     margin-left: -15px; } }
 
 @media screen and (min-width: 993px) {
-  /* line 115, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+  /* line 144, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
   body.ng-scope #recent-game-team-one, body.ng-scope #recent-game-team-two {
     text-align: center; }
-  /* line 119, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
+  /* line 148, /Users/StyeL/DevLeague/League-ANalytical-Examiner-LANE-/sass/_recent-match.scss */
   body.ng-scope #vs {
     margin-top: 10vh; } }
 

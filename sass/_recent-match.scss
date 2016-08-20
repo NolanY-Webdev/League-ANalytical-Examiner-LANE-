@@ -57,6 +57,35 @@ div.match-container {
   margin-right: 7px;
 }
 
+// animation styles here
+.game {
+  overflow: hidden;
+}
+
+.game.ng-enter, .game.ng-leave {
+  transition: all linear 0.9s;
+}
+
+.game.ng-enter, .game.ng-leave.ng-leave-active {
+  margin-left:-2em;
+  // opacity: 0;
+  max-height: 0;
+}
+
+.game.ng-leave, .game.ng-enter.ng-enter-active {
+  margin-left:0;
+  // opacity: 1;
+  max-height: 1em;
+}
+
+
+.animate.ng-enter-stagger {
+  transition-delay: 0.3s;
+}
+
+.animate.ng-leave-stagger {
+  transition-delay: 0.3s;
+}
 // Small screen
 @media screen and (min-width: 1px) and (max-width:479px) {
 

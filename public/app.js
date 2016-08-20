@@ -1,7 +1,7 @@
 'use strict';
 angular
 .module('laneApp', [
-  'ui.router'
+  'ui.router', 'ngAnimate'
 ])
 .config(
   ['$stateProvider',
